@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WZDMainViewController.h
 //  MyHomeWork
 //
 //  Created by 王战东 on 16/9/25.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface WZDMainViewController : UIViewController
 
-
+ 
 @end
 
