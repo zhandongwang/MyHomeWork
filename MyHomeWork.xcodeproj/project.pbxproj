@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2312D5DE1DBE1D2E00AB55EE /* WZDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2312D5DD1DBE1D2E00AB55EE /* WZDMainViewController.m */; };
+		2312D5EC1DBF5EFD00AB55EE /* JSCoreObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2312D5E91DBF5EFD00AB55EE /* JSCoreObject.m */; };
+		2312D5ED1DBF5EFD00AB55EE /* NSObject+JSCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2312D5EB1DBF5EFD00AB55EE /* NSObject+JSCore.m */; };
+		2312D5EF1DBF5FA300AB55EE /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 2312D5EE1DBF5FA300AB55EE /* test.html */; };
 		236098921D980892009C589B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098911D980892009C589B /* main.m */; };
 		236098951D980892009C589B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098941D980892009C589B /* AppDelegate.m */; };
-		236098981D980892009C589B /* WZDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098971D980892009C589B /* WZDMainViewController.m */; };
 		2360989B1D980892009C589B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236098991D980892009C589B /* Main.storyboard */; };
 		2360989D1D980892009C589B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2360989C1D980892009C589B /* Assets.xcassets */; };
 		236098A01D980892009C589B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2360989E1D980892009C589B /* LaunchScreen.storyboard */; };
@@ -38,12 +41,17 @@
 /* Begin PBXFileReference section */
 		100543FCDD69F7BE683785F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		18274D36AD8EB9164023DA75 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2312D5DD1DBE1D2E00AB55EE /* WZDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZDMainViewController.m; sourceTree = "<group>"; };
+		2312D5E81DBF5EFD00AB55EE /* JSCoreObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCoreObject.h; sourceTree = "<group>"; };
+		2312D5E91DBF5EFD00AB55EE /* JSCoreObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCoreObject.m; sourceTree = "<group>"; };
+		2312D5EA1DBF5EFD00AB55EE /* NSObject+JSCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSCore.h"; sourceTree = "<group>"; };
+		2312D5EB1DBF5EFD00AB55EE /* NSObject+JSCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSCore.m"; sourceTree = "<group>"; };
+		2312D5EE1DBF5FA300AB55EE /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		2360988D1D980892009C589B /* MyHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		236098911D980892009C589B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		236098931D980892009C589B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		236098941D980892009C589B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		236098961D980892009C589B /* WZDMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDMainViewController.h; sourceTree = "<group>"; };
-		236098971D980892009C589B /* WZDMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDMainViewController.m; sourceTree = "<group>"; };
 		2360989A1D980892009C589B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2360989C1D980892009C589B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2360989F1D980892009C589B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -108,10 +116,15 @@
 		2360988F1D980892009C589B /* MyHomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				2312D5EE1DBF5FA300AB55EE /* test.html */,
+				2312D5E81DBF5EFD00AB55EE /* JSCoreObject.h */,
+				2312D5E91DBF5EFD00AB55EE /* JSCoreObject.m */,
+				2312D5EA1DBF5EFD00AB55EE /* NSObject+JSCore.h */,
+				2312D5EB1DBF5EFD00AB55EE /* NSObject+JSCore.m */,
 				236098931D980892009C589B /* AppDelegate.h */,
 				236098941D980892009C589B /* AppDelegate.m */,
 				236098961D980892009C589B /* WZDMainViewController.h */,
-				236098971D980892009C589B /* WZDMainViewController.m */,
+				2312D5DD1DBE1D2E00AB55EE /* WZDMainViewController.m */,
 				236098991D980892009C589B /* Main.storyboard */,
 				2360989C1D980892009C589B /* Assets.xcassets */,
 				2360989E1D980892009C589B /* LaunchScreen.storyboard */,
@@ -270,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2312D5EF1DBF5FA300AB55EE /* test.html in Resources */,
 				236098A01D980892009C589B /* LaunchScreen.storyboard in Resources */,
 				2360989D1D980892009C589B /* Assets.xcassets in Resources */,
 				2360989B1D980892009C589B /* Main.storyboard in Resources */,
@@ -345,8 +359,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				236098981D980892009C589B /* WZDMainViewController.m in Sources */,
+				2312D5DE1DBE1D2E00AB55EE /* WZDMainViewController.m in Sources */,
 				236098951D980892009C589B /* AppDelegate.m in Sources */,
+				2312D5EC1DBF5EFD00AB55EE /* JSCoreObject.m in Sources */,
+				2312D5ED1DBF5EFD00AB55EE /* NSObject+JSCore.m in Sources */,
 				236098921D980892009C589B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,10 +7,14 @@
 //
 
 #import "WZDMainViewController.h"
+#import <JavaScriptCore/JavaScriptCore.h>
+#import "JSCoreObject.h"
 
-@interface WZDMainViewController ()
+@interface WZDMainViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, strong) UIView *customView;
+@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) JSContext *context;
 
 @end
 
@@ -19,13 +23,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self.view addSubview:self.customView];
+    [self.view addSubview:self.webView];
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"html"];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsContextCreated:) name:@"didCreateJsContextNotification" object:nil];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - event handle
+
+- (void)jsContextCreated:(NSNotification *)notification
+{
+    JSContext *context = notification.object;
+    
+    NSString *indentifier = [NSString stringWithFormat:@"indentifier%lud", (unsigned long)self.webView.hash];
+    NSString *indentifierJS = [NSString stringWithFormat:@"var %@ = '%@'", indentifier, indentifier];
+    
+    [self.webView stringByEvaluatingJavaScriptFromString:indentifierJS];
+    
+    if (![context[indentifier].toString isEqualToString:indentifier]) {
+      return;
+    }
+
+    self.context = context;
+    JSCoreObject *jsObject = [[JSCoreObject alloc] initWithWebView:self.webView];
+    self.context[@"JSTest"] = jsObject;
+}
+
+#pragma mark - accessors
+
+- (UIWebView *)webView
+{
+    if (!_webView) {
+        _webView = [[UIWebView alloc] initWithFrame:CGRectMake(100, 100, 250, 400)];
+        _webView.delegate = self;
+    }
+    return _webView;
 }
 
 - (UIView *)customView
