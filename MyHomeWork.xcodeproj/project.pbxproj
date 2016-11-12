@@ -11,7 +11,10 @@
 		2312D5EC1DBF5EFD00AB55EE /* JSCoreObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2312D5E91DBF5EFD00AB55EE /* JSCoreObject.m */; };
 		2312D5ED1DBF5EFD00AB55EE /* NSObject+JSCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2312D5EB1DBF5EFD00AB55EE /* NSObject+JSCore.m */; };
 		2312D5EF1DBF5FA300AB55EE /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 2312D5EE1DBF5FA300AB55EE /* test.html */; };
+		2335419F1DCEC30A0069B95F /* JsDemo.js in Resources */ = {isa = PBXBuildFile; fileRef = 2335419E1DCEC30A0069B95F /* JsDemo.js */; };
 		233711BE1DC444F2007FE349 /* SubClass+LoadTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 233711BD1DC444F2007FE349 /* SubClass+LoadTest.m */; };
+		235944191DCC6AF800C6C7E3 /* CustomRlmPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 235944181DCC6AF800C6C7E3 /* CustomRlmPerson.m */; };
+		2359441C1DCC6B7A00C6C7E3 /* CustomRlmDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2359441B1DCC6B7A00C6C7E3 /* CustomRlmDog.m */; };
 		236098921D980892009C589B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098911D980892009C589B /* main.m */; };
 		236098951D980892009C589B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098941D980892009C589B /* AppDelegate.m */; };
 		2360989B1D980892009C589B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236098991D980892009C589B /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 		236098B61D980892009C589B /* MyHomeWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098B51D980892009C589B /* MyHomeWorkUITests.m */; };
 		2373C0451DC43EB9008B3A2C /* BaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2373C0441DC43EB9008B3A2C /* BaseClass.m */; };
 		2373C0481DC43ECD008B3A2C /* SubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2373C0471DC43ECD008B3A2C /* SubClass.m */; };
+		238A746D1DCC35DD00A92E9F /* libtestStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 238A746C1DCC35DD00A92E9F /* libtestStaticLib.a */; };
+		238AD5431DD34B3600597565 /* MyPageRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 238AD5421DD34B3600597565 /* MyPageRouter.m */; };
+		238AD5461DD34FD000597565 /* MyPageNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 238AD5451DD34FD000597565 /* MyPageNavigator.m */; };
 		2FD9557968FCF697C1E9081A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 100543FCDD69F7BE683785F7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +56,13 @@
 		2312D5EA1DBF5EFD00AB55EE /* NSObject+JSCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSCore.h"; sourceTree = "<group>"; };
 		2312D5EB1DBF5EFD00AB55EE /* NSObject+JSCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSCore.m"; sourceTree = "<group>"; };
 		2312D5EE1DBF5FA300AB55EE /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		2335419E1DCEC30A0069B95F /* JsDemo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JsDemo.js; sourceTree = "<group>"; };
 		233711BC1DC444F2007FE349 /* SubClass+LoadTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SubClass+LoadTest.h"; sourceTree = "<group>"; };
 		233711BD1DC444F2007FE349 /* SubClass+LoadTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SubClass+LoadTest.m"; sourceTree = "<group>"; };
+		235944171DCC6AF800C6C7E3 /* CustomRlmPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRlmPerson.h; sourceTree = "<group>"; };
+		235944181DCC6AF800C6C7E3 /* CustomRlmPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRlmPerson.m; sourceTree = "<group>"; };
+		2359441A1DCC6B7A00C6C7E3 /* CustomRlmDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRlmDog.h; sourceTree = "<group>"; };
+		2359441B1DCC6B7A00C6C7E3 /* CustomRlmDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRlmDog.m; sourceTree = "<group>"; };
 		2360988D1D980892009C589B /* MyHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		236098911D980892009C589B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		236098931D980892009C589B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,6 +82,13 @@
 		2373C0441DC43EB9008B3A2C /* BaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseClass.m; sourceTree = "<group>"; };
 		2373C0461DC43ECD008B3A2C /* SubClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubClass.h; sourceTree = "<group>"; };
 		2373C0471DC43ECD008B3A2C /* SubClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubClass.m; sourceTree = "<group>"; };
+		238A746B1DCC35D300A92E9F /* testStaticLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testStaticLib.h; sourceTree = "<group>"; };
+		238A746C1DCC35DD00A92E9F /* libtestStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtestStaticLib.a; sourceTree = "<group>"; };
+		238A74961DCC39F200A92E9F /* TestFrameworkBuild.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TestFrameworkBuild.framework; path = MyHomeWork/TestFrameworkBuild.framework; sourceTree = SOURCE_ROOT; };
+		238AD5411DD34B3600597565 /* MyPageRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageRouter.h; sourceTree = "<group>"; };
+		238AD5421DD34B3600597565 /* MyPageRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageRouter.m; sourceTree = "<group>"; };
+		238AD5441DD34FD000597565 /* MyPageNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageNavigator.h; sourceTree = "<group>"; };
+		238AD5451DD34FD000597565 /* MyPageNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageNavigator.m; sourceTree = "<group>"; };
 		F4687DAC621A4038CCB7888B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FD9557968FCF697C1E9081A /* libPods.a in Frameworks */,
+				238A746D1DCC35DD00A92E9F /* libtestStaticLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +119,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2359441D1DCC803A00C6C7E3 /* JSTest */ = {
+			isa = PBXGroup;
+			children = (
+				2335419E1DCEC30A0069B95F /* JsDemo.js */,
+				2312D5EE1DBF5FA300AB55EE /* test.html */,
+				2312D5E81DBF5EFD00AB55EE /* JSCoreObject.h */,
+				2312D5E91DBF5EFD00AB55EE /* JSCoreObject.m */,
+				2312D5EA1DBF5EFD00AB55EE /* NSObject+JSCore.h */,
+				2312D5EB1DBF5EFD00AB55EE /* NSObject+JSCore.m */,
+			);
+			name = JSTest;
+			sourceTree = "<group>";
+		};
+		2359441E1DCC805700C6C7E3 /* RealmTest */ = {
+			isa = PBXGroup;
+			children = (
+				235944171DCC6AF800C6C7E3 /* CustomRlmPerson.h */,
+				235944181DCC6AF800C6C7E3 /* CustomRlmPerson.m */,
+				2359441A1DCC6B7A00C6C7E3 /* CustomRlmDog.h */,
+				2359441B1DCC6B7A00C6C7E3 /* CustomRlmDog.m */,
+			);
+			name = RealmTest;
+			sourceTree = "<group>";
+		};
 		236098841D980892009C589B = {
 			isa = PBXGroup;
 			children = (
@@ -125,17 +168,19 @@
 		2360988F1D980892009C589B /* MyHomeWork */ = {
 			isa = PBXGroup;
 			children = (
-				2312D5EE1DBF5FA300AB55EE /* test.html */,
-				2312D5E81DBF5EFD00AB55EE /* JSCoreObject.h */,
-				2312D5E91DBF5EFD00AB55EE /* JSCoreObject.m */,
-				2312D5EA1DBF5EFD00AB55EE /* NSObject+JSCore.h */,
-				2312D5EB1DBF5EFD00AB55EE /* NSObject+JSCore.m */,
+				2359441E1DCC805700C6C7E3 /* RealmTest */,
+				2359441D1DCC803A00C6C7E3 /* JSTest */,
+				238A746A1DCC359700A92E9F /* 3rdLib */,
 				2373C0431DC43EB9008B3A2C /* BaseClass.h */,
 				2373C0441DC43EB9008B3A2C /* BaseClass.m */,
 				2373C0461DC43ECD008B3A2C /* SubClass.h */,
 				2373C0471DC43ECD008B3A2C /* SubClass.m */,
 				233711BC1DC444F2007FE349 /* SubClass+LoadTest.h */,
 				233711BD1DC444F2007FE349 /* SubClass+LoadTest.m */,
+				238AD5411DD34B3600597565 /* MyPageRouter.h */,
+				238AD5421DD34B3600597565 /* MyPageRouter.m */,
+				238AD5441DD34FD000597565 /* MyPageNavigator.h */,
+				238AD5451DD34FD000597565 /* MyPageNavigator.m */,
 				236098931D980892009C589B /* AppDelegate.h */,
 				236098941D980892009C589B /* AppDelegate.m */,
 				236098961D980892009C589B /* WZDMainViewController.h */,
@@ -173,6 +218,16 @@
 				236098B71D980892009C589B /* Info.plist */,
 			);
 			path = MyHomeWorkUITests;
+			sourceTree = "<group>";
+		};
+		238A746A1DCC359700A92E9F /* 3rdLib */ = {
+			isa = PBXGroup;
+			children = (
+				238A746B1DCC35D300A92E9F /* testStaticLib.h */,
+				238A746C1DCC35DD00A92E9F /* libtestStaticLib.a */,
+				238A74961DCC39F200A92E9F /* TestFrameworkBuild.framework */,
+			);
+			name = 3rdLib;
 			sourceTree = "<group>";
 		};
 		493C15CB6C952D81DB815289 /* Pods */ = {
@@ -300,6 +355,7 @@
 			files = (
 				2312D5EF1DBF5FA300AB55EE /* test.html in Resources */,
 				236098A01D980892009C589B /* LaunchScreen.storyboard in Resources */,
+				2335419F1DCEC30A0069B95F /* JsDemo.js in Resources */,
 				2360989D1D980892009C589B /* Assets.xcassets in Resources */,
 				2360989B1D980892009C589B /* Main.storyboard in Resources */,
 			);
@@ -378,9 +434,13 @@
 				233711BE1DC444F2007FE349 /* SubClass+LoadTest.m in Sources */,
 				2312D5DE1DBE1D2E00AB55EE /* WZDMainViewController.m in Sources */,
 				2373C0451DC43EB9008B3A2C /* BaseClass.m in Sources */,
+				238AD5431DD34B3600597565 /* MyPageRouter.m in Sources */,
 				236098951D980892009C589B /* AppDelegate.m in Sources */,
+				2359441C1DCC6B7A00C6C7E3 /* CustomRlmDog.m in Sources */,
 				2312D5EC1DBF5EFD00AB55EE /* JSCoreObject.m in Sources */,
 				2312D5ED1DBF5EFD00AB55EE /* NSObject+JSCore.m in Sources */,
+				235944191DCC6AF800C6C7E3 /* CustomRlmPerson.m in Sources */,
+				238AD5461DD34FD000597565 /* MyPageNavigator.m in Sources */,
 				236098921D980892009C589B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,8 +585,16 @@
 			baseConfigurationReference = 18274D36AD8EB9164023DA75 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyHomeWork",
+				);
 				INFOPLIST_FILE = MyHomeWork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyHomeWork",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = zhandongwang.MyHomeWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -537,8 +605,16 @@
 			baseConfigurationReference = F4687DAC621A4038CCB7888B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyHomeWork",
+				);
 				INFOPLIST_FILE = MyHomeWork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyHomeWork",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = zhandongwang.MyHomeWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

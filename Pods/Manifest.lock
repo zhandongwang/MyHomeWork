@@ -1,4 +1,5 @@
 PODS:
+  - Aspects (1.4.1)
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
   - BlocksKit/All (2.2.5):
@@ -14,19 +15,34 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - JSPatch (1.1):
+    - JSPatch/Core (= 1.1)
+  - JSPatch/Core (1.1)
   - Masonry (1.0.2)
+  - MJRefresh (3.1.12)
+  - Realm (1.1.0):
+    - Realm/Headers (= 1.1.0)
+  - Realm/Headers (1.1.0)
   - YYCache (1.0.4)
   - YYText (1.0.7)
 
 DEPENDENCIES:
+  - Aspects
   - BlocksKit
+  - JSPatch
   - Masonry
+  - MJRefresh
+  - Realm
   - YYCache
   - YYText
 
 SPEC CHECKSUMS:
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  JSPatch: ade285ad1d8f06146ed6054a39cef87509453299
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
