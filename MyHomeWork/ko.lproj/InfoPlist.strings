@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  MyHomeWork
+
+  Created by 凤梨 on 17/2/5.
+  Copyright © 2017年 zhandongwang. All rights reserved.
+*/
+CFBundleDisplayName = "현지화 앱 명칭";

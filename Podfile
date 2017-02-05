@@ -1,4 +1,7 @@
-pod 'YYCache'
-pod 'YYText'
+
+target 'MyHomeWork' do
+
 pod 'BlocksKit'
 pod 'Masonry'
+
+end

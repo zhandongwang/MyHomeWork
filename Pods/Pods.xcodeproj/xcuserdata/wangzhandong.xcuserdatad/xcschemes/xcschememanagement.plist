@@ -14,7 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-MyHomeWork.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3EEFEAF22CD82F799F833A5D4ADDDD33</key>
+		<key>03C3FEE9B2FA09532A24601CB5F27CB9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
+		<key>0AC55E754182E1FCF070AC7F74379523</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>84252F514F56623019DA5A3087E3B5CB</key>
+		<key>1FBD8203EE3CC8D8BE4FFB8C659E6E53</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9E9D71E8429CDCE6D5CB45AEA54883CE</key>
+		<key>9DC8D9E02903E93BD0B2FEC9D846EA20</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA1A7295DF2A99609DA0EEBF5E83233D</key>
+		<key>D4DBCBE23B267643AE62E17ABEAFDC0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
