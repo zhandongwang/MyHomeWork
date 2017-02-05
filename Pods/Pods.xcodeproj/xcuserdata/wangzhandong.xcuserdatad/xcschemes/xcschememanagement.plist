@@ -4,22 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Aspects.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>BlocksKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>JSPatch.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -29,12 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Realm.xcscheme</key>
+		<key>Pods-MyHomeWork.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,47 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>12971AF8AC6B8E211CCF08599D87EAEC</key>
+		<key>03C3FEE9B2FA09532A24601CB5F27CB9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
+		<key>0AC55E754182E1FCF070AC7F74379523</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>70BC44266C6FFE30D2C57129458E070B</key>
+		<key>1FBD8203EE3CC8D8BE4FFB8C659E6E53</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8F6E9AECA283D1C73D832C7DAEE0D663</key>
+		<key>9DC8D9E02903E93BD0B2FEC9D846EA20</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D33BE075446DB7FAB91401703C1F01F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DA1A7295DF2A99609DA0EEBF5E83233D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DBC9A0AF6D4571D059D2AF2422F2BD6E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FC8776B3FD2C6DAA6ACA89D812CAE17B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FD1D53461DE538B7C8DFE0B76D857587</key>
+		<key>D4DBCBE23B267643AE62E17ABEAFDC0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
