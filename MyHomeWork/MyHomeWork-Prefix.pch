@@ -12,8 +12,22 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+//判断是那种机型
+#define DEVICE_IS_IPHONE6P ([[UIScreen mainScreen] bounds].size.height == 736)
+#define DEVICE_IS_IPHONE6 ([[UIScreen mainScreen] bounds].size.height == 667)
+#define DEVICE_IS_IPHONE5 ([[UIScreen mainScreen] bounds].size.height == 568)
+#define DEVICE_IS_IPHONE4 ([[UIScreen mainScreen] bounds].size.height == 480)
+
+//屏幕尺寸
 #define SCREEN_WIDTH  [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+#define SCALE_X 1.15
+#define GET_PIXEL(pixel) (DEVICE_IS_IPHONE6P ? (pixel)*(SCALE_X) : pixel)
+
+
+
+#import <Masonry.h>
+#import <BlocksKit/BlocksKit.h>
 
 #endif /* MyHomeWork_Prefix_pch */

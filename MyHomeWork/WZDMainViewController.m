@@ -18,6 +18,7 @@
 @property (nonatomic, strong) JSContext *jsContext;
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) DHPopTableView *popTabView;
+@property (nonatomic, strong) UIButton *floaButton;
 
 @end
 
@@ -25,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor grayColor];
     // Do any additional setup after loading the view, typically from a nib.
 //    [self.view addSubview:self.customView];
     
@@ -72,8 +74,17 @@
     imageView.image = [UIImage imageNamed:NSLocalizedString(ImageName, nil)];
     [self.view addSubview:imageView];
     
-    [self.view addSubview:self.popTabView];
     
+    [self.view addSubview:self.popTabView];
+    [self.view addSubview:self.floaButton];
+    [self.floaButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view.mas_right);
+        make.centerY.equalTo(self.popTabView.mas_centerY);
+    }];
+    __weak typeof (self) weakSelf = self;
+    self.popTabView.hiddenBlock = ^{
+        weakSelf.floaButton.hidden = NO;
+    };
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +93,11 @@
 }
 
 - (void)btnTapped {
+    [self.popTabView show];
+}
+
+- (void)floaButtonTapped {
+    self.floaButton.hidden = YES;
     [self.popTabView show];
 }
 
@@ -131,9 +147,20 @@
     if (!_popTabView) {
         _popTabView = [[DHPopTableView alloc] initWithTableViewFrame:CGRectMake(SCREEN_WIDTH*0.7, 0, SCREEN_WIDTH*0.3, SCREEN_HEIGHT)];
         _popTabView.bgAlpha = 0.65;
+        _popTabView.edgeButtonImage = [UIImage imageNamed:@"cailei"];
+        [_popTabView initSubViews];
         _popTabView.hidden = YES;
     }
     return _popTabView;
+}
+
+- (UIButton *)floaButton {
+    if (!_floaButton) {
+        _floaButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_floaButton setImage:[UIImage imageNamed:@"cailei"] forState:UIControlStateNormal];
+        [_floaButton addTarget:self action:@selector(floaButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _floaButton;
 }
 
 @end
