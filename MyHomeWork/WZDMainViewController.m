@@ -8,6 +8,7 @@
 
 #import "WZDMainViewController.h"
 #import "WZDCustomView.h"
+#import "DHPopTableView.h"
 
 #define ImageName @"biye"
 
@@ -16,7 +17,7 @@
 @property (nonatomic, strong) WZDCustomView *customView;
 @property (nonatomic, strong) JSContext *jsContext;
 @property (nonatomic, strong) UIWebView *webView;
-
+@property (nonatomic, strong) DHPopTableView *popTabView;
 
 @end
 
@@ -60,15 +61,18 @@
     [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:14];
     
-    NSString *buttonTitle = NSLocalizedString(@"CallCamera", nil);
+    NSString *buttonTitle = @"分类展示";// NSLocalizedString(@"CallCamera", nil);
     [button setTitle:buttonTitle forState:UIControlStateNormal];
     [self.view addSubview:button];
+    [button addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 150, 100, 100)];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     imageView.image = [UIImage imageNamed:NSLocalizedString(ImageName, nil)];
     [self.view addSubview:imageView];
+    
+    [self.view addSubview:self.popTabView];
     
 }
 
@@ -77,6 +81,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)btnTapped {
+    [self.popTabView show];
+}
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     self.jsContext = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
@@ -118,6 +125,15 @@
         _webView.delegate = self;
     }
     return _webView;
+}
+
+- (DHPopTableView *)popTabView {
+    if (!_popTabView) {
+        _popTabView = [[DHPopTableView alloc] initWithTableViewFrame:CGRectMake(SCREEN_WIDTH*0.7, 0, SCREEN_WIDTH*0.3, SCREEN_HEIGHT)];
+        _popTabView.bgAlpha = 0.65;
+        _popTabView.hidden = YES;
+    }
+    return _popTabView;
 }
 
 @end
