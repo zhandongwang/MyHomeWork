@@ -9,6 +9,8 @@
 #import "WZDMainViewController.h"
 #import "WZDCustomView.h"
 #import "DHPopTableView.h"
+#import "DHPopTableViewStyle.h"
+#import "DHDeskModel.h"
 
 #define ImageName @"biye"
 
@@ -18,6 +20,8 @@
 @property (nonatomic, strong) JSContext *jsContext;
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) DHPopTableView *popTabView;
+@property (nonatomic, strong) DHPopTableViewStyle *popTabViewStyle;
+@property (nonatomic, copy) NSDictionary *popTableViewData;
 @property (nonatomic, strong) UIButton *floaButton;
 
 @end
@@ -71,7 +75,7 @@
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 150, 100, 100)];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     
-    imageView.image = [UIImage imageNamed:NSLocalizedString(ImageName, nil)];
+    imageView.image = [UIImage imageNamed:@"test2"]; //[UIImage imageNamed:NSLocalizedString(ImageName, nil)];
     [self.view addSubview:imageView];
     
     
@@ -85,6 +89,13 @@
     self.popTabView.hiddenBlock = ^{
         weakSelf.floaButton.hidden = NO;
     };
+    
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadPopViewData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,13 +104,23 @@
 }
 
 - (void)btnTapped {
-    [self.popTabView show];
+    [self.popTabView showWithData:self.popTableViewData];
 }
 
 - (void)floaButtonTapped {
     self.floaButton.hidden = YES;
-    [self.popTabView show];
+    [self.popTabView showWithData:self.popTableViewData];
 }
+
+- (NSDictionary *)loadPopViewData {
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"popData" withExtension:@".xml"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    self.popTableViewData = dict;
+    
+    return dict;
+}
+
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     self.jsContext = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
@@ -145,9 +166,7 @@
 
 - (DHPopTableView *)popTabView {
     if (!_popTabView) {
-        _popTabView = [[DHPopTableView alloc] initWithTableViewFrame:CGRectMake(SCREEN_WIDTH*0.7, 0, SCREEN_WIDTH*0.3, SCREEN_HEIGHT)];
-        _popTabView.bgAlpha = 0.65;
-        _popTabView.edgeButtonImage = [UIImage imageNamed:@"cailei"];
+        _popTabView = [[DHPopTableView alloc] initWithTableViewFrame:CGRectMake(SCREEN_WIDTH*0.7, 0, SCREEN_WIDTH*0.3, SCREEN_HEIGHT) style:self.popTabViewStyle];
         [_popTabView initSubViews];
         _popTabView.hidden = YES;
     }
@@ -161,6 +180,18 @@
         [_floaButton addTarget:self action:@selector(floaButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     }
     return _floaButton;
+}
+
+- (DHPopTableViewStyle *)popTabViewStyle {
+    if (!_popTabViewStyle) {
+        _popTabViewStyle = [[DHPopTableViewStyle alloc] init];
+        _popTabViewStyle.bgAlpha = 0.65;
+        _popTabViewStyle.tableViewAlpha = 0.85;
+        _popTabViewStyle.edgeButtonImage = [UIImage imageNamed:@"cailei"];
+        _popTabViewStyle.cellTextLableFontSize = 14.0;
+        _popTabViewStyle.cellTextLableColor = [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1];
+    }
+    return _popTabViewStyle;
 }
 
 @end

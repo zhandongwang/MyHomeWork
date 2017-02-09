@@ -8,17 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class DHPopTableViewStyle;
+
 @interface DHPopTableView : UIView
-
-/**
- 背景遮层alpha,默认值0.7
- */
-@property (nonatomic, assign) CGFloat bgAlpha;
-
-/**
- 左侧按钮图像，如不提供则不添加edgeButton
- */
-@property (nonatomic, strong) UIImage *edgeButtonImage;
 
 /**
  隐藏回调
@@ -29,7 +21,7 @@
  初始化方法
  @param frame tableView的frame
  */
-- (instancetype)initWithTableViewFrame:(CGRect)frame;
+- (instancetype)initWithTableViewFrame:(CGRect)frame style:(DHPopTableViewStyle *)style;
 
 
 /**
@@ -40,6 +32,7 @@
 /**
  显示
  */
-- (void)show;
+- (void)showWithData:(NSDictionary *)data;
+
 
 @end
