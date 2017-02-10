@@ -21,13 +21,12 @@
 }
 
 - (void)setUpStyle {
-    self.contentView.backgroundColor = [UIColor whiteColor];
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)setUpSubviews {
-    [self.contentView addSubview:self.titleLabel];
-    [self.contentView addSubview:self.bottomLine];
+    [self addSubview:self.titleLabel];
+    [self addSubview:self.bottomLine];
 }
 
 - (void)updateWithTitle:(NSString *)title {
@@ -37,7 +36,7 @@
 
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, CGRectGetWidth(self.contentView.bounds), CGRectGetHeight(self.contentView.bounds) - GET_PIXEL(.5))];
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - GET_PIXEL(.5))];
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.font = [UIFont systemFontOfSize:14.0];
         _titleLabel.textAlignment = NSTextAlignmentLeft;
@@ -48,7 +47,7 @@
 
 - (UIView *)bottomLine {
     if (!_bottomLine) {
-        _bottomLine = [[UIView alloc] initWithFrame:CGRectMake(GET_PIXEL(15), CGRectGetMaxY(self.contentView.bounds) - GET_PIXEL(.5), CGRectGetWidth(self.contentView.bounds) - GET_PIXEL(15), GET_PIXEL(.5))];
+        _bottomLine = [[UIView alloc] initWithFrame:CGRectMake(GET_PIXEL(15), CGRectGetMaxY(self.bounds) - GET_PIXEL(.5), CGRectGetWidth(self.bounds) - GET_PIXEL(15), GET_PIXEL(.5))];
         _bottomLine.backgroundColor = [UIColor grayColor];
     }
     return _bottomLine;

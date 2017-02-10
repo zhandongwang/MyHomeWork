@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DHPopSectionHeaderView : UITableViewCell
+@interface DHPopSectionHeaderView : UIView
 
 @property (nonatomic, strong) UILabel *titleLabel;
 
