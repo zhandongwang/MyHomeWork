@@ -27,7 +27,9 @@
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) DHPopTableView *popTabView;
 @property (nonatomic, strong) DHPopTableViewStyle *popTabViewStyle;
-@property (nonatomic, strong) NSMutableArray *popTableViewData;
+@property (nonatomic, strong) NSMutableDictionary *popTableViewDataDict;
+@property (nonatomic, strong) NSMutableArray *popTableViewSectionData;
+
 @property (nonatomic, strong) UIButton *floaButton;
 
 @end
@@ -95,14 +97,15 @@
     self.popTabView.hiddenBlock = ^{
         weakSelf.floaButton.hidden = NO;
     };
-    self.popTableViewData = [[NSMutableArray alloc] initWithCapacity:5];
-    
+    self.popTableViewDataDict = [[NSMutableDictionary alloc] initWithCapacity:5];
+    self.popTableViewSectionData = @[].mutableCopy;
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self loadPopViewData];
+//    [self loadMessageData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -111,13 +114,29 @@
 }
 
 - (void)btnTapped {
-    [self.popTabView showWithData:self.popTableViewData];
+    [self.popTabView showWithSectionData:self.popTableViewSectionData fullData:self.popTableViewDataDict];
 }
 
 - (void)floaButtonTapped {
     self.floaButton.hidden = YES;
-    [self.popTabView showWithData:self.popTableViewData];
+    [self.popTabView showWithSectionData:self.popTableViewSectionData fullData:self.popTableViewDataDict];
 }
+
+- (void)loadMessageData {
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"message" withExtension:@".json"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    
+    DHMessageKinds *kinds = [DHMessageKinds yy_modelWithJSON:data];
+    [self.popTableViewSectionData addObject:@""];
+    
+    NSMutableArray *msgTitlesArray = [[NSMutableArray alloc] initWithCapacity:5];
+    [kinds.messages enumerateObjectsUsingBlock:^(DHMessageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [msgTitlesArray addObject:obj.title];
+    }];
+    
+    [self.popTableViewDataDict setValue:msgTitlesArray forKey:@""];
+}
+
 
 - (void)loadPopViewData {
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"popData" withExtension:@".json"];
@@ -125,15 +144,15 @@
     
     DHAllOrderModel *allOrderModel = [DHAllOrderModel yy_modelWithJSON:data];
     
-    self.popTableViewData = [allOrderModel.allOrders mutableCopy];
-//    DHMessageKinds *msgKinds = [DHMessageKinds yy_modelWithJSON:data[@"allOrders"]];
-    
-//    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-//    [msgKinds.messages enumerateObjectsUsingBlock:^(DHMessageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        [self.popTableViewData addObject:obj.title];
-//    }];
 
-    
+    for (DHOrderKind *orderKind in allOrderModel.allOrders) {
+        NSMutableArray *orderNamesArray = [[NSMutableArray alloc] initWithCapacity:5];
+        for (DHOrderModel *orderModel in orderKind.orders) {
+            [orderNamesArray addObject:orderModel.name];
+        }
+        [self.popTableViewDataDict setValue:orderNamesArray forKey:orderKind.title];
+        [self.popTableViewSectionData addObject:orderKind.title];
+    }
 }
 
 

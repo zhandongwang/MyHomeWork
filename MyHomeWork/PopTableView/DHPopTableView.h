@@ -31,10 +31,14 @@
  */
 - (void)initSubViews;
 
+
 /**
- 显示
+ 展示
+
+ @param sectionData section数据源
+ @param data 完整数据源，如果只有一个section且不要section则设置key为@""
  */
-- (void)showWithData:(NSArray *)data;
+- (void)showWithSectionData:(NSArray *)sectionData fullData:(NSDictionary *)data;
 
 
 @end

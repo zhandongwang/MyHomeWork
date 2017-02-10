@@ -25,6 +25,7 @@
 		2375164A1E4D721300FB5868 /* DHOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237516491E4D721300FB5868 /* DHOrderModel.m */; };
 		2375164D1E4D7E8D00FB5868 /* DHOrderKind.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375164C1E4D7E8D00FB5868 /* DHOrderKind.m */; };
 		237516501E4D803300FB5868 /* DHAllOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375164F1E4D803300FB5868 /* DHAllOrderModel.m */; };
+		23A5E7501E4DA04A008DCAEE /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = 23A5E74F1E4DA04A008DCAEE /* message.json */; };
 		23D3682E1E4C5A5300ECC80D /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D368301E4C5A5300ECC80D /* test2.png */; };
 		23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A1B1E46F3A800B3FFFD /* InfoPlist.strings */; };
 		23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A251E46F7F200B3FFFD /* Localizable.strings */; };
@@ -84,6 +85,7 @@
 		2375164C1E4D7E8D00FB5868 /* DHOrderKind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHOrderKind.m; sourceTree = "<group>"; };
 		2375164E1E4D803300FB5868 /* DHAllOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAllOrderModel.h; sourceTree = "<group>"; };
 		2375164F1E4D803300FB5868 /* DHAllOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHAllOrderModel.m; sourceTree = "<group>"; };
+		23A5E74F1E4DA04A008DCAEE /* message.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
 		23D368171E4C0ABE00ECC80D /* MyHomeWork-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Prefix.pch"; sourceTree = "<group>"; };
 		23D3682F1E4C5A5300ECC80D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/test2.png; sourceTree = "<group>"; };
 		23D368311E4C5A5900ECC80D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/test2.png"; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				2375163C1E4D613E00FB5868 /* DHPopTableViewStyle.h */,
 				2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */,
 				237516401E4D617F00FB5868 /* popData.json */,
+				23A5E74F1E4DA04A008DCAEE /* message.json */,
 			);
 			path = PopTableView;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */,
 				23D3682E1E4C5A5300ECC80D /* test2.png in Resources */,
 				2335DCBB1E0E137100C48142 /* testWeb.html in Resources */,
+				23A5E7501E4DA04A008DCAEE /* message.json in Resources */,
 				2360989D1D980892009C589B /* Assets.xcassets in Resources */,
 				237516411E4D617F00FB5868 /* popData.json in Resources */,
 				2360989B1D980892009C589B /* Main.storyboard in Resources */,

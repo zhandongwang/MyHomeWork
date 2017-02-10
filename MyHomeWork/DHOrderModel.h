@@ -11,6 +11,6 @@
 @interface DHOrderModel : NSObject
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, strong) NSNumber *orderID;
+//@property (nonatomic, strong) NSNumber *orderID;
 
 @end

@@ -17,7 +17,9 @@ static NSString * const cellIdentifier = @"cellIdentifier";
 @property (nonatomic, strong) UIButton *edgeButton;
 @property (nonatomic, assign) CGRect tableViewFrame;
 @property (nonatomic, strong) DHPopTableViewStyle *style;
-@property (nonatomic, copy) NSArray *dataSource;
+
+@property (nonatomic, copy) NSDictionary *dataSource;
+@property (nonatomic, copy) NSArray *sectionData;
 
 @end
 
@@ -49,11 +51,14 @@ static NSString * const cellIdentifier = @"cellIdentifier";
 #pragma mark - tableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.sectionData.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.count;
+    NSString *sectionTitle = [self.sectionData objectAtIndex:section];
+    [self.dataSource valueForKey:sectionTitle];
+    
+    return [[self.dataSource valueForKey:sectionTitle] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -65,16 +70,31 @@ static NSString * const cellIdentifier = @"cellIdentifier";
         cell.textLabel.textColor = self.style.cellTextLableColor;
     }
     
-    cell.textLabel.text = self.dataSource[indexPath.row];
+    NSString *sectionTitle = [self.sectionData objectAtIndex:indexPath.section];
+    NSArray *rowsData = [self.dataSource valueForKey:sectionTitle];
+    cell.textLabel.text = rowsData[indexPath.row];
     
     return cell;
 }
 
 #pragma mark - tableView Delegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    NSString *title = self.sectionData[section];
+    if (title.length == 0) {
+        return 0;
+    }
+    return tableView.rowHeight;
+}
+
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSString *title = self.sectionData[section];
+    if (title.length == 0) {
+        return nil;
+    }
+    
     CGFloat headerWidth = tableView.bounds.size.width;
-    CGFloat headerHeight = tableView.sectionHeaderHeight;
+    CGFloat headerHeight = tableView.rowHeight;
 
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, headerWidth, headerHeight)];
     headerView.backgroundColor = tableView.backgroundColor;
@@ -89,11 +109,7 @@ static NSString * const cellIdentifier = @"cellIdentifier";
     bottomLine.backgroundColor = tableView.separatorColor;
     [headerView addSubview:bottomLine];
     
-    if (section == 0) {
-        titleLabel.text = @"饮料";
-    } else if (section == 1) {
-        titleLabel.text = @"甜品";
-    }
+    titleLabel.text = self.sectionData[section];
     
     return headerView;
 }
@@ -114,8 +130,11 @@ static NSString * const cellIdentifier = @"cellIdentifier";
 
 #pragma mark - methods 
 
-- (void)showWithData:(NSArray *)data {
+- (void)showWithSectionData:(NSArray *)sectionData fullData:(NSDictionary *)data {
+
     self.dataSource = data;
+    self.sectionData = sectionData;
+
     self.hidden = NO;
     [UIView animateWithDuration:0.25
      animations:^{
@@ -178,7 +197,6 @@ static NSString * const cellIdentifier = @"cellIdentifier";
         //默认设置
         _contentTableView.backgroundColor = [UIColor whiteColor];
         _contentTableView.rowHeight = GET_PIXEL(40);
-        _contentTableView.sectionHeaderHeight = _contentTableView.rowHeight;
         _contentTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         
     }
