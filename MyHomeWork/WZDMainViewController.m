@@ -10,6 +10,13 @@
 #import "WZDCustomView.h"
 #import "DHPopTableView.h"
 #import "DHPopTableViewStyle.h"
+#import "DHMessageKinds.h"
+#import "DHMessageModel.h"
+
+#import "DHAllOrderModel.h"
+#import "DHOrderKind.h"
+#import "DHOrderModel.h"
+
 
 #define ImageName @"biye"
 
@@ -20,7 +27,7 @@
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) DHPopTableView *popTabView;
 @property (nonatomic, strong) DHPopTableViewStyle *popTabViewStyle;
-@property (nonatomic, copy) NSDictionary *popTableViewData;
+@property (nonatomic, strong) NSMutableArray *popTableViewData;
 @property (nonatomic, strong) UIButton *floaButton;
 
 @end
@@ -88,6 +95,7 @@
     self.popTabView.hiddenBlock = ^{
         weakSelf.floaButton.hidden = NO;
     };
+    self.popTableViewData = [[NSMutableArray alloc] initWithCapacity:5];
     
 }
 
@@ -111,14 +119,21 @@
     [self.popTabView showWithData:self.popTableViewData];
 }
 
-- (NSDictionary *)loadPopViewData {
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"popData" withExtension:@".xml"];
+- (void)loadPopViewData {
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"popData" withExtension:@".json"];
     NSData *data = [NSData dataWithContentsOfURL:url];
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    self.popTableViewData = dict;
     
+    DHAllOrderModel *allOrderModel = [DHAllOrderModel yy_modelWithJSON:data];
     
-    return dict;
+    self.popTableViewData = [allOrderModel.allOrders mutableCopy];
+//    DHMessageKinds *msgKinds = [DHMessageKinds yy_modelWithJSON:data[@"allOrders"]];
+    
+//    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+//    [msgKinds.messages enumerateObjectsUsingBlock:^(DHMessageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        [self.popTableViewData addObject:obj.title];
+//    }];
+
+    
 }
 
 

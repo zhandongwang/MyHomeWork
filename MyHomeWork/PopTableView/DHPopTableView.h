@@ -34,7 +34,7 @@
 /**
  显示
  */
-- (void)showWithData:(NSDictionary *)data;
+- (void)showWithData:(NSArray *)data;
 
 
 @end

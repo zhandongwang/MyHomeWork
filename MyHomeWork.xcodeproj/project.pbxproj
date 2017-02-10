@@ -17,11 +17,15 @@
 		236098A01D980892009C589B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2360989E1D980892009C589B /* LaunchScreen.storyboard */; };
 		236098AB1D980892009C589B /* MyHomeWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098AA1D980892009C589B /* MyHomeWorkTests.m */; };
 		236098B61D980892009C589B /* MyHomeWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098B51D980892009C589B /* MyHomeWorkUITests.m */; };
-		237516291E4C738A00FB5868 /* desks.xml in Resources */ = {isa = PBXBuildFile; fileRef = 237516281E4C738A00FB5868 /* desks.xml */; };
-		23D368161E4C06A400ECC80D /* DHPopTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D368151E4C06A400ECC80D /* DHPopTableView.m */; };
-		23D3681A1E4C536F00ECC80D /* DHPopTableViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D368191E4C536F00ECC80D /* DHPopTableViewStyle.m */; };
+		2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163B1E4D613E00FB5868 /* DHPopTableView.m */; };
+		2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */; };
+		237516411E4D617F00FB5868 /* popData.json in Resources */ = {isa = PBXBuildFile; fileRef = 237516401E4D617F00FB5868 /* popData.json */; };
+		237516441E4D626100FB5868 /* DHMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237516431E4D626100FB5868 /* DHMessageModel.m */; };
+		237516471E4D629F00FB5868 /* DHMessageKinds.m in Sources */ = {isa = PBXBuildFile; fileRef = 237516461E4D629F00FB5868 /* DHMessageKinds.m */; };
+		2375164A1E4D721300FB5868 /* DHOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237516491E4D721300FB5868 /* DHOrderModel.m */; };
+		2375164D1E4D7E8D00FB5868 /* DHOrderKind.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375164C1E4D7E8D00FB5868 /* DHOrderKind.m */; };
+		237516501E4D803300FB5868 /* DHAllOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375164F1E4D803300FB5868 /* DHAllOrderModel.m */; };
 		23D3682E1E4C5A5300ECC80D /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D368301E4C5A5300ECC80D /* test2.png */; };
-		23D368331E4C6D1D00ECC80D /* popData.xml in Resources */ = {isa = PBXBuildFile; fileRef = 23D368321E4C6D1D00ECC80D /* popData.xml */; };
 		23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A1B1E46F3A800B3FFFD /* InfoPlist.strings */; };
 		23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A251E46F7F200B3FFFD /* Localizable.strings */; };
 		36B3E01D9D1E692147BBD537 /* libPods-MyHomeWork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69599EA15F9C66C29E99337B /* libPods-MyHomeWork.a */; };
@@ -65,15 +69,24 @@
 		236098B11D980892009C589B /* MyHomeWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyHomeWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		236098B51D980892009C589B /* MyHomeWorkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHomeWorkUITests.m; sourceTree = "<group>"; };
 		236098B71D980892009C589B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		237516281E4C738A00FB5868 /* desks.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = desks.xml; sourceTree = "<group>"; };
-		23D368141E4C06A400ECC80D /* DHPopTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableView.h; sourceTree = "<group>"; };
-		23D368151E4C06A400ECC80D /* DHPopTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableView.m; sourceTree = "<group>"; };
+		2375163A1E4D613E00FB5868 /* DHPopTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableView.h; sourceTree = "<group>"; };
+		2375163B1E4D613E00FB5868 /* DHPopTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableView.m; sourceTree = "<group>"; };
+		2375163C1E4D613E00FB5868 /* DHPopTableViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewStyle.h; sourceTree = "<group>"; };
+		2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableViewStyle.m; sourceTree = "<group>"; };
+		237516401E4D617F00FB5868 /* popData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = popData.json; sourceTree = "<group>"; };
+		237516421E4D626100FB5868 /* DHMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMessageModel.h; sourceTree = "<group>"; };
+		237516431E4D626100FB5868 /* DHMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMessageModel.m; sourceTree = "<group>"; };
+		237516451E4D629F00FB5868 /* DHMessageKinds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMessageKinds.h; sourceTree = "<group>"; };
+		237516461E4D629F00FB5868 /* DHMessageKinds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMessageKinds.m; sourceTree = "<group>"; };
+		237516481E4D721300FB5868 /* DHOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHOrderModel.h; sourceTree = "<group>"; };
+		237516491E4D721300FB5868 /* DHOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHOrderModel.m; sourceTree = "<group>"; };
+		2375164B1E4D7E8D00FB5868 /* DHOrderKind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHOrderKind.h; sourceTree = "<group>"; };
+		2375164C1E4D7E8D00FB5868 /* DHOrderKind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHOrderKind.m; sourceTree = "<group>"; };
+		2375164E1E4D803300FB5868 /* DHAllOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAllOrderModel.h; sourceTree = "<group>"; };
+		2375164F1E4D803300FB5868 /* DHAllOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHAllOrderModel.m; sourceTree = "<group>"; };
 		23D368171E4C0ABE00ECC80D /* MyHomeWork-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Prefix.pch"; sourceTree = "<group>"; };
-		23D368181E4C536F00ECC80D /* DHPopTableViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewStyle.h; sourceTree = "<group>"; };
-		23D368191E4C536F00ECC80D /* DHPopTableViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableViewStyle.m; sourceTree = "<group>"; };
 		23D3682F1E4C5A5300ECC80D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/test2.png; sourceTree = "<group>"; };
 		23D368311E4C5A5900ECC80D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/test2.png"; sourceTree = "<group>"; };
-		23D368321E4C6D1D00ECC80D /* popData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = popData.xml; sourceTree = "<group>"; };
 		23DE6A0D1E46F27E00B3FFFD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		23DE6A0E1E46F27E00B3FFFD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		23DE6A0F1E46F28300B3FFFD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -158,8 +171,7 @@
 		2360988F1D980892009C589B /* MyHomeWork */ = {
 			isa = PBXGroup;
 			children = (
-				237516281E4C738A00FB5868 /* desks.xml */,
-				23D368321E4C6D1D00ECC80D /* popData.xml */,
+				237516391E4D613E00FB5868 /* PopTableView */,
 				23D3681C1E4C580400ECC80D /* images */,
 				2335DCB91E0E130F00C48142 /* Web */,
 				236098931D980892009C589B /* AppDelegate.h */,
@@ -168,10 +180,16 @@
 				236098971D980892009C589B /* WZDMainViewController.m */,
 				23608A901E050F7100C4D190 /* WZDCustomView.h */,
 				23608A911E050F7100C4D190 /* WZDCustomView.m */,
-				23D368141E4C06A400ECC80D /* DHPopTableView.h */,
-				23D368151E4C06A400ECC80D /* DHPopTableView.m */,
-				23D368181E4C536F00ECC80D /* DHPopTableViewStyle.h */,
-				23D368191E4C536F00ECC80D /* DHPopTableViewStyle.m */,
+				237516421E4D626100FB5868 /* DHMessageModel.h */,
+				237516431E4D626100FB5868 /* DHMessageModel.m */,
+				237516451E4D629F00FB5868 /* DHMessageKinds.h */,
+				237516461E4D629F00FB5868 /* DHMessageKinds.m */,
+				237516481E4D721300FB5868 /* DHOrderModel.h */,
+				237516491E4D721300FB5868 /* DHOrderModel.m */,
+				2375164B1E4D7E8D00FB5868 /* DHOrderKind.h */,
+				2375164C1E4D7E8D00FB5868 /* DHOrderKind.m */,
+				2375164E1E4D803300FB5868 /* DHAllOrderModel.h */,
+				2375164F1E4D803300FB5868 /* DHAllOrderModel.m */,
 				236098991D980892009C589B /* Main.storyboard */,
 				2360989C1D980892009C589B /* Assets.xcassets */,
 				2360989E1D980892009C589B /* LaunchScreen.storyboard */,
@@ -208,6 +226,18 @@
 				236098B71D980892009C589B /* Info.plist */,
 			);
 			path = MyHomeWorkUITests;
+			sourceTree = "<group>";
+		};
+		237516391E4D613E00FB5868 /* PopTableView */ = {
+			isa = PBXGroup;
+			children = (
+				2375163A1E4D613E00FB5868 /* DHPopTableView.h */,
+				2375163B1E4D613E00FB5868 /* DHPopTableView.m */,
+				2375163C1E4D613E00FB5868 /* DHPopTableViewStyle.h */,
+				2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */,
+				237516401E4D617F00FB5868 /* popData.json */,
+			);
+			path = PopTableView;
 			sourceTree = "<group>";
 		};
 		23D3681C1E4C580400ECC80D /* images */ = {
@@ -349,11 +379,10 @@
 				236098A01D980892009C589B /* LaunchScreen.storyboard in Resources */,
 				23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */,
 				23D3682E1E4C5A5300ECC80D /* test2.png in Resources */,
-				23D368331E4C6D1D00ECC80D /* popData.xml in Resources */,
 				2335DCBB1E0E137100C48142 /* testWeb.html in Resources */,
 				2360989D1D980892009C589B /* Assets.xcassets in Resources */,
+				237516411E4D617F00FB5868 /* popData.json in Resources */,
 				2360989B1D980892009C589B /* Main.storyboard in Resources */,
-				237516291E4C738A00FB5868 /* desks.xml in Resources */,
 				23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,12 +456,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				237516441E4D626100FB5868 /* DHMessageModel.m in Sources */,
 				236098981D980892009C589B /* WZDMainViewController.m in Sources */,
+				237516501E4D803300FB5868 /* DHAllOrderModel.m in Sources */,
 				23608A921E050F7100C4D190 /* WZDCustomView.m in Sources */,
-				23D368161E4C06A400ECC80D /* DHPopTableView.m in Sources */,
+				2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */,
 				236098951D980892009C589B /* AppDelegate.m in Sources */,
+				2375164A1E4D721300FB5868 /* DHOrderModel.m in Sources */,
+				2375164D1E4D7E8D00FB5868 /* DHOrderKind.m in Sources */,
+				237516471E4D629F00FB5868 /* DHMessageKinds.m in Sources */,
 				236098921D980892009C589B /* main.m in Sources */,
-				23D3681A1E4C536F00ECC80D /* DHPopTableViewStyle.m in Sources */,
+				2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

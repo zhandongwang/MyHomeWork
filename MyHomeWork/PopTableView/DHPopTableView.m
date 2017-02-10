@@ -17,6 +17,7 @@ static NSString * const cellIdentifier = @"cellIdentifier";
 @property (nonatomic, strong) UIButton *edgeButton;
 @property (nonatomic, assign) CGRect tableViewFrame;
 @property (nonatomic, strong) DHPopTableViewStyle *style;
+@property (nonatomic, copy) NSArray *dataSource;
 
 @end
 
@@ -48,11 +49,11 @@ static NSString * const cellIdentifier = @"cellIdentifier";
 #pragma mark - tableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -64,7 +65,7 @@ static NSString * const cellIdentifier = @"cellIdentifier";
         cell.textLabel.textColor = self.style.cellTextLableColor;
     }
     
-    cell.textLabel.text = @"咖啡咖啡";
+    cell.textLabel.text = self.dataSource[indexPath.row];
     
     return cell;
 }
@@ -98,7 +99,6 @@ static NSString * const cellIdentifier = @"cellIdentifier";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%ld",indexPath.row);
     [self hide];
 }
 
@@ -114,8 +114,8 @@ static NSString * const cellIdentifier = @"cellIdentifier";
 
 #pragma mark - methods 
 
-- (void)showWithData:(NSDictionary *)data {
-    
+- (void)showWithData:(NSArray *)data {
+    self.dataSource = data;
     self.hidden = NO;
     [UIView animateWithDuration:0.25
      animations:^{
