@@ -26,6 +26,7 @@
 		2375164D1E4D7E8D00FB5868 /* DHOrderKind.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375164C1E4D7E8D00FB5868 /* DHOrderKind.m */; };
 		237516501E4D803300FB5868 /* DHAllOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375164F1E4D803300FB5868 /* DHAllOrderModel.m */; };
 		23A5E7501E4DA04A008DCAEE /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = 23A5E74F1E4DA04A008DCAEE /* message.json */; };
+		23A5E7531E4DA59E008DCAEE /* DHPopSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A5E7521E4DA59E008DCAEE /* DHPopSectionHeaderView.m */; };
 		23D3682E1E4C5A5300ECC80D /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D368301E4C5A5300ECC80D /* test2.png */; };
 		23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A1B1E46F3A800B3FFFD /* InfoPlist.strings */; };
 		23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A251E46F7F200B3FFFD /* Localizable.strings */; };
@@ -86,6 +87,8 @@
 		2375164E1E4D803300FB5868 /* DHAllOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAllOrderModel.h; sourceTree = "<group>"; };
 		2375164F1E4D803300FB5868 /* DHAllOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHAllOrderModel.m; sourceTree = "<group>"; };
 		23A5E74F1E4DA04A008DCAEE /* message.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
+		23A5E7511E4DA59E008DCAEE /* DHPopSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopSectionHeaderView.h; sourceTree = "<group>"; };
+		23A5E7521E4DA59E008DCAEE /* DHPopSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopSectionHeaderView.m; sourceTree = "<group>"; };
 		23D368171E4C0ABE00ECC80D /* MyHomeWork-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Prefix.pch"; sourceTree = "<group>"; };
 		23D3682F1E4C5A5300ECC80D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/test2.png; sourceTree = "<group>"; };
 		23D368311E4C5A5900ECC80D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/test2.png"; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 			children = (
 				2375163A1E4D613E00FB5868 /* DHPopTableView.h */,
 				2375163B1E4D613E00FB5868 /* DHPopTableView.m */,
+				23A5E7511E4DA59E008DCAEE /* DHPopSectionHeaderView.h */,
+				23A5E7521E4DA59E008DCAEE /* DHPopSectionHeaderView.m */,
 				2375163C1E4D613E00FB5868 /* DHPopTableViewStyle.h */,
 				2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */,
 				237516401E4D617F00FB5868 /* popData.json */,
@@ -463,6 +468,7 @@
 				237516441E4D626100FB5868 /* DHMessageModel.m in Sources */,
 				236098981D980892009C589B /* WZDMainViewController.m in Sources */,
 				237516501E4D803300FB5868 /* DHAllOrderModel.m in Sources */,
+				23A5E7531E4DA59E008DCAEE /* DHPopSectionHeaderView.m in Sources */,
 				23608A921E050F7100C4D190 /* WZDCustomView.m in Sources */,
 				2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */,
 				236098951D980892009C589B /* AppDelegate.m in Sources */,

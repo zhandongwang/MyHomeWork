@@ -8,8 +8,10 @@
 
 #import "DHPopTableView.h"
 #import "DHPopTableViewStyle.h"
+#import "DHPopSectionHeaderView.h"
 
 static NSString * const cellIdentifier = @"cellIdentifier";
+static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
 
 @interface DHPopTableView ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -93,23 +95,18 @@ static NSString * const cellIdentifier = @"cellIdentifier";
         return nil;
     }
     
-    CGFloat headerWidth = tableView.bounds.size.width;
-    CGFloat headerHeight = tableView.rowHeight;
-
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, headerWidth, headerHeight)];
-    headerView.backgroundColor = tableView.backgroundColor;
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(GET_PIXEL(15), 0, headerWidth - GET_PIXEL(15), headerHeight - GET_PIXEL(.5))];
-    titleLabel.textColor = self.style.cellTextLableColor;
-    titleLabel.font = [UIFont systemFontOfSize:self.style.cellTextLableFontSize];
-    titleLabel.textAlignment = NSTextAlignmentLeft;
-    [headerView addSubview:titleLabel];
-    
-    UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(GET_PIXEL(15), headerHeight - GET_PIXEL(.5), headerWidth, GET_PIXEL(.5))];
-    bottomLine.backgroundColor = tableView.separatorColor;
-    [headerView addSubview:bottomLine];
-    
-    titleLabel.text = self.sectionData[section];
+    UITableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:sectionHeaderIdentifier];
+    if (!headerView) {
+        headerView = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:sectionHeaderIdentifier];
+        DHPopSectionHeaderView *view = [[DHPopSectionHeaderView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(tableView.bounds), tableView.rowHeight)];
+        view.tag = 101;
+        view.titleLabel.font = [UIFont systemFontOfSize:self.style.cellTextLableFontSize];
+        view.titleLabel.textColor = self.style.cellTextLableColor;
+        
+        [headerView addSubview:view];
+    }
+    DHPopSectionHeaderView *sectionHeader = [headerView viewWithTag:101];
+    [sectionHeader updateWithTitle:self.sectionData[section]];
     
     return headerView;
 }
@@ -198,7 +195,6 @@ static NSString * const cellIdentifier = @"cellIdentifier";
         _contentTableView.backgroundColor = [UIColor whiteColor];
         _contentTableView.rowHeight = GET_PIXEL(40);
         _contentTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        
     }
     return _contentTableView;
 }
