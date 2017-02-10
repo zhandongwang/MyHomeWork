@@ -12,6 +12,8 @@
 
 @interface DHPopTableView : UIView
 
+@property (nonatomic, strong) UITableView *contentTableView;
+
 /**
  隐藏回调
  */
@@ -25,7 +27,7 @@
 
 
 /**
- 初始化子views
+ 初始化子views，调用此方法后才可以自定义contentTableView其它属性
  */
 - (void)initSubViews;
 

@@ -10,7 +10,6 @@
 #import "WZDCustomView.h"
 #import "DHPopTableView.h"
 #import "DHPopTableViewStyle.h"
-#import "DHDeskModel.h"
 
 #define ImageName @"biye"
 
@@ -118,6 +117,7 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     self.popTableViewData = dict;
     
+    
     return dict;
 }
 
@@ -186,7 +186,6 @@
     if (!_popTabViewStyle) {
         _popTabViewStyle = [[DHPopTableViewStyle alloc] init];
         _popTabViewStyle.bgAlpha = 0.65;
-        _popTabViewStyle.tableViewAlpha = 0.85;
         _popTabViewStyle.edgeButtonImage = [UIImage imageNamed:@"cailei"];
         _popTabViewStyle.cellTextLableFontSize = 14.0;
         _popTabViewStyle.cellTextLableColor = [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1];

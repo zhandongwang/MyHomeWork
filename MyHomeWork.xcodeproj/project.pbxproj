@@ -18,8 +18,6 @@
 		236098AB1D980892009C589B /* MyHomeWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098AA1D980892009C589B /* MyHomeWorkTests.m */; };
 		236098B61D980892009C589B /* MyHomeWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098B51D980892009C589B /* MyHomeWorkUITests.m */; };
 		237516291E4C738A00FB5868 /* desks.xml in Resources */ = {isa = PBXBuildFile; fileRef = 237516281E4C738A00FB5868 /* desks.xml */; };
-		2375162C1E4C818C00FB5868 /* DHDeskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375162B1E4C818C00FB5868 /* DHDeskModel.m */; };
-		2375162F1E4C823700FB5868 /* DHDeskDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375162E1E4C823700FB5868 /* DHDeskDetailModel.m */; };
 		23D368161E4C06A400ECC80D /* DHPopTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D368151E4C06A400ECC80D /* DHPopTableView.m */; };
 		23D3681A1E4C536F00ECC80D /* DHPopTableViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D368191E4C536F00ECC80D /* DHPopTableViewStyle.m */; };
 		23D3682E1E4C5A5300ECC80D /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D368301E4C5A5300ECC80D /* test2.png */; };
@@ -68,10 +66,6 @@
 		236098B51D980892009C589B /* MyHomeWorkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHomeWorkUITests.m; sourceTree = "<group>"; };
 		236098B71D980892009C589B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		237516281E4C738A00FB5868 /* desks.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = desks.xml; sourceTree = "<group>"; };
-		2375162A1E4C818C00FB5868 /* DHDeskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDeskModel.h; sourceTree = "<group>"; };
-		2375162B1E4C818C00FB5868 /* DHDeskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDeskModel.m; sourceTree = "<group>"; };
-		2375162D1E4C823700FB5868 /* DHDeskDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDeskDetailModel.h; sourceTree = "<group>"; };
-		2375162E1E4C823700FB5868 /* DHDeskDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDeskDetailModel.m; sourceTree = "<group>"; };
 		23D368141E4C06A400ECC80D /* DHPopTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableView.h; sourceTree = "<group>"; };
 		23D368151E4C06A400ECC80D /* DHPopTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableView.m; sourceTree = "<group>"; };
 		23D368171E4C0ABE00ECC80D /* MyHomeWork-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Prefix.pch"; sourceTree = "<group>"; };
@@ -178,10 +172,6 @@
 				23D368151E4C06A400ECC80D /* DHPopTableView.m */,
 				23D368181E4C536F00ECC80D /* DHPopTableViewStyle.h */,
 				23D368191E4C536F00ECC80D /* DHPopTableViewStyle.m */,
-				2375162A1E4C818C00FB5868 /* DHDeskModel.h */,
-				2375162B1E4C818C00FB5868 /* DHDeskModel.m */,
-				2375162D1E4C823700FB5868 /* DHDeskDetailModel.h */,
-				2375162E1E4C823700FB5868 /* DHDeskDetailModel.m */,
 				236098991D980892009C589B /* Main.storyboard */,
 				2360989C1D980892009C589B /* Assets.xcassets */,
 				2360989E1D980892009C589B /* LaunchScreen.storyboard */,
@@ -441,8 +431,6 @@
 				23608A921E050F7100C4D190 /* WZDCustomView.m in Sources */,
 				23D368161E4C06A400ECC80D /* DHPopTableView.m in Sources */,
 				236098951D980892009C589B /* AppDelegate.m in Sources */,
-				2375162C1E4C818C00FB5868 /* DHDeskModel.m in Sources */,
-				2375162F1E4C823700FB5868 /* DHDeskDetailModel.m in Sources */,
 				236098921D980892009C589B /* main.m in Sources */,
 				23D3681A1E4C536F00ECC80D /* DHPopTableViewStyle.m in Sources */,
 			);

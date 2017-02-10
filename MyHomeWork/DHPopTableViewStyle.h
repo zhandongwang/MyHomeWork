@@ -17,23 +17,19 @@
 
 
 /**
- tableView的alpha
- */
-@property (nonatomic, assign) CGFloat tableViewAlpha;
-
-/**
  左侧按钮图像，如不提供则不添加edgeButton
  */
 @property (nonatomic, strong) UIImage *edgeButtonImage;
 
-@property (nonatomic, strong) UIColor *separatorColor;
 
-@property (nonatomic, assign) CGFloat tableViewRowHeight;
-
-@property (nonatomic, assign) CGFloat sectionHeaderHeight;
-
+/**
+ cell的textLabel字号
+ */
 @property (nonatomic, assign) CGFloat cellTextLableFontSize;
 
+/**
+ cell的textLabel字体颜色
+ */
 @property (nonatomic, strong) UIColor *cellTextLableColor;
 
 @end

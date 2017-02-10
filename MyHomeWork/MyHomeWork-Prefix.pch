@@ -29,5 +29,6 @@
 
 #import <Masonry.h>
 #import <BlocksKit/BlocksKit.h>
+#import <YYModel/YYModel.h>
 
 #endif /* MyHomeWork_Prefix_pch */

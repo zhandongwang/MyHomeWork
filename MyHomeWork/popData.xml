@@ -1,13 +1,6 @@
 {
-	"messages":[
-		{
-			"title":"所有消息"		
-		},
-		{
-			"title":"未读消息"		
-		},
-		{
-			"title":"已读消息"		
-		}
-	]
+    "topic":"haha",
+    "detail":{
+        "title":"dada"
+    }
 }

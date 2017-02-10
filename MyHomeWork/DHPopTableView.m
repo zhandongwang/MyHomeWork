@@ -15,11 +15,8 @@ static NSString * const cellIdentifier = @"cellIdentifier";
 
 @property (nonatomic, strong) UIView *maskBgView;
 @property (nonatomic, strong) UIButton *edgeButton;
-@property (nonatomic, strong) UITableView *contentTableView;
 @property (nonatomic, assign) CGRect tableViewFrame;
 @property (nonatomic, strong) DHPopTableViewStyle *style;
-@property (nonatomic, copy) NSArray *rowsData;
-@property (nonatomic, copy) NSArray *sectionsData;
 
 @end
 
@@ -51,7 +48,7 @@ static NSString * const cellIdentifier = @"cellIdentifier";
 #pragma mark - tableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sectionsData.count;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -67,15 +64,38 @@ static NSString * const cellIdentifier = @"cellIdentifier";
         cell.textLabel.textColor = self.style.cellTextLableColor;
     }
     
-    cell.textLabel.text = self.rowsData[indexPath.row];
+    cell.textLabel.text = @"咖啡咖啡";
     
     return cell;
 }
 
-- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return self.sectionsData[section];
-}
 #pragma mark - tableView Delegate
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    CGFloat headerWidth = tableView.bounds.size.width;
+    CGFloat headerHeight = tableView.sectionHeaderHeight;
+
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, headerWidth, headerHeight)];
+    headerView.backgroundColor = tableView.backgroundColor;
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(GET_PIXEL(15), 0, headerWidth - GET_PIXEL(15), headerHeight - GET_PIXEL(.5))];
+    titleLabel.textColor = self.style.cellTextLableColor;
+    titleLabel.font = [UIFont systemFontOfSize:self.style.cellTextLableFontSize];
+    titleLabel.textAlignment = NSTextAlignmentLeft;
+    [headerView addSubview:titleLabel];
+    
+    UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(GET_PIXEL(15), headerHeight - GET_PIXEL(.5), headerWidth, GET_PIXEL(.5))];
+    bottomLine.backgroundColor = tableView.separatorColor;
+    [headerView addSubview:bottomLine];
+    
+    if (section == 0) {
+        titleLabel.text = @"饮料";
+    } else if (section == 1) {
+        titleLabel.text = @"甜品";
+    }
+    
+    return headerView;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%ld",indexPath.row);
@@ -137,6 +157,15 @@ static NSString * const cellIdentifier = @"cellIdentifier";
     return _maskBgView;
 }
 
+- (UIButton *)edgeButton {
+    if (!_edgeButton) {
+        _edgeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_edgeButton setImage:self.style.edgeButtonImage forState:UIControlStateNormal];
+        [_edgeButton addTarget:self action:@selector(edgeButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _edgeButton;
+}
+
 - (UITableView *)contentTableView {
     if (!_contentTableView) {
         CGRect rect = self.tableViewFrame;
@@ -146,23 +175,14 @@ static NSString * const cellIdentifier = @"cellIdentifier";
         _contentTableView.delegate = self;
         _contentTableView.tableFooterView = [UIView new];
         
+        //默认设置
         _contentTableView.backgroundColor = [UIColor whiteColor];
-        _contentTableView.alpha = self.style.tableViewAlpha;
-        _contentTableView.rowHeight = self.style.tableViewRowHeight;
-        _contentTableView.sectionHeaderHeight = self.style.sectionHeaderHeight;
+        _contentTableView.rowHeight = GET_PIXEL(40);
+        _contentTableView.sectionHeaderHeight = _contentTableView.rowHeight;
         _contentTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        _contentTableView.separatorColor = self.style.separatorColor;
         
     }
     return _contentTableView;
 }
 
-- (UIButton *)edgeButton {
-    if (!_edgeButton) {
-        _edgeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_edgeButton setImage:self.style.edgeButtonImage forState:UIControlStateNormal];
-        [_edgeButton addTarget:self action:@selector(edgeButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _edgeButton;
-}
 @end
