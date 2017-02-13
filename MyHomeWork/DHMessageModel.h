@@ -11,5 +11,5 @@
 @interface DHMessageModel : NSObject
 
 @property (nonatomic, copy) NSString *title;
-
+@property (nonatomic, strong) NSNumber *msgID;
 @end

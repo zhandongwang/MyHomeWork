@@ -110,8 +110,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self loadPopViewData];
-//    [self loadMessageData];
+//    [self loadPopViewData];
+    [self loadMessageData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -135,12 +135,16 @@
     DHMessageKinds *kinds = [DHMessageKinds yy_modelWithJSON:data];
     [self.popTableViewSectionData addObject:@""];
     
-    NSMutableArray *msgTitlesArray = [[NSMutableArray alloc] initWithCapacity:5];
+    NSMutableArray *cellModelsArray = [[NSMutableArray alloc] initWithCapacity:5];
     [kinds.messages enumerateObjectsUsingBlock:^(DHMessageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [msgTitlesArray addObject:obj.title];
+        
+        DHPopTableViewCellModel *cellModel = [DHPopTableViewCellModel new];
+        cellModel.title = obj.title;
+        cellModel.cellID = obj.msgID;
+        [cellModelsArray addObject:cellModel];
     }];
     
-    [self.popTableViewDataDict setValue:msgTitlesArray forKey:@""];
+    [self.popTableViewDataDict setValue:cellModelsArray forKey:@""];
 }
 
 

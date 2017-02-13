@@ -1,7 +1,12 @@
 {
     "messages":[
-                {"title":"所有消息"},
-                {"title":"未读消息"},
-                {"title":"已读消息"}
+                {
+                "msgID":1,
+                "title":"所有消息"},
+                {"msgID":2,
+                "title":"未读消息"},
+                {
+                "msgID":3,
+                "title":"已读消息"}
     ]
 }
