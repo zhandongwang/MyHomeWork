@@ -202,7 +202,7 @@
     if (!_popTabView) {
         CGRect containerViewFrame = CGRectMake(SCREEN_WIDTH*0.7, 0, SCREEN_WIDTH*0.3, SCREEN_HEIGHT);
         
-        _popTabView = [[DHPopTableView alloc] initWithContainerViewFrame:containerViewFrame tableViewHeight:280 style:self.popTabViewStyle];
+        _popTabView = [[DHPopTableView alloc] initWithWrapperViewFrame:containerViewFrame tableViewHeight:280 style:self.popTabViewStyle];
         [_popTabView initSubViews];
         _popTabView.hidden = YES;
     }
@@ -222,7 +222,7 @@
     if (!_popTabViewStyle) {
         _popTabViewStyle = [[DHPopTableViewStyle alloc] init];
         _popTabViewStyle.bgAlpha = 0.65;
-        _popTabViewStyle.containerViewBgColor = [UIColor colorWithWhite:1.0 alpha:0.85];
+        _popTabViewStyle.tableWrapperViewBgColor = [UIColor colorWithWhite:1.0 alpha:0.85];
         _popTabViewStyle.edgeButtonImage = [UIImage imageNamed:@"cailei"];
         _popTabViewStyle.cellTextLableFontSize = 14.0;
         _popTabViewStyle.cellTextLableColor = [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1];

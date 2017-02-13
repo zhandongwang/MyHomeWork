@@ -16,9 +16,9 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
 @interface DHPopTableView ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UIView *maskBgView;
-@property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, strong) UIView *tableWrapperView;
 @property (nonatomic, strong) UIButton *edgeButton;
-@property (nonatomic, assign) CGRect containerFrame;
+@property (nonatomic, assign) CGRect tableWrapperFrame;
 @property (nonatomic, assign) CGFloat tableViewHeight;
 @property (nonatomic, strong) DHPopTableViewStyle *style;
 
@@ -29,9 +29,9 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
 
 @implementation DHPopTableView
 
-- (instancetype)initWithContainerViewFrame:(CGRect)containerFrame tableViewHeight:(CGFloat)tableViewHeight style:(DHPopTableViewStyle *)style{
+- (instancetype)initWithWrapperViewFrame:(CGRect)containerFrame tableViewHeight:(CGFloat)tableViewHeight style:(DHPopTableViewStyle *)style {
     if (self = [super initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)]) {
-        _containerFrame = containerFrame;
+        _tableWrapperFrame = containerFrame;
         _tableViewHeight = tableViewHeight;
         _style = style;
     }
@@ -40,19 +40,19 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
 
 - (void)initSubViews {
     [self addSubview:self.maskBgView];
-    [self addSubview:self.containerView];
+    [self addSubview:self.tableWrapperView];
     
-    [self.containerView addSubview:self.contentTableView];
+    [self.tableWrapperView addSubview:self.contentTableView];
     [self.contentTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.containerView.mas_centerX);
-        make.centerY.mas_equalTo(self.containerView.mas_centerY);
-        make.width.mas_equalTo(self.containerView.mas_width);
+        make.centerX.mas_equalTo(self.tableWrapperView.mas_centerX);
+        make.centerY.mas_equalTo(self.tableWrapperView.mas_centerY);
+        make.width.mas_equalTo(self.tableWrapperView.mas_width);
         make.height.mas_equalTo(self.tableViewHeight);
         
     }];
     
     if (self.style.edgeButtonImage) {
-        [self.containerView addSubview:self.edgeButton];
+        [self.tableWrapperView addSubview:self.edgeButton];
         [self.edgeButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.contentTableView.mas_left);
             make.centerY.equalTo(self.mas_centerY);
@@ -148,8 +148,8 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
     self.hidden = NO;
     [UIView animateWithDuration:0.25
      animations:^{
-         CGRect rect = self.containerFrame;
-         self.containerView.frame = rect;
+         CGRect rect = self.tableWrapperFrame;
+         self.tableWrapperView.frame = rect;
          self.maskBgView.alpha = self.style.bgAlpha;
          [self layoutIfNeeded];
      }completion:^(BOOL finished) {
@@ -160,9 +160,9 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
 - (void)hide {
     [UIView animateWithDuration:0.25
                      animations:^{
-                         CGRect rect = self.containerFrame;
+                         CGRect rect = self.tableWrapperFrame;
                          rect.origin.x = SCREEN_WIDTH;
-                         self.containerView.frame = rect;
+                         self.tableWrapperView.frame = rect;
                          self.maskBgView.alpha = 0;
                          [self layoutIfNeeded];
                      }completion:^(BOOL finished) {
@@ -186,15 +186,15 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
     return _maskBgView;
 }
 
-- (UIView *)containerView {
-    if (!_containerView) {
-        CGRect rect = self.containerFrame;
+- (UIView *)tableWrapperView {
+    if (!_tableWrapperView) {
+        CGRect rect = self.tableWrapperFrame;
         rect.origin.x = SCREEN_WIDTH;
-        _containerView = [[UIView alloc] initWithFrame:rect];
+        _tableWrapperView = [[UIView alloc] initWithFrame:rect];
         //默认设置
-        _containerView.backgroundColor = [UIColor whiteColor];
+        _tableWrapperView.backgroundColor = [UIColor whiteColor];
     }
-    return _containerView;
+    return _tableWrapperView;
 }
 
 - (UIButton *)edgeButton {

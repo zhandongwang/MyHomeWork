@@ -30,10 +30,10 @@ typedef void(^CellSelectedBlock) (void);
 
 /**
  初始化方法
- @param frame containerView的frame
+ @param frame wrapperView的frame
  @param frame tableView的height
  */
-- (instancetype)initWithContainerViewFrame:(CGRect)containerFrame tableViewHeight:(CGFloat)tableViewHeight style:(DHPopTableViewStyle *)style;
+- (instancetype)initWithWrapperViewFrame:(CGRect)containerFrame tableViewHeight:(CGFloat)tableViewHeight style:(DHPopTableViewStyle *)style;
 
 
 /**
