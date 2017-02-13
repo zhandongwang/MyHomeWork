@@ -18,14 +18,15 @@
 		236098AB1D980892009C589B /* MyHomeWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098AA1D980892009C589B /* MyHomeWorkTests.m */; };
 		236098B61D980892009C589B /* MyHomeWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098B51D980892009C589B /* MyHomeWorkUITests.m */; };
 		2374CFA31E516696001B799D /* DHPopTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA21E516696001B799D /* DHPopTableViewCellModel.m */; };
+		2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA61E518C62001B799D /* DHAllOrderModel.m */; };
+		2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA81E518C62001B799D /* DHMessageKinds.m */; };
+		2374CFB11E518C62001B799D /* DHMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFAA1E518C62001B799D /* DHMessageModel.m */; };
+		2374CFB21E518C62001B799D /* DHOrderKind.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFAC1E518C62001B799D /* DHOrderKind.m */; };
+		2374CFB31E518C62001B799D /* DHOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFAE1E518C62001B799D /* DHOrderModel.m */; };
+		2374CFBA1E518D45001B799D /* FRCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFB91E518D45001B799D /* FRCBaseViewController.m */; };
 		2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163B1E4D613E00FB5868 /* DHPopTableView.m */; };
 		2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */; };
 		237516411E4D617F00FB5868 /* popData.json in Resources */ = {isa = PBXBuildFile; fileRef = 237516401E4D617F00FB5868 /* popData.json */; };
-		237516441E4D626100FB5868 /* DHMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237516431E4D626100FB5868 /* DHMessageModel.m */; };
-		237516471E4D629F00FB5868 /* DHMessageKinds.m in Sources */ = {isa = PBXBuildFile; fileRef = 237516461E4D629F00FB5868 /* DHMessageKinds.m */; };
-		2375164A1E4D721300FB5868 /* DHOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237516491E4D721300FB5868 /* DHOrderModel.m */; };
-		2375164D1E4D7E8D00FB5868 /* DHOrderKind.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375164C1E4D7E8D00FB5868 /* DHOrderKind.m */; };
-		237516501E4D803300FB5868 /* DHAllOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375164F1E4D803300FB5868 /* DHAllOrderModel.m */; };
 		23A5E7501E4DA04A008DCAEE /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = 23A5E74F1E4DA04A008DCAEE /* message.json */; };
 		23A5E7531E4DA59E008DCAEE /* DHPopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A5E7521E4DA59E008DCAEE /* DHPopTableViewCell.m */; };
 		23D3682E1E4C5A5300ECC80D /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D368301E4C5A5300ECC80D /* test2.png */; };
@@ -74,21 +75,23 @@
 		236098B71D980892009C589B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2374CFA11E516696001B799D /* DHPopTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewCellModel.h; sourceTree = "<group>"; };
 		2374CFA21E516696001B799D /* DHPopTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableViewCellModel.m; sourceTree = "<group>"; };
+		2374CFA51E518C62001B799D /* DHAllOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAllOrderModel.h; sourceTree = "<group>"; };
+		2374CFA61E518C62001B799D /* DHAllOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHAllOrderModel.m; sourceTree = "<group>"; };
+		2374CFA71E518C62001B799D /* DHMessageKinds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMessageKinds.h; sourceTree = "<group>"; };
+		2374CFA81E518C62001B799D /* DHMessageKinds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMessageKinds.m; sourceTree = "<group>"; };
+		2374CFA91E518C62001B799D /* DHMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMessageModel.h; sourceTree = "<group>"; };
+		2374CFAA1E518C62001B799D /* DHMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMessageModel.m; sourceTree = "<group>"; };
+		2374CFAB1E518C62001B799D /* DHOrderKind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHOrderKind.h; sourceTree = "<group>"; };
+		2374CFAC1E518C62001B799D /* DHOrderKind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHOrderKind.m; sourceTree = "<group>"; };
+		2374CFAD1E518C62001B799D /* DHOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHOrderModel.h; sourceTree = "<group>"; };
+		2374CFAE1E518C62001B799D /* DHOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHOrderModel.m; sourceTree = "<group>"; };
+		2374CFB81E518D45001B799D /* FRCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCBaseViewController.h; sourceTree = "<group>"; };
+		2374CFB91E518D45001B799D /* FRCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRCBaseViewController.m; sourceTree = "<group>"; };
 		2375163A1E4D613E00FB5868 /* DHPopTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableView.h; sourceTree = "<group>"; };
 		2375163B1E4D613E00FB5868 /* DHPopTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableView.m; sourceTree = "<group>"; };
 		2375163C1E4D613E00FB5868 /* DHPopTableViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewStyle.h; sourceTree = "<group>"; };
 		2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableViewStyle.m; sourceTree = "<group>"; };
 		237516401E4D617F00FB5868 /* popData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = popData.json; sourceTree = "<group>"; };
-		237516421E4D626100FB5868 /* DHMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMessageModel.h; sourceTree = "<group>"; };
-		237516431E4D626100FB5868 /* DHMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMessageModel.m; sourceTree = "<group>"; };
-		237516451E4D629F00FB5868 /* DHMessageKinds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMessageKinds.h; sourceTree = "<group>"; };
-		237516461E4D629F00FB5868 /* DHMessageKinds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMessageKinds.m; sourceTree = "<group>"; };
-		237516481E4D721300FB5868 /* DHOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHOrderModel.h; sourceTree = "<group>"; };
-		237516491E4D721300FB5868 /* DHOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHOrderModel.m; sourceTree = "<group>"; };
-		2375164B1E4D7E8D00FB5868 /* DHOrderKind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHOrderKind.h; sourceTree = "<group>"; };
-		2375164C1E4D7E8D00FB5868 /* DHOrderKind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHOrderKind.m; sourceTree = "<group>"; };
-		2375164E1E4D803300FB5868 /* DHAllOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAllOrderModel.h; sourceTree = "<group>"; };
-		2375164F1E4D803300FB5868 /* DHAllOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHAllOrderModel.m; sourceTree = "<group>"; };
 		23A5E74F1E4DA04A008DCAEE /* message.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
 		23A5E7511E4DA59E008DCAEE /* DHPopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewCell.h; sourceTree = "<group>"; };
 		23A5E7521E4DA59E008DCAEE /* DHPopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableViewCell.m; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 		2360988F1D980892009C589B /* MyHomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				2374CFB71E518D45001B799D /* BaseViewController */,
+				2374CFA41E518C62001B799D /* Model */,
 				237516391E4D613E00FB5868 /* PopTableView */,
 				23D3681C1E4C580400ECC80D /* images */,
 				2335DCB91E0E130F00C48142 /* Web */,
@@ -188,16 +193,6 @@
 				236098971D980892009C589B /* WZDMainViewController.m */,
 				23608A901E050F7100C4D190 /* WZDCustomView.h */,
 				23608A911E050F7100C4D190 /* WZDCustomView.m */,
-				237516421E4D626100FB5868 /* DHMessageModel.h */,
-				237516431E4D626100FB5868 /* DHMessageModel.m */,
-				237516451E4D629F00FB5868 /* DHMessageKinds.h */,
-				237516461E4D629F00FB5868 /* DHMessageKinds.m */,
-				237516481E4D721300FB5868 /* DHOrderModel.h */,
-				237516491E4D721300FB5868 /* DHOrderModel.m */,
-				2375164B1E4D7E8D00FB5868 /* DHOrderKind.h */,
-				2375164C1E4D7E8D00FB5868 /* DHOrderKind.m */,
-				2375164E1E4D803300FB5868 /* DHAllOrderModel.h */,
-				2375164F1E4D803300FB5868 /* DHAllOrderModel.m */,
 				236098991D980892009C589B /* Main.storyboard */,
 				2360989C1D980892009C589B /* Assets.xcassets */,
 				2360989E1D980892009C589B /* LaunchScreen.storyboard */,
@@ -234,6 +229,32 @@
 				236098B71D980892009C589B /* Info.plist */,
 			);
 			path = MyHomeWorkUITests;
+			sourceTree = "<group>";
+		};
+		2374CFA41E518C62001B799D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2374CFA51E518C62001B799D /* DHAllOrderModel.h */,
+				2374CFA61E518C62001B799D /* DHAllOrderModel.m */,
+				2374CFA71E518C62001B799D /* DHMessageKinds.h */,
+				2374CFA81E518C62001B799D /* DHMessageKinds.m */,
+				2374CFA91E518C62001B799D /* DHMessageModel.h */,
+				2374CFAA1E518C62001B799D /* DHMessageModel.m */,
+				2374CFAB1E518C62001B799D /* DHOrderKind.h */,
+				2374CFAC1E518C62001B799D /* DHOrderKind.m */,
+				2374CFAD1E518C62001B799D /* DHOrderModel.h */,
+				2374CFAE1E518C62001B799D /* DHOrderModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2374CFB71E518D45001B799D /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2374CFB81E518D45001B799D /* FRCBaseViewController.h */,
+				2374CFB91E518D45001B799D /* FRCBaseViewController.m */,
+			);
+			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 		237516391E4D613E00FB5868 /* PopTableView */ = {
@@ -470,19 +491,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				237516441E4D626100FB5868 /* DHMessageModel.m in Sources */,
 				236098981D980892009C589B /* WZDMainViewController.m in Sources */,
-				237516501E4D803300FB5868 /* DHAllOrderModel.m in Sources */,
+				2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */,
 				23A5E7531E4DA59E008DCAEE /* DHPopTableViewCell.m in Sources */,
+				2374CFB11E518C62001B799D /* DHMessageModel.m in Sources */,
 				23608A921E050F7100C4D190 /* WZDCustomView.m in Sources */,
+				2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */,
+				2374CFB21E518C62001B799D /* DHOrderKind.m in Sources */,
 				2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */,
 				236098951D980892009C589B /* AppDelegate.m in Sources */,
-				2375164A1E4D721300FB5868 /* DHOrderModel.m in Sources */,
-				2375164D1E4D7E8D00FB5868 /* DHOrderKind.m in Sources */,
 				2374CFA31E516696001B799D /* DHPopTableViewCellModel.m in Sources */,
-				237516471E4D629F00FB5868 /* DHMessageKinds.m in Sources */,
 				236098921D980892009C589B /* main.m in Sources */,
+				2374CFBA1E518D45001B799D /* FRCBaseViewController.m in Sources */,
 				2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */,
+				2374CFB31E518C62001B799D /* DHOrderModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
