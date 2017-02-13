@@ -25,10 +25,14 @@
 #define SCALE_X 1.15
 #define GET_PIXEL(pixel) (DEVICE_IS_IPHONE6P ? (pixel)*(SCALE_X) : pixel)
 
+#define ExceptionLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+
 
 
 #import <Masonry.h>
 #import <BlocksKit/BlocksKit.h>
 #import <YYModel/YYModel.h>
+#import <MJRefresh/MJRefresh.h>
+
 
 #endif /* MyHomeWork_Prefix_pch */

@@ -10,4 +10,8 @@
 
 @interface FRCBaseViewController : UIViewController
 
+@property (nonatomic, strong) UIImage *bgImage;
+@property (nonatomic, strong) NSString *backTitle;
+
+
 @end

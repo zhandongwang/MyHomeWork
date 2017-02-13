@@ -24,6 +24,7 @@
 		2374CFB21E518C62001B799D /* DHOrderKind.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFAC1E518C62001B799D /* DHOrderKind.m */; };
 		2374CFB31E518C62001B799D /* DHOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFAE1E518C62001B799D /* DHOrderModel.m */; };
 		2374CFBA1E518D45001B799D /* FRCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFB91E518D45001B799D /* FRCBaseViewController.m */; };
+		2374CFBD1E5195A3001B799D /* UIViewController+DHRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFBC1E5195A3001B799D /* UIViewController+DHRouter.m */; };
 		2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163B1E4D613E00FB5868 /* DHPopTableView.m */; };
 		2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */; };
 		237516411E4D617F00FB5868 /* popData.json in Resources */ = {isa = PBXBuildFile; fileRef = 237516401E4D617F00FB5868 /* popData.json */; };
@@ -87,6 +88,8 @@
 		2374CFAE1E518C62001B799D /* DHOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHOrderModel.m; sourceTree = "<group>"; };
 		2374CFB81E518D45001B799D /* FRCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCBaseViewController.h; sourceTree = "<group>"; };
 		2374CFB91E518D45001B799D /* FRCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRCBaseViewController.m; sourceTree = "<group>"; };
+		2374CFBB1E5195A3001B799D /* UIViewController+DHRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DHRouter.h"; sourceTree = "<group>"; };
+		2374CFBC1E5195A3001B799D /* UIViewController+DHRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DHRouter.m"; sourceTree = "<group>"; };
 		2375163A1E4D613E00FB5868 /* DHPopTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableView.h; sourceTree = "<group>"; };
 		2375163B1E4D613E00FB5868 /* DHPopTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableView.m; sourceTree = "<group>"; };
 		2375163C1E4D613E00FB5868 /* DHPopTableViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewStyle.h; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 			children = (
 				2374CFB81E518D45001B799D /* FRCBaseViewController.h */,
 				2374CFB91E518D45001B799D /* FRCBaseViewController.m */,
+				2374CFBB1E5195A3001B799D /* UIViewController+DHRouter.h */,
+				2374CFBC1E5195A3001B799D /* UIViewController+DHRouter.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -495,6 +500,7 @@
 				2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */,
 				23A5E7531E4DA59E008DCAEE /* DHPopTableViewCell.m in Sources */,
 				2374CFB11E518C62001B799D /* DHMessageModel.m in Sources */,
+				2374CFBD1E5195A3001B799D /* UIViewController+DHRouter.m in Sources */,
 				23608A921E050F7100C4D190 /* WZDCustomView.m in Sources */,
 				2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */,
 				2374CFB21E518C62001B799D /* DHOrderKind.m in Sources */,
