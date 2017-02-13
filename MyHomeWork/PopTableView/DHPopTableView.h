@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 typedef void(^HideBlock) (void);
-typedef void(^CellSelectedBlock) (void);
+typedef void(^CellSelectedBlock) (NSString *);
 
 @class DHPopTableViewStyle;
 

@@ -97,6 +97,10 @@
     self.popTabView.hiddenBlock = ^{
         weakSelf.floaButton.hidden = NO;
     };
+    self.popTabView.cellSelBlock = ^(NSString *title){
+        NSLog(@"%@", title);
+    };
+    
     self.popTableViewDataDict = [[NSMutableDictionary alloc] initWithCapacity:5];
     self.popTableViewSectionData = @[].mutableCopy;
 }

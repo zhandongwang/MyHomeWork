@@ -126,7 +126,10 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self hide];
     if (self.cellSelBlock) {
-        self.cellSelBlock();
+        NSString *sectionTitle = [self.sectionData objectAtIndex:indexPath.section];
+        NSArray *rowsData = [self.dataSource valueForKey:sectionTitle];
+        NSString *title = rowsData[indexPath.row];
+        self.cellSelBlock(title);
     }
 }
 
