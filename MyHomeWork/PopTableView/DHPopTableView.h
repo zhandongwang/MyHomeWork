@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^HideBlock) (void);
+typedef void(^CellSelectedBlock) (void);
+
 @class DHPopTableViewStyle;
 
 @interface DHPopTableView : UIView
@@ -17,13 +20,20 @@
 /**
  隐藏回调
  */
-@property (nonatomic, copy) void(^hiddenBlock)(void);
+@property (nonatomic, copy) HideBlock hiddenBlock;
+
+
+/**
+ cell点击回调
+ */
+@property (nonatomic, copy) CellSelectedBlock cellSelBlock;
 
 /**
  初始化方法
- @param frame tableView的frame
+ @param frame containerView的frame
+ @param frame tableView的height
  */
-- (instancetype)initWithTableViewFrame:(CGRect)frame style:(DHPopTableViewStyle *)style;
+- (instancetype)initWithContainerViewFrame:(CGRect)containerFrame tableViewHeight:(CGFloat)tableViewHeight style:(DHPopTableViewStyle *)style;
 
 
 /**

@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         _bgAlpha = 0.7;
+        _containerViewBgColor = [UIColor whiteColor];
         _cellTextLableFontSize = 14.0;
     }
     return self;

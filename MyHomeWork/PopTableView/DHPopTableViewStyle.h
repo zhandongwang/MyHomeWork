@@ -17,6 +17,11 @@
 
 
 /**
+ tableView的containerView背景颜色
+ */
+@property (nonatomic, strong) UIColor *containerViewBgColor;
+
+/**
  左侧按钮图像，如不提供则不添加edgeButton
  */
 @property (nonatomic, strong) UIImage *edgeButtonImage;

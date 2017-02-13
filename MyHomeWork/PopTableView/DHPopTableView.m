@@ -16,8 +16,10 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
 @interface DHPopTableView ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UIView *maskBgView;
+@property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UIButton *edgeButton;
-@property (nonatomic, assign) CGRect tableViewFrame;
+@property (nonatomic, assign) CGRect containerFrame;
+@property (nonatomic, assign) CGFloat tableViewHeight;
 @property (nonatomic, strong) DHPopTableViewStyle *style;
 
 @property (nonatomic, copy) NSDictionary *dataSource;
@@ -27,9 +29,10 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
 
 @implementation DHPopTableView
 
-- (instancetype)initWithTableViewFrame:(CGRect)frame style:(DHPopTableViewStyle *)style{
+- (instancetype)initWithContainerViewFrame:(CGRect)containerFrame tableViewHeight:(CGFloat)tableViewHeight style:(DHPopTableViewStyle *)style{
     if (self = [super initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)]) {
-        _tableViewFrame = frame;
+        _containerFrame = containerFrame;
+        _tableViewHeight = tableViewHeight;
         _style = style;
     }
     return self;
@@ -37,9 +40,19 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
 
 - (void)initSubViews {
     [self addSubview:self.maskBgView];
-    [self addSubview:self.contentTableView];
+    [self addSubview:self.containerView];
+    
+    [self.containerView addSubview:self.contentTableView];
+    [self.contentTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.containerView.mas_centerX);
+        make.centerY.mas_equalTo(self.containerView.mas_centerY);
+        make.width.mas_equalTo(self.containerView.mas_width);
+        make.height.mas_equalTo(self.tableViewHeight);
+        
+    }];
+    
     if (self.style.edgeButtonImage) {
-        [self addSubview:self.edgeButton];
+        [self.containerView addSubview:self.edgeButton];
         [self.edgeButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.contentTableView.mas_left);
             make.centerY.equalTo(self.mas_centerY);
@@ -135,8 +148,8 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
     self.hidden = NO;
     [UIView animateWithDuration:0.25
      animations:^{
-         CGRect rect = self.tableViewFrame;
-         self.contentTableView.frame = rect;
+         CGRect rect = self.containerFrame;
+         self.containerView.frame = rect;
          self.maskBgView.alpha = self.style.bgAlpha;
          [self layoutIfNeeded];
      }completion:^(BOOL finished) {
@@ -147,9 +160,9 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
 - (void)hide {
     [UIView animateWithDuration:0.25
                      animations:^{
-                         CGRect rect = self.tableViewFrame;
+                         CGRect rect = self.containerFrame;
                          rect.origin.x = SCREEN_WIDTH;
-                         self.contentTableView.frame = rect;
+                         self.containerView.frame = rect;
                          self.maskBgView.alpha = 0;
                          [self layoutIfNeeded];
                      }completion:^(BOOL finished) {
@@ -173,6 +186,17 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
     return _maskBgView;
 }
 
+- (UIView *)containerView {
+    if (!_containerView) {
+        CGRect rect = self.containerFrame;
+        rect.origin.x = SCREEN_WIDTH;
+        _containerView = [[UIView alloc] initWithFrame:rect];
+        //默认设置
+        _containerView.backgroundColor = [UIColor whiteColor];
+    }
+    return _containerView;
+}
+
 - (UIButton *)edgeButton {
     if (!_edgeButton) {
         _edgeButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -184,9 +208,7 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
 
 - (UITableView *)contentTableView {
     if (!_contentTableView) {
-        CGRect rect = self.tableViewFrame;
-        rect.origin.x = SCREEN_WIDTH;
-        _contentTableView = [[UITableView alloc] initWithFrame:rect];
+        _contentTableView = [[UITableView alloc] initWithFrame:CGRectZero];
         _contentTableView.dataSource = self;
         _contentTableView.delegate = self;
         _contentTableView.tableFooterView = [UIView new];
