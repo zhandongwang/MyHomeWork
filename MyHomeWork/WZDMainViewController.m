@@ -10,6 +10,8 @@
 #import "WZDCustomView.h"
 #import "DHPopTableView.h"
 #import "DHPopTableViewStyle.h"
+#import "DHPopTableViewCellModel.h"
+
 #import "DHMessageKinds.h"
 #import "DHMessageModel.h"
 
@@ -150,11 +152,14 @@
     
 
     for (DHOrderKind *orderKind in allOrderModel.allOrders) {
-        NSMutableArray *orderNamesArray = [[NSMutableArray alloc] initWithCapacity:5];
+        NSMutableArray *cellModelsArray = [[NSMutableArray alloc] initWithCapacity:5];
         for (DHOrderModel *orderModel in orderKind.orders) {
-            [orderNamesArray addObject:orderModel.name];
+            DHPopTableViewCellModel *cellModel = [DHPopTableViewCellModel new];
+            cellModel.title = orderModel.name;
+            cellModel.cellID = orderModel.orderID;
+            [cellModelsArray addObject:cellModel];
         }
-        [self.popTableViewDataDict setValue:orderNamesArray forKey:orderKind.title];
+        [self.popTableViewDataDict setValue:cellModelsArray forKey:orderKind.title];
         [self.popTableViewSectionData addObject:orderKind.title];
     }
 }
@@ -209,6 +214,7 @@
         _popTabView = [[DHPopTableView alloc] initWithWrapperViewFrame:containerViewFrame tableViewHeight:280 style:self.popTabViewStyle];
         [_popTabView initSubViews];
         _popTabView.hidden = YES;
+        
     }
     return _popTabView;
 }
@@ -230,6 +236,7 @@
         _popTabViewStyle.edgeButtonImage = [UIImage imageNamed:@"cailei"];
         _popTabViewStyle.cellTextLableFontSize = 14.0;
         _popTabViewStyle.cellTextLableColor = [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1];
+        
     }
     return _popTabViewStyle;
 }

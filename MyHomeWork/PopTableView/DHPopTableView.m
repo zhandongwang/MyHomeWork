@@ -9,6 +9,7 @@
 #import "DHPopTableView.h"
 #import "DHPopTableViewStyle.h"
 #import "DHPopTableViewCell.h"
+#import "DHPopTableViewCellModel.h"
 
 static NSString * const cellIdentifier = @"cellIdentifier";
 static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
@@ -86,7 +87,7 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
     NSString *sectionTitle = [self.sectionData objectAtIndex:indexPath.section];
     NSArray *rowsData = [self.dataSource valueForKey:sectionTitle];
     
-    [cell updateWithTitle:rowsData[indexPath.row]];
+    [cell updateWithCellModel:rowsData[indexPath.row]];
     
     return cell;
 }
@@ -114,6 +115,7 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
         view.tag = 101;
         view.titleLabel.font = [UIFont boldSystemFontOfSize:self.style.cellTextLableFontSize];
         view.titleLabel.textColor = self.style.cellTextLableColor;
+        view.bottomLine.backgroundColor = tableView.separatorColor;
         
         [headerView addSubview:view];
     }
@@ -128,8 +130,8 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
     if (self.cellSelBlock) {
         NSString *sectionTitle = [self.sectionData objectAtIndex:indexPath.section];
         NSArray *rowsData = [self.dataSource valueForKey:sectionTitle];
-        NSString *title = rowsData[indexPath.row];
-        self.cellSelBlock(title);
+        DHPopTableViewCellModel *cellModel = rowsData[indexPath.row];
+        self.cellSelBlock(cellModel.title);
     }
 }
 

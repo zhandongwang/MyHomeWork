@@ -7,6 +7,7 @@
 //
 
 #import "DHPopTableViewCell.h"
+#import "DHPopTableViewCellModel.h"
 
 @implementation DHPopTableViewCell
 
@@ -42,6 +43,10 @@
 
 - (void)updateWithTitle:(NSString *)title {
     self.titleLabel.text = title;
+}
+
+- (void)updateWithCellModel:(DHPopTableViewCellModel *)cellModel {
+    self.titleLabel.text = cellModel.title;
 }
 
 - (UILabel *)titleLabel {
