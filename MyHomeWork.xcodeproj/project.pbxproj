@@ -12,7 +12,6 @@
 		236098921D980892009C589B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098911D980892009C589B /* main.m */; };
 		236098951D980892009C589B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098941D980892009C589B /* AppDelegate.m */; };
 		236098981D980892009C589B /* WZDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098971D980892009C589B /* WZDMainViewController.m */; };
-		2360989B1D980892009C589B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236098991D980892009C589B /* Main.storyboard */; };
 		2360989D1D980892009C589B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2360989C1D980892009C589B /* Assets.xcassets */; };
 		236098A01D980892009C589B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2360989E1D980892009C589B /* LaunchScreen.storyboard */; };
 		236098AB1D980892009C589B /* MyHomeWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098AA1D980892009C589B /* MyHomeWorkTests.m */; };
@@ -25,6 +24,7 @@
 		2374CFB31E518C62001B799D /* DHOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFAE1E518C62001B799D /* DHOrderModel.m */; };
 		2374CFBA1E518D45001B799D /* FRCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFB91E518D45001B799D /* FRCBaseViewController.m */; };
 		2374CFBD1E5195A3001B799D /* UIViewController+DHRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFBC1E5195A3001B799D /* UIViewController+DHRouter.m */; };
+		2374CFC01E51A247001B799D /* FRCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFBF1E51A247001B799D /* FRCMainViewController.m */; };
 		2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163B1E4D613E00FB5868 /* DHPopTableView.m */; };
 		2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */; };
 		237516411E4D617F00FB5868 /* popData.json in Resources */ = {isa = PBXBuildFile; fileRef = 237516401E4D617F00FB5868 /* popData.json */; };
@@ -64,7 +64,6 @@
 		236098941D980892009C589B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		236098961D980892009C589B /* WZDMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDMainViewController.h; sourceTree = "<group>"; };
 		236098971D980892009C589B /* WZDMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDMainViewController.m; sourceTree = "<group>"; };
-		2360989A1D980892009C589B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2360989C1D980892009C589B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2360989F1D980892009C589B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		236098A11D980892009C589B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +89,8 @@
 		2374CFB91E518D45001B799D /* FRCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRCBaseViewController.m; sourceTree = "<group>"; };
 		2374CFBB1E5195A3001B799D /* UIViewController+DHRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DHRouter.h"; sourceTree = "<group>"; };
 		2374CFBC1E5195A3001B799D /* UIViewController+DHRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DHRouter.m"; sourceTree = "<group>"; };
+		2374CFBE1E51A247001B799D /* FRCMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCMainViewController.h; sourceTree = "<group>"; };
+		2374CFBF1E51A247001B799D /* FRCMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRCMainViewController.m; sourceTree = "<group>"; };
 		2375163A1E4D613E00FB5868 /* DHPopTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableView.h; sourceTree = "<group>"; };
 		2375163B1E4D613E00FB5868 /* DHPopTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableView.m; sourceTree = "<group>"; };
 		2375163C1E4D613E00FB5868 /* DHPopTableViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewStyle.h; sourceTree = "<group>"; };
@@ -101,15 +102,10 @@
 		23D368171E4C0ABE00ECC80D /* MyHomeWork-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Prefix.pch"; sourceTree = "<group>"; };
 		23D3682F1E4C5A5300ECC80D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/test2.png; sourceTree = "<group>"; };
 		23D368311E4C5A5900ECC80D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/test2.png"; sourceTree = "<group>"; };
-		23DE6A0D1E46F27E00B3FFFD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		23DE6A0E1E46F27E00B3FFFD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		23DE6A0F1E46F28300B3FFFD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		23DE6A101E46F28400B3FFFD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		23DE6A111E46F28900B3FFFD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		23DE6A121E46F28900B3FFFD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		23DE6A131E46F29000B3FFFD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		23DE6A141E46F29100B3FFFD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		23DE6A151E46F29D00B3FFFD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		23DE6A161E46F29D00B3FFFD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		23DE6A1A1E46F3A800B3FFFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		23DE6A1C1E46F3D800B3FFFD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -194,9 +190,10 @@
 				236098941D980892009C589B /* AppDelegate.m */,
 				236098961D980892009C589B /* WZDMainViewController.h */,
 				236098971D980892009C589B /* WZDMainViewController.m */,
+				2374CFBE1E51A247001B799D /* FRCMainViewController.h */,
+				2374CFBF1E51A247001B799D /* FRCMainViewController.m */,
 				23608A901E050F7100C4D190 /* WZDCustomView.h */,
 				23608A911E050F7100C4D190 /* WZDCustomView.m */,
-				236098991D980892009C589B /* Main.storyboard */,
 				2360989C1D980892009C589B /* Assets.xcassets */,
 				2360989E1D980892009C589B /* LaunchScreen.storyboard */,
 				236098A11D980892009C589B /* Info.plist */,
@@ -422,7 +419,6 @@
 				23A5E7501E4DA04A008DCAEE /* message.json in Resources */,
 				2360989D1D980892009C589B /* Assets.xcassets in Resources */,
 				237516411E4D617F00FB5868 /* popData.json in Resources */,
-				2360989B1D980892009C589B /* Main.storyboard in Resources */,
 				23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				236098981D980892009C589B /* WZDMainViewController.m in Sources */,
+				2374CFC01E51A247001B799D /* FRCMainViewController.m in Sources */,
 				2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */,
 				23A5E7531E4DA59E008DCAEE /* DHPopTableViewCell.m in Sources */,
 				2374CFB11E518C62001B799D /* DHMessageModel.m in Sources */,
@@ -546,19 +543,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		236098991D980892009C589B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2360989A1D980892009C589B /* Base */,
-				23DE6A0D1E46F27E00B3FFFD /* fr */,
-				23DE6A0F1E46F28300B3FFFD /* zh-Hans */,
-				23DE6A111E46F28900B3FFFD /* zh-Hant */,
-				23DE6A131E46F29000B3FFFD /* ja */,
-				23DE6A151E46F29D00B3FFFD /* ko */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2360989E1D980892009C589B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -19,6 +19,7 @@
 #import "DHOrderKind.h"
 #import "DHOrderModel.h"
 
+#import "FRCMainViewController.h"
 
 #define ImageName @"biye"
 
@@ -34,13 +35,15 @@
 
 @property (nonatomic, strong) UIButton *floaButton;
 
+
 @end
 
 @implementation WZDMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"Home";
     // Do any additional setup after loading the view, typically from a nib.
 //    [self.view addSubview:self.customView];
     
@@ -89,28 +92,28 @@
     [self.view addSubview:imageView];
     
     
-    [self.view addSubview:self.popTabView];
-    [self.view addSubview:self.floaButton];
-    [self.floaButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.view.mas_right);
-        make.centerY.equalTo(self.popTabView.mas_centerY);
-    }];
-    __weak typeof (self) weakSelf = self;
-    self.popTabView.hiddenBlock = ^{
-        weakSelf.floaButton.hidden = NO;
-    };
-    self.popTabView.cellSelBlock = ^(NSString *title){
-        NSLog(@"%@", title);
-    };
-    
-    self.popTableViewDataDict = [[NSMutableDictionary alloc] initWithCapacity:5];
-    self.popTableViewSectionData = @[].mutableCopy;
+//    [self.view addSubview:self.popTabView];
+//    [self.view addSubview:self.floaButton];
+//    [self.floaButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.equalTo(self.view.mas_right);
+//        make.centerY.equalTo(self.popTabView.mas_centerY);
+//    }];
+//    __weak typeof (self) weakSelf = self;
+//    self.popTabView.hiddenBlock = ^{
+//        weakSelf.floaButton.hidden = NO;
+//    };
+//    self.popTabView.cellSelBlock = ^(NSString *title){
+//        NSLog(@"%@", title);
+//    };
+//    
+//    self.popTableViewDataDict = [[NSMutableDictionary alloc] initWithCapacity:5];
+//    self.popTableViewSectionData = @[].mutableCopy;
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self loadPopViewData];
+//    [self loadPopViewData];
 //    [self loadMessageData];
 }
 
@@ -120,7 +123,10 @@
 }
 
 - (void)btnTapped {
-    [self.popTabView showWithSectionData:self.popTableViewSectionData fullData:self.popTableViewDataDict];
+//    [self.popTabView showWithSectionData:self.popTableViewSectionData fullData:self.popTableViewDataDict];
+    FRCMainViewController *vc = [[FRCMainViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 - (void)floaButtonTapped {

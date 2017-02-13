@@ -11,6 +11,8 @@
 
 @interface FRCBaseViewController ()
 
+@property (nonatomic, strong) UITableView *baseTableView;
+
 @end
 
 @implementation FRCBaseViewController
@@ -33,12 +35,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
 }
 
 
@@ -69,35 +70,28 @@
 
 - (void)addRefreshHeaderToTableView:(UITableView *)tableView beginRefresh:(BOOL)beginRefresh {
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(sendFirstPageRequet)];
-    header.stateLabel.textColor = [UIColor whiteColor];
+    header.stateLabel.textColor = [UIColor blackColor];
     header.lastUpdatedTimeLabel.hidden = YES;
-    header.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+    [header setTitle:@"" forState:MJRefreshStateIdle];
+    [header setTitle:@"松开立即刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"正在刷新数据..." forState:MJRefreshStateRefreshing];
     
     if (beginRefresh) {
         [header beginRefreshing];
     }
     tableView.header = header;
+    self.baseTableView = tableView;
 }
 
 - (void)addRefreshFooterToTableView:(UITableView *)tableView {
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(sendNextPageRequet)];
-    footer.stateLabel.textColor = [UIColor whiteColor];
+    footer.stateLabel.textColor = [UIColor blackColor];
     [footer setTitle:@"" forState:MJRefreshStateIdle];
     [footer setTitle:@"加载中..." forState:MJRefreshStateRefreshing];
-    footer.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
     
     tableView.footer = footer;
-    
+    self.baseTableView = tableView;
 }
 
-- (void)resetNoMoreData:(UITableView *)tableView
-{
-    [tableView.footer resetNoMoreData];
-}
-
-- (void)endRefreshToTableView:(UITableView *)tableView {
-    [tableView.header endRefreshing];
-    [tableView.footer endRefreshing];
-}
 
 @end
