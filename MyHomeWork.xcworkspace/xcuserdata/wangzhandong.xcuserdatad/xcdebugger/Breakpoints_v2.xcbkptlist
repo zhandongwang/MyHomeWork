@@ -74,12 +74,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyHomeWork/PopTableView/DHPopTableView.m"
-            timestampString = "508654122.590077"
+            timestampString = "508657556.251015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "-tableView:viewForHeaderInSection:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyHomeWork/PopTableView/DHPopTableViewCell.m"
+            timestampString = "508657567.155285"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "-initWithStyle:reuseIdentifier:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

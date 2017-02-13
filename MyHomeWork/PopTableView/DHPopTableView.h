@@ -46,7 +46,7 @@ typedef void(^CellSelectedBlock) (NSString *);
  展示
 
  @param sectionData section数据源
- @param data 完整数据源，如果只有一个section且不要section则设置key为@""
+ @param data 完整数据源，如果只有一个section且不要section业务方需设置key为@""
  */
 - (void)showWithSectionData:(NSArray *)sectionData fullData:(NSDictionary *)data;
 

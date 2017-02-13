@@ -86,7 +86,6 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
     
     NSString *sectionTitle = [self.sectionData objectAtIndex:indexPath.section];
     NSArray *rowsData = [self.dataSource valueForKey:sectionTitle];
-    
     [cell updateWithCellModel:rowsData[indexPath.row]];
     
     return cell;
@@ -111,7 +110,8 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
     UITableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:sectionHeaderIdentifier];
     if (!headerView) {
         headerView = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:sectionHeaderIdentifier];
-        DHPopTableViewCell *view = [[DHPopTableViewCell alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(tableView.bounds), tableView.rowHeight)];
+        DHPopTableViewCell *view = [DHPopTableViewCell new];
+        view.frame = CGRectMake(0, 0, CGRectGetWidth(tableView.bounds), tableView.rowHeight);
         view.tag = 101;
         view.titleLabel.font = [UIFont boldSystemFontOfSize:self.style.cellTextLableFontSize];
         view.titleLabel.textColor = self.style.cellTextLableColor;
@@ -219,12 +219,12 @@ static NSString * const sectionHeaderIdentifier = @"sectionHeaderIdentifier";
         _contentTableView.dataSource = self;
         _contentTableView.delegate = self;
         _contentTableView.tableFooterView = [UIView new];
+        _contentTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_contentTableView registerClass:[DHPopTableViewCell class] forCellReuseIdentifier:cellIdentifier];
         
         //默认设置
         _contentTableView.backgroundColor = [UIColor whiteColor];
         _contentTableView.rowHeight = GET_PIXEL(40);
-        _contentTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _contentTableView;
 }

@@ -21,16 +21,6 @@
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setUpStyle];
-        [self setUpSubviews];
-    }
-    return self;
-}
-
 - (void)setUpStyle {
     self.contentView.backgroundColor = [UIColor whiteColor];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -46,7 +36,7 @@
 }
 
 - (void)updateWithCellModel:(DHPopTableViewCellModel *)cellModel {
-    self.titleLabel.text = cellModel.title;
+    [self updateWithTitle: cellModel.title];
 }
 
 - (UILabel *)titleLabel {

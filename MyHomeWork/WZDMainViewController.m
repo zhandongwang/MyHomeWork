@@ -110,8 +110,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    [self loadPopViewData];
-    [self loadMessageData];
+    [self loadPopViewData];
+//    [self loadMessageData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -240,7 +240,6 @@
         _popTabViewStyle.edgeButtonImage = [UIImage imageNamed:@"cailei"];
         _popTabViewStyle.cellTextLableFontSize = 14.0;
         _popTabViewStyle.cellTextLableColor = [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1];
-        
     }
     return _popTabViewStyle;
 }
