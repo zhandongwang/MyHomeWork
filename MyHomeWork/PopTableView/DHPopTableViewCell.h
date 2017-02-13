@@ -1,5 +1,5 @@
 //
-//  DHPopSectionHeaderView.h
+//  DHPopTableViewCell.h
 //  MyHomeWork
 //
 //  Created by 凤梨 on 17/2/10.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DHPopSectionHeaderView : UIView
+@interface DHPopTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UILabel *titleLabel;
 

@@ -1,14 +1,24 @@
 //
-//  DHPopSectionHeaderView.m
+//  DHPopTableViewCell.m
 //  MyHomeWork
 //
 //  Created by 凤梨 on 17/2/10.
 //  Copyright © 2017年 zhandongwang. All rights reserved.
 //
 
-#import "DHPopSectionHeaderView.h"
+#import "DHPopTableViewCell.h"
 
-@implementation DHPopSectionHeaderView
+@implementation DHPopTableViewCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self setUpStyle];
+        [self setUpSubviews];
+    }
+    
+    return self;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -21,18 +31,18 @@
 }
 
 - (void)setUpStyle {
-    self.backgroundColor = [UIColor whiteColor];
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setUpSubviews {
-    [self addSubview:self.titleLabel];
-    [self addSubview:self.bottomLine];
+    [self.contentView addSubview:self.titleLabel];
+    [self.contentView addSubview:self.bottomLine];
 }
 
 - (void)updateWithTitle:(NSString *)title {
     self.titleLabel.text = title;
 }
-
 
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
