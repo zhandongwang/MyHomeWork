@@ -28,7 +28,8 @@
     }];
     
     UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [bgImageView setImage:self.bgImage];
+//    [bgImageView setImage:self.bgImage];
+    [bgImageView setImage:[UIImage imageNamed:@"rootViewBg"]];
     [self.view addSubview:bgImageView];
     
 }
@@ -47,6 +48,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark - event handler
 
@@ -70,11 +72,12 @@
 
 - (void)addRefreshHeaderToTableView:(UITableView *)tableView beginRefresh:(BOOL)beginRefresh {
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(sendFirstPageRequet)];
-    header.stateLabel.textColor = [UIColor blackColor];
+    header.stateLabel.textColor = [UIColor whiteColor];
     header.lastUpdatedTimeLabel.hidden = YES;
     [header setTitle:@"" forState:MJRefreshStateIdle];
     [header setTitle:@"松开立即刷新" forState:MJRefreshStatePulling];
     [header setTitle:@"正在刷新数据..." forState:MJRefreshStateRefreshing];
+    header.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
     
     if (beginRefresh) {
         [header beginRefreshing];
@@ -85,9 +88,10 @@
 
 - (void)addRefreshFooterToTableView:(UITableView *)tableView {
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(sendNextPageRequet)];
-    footer.stateLabel.textColor = [UIColor blackColor];
+    footer.stateLabel.textColor = [UIColor whiteColor];
     [footer setTitle:@"" forState:MJRefreshStateIdle];
     [footer setTitle:@"加载中..." forState:MJRefreshStateRefreshing];
+    footer.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
     
     tableView.footer = footer;
     self.baseTableView = tableView;
