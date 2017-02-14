@@ -55,7 +55,6 @@ static NSString * const cellID = @"cellID";
     NSLog(@"%s", __PRETTY_FUNCTION__);
     [self loadMessageData];
     [self.tableView.footer endRefreshing];
-
 }
 
 
@@ -70,7 +69,7 @@ static NSString * const cellID = @"cellID";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.5];
         cell.textLabel.textColor = [UIColor blackColor];
         cell.textLabel.font = [UIFont systemFontOfSize:14];

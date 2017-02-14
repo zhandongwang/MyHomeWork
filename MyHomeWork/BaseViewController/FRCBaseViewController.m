@@ -11,8 +11,6 @@
 
 @interface FRCBaseViewController ()
 
-@property (nonatomic, strong) UITableView *baseTableView;
-
 @end
 
 @implementation FRCBaseViewController
@@ -83,7 +81,6 @@
         [header beginRefreshing];
     }
     tableView.header = header;
-    self.baseTableView = tableView;
 }
 
 - (void)addRefreshFooterToTableView:(UITableView *)tableView {
@@ -94,7 +91,6 @@
     footer.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
     
     tableView.footer = footer;
-    self.baseTableView = tableView;
 }
 
 
