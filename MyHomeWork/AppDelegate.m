@@ -28,6 +28,10 @@
     
     [self.window makeKeyAndVisible];
     
+    
+    //test for git command
+    
+    
     return YES;
 }
 
