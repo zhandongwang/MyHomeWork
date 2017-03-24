@@ -1,0 +1,33 @@
+# More documentation about how to customize your build
+# can be found here:
+# https://docs.fastlane.tools
+fastlane_version "1.109.0"
+
+default_platform :ios
+
+lane :beta do
+  cocoapods
+
+  # build your iOS app
+  gym(
+     scheme: "MyHomeWork"
+  )
+
+  # upload to Beta by Crashlytics
+  crashlytics(
+    # api_token: "YOUR_API_KEY",
+    # build_secret: "YOUR_BUILD_SECRET"
+  )
+  pilot
+
+	
+end
+
+lane :hello do
+  puts "hello Fastlane"
+end
+
+after_all do |lane|
+  puts "Ha Ha"
+
+end
