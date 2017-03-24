@@ -29,7 +29,7 @@
     [self.window makeKeyAndVisible];
     
     
-    //test for git command
+    //test for git command haha hehe
     
     
     return YES;
