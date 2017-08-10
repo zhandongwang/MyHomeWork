@@ -76,21 +76,38 @@
 //    NSURL *url = [[NSBundle mainBundle] URLForResource:@"testWeb" withExtension:@"html"];
 //    [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:url]];
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
-    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:14];
+//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
+//    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//    button.titleLabel.font = [UIFont systemFontOfSize:14];
+//    
+//    NSString *buttonTitle = @"分类展示";// NSLocalizedString(@"CallCamera", nil);
+//    [button setTitle:buttonTitle forState:UIControlStateNormal];
+//    [self.view addSubview:button];
+//    [button addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 150, 100, 100)];
+//    imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    
+//    imageView.image = [UIImage imageNamed:@"test2"]; //[UIImage imageNamed:NSLocalizedString(ImageName, nil)];
+//    [self.view addSubview:imageView];a
     
-    NSString *buttonTitle = @"分类展示";// NSLocalizedString(@"CallCamera", nil);
-    [button setTitle:buttonTitle forState:UIControlStateNormal];
-    [self.view addSubview:button];
-    [button addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
+    UILabel *label1 = [UILabel new];
+    label1.backgroundColor = [UIColor redColor];
+    label1.frame = CGRectMake(0, 0, 80, 100);
+    UILabel *label2 = [UILabel new];
+    label2.frame = CGRectMake(0, 0, 80, 50);
+    label2.backgroundColor = [UIColor blueColor];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 150, 100, 100)];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
     
-    imageView.image = [UIImage imageNamed:@"test2"]; //[UIImage imageNamed:NSLocalizedString(ImageName, nil)];
-    [self.view addSubview:imageView];
+    UIStackView *stackView = [[UIStackView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, 200)];
+    stackView.axis = UILayoutConstraintAxisVertical;
+    stackView.alignment = UIStackViewAlignmentCenter;
+    stackView.distribution = UIStackViewDistributionFillEqually;
+    stackView.spacing = 30;
+    [stackView addArrangedSubview:label1];
+    [stackView addArrangedSubview:label2];
     
+    [self.view addSubview: stackView];
     
 //    [self.view addSubview:self.popTabView];
 //    [self.view addSubview:self.floaButton];

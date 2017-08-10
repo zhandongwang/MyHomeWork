@@ -105,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyHomeWork/BaseViewController/FRCBaseViewController.m"
-            timestampString = "508727703.204966"
+            filePath = "MyHomeWork/RAC/NSObject+Caculator.m"
+            timestampString = "523418174.822832"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "-sendFirstPageRequet"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "+makeCaculators:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
