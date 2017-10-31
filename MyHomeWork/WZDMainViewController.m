@@ -35,6 +35,7 @@
 
 @property (nonatomic, strong) UIButton *floaButton;
 
+@property (nonatomic, copy) NSString *now;
 
 @end
 
@@ -91,23 +92,33 @@
 //    imageView.image = [UIImage imageNamed:@"test2"]; //[UIImage imageNamed:NSLocalizedString(ImageName, nil)];
 //    [self.view addSubview:imageView];a
     
-    UILabel *label1 = [UILabel new];
-    label1.backgroundColor = [UIColor redColor];
-    label1.frame = CGRectMake(0, 0, 80, 100);
-    UILabel *label2 = [UILabel new];
-    label2.frame = CGRectMake(0, 0, 80, 50);
-    label2.backgroundColor = [UIColor blueColor];
+//    UILabel *label1 = [UILabel new];
+//    label1.backgroundColor = [UIColor redColor];
+//    label1.frame = CGRectMake(0, 0, 80, 100);
+//    UILabel *label2 = [UILabel new];
+//    label2.frame = CGRectMake(0, 0, 80, 50);
+//    label2.backgroundColor = [UIColor blueColor];
+//
+//
+//    UIStackView *stackView = [[UIStackView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, 200)];
+//    stackView.axis = UILayoutConstraintAxisVertical;
+//    stackView.alignment = UIStackViewAlignmentCenter;
+//    stackView.distribution = UIStackViewDistributionFillEqually;
+//    stackView.spacing = 30;
+//    [stackView addArrangedSubview:label1];
+//    [stackView addArrangedSubview:label2];
+//
+//    [self.view addSubview: stackView];
     
     
-    UIStackView *stackView = [[UIStackView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, 200)];
-    stackView.axis = UILayoutConstraintAxisVertical;
-    stackView.alignment = UIStackViewAlignmentCenter;
-    stackView.distribution = UIStackViewDistributionFillEqually;
-    stackView.spacing = 30;
-    [stackView addArrangedSubview:label1];
-    [stackView addArrangedSubview:label2];
+//    [self addObserver:self forKeyPath:@"now" options:NSKeyValueObservingOptionNew context:nil];
+//    NSLog(@"1");
+//    [self willChangeValueForKey:@"now"]; // “手动触发self.now的KVO”，必写。
+//    NSLog(@"2");
+//    
+////    [self didChangeValueForKey:@"now"]; // “手动触发self.now的KVO”，必写。
+//    NSLog(@"4");
     
-    [self.view addSubview: stackView];
     
 //    [self.view addSubview:self.popTabView];
 //    [self.view addSubview:self.floaButton];
@@ -127,6 +138,9 @@
 //    self.popTableViewSectionData = @[].mutableCopy;
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"3");
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

@@ -30,43 +30,181 @@
     self.window.rootViewController = navigationController;
     self.window.backgroundColor = [UIColor whiteColor];
     
-    [self testRAC];
-    
+
+//    [self testRAC];
+//    [self testRACCommand];
+//    [self testGCD];
+    [self testRACSignal];
     [self.window makeKeyAndVisible];
     return YES;
 }
 
-- (void)testRAC {
-    //    int result = [NSObject makeCaculators:^(CaculatorMaker *make) {
-    //        make.add(1).add(2);
-    //    }];
-    //    NSLog(@"%d",result);
-    //    Caculator *c = [Caculator new];
-    //    BOOL isEqual = [[[c caculator:^(int result) {
-    //        result += 2;
-    //        result *= 5;
-    //        return result;
-    //    }] equle:^BOOL(int result) {
-    //        return result == 10;
-    //    }] isEqule];
-    //    NSLog(@"%d",isEqual);
+- (RACSignal *)createSignal {
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        NSLog(@"signal created");
+        [subscriber sendNext:nil];
+        return nil;
+    }];
+}
+
+
+- (void)testRACCommand {
+    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+       return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+           NSInteger integer = [input integerValue];
+           for (NSInteger i = 0; i < integer; ++i) {
+               [subscriber sendNext:@(i)];
+           }
+           [subscriber sendCompleted];
+           return nil;
+       }];
+    }];
+    [[command.executionSignals switchToLatest] subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+    }];
     
-//        RACSignal *signalA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-//            [subscriber sendNext:@1];
-//            return nil;
-//        }];
-//        RACSignal *signalB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-//            [subscriber sendNext:@2];
-//            return nil;
-//        }];
+    [command execute:@1];
+    [command execute:@2];
+    [command execute:@3];
+    
+}
+
+- (void)testRACSignal {
+    // 创建信号A
+    RACSignal *signalA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        // 发送请求
+        NSLog(@"----发送上部分请求---afn");
+        
+        [subscriber sendNext:@"上部分数据"];
+        [subscriber sendCompleted]; // 必须要调用sendCompleted方法！
+        return nil;
+    }];
+    
+    // 创建信号B，
+    RACSignal *signalsB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        // 发送请求
+        NSLog(@"--发送下部分请求--afn");
+        [subscriber sendNext:@"下部分数据"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    // 创建组合信号
+    // then;忽略掉第一个信号的所有值
+    RACSignal *thenSignal = [signalA concat:signalsB];
+    
+    // 订阅信号
+    [thenSignal subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    
+
+
+}
+
+- (void)testGCD {
+//    dispatch_queue_t concurrentQueue = dispatch_queue_create("concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+//    void(^blk1_reading)(void) = ^{
+//        NSLog(@"blk1---reading");
+//    };
 //    
+//    void(^blk2_reading)(void) = ^{
+//        NSLog(@"blk2---reading");
+//    };
+//    void(^blk3_reading)(void) = ^{
+//        NSLog(@"blk3---reading");
+//    };
+//    void(^blk4_reading)(void) = ^{
+//        NSLog(@"blk4---reading");
+//    };
+//    void(^blk_writing)(void) = ^{
+//        NSLog(@"blk---writing");
+//    };
+//    
+//    dispatch_async(concurrentQueue, blk1_reading);
+//    dispatch_async(concurrentQueue, blk2_reading);
+//    dispatch_barrier_async(concurrentQueue, blk_writing);
+//    dispatch_async(concurrentQueue, blk3_reading);
+//    dispatch_async(concurrentQueue, blk4_reading);
+    
+    NSOperationQueue *queue = [NSOperationQueue new];
+    queue.maxConcurrentOperationCount = 1;
+    [queue addOperationWithBlock:^{
+        NSLog(@"task1---%@",[NSThread currentThread]);
+    }];
+    [queue addOperationWithBlock:^{
+        NSLog(@"task2---%@",[NSThread currentThread]);
+    }];
+    [queue addOperationWithBlock:^{
+        NSLog(@"task3---%@",[NSThread currentThread]);
+    }];
+    
+    NSLog(@"Finished");
+}
+
+- (void)testRAC {
+    RACSignal *signalA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@
+        "A1"];
+        [subscriber sendNext:@
+         "A2"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    RACSignal *signalB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"B1"];
+        [subscriber sendNext:@"B2"];
+        [subscriber sendNext:@"B3"];
+        return nil;
+    }];
+    
+    [[signalA concat:signalB] subscribeNext:^(id x) {
+        NSLog(@"concat:%@",x);
+    }];
+    
+    [[signalA merge:signalB] subscribeNext:^(id x) {
+        NSLog(@"merge:%@",x);
+    }];
+    
+    [[signalA zipWith:signalB] subscribeNext:^(id x) {
+         NSLog(@"zipWith:%@",x);
+    }];
+    [[signalA combineLatestWith:signalB] subscribeNext:^(id x) {
+        NSLog(@"combineLatestWith:%@",x);
+    }];
+    
+    [[RACSignal combineLatest:@[signalA, signalB] reduce:^id(NSString *str1, NSString *str2){
+        return [NSString stringWithFormat:@"%@ %@",str1,str2];
+    }] subscribeNext:^(id x) {
+        NSLog(@"combineLatest:reduce:%@",x);
+    }];
+    
+    [[RACSignal merge:@[[self sayHello], [self sayByebye]]] subscribeCompleted:^{
+        NSLog(@"done");
+    }];
+
+//    [[RACSignal combineLatest:@[signalA, signalB] reduce:^id(NSString *str1, NSString *str2){
+//        return [NSString stringWithFormat:@"%@ %@",str1,str2];
+//    }] subscribeNext:^(id x) {
+//        NSLog(@"%@",x);
+//    }];
+//    [self rac_liftSelector:@selector(updateUI:data2:) withSignalsFromArray:@[signalA,signalB]];
+
+//    RACSignal *mergeSignal = [RACSignal combineLatest:@[signalA, signalB] reduce:^id(NSString *str1, NSString *str2){
+//        return [NSString stringWithFormat:@"%@ %@",str1,str2];
+//    }];
+//    [mergeSignal subscribeNext:^(id x) {
+//         NSLog(@"%@",x);
+//    }];
+
+
+
 //    RACSignal *combieSignal = [RACSignal combineLatest:@[signalA,signalB] reduce:^id(NSNumber *num1, NSNumber *num2){
 //        return [NSString stringWithFormat:@"%@--%@",num1,num2];
 //    }];
 //    [combieSignal subscribeNext:^(id x) {
 //        NSLog(@"%@",x);
 //    }];
-    RACSubject *subject = [RACSubject subject];
+//    RACSubject *subject = [RACSubject subject];
 //    [subject subscribeNext:^(id x) {
 //        NSLog(@"1111%@",x);
 //    }];
@@ -168,6 +306,27 @@
 //    }];
 //    [self.loginCommand execute:@111];
 
+}
+
+- (RACSignal *)sayHello {
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        NSLog(@"hello");
+        [subscriber sendCompleted];
+        return nil;
+    }];
+}
+
+
+- (RACSignal *)sayByebye {
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        NSLog(@"byebye");
+        [subscriber sendCompleted];
+        return nil;
+    }];
+}
+
+- (void)updateUI:(NSString *)data1 data2:(NSString *)data2 {
+    NSLog(@"%@%@",data1,data2);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
