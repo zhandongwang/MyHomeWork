@@ -59,16 +59,16 @@
 //    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
 //    imageView.frame = CGRectMake(0, 50, 50, 50);
 //    [self.view addSubview:imageView];
-    
+//
 //    UIGraphicsBeginImageContextWithOptions(CGSizeMake(100, 100), NO, 0);
-//    
+//
 //    CGContextRef context = UIGraphicsGetCurrentContext();
 //    CGContextAddEllipseInRect(context, CGRectMake(0, 0, 50, 50));
 //    CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
 //    CGContextFillPath(context);
 //    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
 //    UIGraphicsEndImageContext();
-//    
+//
 //    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
 //    imageView.frame = CGRectMake(0, 50, 50, 50);
 //    [self.view addSubview:imageView];
@@ -76,20 +76,20 @@
 //    NSURL *url = [[NSBundle mainBundle] URLForResource:@"testWeb" withExtension:@"html"];
 //    [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:url]];
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
-    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:14];
-    
-    NSString *buttonTitle = @"分类展示";// NSLocalizedString(@"CallCamera", nil);
-    [button setTitle:buttonTitle forState:UIControlStateNormal];
-    [self.view addSubview:button];
-    [button addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 150, 100, 100)];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    
-    imageView.image = [UIImage imageNamed:@"test2"]; //[UIImage imageNamed:NSLocalizedString(ImageName, nil)];
-    [self.view addSubview:imageView];
+//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
+//    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//    button.titleLabel.font = [UIFont systemFontOfSize:14];
+//
+//    NSString *buttonTitle = @"分类展示";// NSLocalizedString(@"CallCamera", nil);
+//    [button setTitle:buttonTitle forState:UIControlStateNormal];
+//    [self.view addSubview:button];
+//    [button addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
+//
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 150, 100, 100)];
+//    imageView.contentMode = UIViewContentModeScaleAspectFit;
+//
+//    imageView.image = [UIImage imageNamed:@"test2"]; //[UIImage imageNamed:NSLocalizedString(ImageName, nil)];
+//    [self.view addSubview:imageView];
     
     
 //    [self.view addSubview:self.popTabView];
@@ -108,8 +108,51 @@
 //    
 //    self.popTableViewDataDict = [[NSMutableDictionary alloc] initWithCapacity:5];
 //    self.popTableViewSectionData = @[].mutableCopy;
+//    __block int a = 0;
+//    NSLog(@"block定义前%p", &a);
+//    void(^foo)(void) = ^{
+//        a = 1;
+//        NSLog(@"block内部%p", &a);
+//    };
+//    NSLog(@"block定义后%p", &a);
+//    foo();
+
+    
 }
 
+- (void)testThread {
+    NSInvocationOperation *invocationOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocation:) object:@"hello invocationOperation"];
+    //    [invocationOperation start];
+    
+    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"blockOperation1 thread:%@",[NSThread currentThread]);
+    }];
+    [blockOperation addExecutionBlock:^{
+        NSLog(@"blockOperation1 thread:%@",[NSThread currentThread]);
+    }];
+    [blockOperation addExecutionBlock:^{
+        NSLog(@"blockOperation1 thread:%@",[NSThread currentThread]);
+    }];
+    [blockOperation setCompletionBlock:^{
+        NSLog(@"blockOperation completed");
+    }];
+    //    [blockOperation start];
+    
+    NSOperationQueue *queue = [NSOperationQueue new];
+    [queue addOperation:invocationOperation];
+    [queue addOperation:blockOperation];
+    [queue addOperationWithBlock:^{
+        NSLog(@"queueOperationBlock thread:%@",[NSThread currentThread]);
+    }];
+    
+    
+    NSLog(@"after invocation");
+}
+
+- (void)invocation:(NSString *)params {
+    NSLog(@"handler invocationOperation with params:%@",params);
+    NSLog(@"invocationOperation thread:%@",[NSThread currentThread]);
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -186,8 +229,8 @@
 }
 
 - (void)callCamera {
-    NSLog(@"Objc callCamera");
-    JSValue *picCallBack = self.jsContext[@"picCallback"];
+    NSLog(@"Objc callCamera");//JS调用Native
+    JSValue *picCallBack = self.jsContext[@"picCallback"];//回调
     [picCallBack callWithArguments:@[@"photos"]];
 }
 
