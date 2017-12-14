@@ -13,4 +13,11 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSNumber *orderID;
 
+@property (nonatomic, strong) NSMutableArray *orders;
+
+- (NSMutableArray *)ordersArray;
+- (void)removeObjectFromOrdersAtIndex:(NSUInteger)index;
+- (void)insertObject:(id)object inOrdersAtIndex:(NSUInteger)index;
+- (void)replaceObjectInOrdersAtIndex:(NSUInteger)index withObject:(id)object;
+
 @end

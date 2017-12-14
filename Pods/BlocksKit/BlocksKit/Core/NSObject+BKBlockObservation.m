@@ -143,6 +143,7 @@ static void *BKBlockObservationContext = &BKBlockObservationContext;
 - (void)dealloc
 {
 	if (self.keyPaths) {
+        //移除所有观察关系
 		[self _stopObservingLocked];
 	}
 }
@@ -266,18 +267,20 @@ static void *BKBlockObservationContext = &BKBlockObservationContext;
 	NSParameterAssert(task);
 
     Class classToSwizzle = self.class;
+    //获取所有修改过dealloc的类
     NSMutableSet *classes = self.class.bk_observedClassesHash;
     @synchronized (classes) {
+        //获取当前类名，并判断是否修改过dealloc
         NSString *className = NSStringFromClass(classToSwizzle);
         if (![classes containsObject:className]) {
             SEL deallocSelector = sel_registerName("dealloc");
             
 			__block void (*originalDealloc)(__unsafe_unretained id, SEL) = NULL;
-            
+            //实现新的dealloc
 			id newDealloc = ^(__unsafe_unretained id objSelf) {
-                [objSelf bk_removeAllBlockObservers];
+                [objSelf bk_removeAllBlockObservers];//先移除掉所有Observer
                 
-                if (originalDealloc == NULL) {
+                if (originalDealloc == NULL) {//如果原有的dealloc没有找到，则查找父类的dealloc并调用
                     struct objc_super superInfo = {
                         .receiver = objSelf,
                         .super_class = class_getSuperclass(classToSwizzle)
@@ -285,15 +288,16 @@ static void *BKBlockObservationContext = &BKBlockObservationContext;
                     
                     void (*msgSend)(struct objc_super *, SEL) = (__typeof__(msgSend))objc_msgSendSuper;
                     msgSend(&superInfo, deallocSelector);
-                } else {
+                } else {//找到了原有的dealloc，调用
                     originalDealloc(objSelf, deallocSelector);
                 }
             };
             
             IMP newDeallocIMP = imp_implementationWithBlock(newDealloc);
-            
+            //向当前类添加dealloc，多半会失败，因为已有dealloc
             if (!class_addMethod(classToSwizzle, deallocSelector, newDeallocIMP, "v@:")) {
                 // The class already contains a method implementation.
+                //获取原有dealloc的实现
                 Method deallocMethod = class_getInstanceMethod(classToSwizzle, deallocSelector);
                 
                 // We need to store original implementation before setting new implementation
@@ -309,6 +313,7 @@ static void *BKBlockObservationContext = &BKBlockObservationContext;
     }
 
 	NSMutableDictionary *dict;
+    //以自己为被观察者创建一个观察者实例
 	_BKObserver *observer = [[_BKObserver alloc] initWithObservee:self keyPaths:keyPaths context:context task:task];
 	[observer startObservingWithOptions:options];
 

@@ -20,9 +20,8 @@
 #import "DHOrderModel.h"
 
 #import "FRCMainViewController.h"
-
+#import <BlocksKit/BlocksKit.h>
 #define ImageName @"biye"
-
 @interface WZDMainViewController ()<JSObjcDelegate, UIWebViewDelegate>
 
 @property (nonatomic, strong) WZDCustomView *customView;
@@ -35,7 +34,8 @@
 
 @property (nonatomic, strong) UIButton *floaButton;
 
-
+@property (nonatomic, strong) NSArray<DHOrderModel *> *orderArray;
+@property (nonatomic, strong) DHOrderModel *orderModel;
 @end
 
 @implementation WZDMainViewController
@@ -44,6 +44,38 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Home";
+    
+    self.orderModel = [DHOrderModel new];
+    self.orderModel.name = @"model_1";
+    self.orderModel.orderID = @1;
+    self.orderModel.orders = [NSMutableArray array];
+//    NSMutableArray *delegateArray = [self.orderModel mutableArrayValueForKey:@"orders"];
+//    [self.orderModel addObserver:self forKeyPath:@"orders" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
+    [self.orderModel bk_addObserverForKeyPath:@"orders" task:^(id target) {
+        
+    }];
+//    [self.orderModel bk_addObserverForKeyPath:@"orders" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew task:^(id obj, NSDictionary *change) {
+//
+//    }];
+   
+    
+//    [[self.orderModel ordersArray] addObject:@"HAHA"];
+//[[self.orderModel ordersArray] removeObject:@"HAHA"];
+    [[self.orderModel ordersArray] addObjectsFromArray:@[@"hello",@"world"]];
+    
+//    DHOrderModel *model_2 = [DHOrderModel new];
+//    model_2.name = @"model_2";
+//    model_2.orderID = @2;
+//
+//    DHOrderModel *model_3 = [DHOrderModel new];
+//    model_3.name = @"model_1";
+//    model_3.orderID = @3;
+//
+//    self.orderArray = @[model_1,model_2,model_3];
+//    NSArray *modelNames = [self.orderArray valueForKeyPath:@"@unionOfObjects.name"];
+//    NSLog(@"%@",modelNames);
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
 //    [self.view addSubview:self.customView];
     
@@ -117,7 +149,11 @@
 //    NSLog(@"block定义后%p", &a);
 //    foo();
 
-    
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"%@",change[@"old"]);
+    NSLog(@"%@",change[@"new"]);
 }
 
 - (void)testThread {

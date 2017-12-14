@@ -10,5 +10,28 @@
 
 @implementation DHOrderModel
 
+//- (NSInteger)countOfOrderArray {
+//    return self.count;
+//}
+//
+//- (id)objectInOrderArrayAtIndex:(NSUInteger)index {
+//    return [NSString stringWithFormat:@"%@_%ld",self.name, index];
+//}
+
+- (NSMutableArray *)ordersArray {
+    return [self mutableArrayValueForKey:NSStringFromSelector(@selector(orders))];
+}
+
+- (void)insertObject:(id )object inOrdersAtIndex:(NSUInteger)index {
+    [self.orders insertObject:object atIndex:index];
+}
+
+- (void)removeObjectFromOrdersAtIndex:(NSUInteger)index {
+    [self.orders removeObjectAtIndex:index];
+}
+
+- (void)replaceObjectInOrdersAtIndex:(NSUInteger)index withObject:(id)object {
+    [self.orders replaceObjectAtIndex:index withObject:object];
+}
 
 @end
