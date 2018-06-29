@@ -12,6 +12,7 @@
 
 - (void)callCamera;
 - (void)share:(NSString *)shareString;
+- (void)getPreviewContent:(id)data;
 
 @end
 

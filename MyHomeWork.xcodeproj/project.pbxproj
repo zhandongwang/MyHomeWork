@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2307F1662064A2120060A688 /* WZDPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307F1652064A2120060A688 /* WZDPatch.m */; };
+		2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307F1682064A3F60060A688 /* WZDPatchTest.m */; };
 		2335DCBB1E0E137100C48142 /* testWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = 2335DCBA1E0E137100C48142 /* testWeb.html */; };
 		23608A921E050F7100C4D190 /* WZDCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23608A911E050F7100C4D190 /* WZDCustomView.m */; };
 		236098921D980892009C589B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098911D980892009C589B /* main.m */; };
@@ -55,6 +57,10 @@
 
 /* Begin PBXFileReference section */
 		0BCFDF0087E34B7DC8491769 /* Pods-MyHomeWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHomeWork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork.debug.xcconfig"; sourceTree = "<group>"; };
+		2307F1642064A2120060A688 /* WZDPatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDPatch.h; sourceTree = "<group>"; };
+		2307F1652064A2120060A688 /* WZDPatch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDPatch.m; sourceTree = "<group>"; };
+		2307F1672064A3F60060A688 /* WZDPatchTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDPatchTest.h; sourceTree = "<group>"; };
+		2307F1682064A3F60060A688 /* WZDPatchTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDPatchTest.m; sourceTree = "<group>"; };
 		2335DCBA1E0E137100C48142 /* testWeb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testWeb.html; sourceTree = "<group>"; };
 		23608A901E050F7100C4D190 /* WZDCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZDCustomView.h; sourceTree = "<group>"; };
 		23608A911E050F7100C4D190 /* WZDCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZDCustomView.m; sourceTree = "<group>"; };
@@ -148,6 +154,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2307F1632064A1F30060A688 /* Patch */ = {
+			isa = PBXGroup;
+			children = (
+				2307F1642064A2120060A688 /* WZDPatch.h */,
+				2307F1652064A2120060A688 /* WZDPatch.m */,
+				2307F1672064A3F60060A688 /* WZDPatchTest.h */,
+				2307F1682064A3F60060A688 /* WZDPatchTest.m */,
+			);
+			path = Patch;
+			sourceTree = "<group>";
+		};
 		2335DCB91E0E130F00C48142 /* Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +198,7 @@
 		2360988F1D980892009C589B /* MyHomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				2307F1632064A1F30060A688 /* Patch */,
 				2374CFB71E518D45001B799D /* BaseViewController */,
 				2374CFA41E518C62001B799D /* Model */,
 				237516391E4D613E00FB5868 /* PopTableView */,
@@ -503,7 +521,9 @@
 				2374CFC01E51A247001B799D /* FRCMainViewController.m in Sources */,
 				2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */,
 				23A5E7531E4DA59E008DCAEE /* DHPopTableViewCell.m in Sources */,
+				2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */,
 				2374CFB11E518C62001B799D /* DHMessageModel.m in Sources */,
+				2307F1662064A2120060A688 /* WZDPatch.m in Sources */,
 				2374CFBD1E5195A3001B799D /* UIViewController+DHRouter.m in Sources */,
 				23608A921E050F7100C4D190 /* WZDCustomView.m in Sources */,
 				2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */,

@@ -8,6 +8,13 @@
 
 #import "WZDCustomView.h"
 
+@interface WZDCustomView()
+
+@property (nonatomic, copy) NSString *name;
+
+@end
+
+
 @implementation WZDCustomView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -70,5 +77,8 @@
     
 }
 
+- (void)updateName:(NSString *)name {
+    self.name = name;
+}
 
 @end

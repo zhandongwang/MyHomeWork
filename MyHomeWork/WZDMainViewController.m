@@ -8,34 +8,26 @@
 
 #import "WZDMainViewController.h"
 #import "WZDCustomView.h"
-#import "DHPopTableView.h"
-#import "DHPopTableViewStyle.h"
-#import "DHPopTableViewCellModel.h"
-
-#import "DHMessageKinds.h"
-#import "DHMessageModel.h"
-
 #import "DHAllOrderModel.h"
 #import "DHOrderKind.h"
 #import "DHOrderModel.h"
 
 #import "FRCMainViewController.h"
 #import <BlocksKit/BlocksKit.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+
 #define ImageName @"biye"
 @interface WZDMainViewController ()<JSObjcDelegate, UIWebViewDelegate>
 
 @property (nonatomic, strong) WZDCustomView *customView;
 @property (nonatomic, strong) JSContext *jsContext;
 @property (nonatomic, strong) UIWebView *webView;
-@property (nonatomic, strong) DHPopTableView *popTabView;
-@property (nonatomic, strong) DHPopTableViewStyle *popTabViewStyle;
 @property (nonatomic, strong) NSMutableDictionary *popTableViewDataDict;
 @property (nonatomic, strong) NSMutableArray *popTableViewSectionData;
 
-@property (nonatomic, strong) UIButton *floaButton;
+@property (nonatomic, strong) UIButton *actionButton;
+@property (nonatomic, strong) RACCommand *actionCommand;
 
-@property (nonatomic, strong) NSArray<DHOrderModel *> *orderArray;
-@property (nonatomic, strong) DHOrderModel *orderModel;
 @end
 
 @implementation WZDMainViewController
@@ -44,102 +36,109 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Home";
+    [self.view addSubview:self.customView];
+    [self.customView addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
-    self.orderModel = [DHOrderModel new];
-    self.orderModel.name = @"model_1";
-    self.orderModel.orderID = @1;
-    self.orderModel.orders = [NSMutableArray array];
-//    NSMutableArray *delegateArray = [self.orderModel mutableArrayValueForKey:@"orders"];
-//    [self.orderModel addObserver:self forKeyPath:@"orders" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
-    [self.orderModel bk_addObserverForKeyPath:@"orders" task:^(id target) {
-        
-    }];
-//    [self.orderModel bk_addObserverForKeyPath:@"orders" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew task:^(id obj, NSDictionary *change) {
-//
-//    }];
-   
-    
-//    [[self.orderModel ordersArray] addObject:@"HAHA"];
-//[[self.orderModel ordersArray] removeObject:@"HAHA"];
-    [[self.orderModel ordersArray] addObjectsFromArray:@[@"hello",@"world"]];
-    
-//    DHOrderModel *model_2 = [DHOrderModel new];
-//    model_2.name = @"model_2";
-//    model_2.orderID = @2;
-//
-//    DHOrderModel *model_3 = [DHOrderModel new];
-//    model_3.name = @"model_1";
-//    model_3.orderID = @3;
-//
-//    self.orderArray = @[model_1,model_2,model_3];
-//    NSArray *modelNames = [self.orderArray valueForKeyPath:@"@unionOfObjects.name"];
-//    NSLog(@"%@",modelNames);
-    
-    
-    // Do any additional setup after loading the view, typically from a nib.
-//    [self.view addSubview:self.customView];
-    
-//    UIGraphicsBeginImageContextWithOptions(CGSizeMake(100, 100), NO, 0);
-//   
-//    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 50, 50)];
-//    [[UIColor greenColor] setFill];
-//    [path fill];
-//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//   
-//    UIGraphicsEndImageContext();
-//    
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-//    imageView.frame = CGRectMake(0, 50, 50, 50);
-//    [self.view addSubview:imageView];
-//
-//    UIGraphicsBeginImageContextWithOptions(CGSizeMake(100, 100), NO, 0);
-//
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextAddEllipseInRect(context, CGRectMake(0, 0, 50, 50));
-//    CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
-//    CGContextFillPath(context);
-//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-//    imageView.frame = CGRectMake(0, 50, 50, 50);
-//    [self.view addSubview:imageView];
 //    [self.view addSubview:self.webView];
-//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"testWeb" withExtension:@"html"];
+//    NSURL *url = [NSURL URLWithString:@"http://d.2dfire-pre.com/hercules/page/guide.html?allowBack=true&isInstallShopkeeperApp=false&pageIndex=1&version=4746&deviceType=1&industryType=3&language=en#/index"];
+////    NSURL *url = [[NSBundle mainBundle] URLForResource:@"testWeb" withExtension:@"html"];
 //    [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:url]];
-
-//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
-//    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//    button.titleLabel.font = [UIFont systemFontOfSize:14];
-//
-//    NSString *buttonTitle = @"分类展示";// NSLocalizedString(@"CallCamera", nil);
-//    [button setTitle:buttonTitle forState:UIControlStateNormal];
-//    [self.view addSubview:button];
-//    [button addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
-//
-//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 150, 100, 100)];
-//    imageView.contentMode = UIViewContentModeScaleAspectFit;
-//
-//    imageView.image = [UIImage imageNamed:@"test2"]; //[UIImage imageNamed:NSLocalizedString(ImageName, nil)];
-//    [self.view addSubview:imageView];
     
-    
-//    [self.view addSubview:self.popTabView];
-//    [self.view addSubview:self.floaButton];
-//    [self.floaButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.right.equalTo(self.view.mas_right);
-//        make.centerY.equalTo(self.popTabView.mas_centerY);
+//    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+//        NSLog(@"执行命令");
+//        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+//            [subscriber sendNext:@"请求数据"];
+//            [subscriber sendCompleted];
+//            return nil;
+//        }];
 //    }];
-//    __weak typeof (self) weakSelf = self;
-//    self.popTabView.hiddenBlock = ^{
-//        weakSelf.floaButton.hidden = NO;
+//
+//    self.actionCommand = command;
+//    [command.executionSignals.switchToLatest subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//    }];
+//    [self.actionCommand execute:@3];
+    
+    [[[[RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        
+        [subscriber sendNext:@1];
+        [subscriber sendCompleted];
+        
+        return nil;
+    }] doNext:^(id  _Nullable x) {
+        NSLog(@"doNext");
+    }] doCompleted:^{
+        NSLog(@"doCompleted");
+    }] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@",x);
+    }];
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.customView updateName:@"hello"];
+}
+
+- (void)dealloc {
+    [self.customView removeObserver:self forKeyPath:@"name"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"name"]) {
+        
+    }
+}
+//void blockFunc1()
+//{
+//    int num = 100;
+//    void (^block)() = ^{
+//        NSLog(@"num equal %d", num);
 //    };
-//    self.popTabView.cellSelBlock = ^(NSString *title){
-//        NSLog(@"%@", title);
+//    num = 200;
+//    block();
+//}
+//void blockFunc2()
+//{
+//    __block int num = 100;
+//    void (^block)() = ^{
+//        NSLog(@"num equal %d", num);
 //    };
-//    
-//    self.popTableViewDataDict = [[NSMutableDictionary alloc] initWithCapacity:5];
-//    self.popTableViewSectionData = @[].mutableCopy;
+//    num = 200;
+//    block();
+//}
+//// 全局变量
+//int num = 100;
+//void blockFunc3()
+//{
+//    void (^block)() = ^{
+//        NSLog(@"num equal %d", num);
+//    };
+//    num = 200;
+//    block();
+//}
+//
+//void blockFunc4()
+//{
+//    static int num = 100;
+//    void (^block)() = ^{
+//        NSLog(@"num equal %d", num);
+//    };
+//    num = 200;
+//    block();
+//}
+
+
+- (RACSignal *)loginSignal {
+    return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        NSLog(@"logging in");
+        [subscriber sendCompleted];
+        return nil;
+    }];
+}
+
+- (void)testBlock {
 //    __block int a = 0;
 //    NSLog(@"block定义前%p", &a);
 //    void(^foo)(void) = ^{
@@ -148,12 +147,10 @@
 //    };
 //    NSLog(@"block定义后%p", &a);
 //    foo();
-
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    NSLog(@"%@",change[@"old"]);
-    NSLog(@"%@",change[@"new"]);
+- (void)doWithBlock:(void(^)(NSString *name))block {
+    !block?: block(@"hello");
 }
 
 - (void)testThread {
@@ -202,34 +199,13 @@
 }
 
 - (void)btnTapped {
-//    [self.popTabView showWithSectionData:self.popTableViewSectionData fullData:self.popTableViewDataDict];
-    FRCMainViewController *vc = [[FRCMainViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-
+//    [self.popTabView showWithSectionData:self.popTableViewSectionData
 }
 
-- (void)floaButtonTapped {
-    self.floaButton.hidden = YES;
-    [self.popTabView showWithSectionData:self.popTableViewSectionData fullData:self.popTableViewDataDict];
-}
 
 - (void)loadMessageData {
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"message" withExtension:@".json"];
     NSData *data = [NSData dataWithContentsOfURL:url];
-    
-    DHMessageKinds *kinds = [DHMessageKinds yy_modelWithJSON:data];
-    [self.popTableViewSectionData addObject:@""];
-    
-    NSMutableArray *cellModelsArray = [[NSMutableArray alloc] initWithCapacity:5];
-    [kinds.messages enumerateObjectsUsingBlock:^(DHMessageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
-        DHPopTableViewCellModel *cellModel = [DHPopTableViewCellModel new];
-        cellModel.title = obj.title;
-        cellModel.cellID = obj.msgID;
-        [cellModelsArray addObject:cellModel];
-    }];
-    
-    [self.popTableViewDataDict setValue:cellModelsArray forKey:@""];
 }
 
 
@@ -237,26 +213,27 @@
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"popData" withExtension:@".json"];
     NSData *data = [NSData dataWithContentsOfURL:url];
     
-    DHAllOrderModel *allOrderModel = [DHAllOrderModel yy_modelWithJSON:data];
-    
 
-    for (DHOrderKind *orderKind in allOrderModel.allOrders) {
-        NSMutableArray *cellModelsArray = [[NSMutableArray alloc] initWithCapacity:5];
-        for (DHOrderModel *orderModel in orderKind.orders) {
-            DHPopTableViewCellModel *cellModel = [DHPopTableViewCellModel new];
-            cellModel.title = orderModel.name;
-            cellModel.cellID = orderModel.orderID;
-            [cellModelsArray addObject:cellModel];
-        }
-        [self.popTableViewDataDict setValue:cellModelsArray forKey:orderKind.title];
-        [self.popTableViewSectionData addObject:orderKind.title];
-    }
 }
 
+- (void)getPreviewContent:(id)data {
+    
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+//    NSString *url = request.URL.absoluteString;
+//    if ([url rangeOfString:@"toyun://"].location != NSNotFound) {
+//        // url的协议头是Toyun
+//        NSLog(@"callCamera");
+//        return NO;
+//    }
+    return YES;
+}
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     self.jsContext = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    self.jsContext[@"Toyun"] = self;
+    self.jsContext[@"cloudCashierGreenHand"] = self;
     self.jsContext.exceptionHandler = ^(JSContext *context, JSValue *exceptionValue) {
         context.exception = exceptionValue;
         NSLog(@"异常:%@", exceptionValue);
@@ -283,50 +260,24 @@
     if (!_customView) {
         _customView = [[WZDCustomView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
         _customView.center = self.view.center;
-    
     }
     return _customView;
 }
 
 - (UIWebView *)webView {
     if (!_webView) {
-        _webView = [[UIWebView alloc] initWithFrame:self.view.frame];
+        _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-64)];
         _webView.delegate = self;
     }
     return _webView;
 }
-
-- (DHPopTableView *)popTabView {
-    if (!_popTabView) {
-        CGRect containerViewFrame = CGRectMake(SCREEN_WIDTH*0.7, 0, SCREEN_WIDTH*0.3, SCREEN_HEIGHT);
-        
-        _popTabView = [[DHPopTableView alloc] initWithWrapperViewFrame:containerViewFrame tableViewHeight:280 style:self.popTabViewStyle];
-        [_popTabView initSubViews];
-        _popTabView.hidden = YES;
-        
+- (UIButton *)actionButton {
+    if (!_actionButton) {
+        _actionButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_actionButton setTitle:NSLocalizedString(@"CallCamera",@"") forState:UIControlStateNormal];
+        [_actionButton setBackgroundColor:[UIColor greenColor]];
     }
-    return _popTabView;
-}
-
-- (UIButton *)floaButton {
-    if (!_floaButton) {
-        _floaButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_floaButton setImage:[UIImage imageNamed:@"cailei"] forState:UIControlStateNormal];
-        [_floaButton addTarget:self action:@selector(floaButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _floaButton;
-}
-
-- (DHPopTableViewStyle *)popTabViewStyle {
-    if (!_popTabViewStyle) {
-        _popTabViewStyle = [[DHPopTableViewStyle alloc] init];
-        _popTabViewStyle.bgAlpha = 0.65;
-        _popTabViewStyle.tableWrapperViewBgColor = [UIColor colorWithWhite:1.0 alpha:0.85];
-        _popTabViewStyle.edgeButtonImage = [UIImage imageNamed:@"cailei"];
-        _popTabViewStyle.cellTextLableFontSize = 14.0;
-        _popTabViewStyle.cellTextLableColor = [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1];
-    }
-    return _popTabViewStyle;
+    return _actionButton;
 }
 
 @end

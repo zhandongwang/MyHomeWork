@@ -10,4 +10,5 @@
 
 @interface WZDCustomView : UIView
 
+- (void)updateName:(NSString *)name;
 @end
