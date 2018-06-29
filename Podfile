@@ -11,7 +11,6 @@ pod 'WebViewJavascriptBridge', '~> 6.0'
 pod 'ReactiveObjC', :path => '~/Documents/Projects/ReactiveObjC'
 pod 'Aspects'
 
-#just test
+#test = 1
 
-#develop add test
 end
