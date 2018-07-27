@@ -126,9 +126,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "329"
-            endingLineNumber = "329"
-            landmarkName = "-updateUI:data2:"
-            landmarkType = "7">
+            endingLineNumber = "329">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -143,7 +141,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
             endingLineNumber = "142"
-            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            landmarkName = "-testBlock"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -158,9 +156,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "-testRACSignal"
-            landmarkType = "7">
+            endingLineNumber = "97">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
