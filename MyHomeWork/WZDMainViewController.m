@@ -59,26 +59,16 @@
 //    }];
 //    [self.actionCommand execute:@3];
     
-    [[[[RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-        
-        [subscriber sendNext:@1];
-        [subscriber sendCompleted];
-        
-        return nil;
-    }] doNext:^(id  _Nullable x) {
-        NSLog(@"doNext");
-    }] doCompleted:^{
-        NSLog(@"doCompleted");
-    }] subscribeNext:^(id  _Nullable x) {
-        NSLog(@"%@",x);
-    }];
-    
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self.customView updateName:@"hello"];
+    [[self loginSignal] subscribeNext:^(id  _Nullable x) {
+        
+    } error:^(NSError * _Nullable error) {
+        
+    }];
 }
 
 - (void)dealloc {

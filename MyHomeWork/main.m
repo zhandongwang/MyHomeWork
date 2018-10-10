@@ -70,9 +70,6 @@ void blockFunc4()
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        blockFunc11();
-        blockFunc22();
-//        return 0;
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

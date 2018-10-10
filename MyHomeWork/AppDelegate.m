@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WZDMainViewController.h"
-
+#import "RACViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,11 +20,21 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    WZDMainViewController *vc = [[WZDMainViewController alloc] init];
+    RACViewController *vc = [[RACViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigationController;
     self.window.backgroundColor = [UIColor whiteColor];
 
+    NSString *str = @"haha";
+    NSData *ecodeddata = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *encodedStr = [ecodeddata base64EncodedStringWithOptions:kNilOptions];
+    
+    NSData *decodedData = [[NSData  alloc] initWithBase64EncodedString:encodedStr options:kNilOptions];
+    NSString *decodedStr = [[NSString alloc] initWithData:decodedData encoding:NSUTF8StringEncoding];
+    
+    
+    
+    
     [self.window makeKeyAndVisible];
     
 //    dispatch_queue_t queue = dispatch_queue_create("com.queue", DISPATCH_QUEUE_CONCURRENT);

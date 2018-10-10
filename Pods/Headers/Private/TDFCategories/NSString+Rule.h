@@ -1,0 +1,1 @@
+../../../TDFCategories/Classes/NSString/NSString+Rule.h
