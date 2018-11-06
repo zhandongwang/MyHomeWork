@@ -55,7 +55,7 @@
     
     if(recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
         
-        thecenter=TDFFooterButtonSize/2+8;
+        thecenter=TDFFooterButtonSize/2+15;
         
         if (centerY < TDFFooterButtonSize/2) {
             centerY = TDFFooterButtonSize/2;

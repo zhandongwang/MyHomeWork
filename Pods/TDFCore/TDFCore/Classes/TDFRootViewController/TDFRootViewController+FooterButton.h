@@ -7,7 +7,8 @@
 //
 
 #import "TDFRootViewController.h"
-#import "TDFAdaptation.h"
+#import <TDFAdaptationKit/TDFAdaptationKit.h>
+
 #define TDFFooterButtonSize 55.0f
 #define TDFFooterButtonsLeftOffset 8.0f
 #define TDFFooterButtonsHorizontalOffset 10.0f

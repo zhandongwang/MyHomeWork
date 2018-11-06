@@ -10,14 +10,12 @@
     </div>       
 
     <div>
-        <input type="button" value="Share" onclick="callShare()">
+        <input type="button" value="Share" onclick="calljs()">
     </div>
 
 <script>
     var callShare = function() {
-        var shareInfo = JSON.stringify({"title": "标题", "desc": "内容", "shareUrl": "http://www.jianshu.com/p/f896d73c670a",
-        "shareIco":"http://upload-images.jianshu.io/upload_images/1192353-fd26211d54aea8a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"});
-        Toyun.share(shareInfo);
+        window.webkit.messageHandlers.MyNative.postMessage('testJS');
     }
 
     var picCallback = function(photos) {
@@ -26,6 +24,15 @@
 
     var shareCallback = function(){
         alert('share success');
+    }
+
+    function calljs(){
+        window.bridge.plugin.test({'hello': 'world'})
+        window.bridge.plugin.test2({'hello': 'world'}, function(json) {
+                                   window.bridge.log(JSON.stringify(json))
+                                   })
+
+        //window.webkit.messageHandlers.MyNative.postMessage('testJS');
     }
 </script>
 </body>

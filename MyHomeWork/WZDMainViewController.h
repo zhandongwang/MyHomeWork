@@ -7,14 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <JavaScriptCore/JavaScriptCore.h>
-@protocol JSObjcDelegate <NSObject, JSExport>
-
-- (void)callCamera;
-- (void)share:(NSString *)shareString;
-- (void)getPreviewContent:(id)data;
-
-@end
 
 @interface WZDMainViewController : UIViewController
 

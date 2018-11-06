@@ -15,6 +15,8 @@ pod 'Aspects'
 #pod 'GodEye',       :configurations => ['Debug']
 pod 'CocoaSecurity'
 pod 'HBHybridKit',  :path => '~/Documents/Development/CCDPods/HBHybridKit'
+pod 'OCTWebViewBridge'
+pod 'SnapKit'
 
 
 #test4

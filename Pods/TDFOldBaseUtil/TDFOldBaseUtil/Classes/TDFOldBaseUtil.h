@@ -24,7 +24,6 @@
 
 #import "NSString+Estimate.h"
 #import "UIImage+Resize.h"
-#import "UIColor+Hex.h"
 #import "UIImageView+TDFRequest.h"
 #import "UIView+Sizes.h"
 #import "TDFBKBackForePriceConverter.h"

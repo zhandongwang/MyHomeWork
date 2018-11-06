@@ -31,6 +31,9 @@
 		2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */; };
 		237516411E4D617F00FB5868 /* popData.json in Resources */ = {isa = PBXBuildFile; fileRef = 237516401E4D617F00FB5868 /* popData.json */; };
 		237EE7122159CC850056116E /* DHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EE7112159CC850056116E /* DHUserModel.m */; };
+		23965FB321918F4200349149 /* WebPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 23965FB221918F4200349149 /* WebPlugin.m */; };
+		23965FB521918FED00349149 /* log.js in Resources */ = {isa = PBXBuildFile; fileRef = 23965FB421918FED00349149 /* log.js */; };
+		23965FB72191AC7500349149 /* WZDSwiftWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23965FB62191AC7500349149 /* WZDSwiftWebViewController.swift */; };
 		23A5E7501E4DA04A008DCAEE /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = 23A5E74F1E4DA04A008DCAEE /* message.json */; };
 		23A5E7531E4DA59E008DCAEE /* DHPopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A5E7521E4DA59E008DCAEE /* DHPopTableViewCell.m */; };
 		23BF04802134E8F600ECD946 /* CaculatorMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF04782134E8F500ECD946 /* CaculatorMaker.m */; };
@@ -42,6 +45,9 @@
 		23D3682E1E4C5A5300ECC80D /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D368301E4C5A5300ECC80D /* test2.png */; };
 		23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A1B1E46F3A800B3FFFD /* InfoPlist.strings */; };
 		23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A251E46F7F200B3FFFD /* Localizable.strings */; };
+		23E77FF521884539009B8E84 /* JSPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E77FF421884539009B8E84 /* JSPerson.m */; };
+		23E77FF721885097009B8E84 /* EvaluatePrice.js in Resources */ = {isa = PBXBuildFile; fileRef = 23E77FF621885096009B8E84 /* EvaluatePrice.js */; };
+		23E77FFA218855FD009B8E84 /* WZDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E77FF9218855FD009B8E84 /* WZDWebViewController.m */; };
 		36B3E01D9D1E692147BBD537 /* libPods-MyHomeWork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69599EA15F9C66C29E99337B /* libPods-MyHomeWork.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		0BCFDF0087E34B7DC8491769 /* Pods-MyHomeWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHomeWork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork.debug.xcconfig"; sourceTree = "<group>"; };
+		230206D22178A649006FBF56 /* MyHomeWork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Bridging-Header.h"; sourceTree = "<group>"; };
 		2307F1642064A2120060A688 /* WZDPatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDPatch.h; sourceTree = "<group>"; };
 		2307F1652064A2120060A688 /* WZDPatch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDPatch.m; sourceTree = "<group>"; };
 		2307F1672064A3F60060A688 /* WZDPatchTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDPatchTest.h; sourceTree = "<group>"; };
@@ -111,6 +118,10 @@
 		237516401E4D617F00FB5868 /* popData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = popData.json; sourceTree = "<group>"; };
 		237EE7102159CC850056116E /* DHUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHUserModel.h; sourceTree = "<group>"; };
 		237EE7112159CC850056116E /* DHUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHUserModel.m; sourceTree = "<group>"; };
+		23965FB121918F4200349149 /* WebPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPlugin.h; sourceTree = "<group>"; };
+		23965FB221918F4200349149 /* WebPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPlugin.m; sourceTree = "<group>"; };
+		23965FB421918FED00349149 /* log.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = log.js; sourceTree = "<group>"; };
+		23965FB62191AC7500349149 /* WZDSwiftWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZDSwiftWebViewController.swift; sourceTree = "<group>"; };
 		23A5E74F1E4DA04A008DCAEE /* message.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
 		23A5E7511E4DA59E008DCAEE /* DHPopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewCell.h; sourceTree = "<group>"; };
 		23A5E7521E4DA59E008DCAEE /* DHPopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableViewCell.m; sourceTree = "<group>"; };
@@ -145,6 +156,11 @@
 		23DE6A271E46F7FB00B3FFFD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		23DE6A281E46F7FD00B3FFFD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		23DE6A291E46F7FE00B3FFFD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		23E77FF321884539009B8E84 /* JSPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSPerson.h; sourceTree = "<group>"; };
+		23E77FF421884539009B8E84 /* JSPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSPerson.m; sourceTree = "<group>"; };
+		23E77FF621885096009B8E84 /* EvaluatePrice.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = EvaluatePrice.js; sourceTree = "<group>"; };
+		23E77FF8218855FD009B8E84 /* WZDWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDWebViewController.h; sourceTree = "<group>"; };
+		23E77FF9218855FD009B8E84 /* WZDWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDWebViewController.m; sourceTree = "<group>"; };
 		69599EA15F9C66C29E99337B /* libPods-MyHomeWork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyHomeWork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7A47D341A6CDDDD0A9797C /* Pods-MyHomeWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHomeWork.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,7 +205,16 @@
 		2335DCB91E0E130F00C48142 /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				23965FB421918FED00349149 /* log.js */,
+				23E77FF621885096009B8E84 /* EvaluatePrice.js */,
 				2335DCBA1E0E137100C48142 /* testWeb.html */,
+				23E77FF321884539009B8E84 /* JSPerson.h */,
+				23E77FF421884539009B8E84 /* JSPerson.m */,
+				23E77FF8218855FD009B8E84 /* WZDWebViewController.h */,
+				23E77FF9218855FD009B8E84 /* WZDWebViewController.m */,
+				23965FB62191AC7500349149 /* WZDSwiftWebViewController.swift */,
+				23965FB121918F4200349149 /* WebPlugin.h */,
+				23965FB221918F4200349149 /* WebPlugin.m */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -242,6 +267,7 @@
 				23DE6A251E46F7F200B3FFFD /* Localizable.strings */,
 				23DE6A1B1E46F3A800B3FFFD /* InfoPlist.strings */,
 				236098901D980892009C589B /* Supporting Files */,
+				230206D22178A649006FBF56 /* MyHomeWork-Bridging-Header.h */,
 			);
 			path = MyHomeWork;
 			sourceTree = "<group>";
@@ -432,6 +458,7 @@
 					2360988C1D980892009C589B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 2V9XE4LC4E;
+						LastSwiftMigration = 0940;
 					};
 					236098A51D980892009C589B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -477,6 +504,8 @@
 				23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */,
 				23D3682E1E4C5A5300ECC80D /* test2.png in Resources */,
 				2335DCBB1E0E137100C48142 /* testWeb.html in Resources */,
+				23E77FF721885097009B8E84 /* EvaluatePrice.js in Resources */,
+				23965FB521918FED00349149 /* log.js in Resources */,
 				23A5E7501E4DA04A008DCAEE /* message.json in Resources */,
 				2360989D1D980892009C589B /* Assets.xcassets in Resources */,
 				237516411E4D617F00FB5868 /* popData.json in Resources */,
@@ -510,6 +539,13 @@
 				"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-resources.sh",
 				"${PODS_ROOT}/../../../Development/CCDPods/HBHybridKit/HBHybridKit/Assets/Resource.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_template.js",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_with_callback_template.js",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/css_injector.js",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/log_plugin.js",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/message.js",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.css",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.js",
 				"${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt",
 				"${PODS_ROOT}/TDFCategories/Resources/en.lproj",
 				"${PODS_ROOT}/TDFCategories/Resources/th.lproj",
@@ -648,6 +684,13 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Resource.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/block_plugin_template.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/block_plugin_with_callback_template.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/css_injector.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/log_plugin.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/message.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/night.css",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/night.js",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/unicode_to_hanyu_pinyin.txt",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/th.lproj",
@@ -797,14 +840,18 @@
 				23BF04832134E8F600ECD946 /* Caculator.m in Sources */,
 				2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */,
 				2374CFB11E518C62001B799D /* DHMessageModel.m in Sources */,
+				23965FB72191AC7500349149 /* WZDSwiftWebViewController.swift in Sources */,
 				23BF04812134E8F600ECD946 /* RACViewController.m in Sources */,
 				2307F1662064A2120060A688 /* WZDPatch.m in Sources */,
+				23E77FFA218855FD009B8E84 /* WZDWebViewController.m in Sources */,
 				2374CFBD1E5195A3001B799D /* UIViewController+DHRouter.m in Sources */,
+				23965FB321918F4200349149 /* WebPlugin.m in Sources */,
 				23608A921E050F7100C4D190 /* WZDCustomView.m in Sources */,
 				2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */,
 				2374CFB21E518C62001B799D /* DHOrderKind.m in Sources */,
 				2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */,
 				236098951D980892009C589B /* AppDelegate.m in Sources */,
+				23E77FF521884539009B8E84 /* JSPerson.m in Sources */,
 				2374CFA31E516696001B799D /* DHPopTableViewCellModel.m in Sources */,
 				236098921D980892009C589B /* main.m in Sources */,
 				2374CFBA1E518D45001B799D /* FRCBaseViewController.m in Sources */,
@@ -987,6 +1034,7 @@
 			baseConfigurationReference = 0BCFDF0087E34B7DC8491769 /* Pods-MyHomeWork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2V9XE4LC4E;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -995,6 +1043,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhandongwang.MyHomeWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyHomeWork/MyHomeWork-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1003,6 +1054,7 @@
 			baseConfigurationReference = FC7A47D341A6CDDDD0A9797C /* Pods-MyHomeWork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2V9XE4LC4E;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1011,12 +1063,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhandongwang.MyHomeWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyHomeWork/MyHomeWork-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		236098BE1D980892009C589B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MyHomeWorkTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1029,6 +1084,7 @@
 		236098BF1D980892009C589B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MyHomeWorkTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1041,6 +1097,7 @@
 		236098C11D980892009C589B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MyHomeWorkUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhandongwang.MyHomeWorkUITests;
@@ -1052,6 +1109,7 @@
 		236098C21D980892009C589B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MyHomeWorkUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhandongwang.MyHomeWorkUITests;

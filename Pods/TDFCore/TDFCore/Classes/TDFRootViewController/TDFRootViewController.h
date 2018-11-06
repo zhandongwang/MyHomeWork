@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <libextobjc/EXTScope.h>
+#import <libextobjc/libextobjc.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <TDFNavigationBarKit/TDFNavigationBarKit.h>
 #import <TDFInternationalKit/TDFInternationalKit.h>
 #import <TDFFooterKit/TDFFooterKit.h>
-#import "TDFAdaptation.h"
+#import <TDFAdaptationKit/TDFAdaptationKit.h>
 
 @interface TDFRootViewController : UIViewController
 

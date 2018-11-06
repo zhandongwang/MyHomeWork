@@ -154,7 +154,7 @@ static void FCSwizzleInstanceMethod(Class cls, SEL originalSelector, SEL swizzle
         
         if ([view.footer alignment] == TDFFooterAlignmentLeftForVerticalVersion) {
             y -= view.footer.size.height - kTDFFooterButtonsLeftOffset;
-            view.frame = CGRectMake(kTDFFooterButtonsLeftOffset, y, view.footer.size.width, view.footer.size.height);
+            view.frame = CGRectMake(kTDFFooterButtonsHorizontalEdgeMarginOffset, y, view.footer.size.width, view.footer.size.height);
         } else if ([view.footer alignment] == TDFFooterAlignmentLeft) {
             view.frame = CGRectMake(LX, y, view.footer.size.width, view.footer.size.height);
             LX += view.footer.size.width + kTDFFooterButtonsHorizontalOffset;

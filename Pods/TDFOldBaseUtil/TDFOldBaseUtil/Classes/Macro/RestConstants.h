@@ -17,6 +17,19 @@
 
 #define ASSIGN_BY_ENTITYID_URL @"/AssignPadServer?eId=%@&key=%@&type=2"
 
+//主页和左侧栏数据改变
+#define Notification_AllDataSourceChange @"Notification_AllDataSourceChange"
+#define Notification_LeftDataSourceChange @"Notification_LeftDataSourceChange"
+#define Notification_HomeDataSourceChange @"Notification_HomeDataSourceChange"
+
+#define UI_NAVIGATE_SHOW_NOTIFICATION @"UI_NAVIGATE_SHOW_NOTIFICATION"      //导航
+
+#define UPDATE_HOMEPAGE_AND_LEFT_MENU @"UPDATE_HOMEPAGE_AND_LEFT_MENU" // 需要刷新首页的通知
+#define UPDATE_LEFT_MENU @"UPDATE_LEFT_MENU" // 需要刷新左侧栏的通知
+
+#define LODATA @"LOADDATA"
+
+
 //二维码生成规则.座位二维码生成规则 entityId, seatcode, key.
 //#define SEAT_QR_CODE @"http://weidian.2dfire.com/ma/order/%@/%@/%@" //外网
 //#define SEAT_QR_CODE @"http://api.l.whereask.com/ma/order/%@/%@/%@"  //内网
@@ -28,6 +41,8 @@
 #define WX_INSTALL_URL @"itms-apps://itunes.apple.com/cn/app/wei-xin/id414478124?mt=8"
 
 #define FILE_SERVER_URL @"%@/imageUpload"
+
+#define TDF_ROOT_NAVIGATION_CONTROLLER (UINavigationController *)[[UIApplication sharedApplication].delegate window].rootViewController
 
 //URL路径格式.
 #define URL_PATH_FORMAT @"%@/%@"

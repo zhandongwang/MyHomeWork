@@ -28,6 +28,7 @@
 #import <TDFCategories/UIImage+Compress.h>
 #import <TDFCategories/NSBundle+Factory.h>
 #import <TDFCategories/UILabel+AttributedText.h>
+#import <TDFCategories/UIColor+Hex.h>
 #else 
 #import "NSString+BaseFormatter.h"
 #import "NSString+BaseOperation.h"
@@ -45,6 +46,7 @@
 #import "UIImage+Compress.h"
 #import "NSBundle+Factory.h"
 #import "UILabel+AttributedText.h"
+#import "UIColor+Hex.h"
 #endif /* TDFCategories_h */
 
 #endif /* TDFCategories_h */

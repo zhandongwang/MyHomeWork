@@ -15,17 +15,14 @@
 #import "FRCMainViewController.h"
 #import <BlocksKit/BlocksKit.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-
+#import "JSPerson.h"
 #define ImageName @"biye"
-@interface WZDMainViewController ()<JSObjcDelegate, UIWebViewDelegate>
+@interface WZDMainViewController ()
 
 @property (nonatomic, strong) WZDCustomView *customView;
-@property (nonatomic, strong) JSContext *jsContext;
-@property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) NSMutableDictionary *popTableViewDataDict;
 @property (nonatomic, strong) NSMutableArray *popTableViewSectionData;
 
-@property (nonatomic, strong) UIButton *actionButton;
 @property (nonatomic, strong) RACCommand *actionCommand;
 
 @end
@@ -39,10 +36,28 @@
     [self.view addSubview:self.customView];
     [self.customView addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
-//    [self.view addSubview:self.webView];
-//    NSURL *url = [NSURL URLWithString:@"http://d.2dfire-pre.com/hercules/page/guide.html?allowBack=true&isInstallShopkeeperApp=false&pageIndex=1&version=4746&deviceType=1&industryType=3&language=en#/index"];
-////    NSURL *url = [[NSBundle mainBundle] URLForResource:@"testWeb" withExtension:@"html"];
-//    [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:url]];
+    JSContext *context = [[JSContext alloc] init];
+    [context evaluateScript:@"var a = 2; var b = 2"];
+    NSInteger sum  = [[context evaluateScript:@"a + b"] toInt32];
+    NSLog(@"%d",sum);
+    
+    context[@"globalFunc"] = ^(){
+        NSArray *args = [JSContext currentArguments];
+        for (id obj in args) {
+            NSLog(@"拿到了参数%@",obj);
+        }
+    };
+    context[@"globalProp"] = @"全局变量字符串";
+    [context evaluateScript:@"globalFunc(globalProp)"];
+    
+    JSPerson *person = [JSPerson new];
+    context[@"person"] = person;
+    person.firstName = @"Di";
+    person.secondName = @"Tang";
+    [context evaluateScript:@"log(person.fullName())"];
+
+    [person evaluatePrice];
+    
     
 //    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
 //        NSLog(@"执行命令");
@@ -211,38 +226,6 @@
     
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
-//    NSString *url = request.URL.absoluteString;
-//    if ([url rangeOfString:@"toyun://"].location != NSNotFound) {
-//        // url的协议头是Toyun
-//        NSLog(@"callCamera");
-//        return NO;
-//    }
-    return YES;
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    self.jsContext = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    self.jsContext[@"cloudCashierGreenHand"] = self;
-    self.jsContext.exceptionHandler = ^(JSContext *context, JSValue *exceptionValue) {
-        context.exception = exceptionValue;
-        NSLog(@"异常:%@", exceptionValue);
-    };
-    
-}
-
-- (void)callCamera {
-    NSLog(@"Objc callCamera");//JS调用Native
-    JSValue *picCallBack = self.jsContext[@"picCallback"];//回调
-    [picCallBack callWithArguments:@[@"photos"]];
-}
-
-- (void)share:(NSString *)shareString {
-    NSLog(@"Objc share:%@", shareString);
-    JSValue *shareCallBack = self.jsContext[@"shareCallback"];
-    [shareCallBack callWithArguments:nil];
-}
 
 #pragma mark - accessors
 
@@ -253,22 +236,6 @@
         _customView.center = self.view.center;
     }
     return _customView;
-}
-
-- (UIWebView *)webView {
-    if (!_webView) {
-        _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-64)];
-        _webView.delegate = self;
-    }
-    return _webView;
-}
-- (UIButton *)actionButton {
-    if (!_actionButton) {
-        _actionButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_actionButton setTitle:NSLocalizedString(@"CallCamera",@"") forState:UIControlStateNormal];
-        [_actionButton setBackgroundColor:[UIColor greenColor]];
-    }
-    return _actionButton;
 }
 
 @end
