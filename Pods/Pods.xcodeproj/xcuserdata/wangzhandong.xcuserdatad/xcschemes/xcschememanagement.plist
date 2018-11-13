@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Aspects.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -20,16 +15,6 @@
 			<false/>
 		</dict>
 		<key>CocoaSecurity.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>HBHybridKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>JSONKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -49,17 +34,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>NSHash.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>OCTWebViewBridge.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>PinYin4Objc.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -74,87 +49,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>RegexKitLite.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SDWebImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFAdaptationKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFBaseInfoKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFCategories.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFCore.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFCoreProtocol.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFDataCenterKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFFooterKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFHTTPDNSKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFInternationalKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFNavigationBarKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFOldBaseUtil.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFSecurityKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFStyleKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TDFThemeKit.xcscheme</key>
+		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -170,11 +65,6 @@
 			<false/>
 		</dict>
 		<key>YYModel.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>libextobjc.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

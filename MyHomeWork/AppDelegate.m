@@ -7,14 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "WZDMainViewController.h"
+#import "FLMainViewController.h"
 #import "RACViewController.h"
-#import "WZDWebViewController.h"
-
+#import "FLWebViewController.h"
+#import "MyHomeWork-Swift.h"
 @interface AppDelegate ()
 
 @end
-
 
 @implementation AppDelegate
 
@@ -22,48 +21,12 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    WZDWebViewController *vc = [[WZDWebViewController alloc] init];
+    FLMainViewController  *vc = [[FLMainViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigationController;
     self.window.backgroundColor = [UIColor whiteColor];
 
     [self.window makeKeyAndVisible];
-    
-//    dispatch_queue_t queue = dispatch_queue_create("com.queue", DISPATCH_QUEUE_CONCURRENT);
-//    dispatch_queue_t queue1 = dispatch_queue_create("com.queue1", DISPATCH_QUEUE_CONCURRENT);
-//    dispatch_queue_t queue2 = dispatch_queue_create("com.queue2", DISPATCH_QUEUE_CONCURRENT);
-//
-//
-//    JSContext *context = [[JSContext alloc] initWithVirtualMachine:[JSVirtualMachine new]];
-//    JSValue *value = [context evaluateScript:@"var a=1+2"];
-//
-//    JSContext *context1 = [[JSContext alloc] initWithVirtualMachine:[JSVirtualMachine new]];
-//    JSContext *context2 = [[JSContext alloc] initWithVirtualMachine:[context virtualMachine]];
-//
-//    NSLog(@"start");
-//    dispatch_async(queue, ^{
-//        while (true) {
-//            sleep(1);
-//            [context evaluateScript:@"log('tick')"];
-//            [context evaluateScript:@"log('tick')"];
-//        }
-//    });
-//    dispatch_async(queue1, ^{
-//        while (true) {
-//            sleep(1);
-//            [context1 evaluateScript:@"log('tick1')"];
-//        }
-//    });
-//    dispatch_async(queue2, ^{
-//        while (true) {
-//            sleep(1);
-//            [context2 evaluateScript:@"log('tick2')"];
-//        }
-//    });
-//    [context evaluateScript:@"sleep(5)"];
-//    NSLog(@"end");
-    
-    
     
     return YES;
 }

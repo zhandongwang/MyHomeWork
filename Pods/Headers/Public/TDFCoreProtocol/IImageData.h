@@ -1,1 +1,0 @@
-../../../TDFCoreProtocol/Classes/IImageData.h

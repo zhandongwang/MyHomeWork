@@ -1,4 +1,4 @@
-framework module Pods_MyHomeWork {
+module Pods_MyHomeWork {
   umbrella header "Pods-MyHomeWork-umbrella.h"
 
   export *

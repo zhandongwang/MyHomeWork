@@ -1,1 +1,0 @@
-../../../TDFFooterKit/TDFFooterKit/Classes/TDFFooterSvgView.h

@@ -1,1 +1,0 @@
-../../../TDFNavigationBarKit/TDFNavigationBarKit/Classes/TDFCustomNavBarAdapter.h

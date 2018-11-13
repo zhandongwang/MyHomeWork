@@ -1,19 +1,4 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
-    - AFNetworking/NSURLSession
   - Aspects (1.4.2.1)
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
@@ -31,147 +16,12 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - CocoaSecurity (1.2.4.2)
-  - HBHybridKit (0.5.5):
-    - TDFCore
-    - YYModel
-  - JSONKit (1.5.3)
-  - libextobjc (0.5.2):
-    - libextobjc/EXTADT (= 0.5.2)
-    - libextobjc/EXTConcreteProtocol (= 0.5.2)
-    - libextobjc/EXTCoroutine (= 0.5.2)
-    - libextobjc/EXTKeyPathCoding (= 0.5.2)
-    - libextobjc/EXTNil (= 0.5.2)
-    - libextobjc/EXTSafeCategory (= 0.5.2)
-    - libextobjc/EXTScope (= 0.5.2)
-    - libextobjc/EXTSelectorChecking.h (= 0.5.2)
-    - libextobjc/EXTSynthesize (= 0.5.2)
-    - "libextobjc/NSInvocation+EXT (= 0.5.2)"
-    - "libextobjc/NSMethodSignature+EXT (= 0.5.2)"
-    - libextobjc/RuntimeExtensions (= 0.5.2)
-    - libextobjc/UmbrellaHeader (= 0.5.2)
-  - libextobjc/EXTADT (0.5.2):
-    - libextobjc/RuntimeExtensions
-  - libextobjc/EXTConcreteProtocol (0.5.2):
-    - libextobjc/RuntimeExtensions
-  - libextobjc/EXTCoroutine (0.5.2)
-  - libextobjc/EXTKeyPathCoding (0.5.2):
-    - libextobjc/RuntimeExtensions
-  - libextobjc/EXTNil (0.5.2):
-    - libextobjc/RuntimeExtensions
-  - libextobjc/EXTSafeCategory (0.5.2):
-    - libextobjc/RuntimeExtensions
-  - libextobjc/EXTScope (0.5.2):
-    - libextobjc/RuntimeExtensions
-  - libextobjc/EXTSelectorChecking.h (0.5.2):
-    - libextobjc/RuntimeExtensions
-  - libextobjc/EXTSynthesize (0.5.2):
-    - libextobjc/RuntimeExtensions
-  - "libextobjc/NSInvocation+EXT (0.5.2)":
-    - libextobjc/RuntimeExtensions
-  - "libextobjc/NSMethodSignature+EXT (0.5.2)":
-    - libextobjc/RuntimeExtensions
-  - libextobjc/RuntimeExtensions (0.5.2)
-  - libextobjc/UmbrellaHeader (0.5.2)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0.1)
   - MJRefresh (2.4.12)
-  - NSHash (1.2.0)
   - OCTWebViewBridge (1.2.0)
-  - PinYin4Objc (1.1.3)
   - ReactiveObjC (3.0.0)
-  - RegexKitLite (4.0.2)
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
-  - TDFAdaptationKit (0.1.2)
-  - TDFBaseInfoKit (0.2.4)
-  - TDFCategories (2.0.20):
-    - TDFCategories/NSBundle (= 2.0.20)
-    - TDFCategories/NSData (= 2.0.20)
-    - TDFCategories/NSDictionay (= 2.0.20)
-    - TDFCategories/NSMutableArray (= 2.0.20)
-    - TDFCategories/NSString (= 2.0.20)
-    - TDFCategories/UIButton (= 2.0.20)
-    - TDFCategories/UICollectionReusableView (= 2.0.20)
-    - TDFCategories/UICollectionViewCell (= 2.0.20)
-    - TDFCategories/UIColor (= 2.0.20)
-    - TDFCategories/UIImage (= 2.0.20)
-    - TDFCategories/UILabel (= 2.0.20)
-    - TDFCategories/UIScrollView (= 2.0.20)
-    - TDFCategories/UITableViewCell (= 2.0.20)
-    - TDFCategories/UITableViewHeaderFooterView (= 2.0.20)
-    - TDFCategories/UIView (= 2.0.20)
-    - TDFCategories/UIViewController (= 2.0.20)
-  - TDFCategories/NSBundle (2.0.20)
-  - TDFCategories/NSData (2.0.20)
-  - TDFCategories/NSDictionay (2.0.20)
-  - TDFCategories/NSMutableArray (2.0.20)
-  - TDFCategories/NSString (2.0.20):
-    - TDFDataCenterKit
-  - TDFCategories/UIButton (2.0.20)
-  - TDFCategories/UICollectionReusableView (2.0.20)
-  - TDFCategories/UICollectionViewCell (2.0.20)
-  - TDFCategories/UIColor (2.0.20)
-  - TDFCategories/UIImage (2.0.20)
-  - TDFCategories/UILabel (2.0.20)
-  - TDFCategories/UIScrollView (2.0.20)
-  - TDFCategories/UITableViewCell (2.0.20)
-  - TDFCategories/UITableViewHeaderFooterView (2.0.20)
-  - TDFCategories/UIView (2.0.20)
-  - TDFCategories/UIViewController (2.0.20)
-  - TDFCore (1.2.20):
-    - libextobjc (~> 0.5)
-    - MBProgressHUD (~> 1.0)
-    - RegexKitLite (~> 4.0)
-    - SDWebImage (~> 4.4)
-    - TDFAdaptationKit (~> 0.1)
-    - TDFCategories (~> 2.0)
-    - TDFCoreProtocol (~> 1.0)
-    - TDFDataCenterKit (~> 0.2)
-    - TDFFooterKit (~> 0.1)
-    - TDFNavigationBarKit (~> 0.1)
-    - TDFNetworking (~> 0.3)
-    - TDFOldBaseUtil (~> 0.2)
-    - TDFStyleKit (~> 0.2)
-    - TDFThemeKit (~> 0.1)
-  - TDFCoreProtocol (1.2.8)
-  - TDFDataCenterKit (0.2.5)
-  - TDFFooterKit (0.1.3):
-    - TDFAdaptationKit
-    - TDFCoreProtocol
-    - TDFInternationalKit
-  - TDFHTTPDNSKit (0.0.5):
-    - TDFSecurityKit
-  - TDFInternationalKit (0.1.1):
-    - TDFDataCenterKit
-  - TDFNavigationBarKit (0.1.2):
-    - TDFAdaptationKit
-    - TDFCategories/NSString
-    - TDFCategories/UIButton
-    - TDFCategories/UIColor
-    - TDFCategories/UIImage
-    - TDFCategories/UIViewController
-    - TDFCoreProtocol
-    - TDFStyleKit
-  - TDFNetworking (0.6.4):
-    - AFNetworking
-    - CocoaSecurity
-    - NSHash
-    - TDFDataCenterKit
-    - TDFHTTPDNSKit
-  - TDFOldBaseUtil (0.2.29):
-    - JSONKit
-    - Masonry
-    - PinYin4Objc
-    - RegexKitLite
-    - SDWebImage
-    - TDFBaseInfoKit
-    - TDFInternationalKit
-    - TDFNetworking
-  - TDFSecurityKit (0.1.0)
-  - TDFStyleKit (0.2.0)
-  - TDFThemeKit (0.1.2):
-    - YYModel
+  - SnapKit (4.2.0)
   - WebViewJavascriptBridge (6.0.3)
   - YYCache (1.0.4)
   - YYModel (1.0.4.2)
@@ -180,94 +30,49 @@ DEPENDENCIES:
   - Aspects
   - BlocksKit
   - CocoaSecurity
-  - HBHybridKit (from `~/Documents/Development/CCDPods/HBHybridKit`)
   - Masonry
   - MBProgressHUD
   - MJRefresh (~> 2.4.7)
   - OCTWebViewBridge
   - ReactiveObjC (= 3.0.0)
+  - SnapKit
   - WebViewJavascriptBridge (~> 6.0)
-  - YYCache
+  - YYCache (from `~/Documents/Development/YYCache`)
   - YYModel
 
 SPEC REPOS:
   http://git.2dfire-inc.com/ios/cocoapods-spec.git:
     - Aspects
     - CocoaSecurity
-    - JSONKit
-    - libextobjc
     - MBProgressHUD
-    - PinYin4Objc
-    - RegexKitLite
-    - SDWebImage
-    - TDFAdaptationKit
-    - TDFBaseInfoKit
-    - TDFCategories
-    - TDFCore
-    - TDFCoreProtocol
-    - TDFDataCenterKit
-    - TDFFooterKit
-    - TDFHTTPDNSKit
-    - TDFInternationalKit
-    - TDFNavigationBarKit
-    - TDFNetworking
-    - TDFOldBaseUtil
-    - TDFSecurityKit
-    - TDFStyleKit
-    - TDFThemeKit
     - YYModel
   https://github.com/cocoapods/specs.git:
-    - AFNetworking
     - BlocksKit
     - Masonry
     - MJRefresh
-    - NSHash
     - OCTWebViewBridge
     - ReactiveObjC
-    - SDWebImage
+    - SnapKit
     - WebViewJavascriptBridge
-    - YYCache
 
 EXTERNAL SOURCES:
-  HBHybridKit:
-    :path: "~/Documents/Development/CCDPods/HBHybridKit"
+  YYCache:
+    :path: "~/Documents/Development/YYCache"
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Aspects: 65f1e7348799b447d07b398b6b010fe3ad53894a
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   CocoaSecurity: b61a06b3567d9a817ea2fe457cbe691669886288
-  HBHybridKit: 919ed5ee083c8b84ffecf29d16bd6cf4300f2c7b
-  JSONKit: 90952c2aa74838bb0f2e47ba421f3e482d4be72d
-  libextobjc: ddeb299186a941e7d06b744cd6935c8a80e7678d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 51126d6c82778b4a5fa3636f6e91ff1a2bd5a2c4
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
-  NSHash: 036c03781d372c288d332b512b203e7bb832e46e
   OCTWebViewBridge: e46e9b1aa21e592bd4a643bce41f7e9ebe4c7510
-  PinYin4Objc: ac8acd50672dc33ec6e7b5bf969cdf8115645234
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
-  RegexKitLite: b78a6e6d457040b7e9a7cad0f30d0c83e5e0eaa4
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  TDFAdaptationKit: facfa56fdf6b39a959dbe4c69fc79f047c93d296
-  TDFBaseInfoKit: 099ce717a89d9033a3cab9e4da90749956aeb447
-  TDFCategories: 8898bf3ef8c9f456be923e883f55fe3f69219506
-  TDFCore: 528a29fb44cef31e9c34f62d6d73cb9506ca2db8
-  TDFCoreProtocol: 952b3dacff47f768663d6bcbe2454fd88a551b0c
-  TDFDataCenterKit: 14af110a1c826196099b9f91e550fb4263ad9177
-  TDFFooterKit: 3b94a467fb0a111bfa4876e495292d4d05ef3a61
-  TDFHTTPDNSKit: dd45426f9aff78a1139d45facd4003761dfaf6df
-  TDFInternationalKit: 6c1269f23639efd9db6543ee9bb3d267f728da5f
-  TDFNavigationBarKit: 086ef335d9375dbdb4d3becb0b4b49572a804278
-  TDFNetworking: c6ea900ccce75fe715c74c9675092c56fb2ad771
-  TDFOldBaseUtil: d7d59eda9e371275667efa48097885840d78902d
-  TDFSecurityKit: 6c9f8923c6bcfc3ba5083f212a36862598f97c8b
-  TDFStyleKit: be5429ac923bfbc47e6bd381d582610af2428a79
-  TDFThemeKit: e3bb4fe30f6bbffc5671c37c91418791881b6ac4
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
-  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYCache: e48e68f2c149d5278ee13dd4cfe0132b48125797
   YYModel: e7c12e5834b520a7b9b2dcb6bd822e0bc546d45c
 
-PODFILE CHECKSUM: 65eac3f0c305d9f48194f2041c23f93934d70aab
+PODFILE CHECKSUM: 5a7918e0ef7921c95cfb4c3386e41527431056d1
 
 COCOAPODS: 1.6.0.beta.1

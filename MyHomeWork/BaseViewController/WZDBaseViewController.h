@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol  WZDBaseViewControllerProtocol<NSObject>
+@protocol  FLBaseViewControllerProtocol<NSObject>
 
 - (void)sendRequest;
 
 @end
 
-@protocol  WZDBaseViewControllerInterceptorProtocol<NSObject>
+@protocol  FLBaseViewControllerInterceptorProtocol<NSObject>
 
 - (void)willRun;
 - (void)didRun;
@@ -24,7 +24,7 @@
 
 @interface WZDBaseViewController : UIViewController
 
-@property (nonatomic, weak) id <WZDBaseViewControllerProtocol> child;
-@property (nonatomic, weak) id <WZDBaseViewControllerInterceptorProtocol> interceptor;
+@property (nonatomic, weak) id <FLBaseViewControllerProtocol> child;
+@property (nonatomic, weak) id <FLBaseViewControllerInterceptorProtocol> interceptor;
 
 @end

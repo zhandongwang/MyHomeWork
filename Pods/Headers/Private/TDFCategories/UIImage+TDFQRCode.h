@@ -1,1 +1,0 @@
-../../../TDFCategories/Classes/UIImage/UIImage+TDFQRCode.h

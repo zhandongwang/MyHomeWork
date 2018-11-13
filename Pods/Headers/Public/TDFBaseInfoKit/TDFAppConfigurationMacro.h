@@ -1,1 +1,0 @@
-../../../TDFBaseInfoKit/Class/TDFAppConfigurationMacro.h

@@ -8,7 +8,7 @@
 
 #import "WZDBaseViewController.h"
 
-@interface WZDBaseViewController ()<WZDBaseViewControllerProtocol>
+@interface WZDBaseViewController ()<FLBaseViewControllerProtocol>
 
 @end
 
