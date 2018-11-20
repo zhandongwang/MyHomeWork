@@ -19,6 +19,11 @@
     class_replaceMethod(self.class, selector, targetMethodIMP, typeEncoding);
 }
 
+- (void)dealloc {
+    NSLog(@"%@",[NSOperationQueue currentQueue]);
+}
+
+
 - (void)runTo:(NSString *)place {
     NSLog(@"car runTo %@",place);
 }

@@ -40,21 +40,6 @@
     self.title = @"Home";
     [self.view addSubview:self.customView];
     [self.customView addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
-//    FLCar *car = [[FLCar alloc] init];
-//    [car runTo:@"杭州"];
-    NSString *str = @"test";
-    FLProxy *proxyA = [FLProxy proxyForObject:str];
-    FLProxyB *proxyB = [[FLProxyB alloc] initWithObj:str];
-    
-    
-    
-    NSLog(@"%d", [proxyA respondsToSelector:@selector(length)]);
-    NSLog(@"%d", [proxyB respondsToSelector:@selector(length)]);
-    
-    NSLog(@"%d", [proxyA isKindOfClass:[NSString class]]);
-    NSLog(@"%d", [proxyB isKindOfClass:[NSString class]]);
-    
-    
     
     
 }
@@ -78,45 +63,6 @@
         
     }
 }
-//void blockFunc1()
-//{
-//    int num = 100;
-//    void (^block)() = ^{
-//        NSLog(@"num equal %d", num);
-//    };
-//    num = 200;
-//    block();
-//}
-//void blockFunc2()
-//{
-//    __block int num = 100;
-//    void (^block)() = ^{
-//        NSLog(@"num equal %d", num);
-//    };
-//    num = 200;
-//    block();
-//}
-//// 全局变量
-//int num = 100;
-//void blockFunc3()
-//{
-//    void (^block)() = ^{
-//        NSLog(@"num equal %d", num);
-//    };
-//    num = 200;
-//    block();
-//}
-//
-//void blockFunc4()
-//{
-//    static int num = 100;
-//    void (^block)() = ^{
-//        NSLog(@"num equal %d", num);
-//    };
-//    num = 200;
-//    block();
-//}
-
 
 - (RACSignal *)loginSignal {
     return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
@@ -126,60 +72,13 @@
     }];
 }
 
-- (void)testBlock {
-//    __block int a = 0;
-//    NSLog(@"block定义前%p", &a);
-//    void(^foo)(void) = ^{
-//        a = 1;
-//        NSLog(@"block内部%p", &a);
-//    };
-//    NSLog(@"block定义后%p", &a);
-//    foo();
-}
-
 - (void)doWithBlock:(void(^)(NSString *name))block {
     !block?: block(@"hello");
 }
 
-- (void)testThread {
-    NSInvocationOperation *invocationOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocation:) object:@"hello invocationOperation"];
-    //    [invocationOperation start];
-    
-    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
-        NSLog(@"blockOperation1 thread:%@",[NSThread currentThread]);
-    }];
-    [blockOperation addExecutionBlock:^{
-        NSLog(@"blockOperation1 thread:%@",[NSThread currentThread]);
-    }];
-    [blockOperation addExecutionBlock:^{
-        NSLog(@"blockOperation1 thread:%@",[NSThread currentThread]);
-    }];
-    [blockOperation setCompletionBlock:^{
-        NSLog(@"blockOperation completed");
-    }];
-    //    [blockOperation start];
-    
-    NSOperationQueue *queue = [NSOperationQueue new];
-    [queue addOperation:invocationOperation];
-    [queue addOperation:blockOperation];
-    [queue addOperationWithBlock:^{
-        NSLog(@"queueOperationBlock thread:%@",[NSThread currentThread]);
-    }];
-    
-    
-    NSLog(@"after invocation");
-}
-
-- (void)invocation:(NSString *)params {
-    NSLog(@"handler invocationOperation with params:%@",params);
-    NSLog(@"invocationOperation thread:%@",[NSThread currentThread]);
-}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    [self loadPopViewData];
-    
-//    [self loadMessageData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -188,27 +87,11 @@
 }
 
 - (void)btnTapped {
-//    [self.popTabView showWithSectionData:self.popTableViewSectionData
+    FLCar *car = [[FLCar alloc] init];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [car class];
+    });
 }
-
-
-- (void)loadMessageData {
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"message" withExtension:@".json"];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-}
-
-
-- (void)loadPopViewData {
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"popData" withExtension:@".json"];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    
-
-}
-
-- (void)getPreviewContent:(id)data {
-    
-}
-
 
 #pragma mark - accessors
 
@@ -217,6 +100,14 @@
     if (!_customView) {
         _customView = [[WZDCustomView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
         _customView.center = self.view.center;
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setTitle:@"测试" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [button setBackgroundColor:[UIColor yellowColor]];
+        button.frame = CGRectMake(50, 50, 50, 20);
+        [button addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
+        [_customView addSubview:button];
     }
     return _customView;
 }
