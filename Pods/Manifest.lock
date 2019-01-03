@@ -19,7 +19,7 @@ PODS:
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0.1)
   - MJRefresh (2.4.12)
-  - OCTWebViewBridge (1.2.0)
+  - OCTWebViewBridge (1.0.7)
   - ReactiveObjC (3.0.0)
   - SnapKit (4.2.0)
   - WebViewJavascriptBridge (6.0.3)
@@ -33,7 +33,7 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - MJRefresh (~> 2.4.7)
-  - OCTWebViewBridge
+  - OCTWebViewBridge (from `~/Documents/Development/CCDPods/OCTWebViewBridge`)
   - ReactiveObjC (= 3.0.0)
   - SnapKit
   - WebViewJavascriptBridge (~> 6.0)
@@ -41,7 +41,7 @@ DEPENDENCIES:
   - YYModel
 
 SPEC REPOS:
-  http://git.2dfire-inc.com/ios/cocoapods-spec.git:
+  http://git.2dfire.net/ios/cocoapods-spec.git:
     - Aspects
     - CocoaSecurity
     - MBProgressHUD
@@ -50,29 +50,30 @@ SPEC REPOS:
     - BlocksKit
     - Masonry
     - MJRefresh
-    - OCTWebViewBridge
     - ReactiveObjC
     - SnapKit
     - WebViewJavascriptBridge
 
 EXTERNAL SOURCES:
+  OCTWebViewBridge:
+    :path: "~/Documents/Development/CCDPods/OCTWebViewBridge"
   YYCache:
     :path: "~/Documents/Development/YYCache"
 
 SPEC CHECKSUMS:
-  Aspects: 65f1e7348799b447d07b398b6b010fe3ad53894a
+  Aspects: 2a29023e54b6dd92a5fec8ead8e8607b41b45efa
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  CocoaSecurity: b61a06b3567d9a817ea2fe457cbe691669886288
+  CocoaSecurity: c1287f056a21fa88a74e4d7f57f56b0a1a6e64b0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MBProgressHUD: 51126d6c82778b4a5fa3636f6e91ff1a2bd5a2c4
+  MBProgressHUD: 443c07c0aa22772fbe3702db40fc65c36d80155e
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
-  OCTWebViewBridge: e46e9b1aa21e592bd4a643bce41f7e9ebe4c7510
+  OCTWebViewBridge: 4fe17d3af2099d28763cd024cca4962c6412a67c
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYCache: e48e68f2c149d5278ee13dd4cfe0132b48125797
-  YYModel: e7c12e5834b520a7b9b2dcb6bd822e0bc546d45c
+  YYModel: 4fb57c2e53b0d22dc4414878928ece524bf30788
 
-PODFILE CHECKSUM: 5a7918e0ef7921c95cfb4c3386e41527431056d1
+PODFILE CHECKSUM: 4655213b03f42c5c5110b16539f170917568395e
 
 COCOAPODS: 1.6.0.beta.1

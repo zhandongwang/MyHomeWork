@@ -16,6 +16,8 @@ static NSString * const cellID = @"cellID";
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *titleArray;
+@property (nonatomic, strong) UILabel *mylabel;
+@property (nonatomic, strong) UIButton *myButton;
 
 @end
 
@@ -25,11 +27,20 @@ static NSString * const cellID = @"cellID";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"FRC";
-    [self.view addSubview:self.tableView];
-    [self addRefreshToTableView:self.tableView];
-    self.titleArray = [[NSMutableArray alloc] initWithCapacity:10];
+    [self.view addSubview:self.mylabel];
+    self.mylabel.frame = CGRectMake(100, 200, 200, 40);
+    [self.view addSubview:self.myButton];
+    [self.myButton setFrame:CGRectMake(100, 300, 200, 40)];
+    
+    
+//    [self.view addSubview:self.tableView];
+//    [self addRefreshToTableView:self.tableView];
+//    self.titleArray = [[NSMutableArray alloc] initWithCapacity:10];
 }
 
+- (void)test {
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -81,7 +92,6 @@ static NSString * const cellID = @"cellID";
 }
 
 #pragma mark - methods
-
 - (void)loadMessageData {
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"message" withExtension:@".json"];
     NSData *data = [NSData dataWithContentsOfURL:url];
@@ -110,4 +120,22 @@ static NSString * const cellID = @"cellID";
     return _tableView;
 }
 
+- (UILabel *)mylabel {
+    if (!_mylabel) {
+        _mylabel = [[UILabel alloc] init];
+        _mylabel.backgroundColor = [UIColor blueColor];
+        _mylabel.text = @"测试";
+    }
+    return _mylabel;
+}
+
+- (UIButton *)myButton {
+    if (!_myButton) {
+        _myButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_myButton setBackgroundColor:[UIColor redColor]];
+        [_myButton setTitle:@"测试" forState:UIControlStateNormal];
+        [_myButton addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _myButton;
+}
 @end

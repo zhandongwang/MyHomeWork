@@ -54,6 +54,7 @@
 	BOOL shouldConnect = OSAtomicCompareAndSwap32Barrier(0, 1, &_hasConnected);
 
 	if (shouldConnect) {
+        //使用热信号subject订阅sourceSignal,subject负责传递事件,让其他订阅者订阅这个subject
 		self.serialDisposable.disposable = [self.sourceSignal subscribe:_signal];
 	}
 

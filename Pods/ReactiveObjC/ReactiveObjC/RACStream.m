@@ -95,6 +95,7 @@
 	Class class = self.class;
 	
 	return [[self flattenMap:^(id value) {
+        //直接返回block的值
 		return [class return:block(value)];
 	}] setNameWithFormat:@"[%@] -map:", self.name];
 }

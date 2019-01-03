@@ -9,14 +9,16 @@
 #import "RACViewController.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "DHUserModel.h"
-
+#import "RACViewModel.h"
 @interface RACViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) UIButton *loginButton;
+@property (nonatomic, strong) UILabel *userNameLabel;
 @property (nonatomic, strong) UITextField *userNameTextField;
 @property (nonatomic, strong) UITextField *pwdTextField;
+@property (nonatomic, strong) UILabel *pwdLabel;
 @property (nonatomic, strong) UILabel *resultLabel;
-
+@property (nonatomic, strong) RACViewModel *viewModel;
 @end
 
 @implementation RACViewController
@@ -25,53 +27,164 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    
     [self setupSubViews];
-    DHUserModel *model = [[DHUserModel alloc] init];
     
+    self.viewModel = [[RACViewModel alloc] init];
+    RAC(self.viewModel, userName) = self.userNameTextField.rac_textSignal;
+    RAC(self.viewModel,password) = self.pwdTextField.rac_textSignal;
+    
+    self.loginButton.rac_command = self.viewModel.loginCommand;
     @weakify(self);
-    [[[[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-      doNext:^(__kindof UIControl * _Nullable x) {
-          self.loginButton.enabled = NO;
-          self.resultLabel.hidden = YES;
-      }]
-      flattenMap:^__kindof RACSignal * _Nullable(__kindof UIControl * _Nullable value) {
-        @strongify(self);
-        return [self signInSignal];
-      }]
-      subscribeNext:^(NSNumber  *signInResult) {
-        @strongify(self);
-        self.loginButton.enabled = YES;
-        BOOL success = [signInResult boolValue];
-        self.resultLabel.hidden = success;
-        if (success) {
-            NSLog(@"SignIN Succeed!");
-        }
+    [[self.viewModel.loginCommand executionSignals] subscribeNext:^(RACSignal  *x) {
+        @strongify(self)
+        [x subscribeNext:^(NSString*  value) {
+            NSLog(@"%@",value);
+        }];
     }];
     
-    RACSignal *validUserNameSignal = [self.userNameTextField.rac_textSignal map:^id _Nullable(NSString * value) {
-        return @([self isValaidUserName:value]);
-    }];
     
-    RACSignal *validPwdSignal = [self.pwdTextField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
-        return @([self isValaidPassword:value]);
-    }];
     
-    RACSignal *signUpSignal = [RACSignal combineLatest:@[validUserNameSignal,validPwdSignal] reduce:^id(NSNumber *userNameValid, NSNumber *pwdValid){
-        return @([userNameValid boolValue] && [pwdValid boolValue]);
-    }];
     
-    RAC(self.loginButton, backgroundColor) = [signUpSignal map:^id _Nullable(NSNumber  *signupActive) {
-      return [signupActive boolValue] ? [UIColor redColor] : [UIColor grayColor];
-    }];
-        
-    RAC(self.userNameTextField, backgroundColor) = [validUserNameSignal map:^id _Nullable(NSNumber  *value) {
-        return [value boolValue] ? [UIColor greenColor] : [UIColor yellowColor];
-    }];
     
-    RAC(self.pwdTextField, backgroundColor) = [validPwdSignal map:^id _Nullable(NSNumber  *value) {
-        return [value boolValue] ? [UIColor greenColor] : [UIColor yellowColor];
+    
+    
+//    @weakify(self);
+//    [[[[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+//      doNext:^(__kindof UIControl * _Nullable x) {
+//          self.loginButton.enabled = NO;
+//          self.resultLabel.hidden = YES;
+//      }]
+//      flattenMap:^__kindof RACSignal * _Nullable(__kindof UIControl * _Nullable value) {
+//        @strongify(self);
+//        return [self signInSignal];
+//      }]
+//      subscribeNext:^(NSNumber  *signInResult) {
+//        @strongify(self);
+//        self.loginButton.enabled = YES;
+//        BOOL success = [signInResult boolValue];
+//        self.resultLabel.hidden = success;
+//        if (success) {
+//            NSLog(@"SignIN Succeed!");
+//        }
+//    }];
+//
+//    RACSignal *validUserNameSignal = [self.userNameTextField.rac_textSignal map:^id _Nullable(NSString * value) {
+//        return @([self isValaidUserName:value]);
+//    }];
+//
+//    RACSignal *validPwdSignal = [self.pwdTextField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
+//        return @([self isValaidPassword:value]);
+//    }];
+//
+//    RACSignal *signUpSignal = [RACSignal combineLatest:@[validUserNameSignal,validPwdSignal] reduce:^id(NSNumber *userNameValid, NSNumber *pwdValid){
+//        return @([userNameValid boolValue] && [pwdValid boolValue]);
+//    }];
+//
+//    RAC(self.loginButton, backgroundColor) = [signUpSignal map:^id _Nullable(NSNumber  *signupActive) {
+//      return [signupActive boolValue] ? [UIColor redColor] : [UIColor grayColor];
+//    }];
+//
+//    RAC(self.userNameTextField, backgroundColor) = [validUserNameSignal map:^id _Nullable(NSNumber  *value) {
+//        return [value boolValue] ? [UIColor greenColor] : [UIColor yellowColor];
+//    }];
+//
+//    RAC(self.pwdTextField, backgroundColor) = [validPwdSignal map:^id _Nullable(NSNumber  *value) {
+//        return [value boolValue] ? [UIColor greenColor] : [UIColor yellowColor];
+//    }];
+}
+
+- (RACSignal *)simpleSignal {
+    return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        NSLog(@"singnal was subscrbed");
+        [subscriber sendNext:@1];
+        [subscriber sendCompleted];
+        [subscriber sendError:nil];
+        return nil;
     }];
 }
+
+- (void)test {
+    RACSignal *coldSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        NSLog(@"Cold signal be subscribed.");
+        [[RACScheduler mainThreadScheduler] afterDelay:1.5 schedule:^{
+            [subscriber sendNext:@"A"];
+        }];
+        
+        [[RACScheduler mainThreadScheduler] afterDelay:3 schedule:^{
+            [subscriber sendNext:@"B"];
+        }];
+        
+        [[RACScheduler mainThreadScheduler] afterDelay:5 schedule:^{
+            [subscriber sendCompleted];
+        }];
+        
+        return nil;
+    }];
+    
+    RACSubject *subject = [RACSubject subject];
+    NSLog(@"Subject created.");
+    
+    [[RACScheduler mainThreadScheduler] afterDelay:2 schedule:^{
+        //订阅冷信号, 事件通过subject发送出去
+        [coldSignal subscribe:subject];
+    }];
+    
+    [subject subscribeNext:^(id x) {
+        NSLog(@"Subscriber 1 recieve value:%@.", x);
+    }];
+}
+
+//- (void)testSubject {
+//    RACSubject *subject = [RACSubject subject];
+//    RACSubject *replaySubject = [RACReplaySubject subject];
+//    [[RACScheduler mainThreadScheduler] afterDelay:0.1
+//                                          schedule:^{
+//                                              // Subscriber 1
+//                                              [subject subscribeNext:^(id x) {
+//                                                  NSLog(@"Subscriber 1 get a next value: %@ from subject", x);
+//                                              }];
+//                                              [replaySubject subscribeNext:^(id x) {
+//                                                  NSLog(@"Subscriber 1 get a next value: %@ from replay subject", x);
+//                                              }];
+//
+//                                              // Subscriber 2
+//                                              [subject subscribeNext:^(id x) {
+//                                                  NSLog(@"Subscriber 2 get a next value: %@ from subject", x);
+//                                              }];
+//                                              [replaySubject subscribeNext:^(id x) {
+//                                                  NSLog(@"Subscriber 2 get a next value: %@ from replay subject", x);
+//                                              }];
+//                                          }];
+//    [[RACScheduler mainThreadScheduler] afterDelay:1 schedule:^{
+//        [subject sendNext:@"send package 1"];
+//        [replaySubject sendNext:@"send package 1"];
+//    }];
+//
+//    [[RACScheduler mainThreadScheduler] afterDelay:1.1
+//                                          schedule:^{
+//                                              // Subscriber 3
+//                                              [subject subscribeNext:^(id x) {
+//                                                  NSLog(@"Subscriber 3 get a next value: %@ from subject", x);
+//                                              }];
+//                                              [replaySubject subscribeNext:^(id x) {
+//                                                  NSLog(@"Subscriber 3 get a next value: %@ from replay subject", x);
+//                                              }];
+//
+//                                              // Subscriber 4
+//                                              [subject subscribeNext:^(id x) {
+//                                                  NSLog(@"Subscriber 4 get a next value: %@ from subject", x);
+//                                              }];
+//                                              [replaySubject subscribeNext:^(id x) {
+//                                                  NSLog(@"Subscriber 4 get a next value: %@ from replay subject", x);
+//                                              }];
+//                                          }];
+//    [[RACScheduler mainThreadScheduler] afterDelay:2 schedule:^{
+//        [subject sendNext:@"send package 2"];
+//        [replaySubject sendNext:@"send package 2"];
+//    }];
+
+
 
 - (RACSignal *)signInSignal {
     return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
@@ -93,9 +206,14 @@
     
     [self.view addSubview:self.userNameTextField];
     [self.userNameTextField setFrame:CGRectMake(100, 200, 200, 40)];
+    [self.view addSubview:self.userNameLabel];
+    [self.userNameLabel setFrame:CGRectMake(30, 200, 60, 40)];
+    
     
     [self.view addSubview:self.pwdTextField];
     [self.pwdTextField setFrame:CGRectMake(100, 250, 200, 40)];
+    [self.view addSubview:self.pwdLabel];
+    [self.pwdLabel setFrame:CGRectMake(30, 250, 60, 40)];
 }
 
 - (void)singInWithUserName:(NSString *)userName pwd:(NSString *)pwd block:(void(^)(BOOL success))block {
@@ -103,7 +221,7 @@
     if (self.pwdTextField.text.length > 12) {
         block(YES);
     } else {
-         block(NO);
+        block(NO);
     }
 }
 
@@ -127,8 +245,10 @@
     if (!_loginButton) {
         _loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_loginButton setTitle:@"Action" forState:UIControlStateNormal];
-        [_loginButton setBackgroundColor:[UIColor redColor]];
-        [_loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//        [_loginButton setBackgroundColor:[UIColor redColor]];
+        [_loginButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+        [_loginButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        
         
     }
     return _loginButton;
@@ -166,5 +286,24 @@
     return _resultLabel;
 }
 
+- (UILabel *)userNameLabel {
+    if (!_userNameLabel) {
+        _userNameLabel = [[UILabel alloc] init];
+        _userNameLabel.font = [UIFont systemFontOfSize:14];
+        _userNameLabel.textColor = [UIColor blackColor];
+        _userNameLabel.text = @"用户名";
+    }
+    return _userNameLabel;
+}
+
+- (UILabel *)pwdLabel {
+    if (!_pwdLabel) {
+        _pwdLabel = [[UILabel alloc] init];
+        _pwdLabel.font = [UIFont systemFontOfSize:14];
+        _pwdLabel.textColor = [UIColor blackColor];
+        _pwdLabel.text = @"密码";
+    }
+    return _pwdLabel;
+}
 
 @end

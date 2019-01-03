@@ -47,11 +47,64 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self.customView updateName:@"hello"];
-    [[self loginSignal] subscribeNext:^(id  _Nullable x) {
-        
-    } error:^(NSError * _Nullable error) {
-        
+    
+    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(NSNumber * _Nullable input) {
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            NSInteger integer = [input integerValue];
+            for (NSInteger i = 0; i < integer; i++) {
+                [subscriber sendNext:@(i)];
+            }
+            [subscriber sendCompleted];
+            return nil;
+        }];
     }];
+    [[command.executionSignals switchToLatest] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@", x);
+    }];
+    
+    [command execute:@1];
+//    [RACScheduler.mainThreadScheduler afterDelay:0.1
+//                                        schedule:^{
+//                                            [command execute:@2];
+//                                        }];
+//    [RACScheduler.mainThreadScheduler afterDelay:0.2
+//                                        schedule:^{
+//                                            [command execute:@3];
+//                                        }];
+    
+    
+//    self.actionCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+//        RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+//            [subscriber sendNext:@"command signal"];
+//            [subscriber sendCompleted];
+//
+//            return nil;
+//        }];
+//        return signal;
+//    }];
+    
+    
+//    [[[[self loginSignal]
+//       doNext:^(id  _Nullable x) {
+//           NSLog(@"doNext");
+//       }]
+//        doCompleted:^{
+//         NSLog(@"doCompleted");
+//        }]
+//      subscribeNext:^(id  _Nullable x) {
+//          NSLog(@"%@",x);
+//      } error:^(NSError * _Nullable error) {
+//          NSLog(@"error");
+//      }completed:^{
+//          NSLog(@"completed");
+//      }] ;
+    
+    
+}
+
+
+- (void)updateWithFirst:(id)x1 second:(id)x2 {
+    NSLog(@"%@,%@",x1,x2);
 }
 
 - (void)dealloc {
@@ -66,7 +119,9 @@
 
 - (RACSignal *)loginSignal {
     return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-        NSLog(@"logging in");
+//        NSLog(@"logging in");
+//        [NSThread sleepForTimeInterval:10];
+        [subscriber sendNext:@1];
         [subscriber sendCompleted];
         return nil;
     }];
@@ -87,10 +142,22 @@
 }
 
 - (void)btnTapped {
-    FLCar *car = [[FLCar alloc] init];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [car class];
-    });
+//    FLCar *car = [[FLCar alloc] init];
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        [car class];
+//    });
+    
+    [self.actionCommand.executionSignals subscribeNext:^(id  _Nullable x) {
+        [x subscribeNext:^(id  _Nullable x) {
+             NSLog(@"%@",x);
+        }];
+        
+    }];
+    
+//    
+//    [self.actionCommand.executionSignals.switchToLatest subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//    }];
 }
 
 #pragma mark - accessors

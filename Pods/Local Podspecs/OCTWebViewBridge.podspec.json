@@ -1,0 +1,29 @@
+{
+  "name": "OCTWebViewBridge",
+  "version": "1.0.7",
+  "summary": "WKWebView Javascript Bridge",
+  "description": "WKWebView Bridge, Javascript call Native Code.",
+  "homepage": "http://git.2dfire.net/ios/OCTWebViewBridge",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "xiami": "xiami@2dfire.com"
+  },
+  "source": {
+    "git": "http://git.2dfire.net/ios/OCTWebViewBridge.git",
+    "tag": "1.0.7"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "OCTWebViewBridge/Classes/**/*",
+  "public_header_files": "OCTWebViewBridge/Classes/**/*.{h}",
+  "resource_bundles": {
+    "OCTWebViewBridge": [
+      "OCTWebViewBridge/Resources/*"
+    ]
+  },
+  "frameworks": "WebKit"
+}

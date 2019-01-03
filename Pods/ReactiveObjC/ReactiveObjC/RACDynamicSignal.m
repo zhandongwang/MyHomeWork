@@ -27,6 +27,7 @@
 
 + (RACSignal *)createSignal:(RACDisposable * (^)(id<RACSubscriber> subscriber))didSubscribe {
 	RACDynamicSignal *signal = [[self alloc] init];
+    //持有block
 	signal->_didSubscribe = [didSubscribe copy];
 	return [signal setNameWithFormat:@"+createSignal:"];
 }
@@ -41,6 +42,7 @@
 
 	if (self.didSubscribe != NULL) {
 		RACDisposable *schedulingDisposable = [RACScheduler.subscriptionScheduler schedule:^{
+            //执行block，并把subscriber传给block
 			RACDisposable *innerDisposable = self.didSubscribe(subscriber);
 			[disposable addDisposable:innerDisposable];
 		}];

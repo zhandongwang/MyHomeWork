@@ -6,7 +6,7 @@
 <body>
     <div style="margin-top: 100px">
         <h1>Objective-C和JavaScript交互的那些事</h1>
-        <input type="button" value="CallCamera" onclick="Toyun.callCamera()">
+        <input type="button" value="CallCamera" onclick="callCamera()">
     </div>       
 
     <div>
@@ -18,20 +18,22 @@
         window.webkit.messageHandlers.MyNative.postMessage('testJS');
     }
 
+    var callCamera = function() {
+        window.bridge.plugin.test2({'Hello Native': 'I am JS'}, function(json) {
+                                   window.bridge.log(JSON.stringify(json))
+                                   })
+    }
+
     var picCallback = function(photos) {
         alert(photos);
     }
 
-    var shareCallback = function(){
-        alert('share success');
+    var cameraCallback = function(result){
+        alert(result);
     }
 
     function calljs(){
         window.bridge.plugin.test({'hello': 'world'})
-        window.bridge.plugin.test2({'hello': 'world'}, function(json) {
-                                   window.bridge.log(JSON.stringify(json))
-                                   })
-
         //window.webkit.messageHandlers.MyNative.postMessage('testJS');
     }
 </script>

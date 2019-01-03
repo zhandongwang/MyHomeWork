@@ -948,6 +948,7 @@ static RACDisposable *subscribeForever (RACSignal *signal, void (^next)(id), voi
 }
 
 - (RACMulticastConnection *)publish {
+    //自己内部提供subject
 	RACSubject *subject = [[RACSubject subject] setNameWithFormat:@"[%@] -publish", self.name];
 	RACMulticastConnection *connection = [self multicast:subject];
 	return connection;
@@ -960,6 +961,7 @@ static RACDisposable *subscribeForever (RACSignal *signal, void (^next)(id), voi
 }
 
 - (RACSignal *)replay {
+    //创建RACReplaySubject对象，可以收到历史值
 	RACReplaySubject *subject = [[RACReplaySubject subject] setNameWithFormat:@"[%@] -replay", self.name];
 
 	RACMulticastConnection *connection = [self multicast:subject];
@@ -969,6 +971,7 @@ static RACDisposable *subscribeForever (RACSignal *signal, void (^next)(id), voi
 }
 
 - (RACSignal *)replayLast {
+    //创建RACReplaySubject对象，接收最后一个历史值
 	RACReplaySubject *subject = [[RACReplaySubject replaySubjectWithCapacity:1] setNameWithFormat:@"[%@] -replayLast", self.name];
 
 	RACMulticastConnection *connection = [self multicast:subject];
@@ -978,6 +981,7 @@ static RACDisposable *subscribeForever (RACSignal *signal, void (^next)(id), voi
 }
 
 - (RACSignal *)replayLazily {
+    //热信号第一次被订阅的时候才去订阅sourceSignal
 	RACMulticastConnection *connection = [self multicast:[RACReplaySubject subject]];
 	return [[RACSignal
 		defer:^{

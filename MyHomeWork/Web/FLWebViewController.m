@@ -64,15 +64,15 @@
     }];
     [self.wkWebView loadRequest:request];
     
-//    [[OCTWebViewPluginInjector injectorForWebView:self.wkWebView] injectPlugin:[WebPlugin new]];
+    [[OCTWebViewPluginInjector injectorForWebView:self.wkWebView] injectPlugin:[OCTLogPlugin new]];
 
-//    [[OCTWebViewPluginInjector injectorForWebView:self.wkWebView] injectPluginWithFunctionName:@"test" handler:^(NSDictionary *data) {
-//        NSLog(@"%@", data);
-//    }];
+    [[OCTWebViewPluginInjector injectorForWebView:self.wkWebView] injectPluginWithFunctionName:@"test" handler:^(NSDictionary *data) {
+        NSLog(@"%@", data);
+    }];
 
     [[OCTWebViewPluginInjector injectorForWebView:self.wkWebView] injectPluginWithFunctionName:@"test2" handlerWithResponseBlock:^(NSDictionary *data, OCTResponseCallback responseCallback) {
         NSLog(@"test2: %@", data);
-        responseCallback(@{ @"hello" : @"jscallback" });
+        responseCallback(@{ @"Hello JS" : @"I'm back from Native" });
     }];
 
     

@@ -1,6 +1,6 @@
 
 source 'https://github.com/CocoaPods/Specs.git'
-source 'http://git.2dfire-inc.com/ios/cocoapods-spec.git'   # 私有库
+source 'http://git.2dfire.net/ios/cocoapods-spec.git'   # 私有库
 target 'MyHomeWork' do
 
 pod 'BlocksKit'
@@ -13,7 +13,7 @@ pod 'WebViewJavascriptBridge', '~> 6.0'
 pod 'ReactiveObjC', '3.0.0'
 pod 'Aspects'
 pod 'CocoaSecurity'
-pod 'OCTWebViewBridge'
+pod 'OCTWebViewBridge', :path => '~/Documents/Development/CCDPods/OCTWebViewBridge'
 pod 'SnapKit'
 
 

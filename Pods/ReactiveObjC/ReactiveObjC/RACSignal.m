@@ -90,6 +90,8 @@
 	return [RACReturnSignal return:value];
 }
 
+//bind返回一R个signal。
+//入参是一个无参的block，这个block返回另一个block（RACSignalBindBlock类型，其返回值是RACSignal*）
 - (RACSignal *)bind:(RACSignalBindBlock (^)(void))block {
 	NSCParameterAssert(block != NULL);
 
@@ -113,6 +115,8 @@
 		RACCompoundDisposable *compoundDisposable = [RACCompoundDisposable compoundDisposable];
 
 		void (^completeSignal)(RACDisposable *) = ^(RACDisposable *finishedDisposable) {
+            //4.binding block 要求终止绑定
+            //5.所有的信号完成
 			if (OSAtomicDecrement32Barrier(&signalCount) == 0) {
 				[subscriber sendCompleted];
 				[compoundDisposable dispose];
@@ -128,6 +132,7 @@
 			[compoundDisposable addDisposable:selfDisposable];
 
 			RACDisposable *disposable = [signal subscribeNext:^(id x) {
+                //4.中间信号的输出作为原信号的输出
 				[subscriber sendNext:x];
 			} error:^(NSError *error) {
 				[compoundDisposable dispose];
@@ -144,15 +149,17 @@
 		@autoreleasepool {
 			RACSerialDisposable *selfDisposable = [[RACSerialDisposable alloc] init];
 			[compoundDisposable addDisposable:selfDisposable];
-
+            //1.订阅原信号
 			RACDisposable *bindingDisposable = [self subscribeNext:^(id x) {
 				// Manually check disposal to handle synchronous errors.
 				if (compoundDisposable.disposed) return;
 
 				BOOL stop = NO;
+                //2.当原信号有值输出时，将其转换为中间信号signal
 				id signal = bindingBlock(x, &stop);
 
 				@autoreleasepool {
+                    //3.订阅中间信号
 					if (signal != nil) addSignal(signal);
 					if (signal == nil || stop) {
 						[selfDisposable dispose];
@@ -271,7 +278,7 @@
 
 - (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock {
 	NSCParameterAssert(nextBlock != NULL);
-	
+	//内部创建一个subscriber,然后执行子类的subscribe
 	RACSubscriber *o = [RACSubscriber subscriberWithNext:nextBlock error:NULL completed:NULL];
 	return [self subscribe:o];
 }
@@ -288,8 +295,9 @@
 	NSCParameterAssert(nextBlock != NULL);
 	NSCParameterAssert(errorBlock != NULL);
 	NSCParameterAssert(completedBlock != NULL);
-	
+	//先由父类创建订阅者
 	RACSubscriber *o = [RACSubscriber subscriberWithNext:nextBlock error:errorBlock completed:completedBlock];
+    //执行子类的subscribe方法
 	return [self subscribe:o];
 }
 

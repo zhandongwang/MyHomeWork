@@ -13,7 +13,7 @@
 {
     self = [super init];
     if (self) {
-        @throw [NSException exceptionWithName:@"DHUserModel init error" reason:@"noting" userInfo:nil];
+//        @throw [NSException exceptionWithName:@"DHUserModel init error" reason:@"noting" userInfo:nil];
     }
     return self;
 }

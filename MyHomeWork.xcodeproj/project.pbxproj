@@ -47,6 +47,8 @@
 		23BF04832134E8F600ECD946 /* Caculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF047E2134E8F500ECD946 /* Caculator.m */; };
 		23BF048621353D0200ECD946 /* WZDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF048521353D0200ECD946 /* WZDBaseViewController.m */; };
 		23BF048921353D2100ECD946 /* FLChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF048821353D2100ECD946 /* FLChildViewController.m */; };
+		23BFA07021DCD7B80045AF0B /* RACViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA06F21DCD7B80045AF0B /* RACViewModel.m */; };
+		23BFA07321DCD7E00045AF0B /* RACRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA07221DCD7E00045AF0B /* RACRequest.m */; };
 		23D3682E1E4C5A5300ECC80D /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D368301E4C5A5300ECC80D /* test2.png */; };
 		23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A1B1E46F3A800B3FFFD /* InfoPlist.strings */; };
 		23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A251E46F7F200B3FFFD /* Localizable.strings */; };
@@ -152,6 +154,10 @@
 		23BF048521353D0200ECD946 /* WZDBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDBaseViewController.m; sourceTree = "<group>"; };
 		23BF048721353D2100ECD946 /* FLChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLChildViewController.h; sourceTree = "<group>"; };
 		23BF048821353D2100ECD946 /* FLChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLChildViewController.m; sourceTree = "<group>"; };
+		23BFA06E21DCD7B80045AF0B /* RACViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACViewModel.h; sourceTree = "<group>"; };
+		23BFA06F21DCD7B80045AF0B /* RACViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACViewModel.m; sourceTree = "<group>"; };
+		23BFA07121DCD7E00045AF0B /* RACRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACRequest.h; sourceTree = "<group>"; };
+		23BFA07221DCD7E00045AF0B /* RACRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACRequest.m; sourceTree = "<group>"; };
 		23D368171E4C0ABE00ECC80D /* MyHomeWork-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Prefix.pch"; sourceTree = "<group>"; };
 		23D3682F1E4C5A5300ECC80D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/test2.png; sourceTree = "<group>"; };
 		23D368311E4C5A5900ECC80D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/test2.png"; sourceTree = "<group>"; };
@@ -398,6 +404,10 @@
 				23BF047B2134E8F500ECD946 /* NSObject+Caculator.m */,
 				23BF047C2134E8F500ECD946 /* CaculatorMaker.h */,
 				23BF047D2134E8F500ECD946 /* RACViewController.h */,
+				23BFA06E21DCD7B80045AF0B /* RACViewModel.h */,
+				23BFA07121DCD7E00045AF0B /* RACRequest.h */,
+				23BFA07221DCD7E00045AF0B /* RACRequest.m */,
+				23BFA06F21DCD7B80045AF0B /* RACViewModel.m */,
 				23BF047E2134E8F500ECD946 /* Caculator.m */,
 				23BF047F2134E8F500ECD946 /* NSObject+Caculator.h */,
 			);
@@ -579,24 +589,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_template.js",
-				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_with_callback_template.js",
-				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/css_injector.js",
-				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/log_plugin.js",
-				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/message.js",
-				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.css",
-				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.js",
+				"${PODS_CONFIGURATION_BUILD_DIR}/OCTWebViewBridge/OCTWebViewBridge.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/block_plugin_template.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/block_plugin_with_callback_template.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/css_injector.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/log_plugin.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/message.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/night.css",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/night.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OCTWebViewBridge.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -628,11 +626,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23BFA07021DCD7B80045AF0B /* RACViewModel.m in Sources */,
 				236098981D980892009C589B /* FLMainViewController.m in Sources */,
 				23BF048621353D0200ECD946 /* WZDBaseViewController.m in Sources */,
 				23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */,
 				23BF048921353D2100ECD946 /* FLChildViewController.m in Sources */,
 				23BF04802134E8F600ECD946 /* CaculatorMaker.m in Sources */,
+				23BFA07321DCD7E00045AF0B /* RACRequest.m in Sources */,
 				2374CFC01E51A247001B799D /* FRCMainViewController.m in Sources */,
 				2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */,
 				23A5E7531E4DA59E008DCAEE /* DHPopTableViewCell.m in Sources */,
