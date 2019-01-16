@@ -11,7 +11,7 @@
 @interface WZDCustomView()
 
 @property (nonatomic, copy) NSString *name;
-
+@property (nonatomic, strong) NSThread *thread;
 @end
 
 
@@ -76,7 +76,50 @@
 //    
     
 }
+//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(show) object:nil];
+//    self.thread = thread;
+//    [thread start];
+//}
 
+- (void)show {
+    [[NSRunLoop currentRunLoop] addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
+    //RunLoop中要至少有一个Timer 或 一个Source
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(test) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+    //创建监听者
+    CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(CFAllocatorGetDefault(), kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        switch (activity) {
+            case kCFRunLoopEntry:
+            NSLog(@"RunLoop进入");
+            break;
+            case kCFRunLoopBeforeTimers:
+            NSLog(@"RunLoop要处理Timers了");
+            break;
+            case kCFRunLoopBeforeSources:
+            NSLog(@"RunLoop要处理Sources了");
+            break;
+            case kCFRunLoopBeforeWaiting:
+            NSLog(@"RunLoop要休息了");
+            break;
+            case kCFRunLoopAfterWaiting:
+            NSLog(@"RunLoop醒来了");
+            break;
+            case kCFRunLoopExit:
+            NSLog(@"RunLoop退出了");
+            break;
+            
+            default:
+            break;
+        }
+    });
+    CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopDefaultMode);
+    [[NSRunLoop currentRunLoop] run];
+    CFRelease(observer);
+}
+    
+    
+    
 - (void)updateName:(NSString *)name {
     self.name = name;
 }

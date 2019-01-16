@@ -55,6 +55,9 @@
 		23E77FF521884539009B8E84 /* JSPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E77FF421884539009B8E84 /* JSPerson.m */; };
 		23E77FF721885097009B8E84 /* EvaluatePrice.js in Resources */ = {isa = PBXBuildFile; fileRef = 23E77FF621885096009B8E84 /* EvaluatePrice.js */; };
 		23E77FFA218855FD009B8E84 /* FLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E77FF9218855FD009B8E84 /* FLWebViewController.m */; };
+		23E8B79321E5E01700FD446F /* DHOrderDishModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8B79221E5E01700FD446F /* DHOrderDishModel.m */; };
+		23E8B79621E5E07A00FD446F /* DHOrderDishModel+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8B79521E5E07A00FD446F /* DHOrderDishModel+Test.m */; };
+		23E8B79C21E6E67E00FD446F /* DHOrderDishModel+Test2.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8B79B21E6E67E00FD446F /* DHOrderDishModel+Test2.m */; };
 		36B3E01D9D1E692147BBD537 /* libPods-MyHomeWork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69599EA15F9C66C29E99337B /* libPods-MyHomeWork.a */; };
 /* End PBXBuildFile section */
 
@@ -182,6 +185,12 @@
 		23E77FF621885096009B8E84 /* EvaluatePrice.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = EvaluatePrice.js; sourceTree = "<group>"; };
 		23E77FF8218855FD009B8E84 /* FLWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLWebViewController.h; sourceTree = "<group>"; };
 		23E77FF9218855FD009B8E84 /* FLWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLWebViewController.m; sourceTree = "<group>"; };
+		23E8B79121E5E01700FD446F /* DHOrderDishModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHOrderDishModel.h; sourceTree = "<group>"; };
+		23E8B79221E5E01700FD446F /* DHOrderDishModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHOrderDishModel.m; sourceTree = "<group>"; };
+		23E8B79421E5E07A00FD446F /* DHOrderDishModel+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DHOrderDishModel+Test.h"; sourceTree = "<group>"; };
+		23E8B79521E5E07A00FD446F /* DHOrderDishModel+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DHOrderDishModel+Test.m"; sourceTree = "<group>"; };
+		23E8B79A21E6E67E00FD446F /* DHOrderDishModel+Test2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DHOrderDishModel+Test2.h"; sourceTree = "<group>"; };
+		23E8B79B21E6E67E00FD446F /* DHOrderDishModel+Test2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DHOrderDishModel+Test2.m"; sourceTree = "<group>"; };
 		69599EA15F9C66C29E99337B /* libPods-MyHomeWork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyHomeWork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7A47D341A6CDDDD0A9797C /* Pods-MyHomeWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHomeWork.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -344,6 +353,12 @@
 				2374CFAC1E518C62001B799D /* DHOrderKind.m */,
 				2374CFAD1E518C62001B799D /* DHOrderModel.h */,
 				2374CFAE1E518C62001B799D /* DHOrderModel.m */,
+				23E8B79121E5E01700FD446F /* DHOrderDishModel.h */,
+				23E8B79221E5E01700FD446F /* DHOrderDishModel.m */,
+				23E8B79421E5E07A00FD446F /* DHOrderDishModel+Test.h */,
+				23E8B79521E5E07A00FD446F /* DHOrderDishModel+Test.m */,
+				23E8B79A21E6E67E00FD446F /* DHOrderDishModel+Test2.h */,
+				23E8B79B21E6E67E00FD446F /* DHOrderDishModel+Test2.m */,
 				237EE7102159CC850056116E /* DHUserModel.h */,
 				237EE7112159CC850056116E /* DHUserModel.m */,
 			);
@@ -627,10 +642,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BFA07021DCD7B80045AF0B /* RACViewModel.m in Sources */,
+				23E8B79321E5E01700FD446F /* DHOrderDishModel.m in Sources */,
 				236098981D980892009C589B /* FLMainViewController.m in Sources */,
 				23BF048621353D0200ECD946 /* WZDBaseViewController.m in Sources */,
 				23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */,
 				23BF048921353D2100ECD946 /* FLChildViewController.m in Sources */,
+				23E8B79C21E6E67E00FD446F /* DHOrderDishModel+Test2.m in Sources */,
+				23E8B79621E5E07A00FD446F /* DHOrderDishModel+Test.m in Sources */,
 				23BF04802134E8F600ECD946 /* CaculatorMaker.m in Sources */,
 				23BFA07321DCD7E00045AF0B /* RACRequest.m in Sources */,
 				2374CFC01E51A247001B799D /* FRCMainViewController.m in Sources */,

@@ -10,6 +10,13 @@
 
 @implementation DHOrderModel
 
++ (void)load {
+        NSLog(@"DHOrderModel load");
+    }
++ (void)initialize {
+    NSLog(@"DHOrderModel initialize");
+}
+    
 //- (NSInteger)countOfOrderArray {
 //    return self.count;
 //}

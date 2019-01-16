@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
   - Aspects (1.4.2.1)
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
@@ -15,37 +30,48 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - CCDTimeSaver (0.1.2)
   - CocoaSecurity (1.2.4.2)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0.1)
   - MJRefresh (2.4.12)
   - OCTWebViewBridge (1.0.7)
   - ReactiveObjC (3.0.0)
+  - SDWebImage (4.2.1):
+    - SDWebImage/Core (= 4.2.1)
+  - SDWebImage/Core (4.2.1)
   - SnapKit (4.2.0)
   - WebViewJavascriptBridge (6.0.3)
   - YYCache (1.0.4)
-  - YYModel (1.0.4.2)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - AFNetworking (from `~/Documents/Projects/AFN-DL`)
   - Aspects
   - BlocksKit
+  - CCDTimeSaver
   - CocoaSecurity
+  - FMDB (from `~/Documents/Development/fmdb`)
   - Masonry
   - MBProgressHUD
   - MJRefresh (~> 2.4.7)
   - OCTWebViewBridge (from `~/Documents/Development/CCDPods/OCTWebViewBridge`)
   - ReactiveObjC (= 3.0.0)
+  - SDWebImage (from `~/Documents/Projects/SD-DL`)
   - SnapKit
   - WebViewJavascriptBridge (~> 6.0)
   - YYCache (from `~/Documents/Development/YYCache`)
-  - YYModel
+  - YYModel (from `~/Documents/Development/YYModel`)
 
 SPEC REPOS:
   http://git.2dfire.net/ios/cocoapods-spec.git:
     - Aspects
+    - CCDTimeSaver
     - CocoaSecurity
     - MBProgressHUD
-    - YYModel
   https://github.com/cocoapods/specs.git:
     - BlocksKit
     - Masonry
@@ -55,25 +81,37 @@ SPEC REPOS:
     - WebViewJavascriptBridge
 
 EXTERNAL SOURCES:
+  AFNetworking:
+    :path: "~/Documents/Projects/AFN-DL"
+  FMDB:
+    :path: "~/Documents/Development/fmdb"
   OCTWebViewBridge:
     :path: "~/Documents/Development/CCDPods/OCTWebViewBridge"
+  SDWebImage:
+    :path: "~/Documents/Projects/SD-DL"
   YYCache:
     :path: "~/Documents/Development/YYCache"
+  YYModel:
+    :path: "~/Documents/Development/YYModel"
 
 SPEC CHECKSUMS:
+  AFNetworking: 9eafa7e00949e88834fbf954cd1398560e814a1f
   Aspects: 2a29023e54b6dd92a5fec8ead8e8607b41b45efa
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  CCDTimeSaver: 8c149554294d68fda7d60ca4472e6762ae5c8311
   CocoaSecurity: c1287f056a21fa88a74e4d7f57f56b0a1a6e64b0
+  FMDB: 1c1e5586378da0fbe2148a7afa0297885fa0dc86
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 443c07c0aa22772fbe3702db40fc65c36d80155e
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
   OCTWebViewBridge: 4fe17d3af2099d28763cd024cca4962c6412a67c
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
+  SDWebImage: 4340653c8610b66887d1b8c31fc00d8b39c99100
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYCache: e48e68f2c149d5278ee13dd4cfe0132b48125797
-  YYModel: 4fb57c2e53b0d22dc4414878928ece524bf30788
+  YYModel: eb86cab3f5071337137ed680c72c1de4fc378356
 
-PODFILE CHECKSUM: 4655213b03f42c5c5110b16539f170917568395e
+PODFILE CHECKSUM: 3177f346119a39fec5d0425e4abeac21c038a0ad
 
 COCOAPODS: 1.6.0.beta.1

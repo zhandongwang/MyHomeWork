@@ -25,5 +25,13 @@
       "OCTWebViewBridge/Resources/*"
     ]
   },
+  "ios": {
+    "preserve_paths": [
+      "OCTWebViewBridge/Classes/**/*",
+      "OCTWebViewBridge/Resources/*",
+      "OCTWebViewBridge.framework"
+    ]
+  },
+  "prepare_command": "echo '        #!/bin/sh\n\n        if [[ -d OCTWebViewBridge.framework ]]; then\n          echo \"Tdfire: OCTWebViewBridge.framework is not empty\"\n          exit 0\n        fi\n\n        if [[ ! -d tdfire_download_temp ]]; then\n          mkdir tdfire_download_temp\n        fi\n\n        cd tdfire_download_temp\n\n        curl --fail -O -J -v http://iosframeworkserver-shopkeeperclient.app.2dfire.com/download/OCTWebViewBridge/1.0.7\n\n        if [[ -f OCTWebViewBridge.framework.zip ]]; then\n          echo \"Tdfire: copying OCTWebViewBridge.framework ...\"\n\n          unzip OCTWebViewBridge.framework.zip\n          cp -fa OCTWebViewBridge.framework ../\n        fi\n\n        cd ..\n        rm -fr tdfire_download_temp\n\n        echo \"pod cache path for OCTWebViewBridge: $(pwd)\"\n' > download.sh && sh download.sh && rm download.sh",
   "frameworks": "WebKit"
 }

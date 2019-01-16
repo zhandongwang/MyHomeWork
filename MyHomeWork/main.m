@@ -5,9 +5,9 @@
 //  Created by 王战东 on 16/9/25.
 //  Copyright © 2016年 zhandongwang. All rights reserved.
 //
-@import Foundation;
-#import "AppDelegate.h"
 
+#include <Foundation/Foundation.h>
+//#import "AppDelegate.h"
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));

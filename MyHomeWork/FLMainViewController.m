@@ -21,7 +21,7 @@
 #import "FLCar.h"
 #import "FLProxy.h"
 #import "FLProxyB.h"
-
+#import "DHOrderDishModel.h"
 @interface FLMainViewController ()
 
 @property (nonatomic, strong) WZDCustomView *customView;
@@ -40,9 +40,30 @@
     self.title = @"Home";
     [self.view addSubview:self.customView];
     [self.customView addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    DHOrderDishModel *order1 = [[DHOrderDishModel alloc] init];
+    order1.name = @"1";
     
+//    DHOrderModel *order2 = [[DHOrderModel alloc] init];
+//    order2.name = @"2";
+//
+//    [order1 addObserver:self forKeyPath:@"name" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld ) context:nil];
+//    [order1 willChangeValueForKey:@"name"];
+//    [order2 didChangeValueForKey:@"name"];
+////    order1.name = @"11";
+//
+//    [order1 removeObserver:self forKeyPath:@"name"];
+    
+   
     
 }
+
+
+    
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+     NSLog(@"监听到%@的%@改变了%@", object, keyPath,change);
+}
+
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -111,11 +132,6 @@
     [self.customView removeObserver:self forKeyPath:@"name"];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"name"]) {
-        
-    }
-}
 
 - (RACSignal *)loginSignal {
     return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {

@@ -5,7 +5,7 @@ target 'MyHomeWork' do
 
 pod 'BlocksKit'
 pod 'Masonry'
-pod 'YYModel'
+pod 'YYModel',  :path => '~/Documents/Development/YYModel'
 pod 'YYCache',  :path => '~/Documents/Development/YYCache'
 pod 'MJRefresh', '~> 2.4.7'
 pod 'MBProgressHUD'
@@ -15,6 +15,11 @@ pod 'Aspects'
 pod 'CocoaSecurity'
 pod 'OCTWebViewBridge', :path => '~/Documents/Development/CCDPods/OCTWebViewBridge'
 pod 'SnapKit'
+pod 'AFNetworking', :path => '~/Documents/Projects/AFN-DL'
+pod 'SDWebImage', :path => '~/Documents/Projects/SD-DL'
+pod 'CCDTimeSaver'
+pod 'FMDB', :path => '~/Documents/Development/fmdb'
+
 
 
 #test4
