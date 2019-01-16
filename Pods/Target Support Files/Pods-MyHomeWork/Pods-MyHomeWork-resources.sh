@@ -93,11 +93,23 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/OCTWebViewBridge/OCTWebViewBridge.bundle"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_template.js"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_with_callback_template.js"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/css_injector.js"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/log_plugin.js"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/message.js"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.css"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.js"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/OCTWebViewBridge/OCTWebViewBridge.bundle"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_template.js"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_with_callback_template.js"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/css_injector.js"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/log_plugin.js"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/message.js"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.css"
+  install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.js"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

@@ -96,9 +96,9 @@ class FLSwiftWebViewController: UIViewController,WKScriptMessageHandler,WKNaviga
 //            print(data ?? "")
 //        }
         
-        OCTWebViewPluginInjector.init(for: self.wkWebView).injectPlugin(withFunctionName: "test2") { (data, callback) in
-            callback!("test2")
-        }
+//        OCTWebViewPluginInjector.init(for: self.wkWebView).injectPlugin(withFunctionName: "test2") { (data, callback) in
+//            callback!("test2")
+//        }
     }
     
     

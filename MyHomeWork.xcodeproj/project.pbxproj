@@ -604,12 +604,24 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/OCTWebViewBridge/OCTWebViewBridge.bundle",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_template.js",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_with_callback_template.js",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/css_injector.js",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/log_plugin.js",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/message.js",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.css",
+				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.js",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OCTWebViewBridge.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/block_plugin_template.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/block_plugin_with_callback_template.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/css_injector.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/log_plugin.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/message.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/night.css",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/night.js",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -38,13 +38,12 @@ PODS:
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0.1)
   - MJRefresh (2.4.12)
-  - OCTWebViewBridge (1.0.7)
+  - OCTWebViewBridge (2.1.0)
   - ReactiveObjC (3.0.0)
   - SDWebImage (4.2.1):
     - SDWebImage/Core (= 4.2.1)
   - SDWebImage/Core (4.2.1)
   - SnapKit (4.2.0)
-  - WebViewJavascriptBridge (6.0.3)
   - YYCache (1.0.4)
   - YYModel (1.0.4)
 
@@ -58,11 +57,10 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - MJRefresh (~> 2.4.7)
-  - OCTWebViewBridge (from `~/Documents/Development/CCDPods/OCTWebViewBridge`)
+  - OCTWebViewBridge
   - ReactiveObjC (= 3.0.0)
   - SDWebImage (from `~/Documents/Projects/SD-DL`)
   - SnapKit
-  - WebViewJavascriptBridge (~> 6.0)
   - YYCache (from `~/Documents/Development/YYCache`)
   - YYModel (from `~/Documents/Development/YYModel`)
 
@@ -76,17 +74,15 @@ SPEC REPOS:
     - BlocksKit
     - Masonry
     - MJRefresh
+    - OCTWebViewBridge
     - ReactiveObjC
     - SnapKit
-    - WebViewJavascriptBridge
 
 EXTERNAL SOURCES:
   AFNetworking:
     :path: "~/Documents/Projects/AFN-DL"
   FMDB:
     :path: "~/Documents/Development/fmdb"
-  OCTWebViewBridge:
-    :path: "~/Documents/Development/CCDPods/OCTWebViewBridge"
   SDWebImage:
     :path: "~/Documents/Projects/SD-DL"
   YYCache:
@@ -104,14 +100,13 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 443c07c0aa22772fbe3702db40fc65c36d80155e
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
-  OCTWebViewBridge: 4fe17d3af2099d28763cd024cca4962c6412a67c
+  OCTWebViewBridge: e7712ef0c0670905da57b8a36d3f02a43115c507
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SDWebImage: 4340653c8610b66887d1b8c31fc00d8b39c99100
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYCache: e48e68f2c149d5278ee13dd4cfe0132b48125797
   YYModel: eb86cab3f5071337137ed680c72c1de4fc378356
 
-PODFILE CHECKSUM: 3177f346119a39fec5d0425e4abeac21c038a0ad
+PODFILE CHECKSUM: 4d4d0f3f4c9a66b9140947712726990758a2ea5e
 
 COCOAPODS: 1.6.0.beta.1

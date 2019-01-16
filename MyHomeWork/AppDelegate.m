@@ -11,6 +11,7 @@
 #import "RACViewController.h"
 #import "FLWebViewController.h"
 #import "FRCMainViewController.h"
+#import "FLChildViewController.h"
 #import "MyHomeWork-Swift.h"
 @interface AppDelegate ()
 
@@ -22,7 +23,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    FLMainViewController  *vc = [[FLMainViewController alloc] init];
+    FLChildViewController  *vc = [[FLChildViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigationController;
     self.window.backgroundColor = [UIColor whiteColor];

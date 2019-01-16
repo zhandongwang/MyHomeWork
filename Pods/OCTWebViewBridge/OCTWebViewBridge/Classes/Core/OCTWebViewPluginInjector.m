@@ -29,10 +29,21 @@ NSString *const kOCTMessageSelectorKey = @"selector";
  *  Message.body.args
  */
 NSString *const kOCTMessageArgsKey = @"args";
+
 /**
- *  Native 异步执行后向 Web 返回数据
+ *  参数类型
  */
-NSString *const kOCTMessageCallbackIdKey = @"callbackId";
+NSString *const kOCTMessageArgTypeKey = @"type";
+/**
+ *  参数的值
+ */
+NSString *const kOCTMessageArgValueKey = @"val";
+
+typedef NS_ENUM(NSUInteger, OCTMessageArgType) {
+    
+    OCTMessageArgTypeFunction       =       0,
+    OCTMessageArgTypeOthor          =       1,
+};
 
 
 @interface OCTWebViewInjectorCache : NSObject
@@ -200,12 +211,11 @@ NSString *const kOCTMessageCallbackIdKey = @"callbackId";
     if (![args isKindOfClass:[NSArray class]]) {
         return;
     }
-    
-    NSInteger callbackId = [commands[kOCTMessageCallbackIdKey] integerValue];
-    [self invokeWithBridgeObj:obj selector:selector args:args callbackId:callbackId];
+
+    [self invokeWithBridgeObj:obj selector:selector args:args];
 }
 
-- (void)invokeWithBridgeObj:(id<OCTWebViewPlugin>)obj selector:(NSString *)selector args:(NSArray *)args callbackId:(NSInteger)callbackId {
+- (void)invokeWithBridgeObj:(id<OCTWebViewPlugin>)obj selector:(NSString *)selector args:(NSArray *)args {
     
     SEL sel = NSSelectorFromString(selector);
     NSMethodSignature *signature = [[obj class] instanceMethodSignatureForSelector:sel];
@@ -217,15 +227,7 @@ NSString *const kOCTMessageCallbackIdKey = @"callbackId";
     
     NSInteger selectorArgsCount = [signature numberOfArguments] - 2;
     
-    NSInteger jsArgsCount = args.count + (callbackId >= 0 ? 1: 0);
-    
-    NSString *lastObjType = [NSString stringWithCString:[signature getArgumentTypeAtIndex:selectorArgsCount + 1] encoding:NSUTF8StringEncoding];
-    //   参考 type encoding
-    if (![lastObjType isEqualToString:@"@?"] && callbackId > 0) {
-        
-        NSLog(@"JS Invoke - class: %@, selector: %@, js need callback，but this fucking selector does not support", NSStringFromClass([obj class]), selector);
-        return;
-    }
+    NSInteger jsArgsCount = args.count;
     
     if (jsArgsCount != selectorArgsCount) {
         
@@ -238,41 +240,41 @@ NSString *const kOCTMessageCallbackIdKey = @"callbackId";
     invocation.selector = sel;
     
     NSInteger index = 2;
-    for (id obj in args) {
+    for (NSDictionary *obj in args) {
         
-        [invocation setArgument:(void *)&obj atIndex:index];
+        OCTMessageArgType type = [obj[kOCTMessageArgTypeKey] integerValue];
+        id val = obj[kOCTMessageArgValueKey];
+        // 函数类型
+        if (type == OCTMessageArgTypeFunction) {
+            
+            __weak __typeof(self) wself = self;
+            
+            NSString *identifier = [[self class] generateCallbackIdentifier];
+            OCTResponseCallback callback = ^void(id param) {
+                __strong __typeof(wself) sself = wself;
+                [sself invokeCallbackWithId:[val integerValue] params:param];
+                [self.callbackMap removeObjectForKey:identifier];
+            };
+            self.callbackMap[identifier] = callback;
+            [invocation setArgument:(void *)&callback atIndex:index];
+        } else {
+            
+            [invocation setArgument:&val atIndex:index];
+        }
         index++;
     }
-    
-    if (callbackId >= 0) {
-        
-        __weak __typeof(self) wself = self;
-        
-        NSString *identifier = [[self class] generateCallbackIdentifier];
-        OCTResponseCallback callback = ^void(id param) {
-            __strong __typeof(wself) sself = wself;
-            [sself invokeCallbackWithId:callbackId param:param];
-            
-            [self.callbackMap removeObjectForKey:identifier];
-        };
-        self.callbackMap[identifier] = callback;
-        [invocation setArgument:(void *)&callback atIndex:index];
-    }
-    
     [invocation invoke];
 }
 
 
-- (void)invokeCallbackWithId:(NSInteger)callbackId param:(id)param {
+- (void)invokeCallbackWithId:(NSInteger)callbackId params:(NSArray *)params {
     
-    NSString *json = @"null";
-    if (param) {
-        NSError *error;
-        NSData *data = [NSJSONSerialization dataWithJSONObject:@[ param ] options:0 error:NULL];
-        if (!error) {
-            json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            json = [json substringWithRange:NSMakeRange(1, json.length - 2)];
-        }
+    NSString *json = @"";
+    NSError *error;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:params options:0 error:NULL];
+    if (!error) {
+        json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        json = [json substringWithRange:NSMakeRange(1, json.length - 2)];
     }
     
     NSString *code = [NSString stringWithFormat:@"window.bridge.callbackDispatcher.invoke(%zd, %@)", callbackId, json];
