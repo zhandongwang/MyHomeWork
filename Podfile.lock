@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Aspects (1.4.2.1)
+  - Aspects (1.4.1)
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
   - BlocksKit/All (2.2.5):
@@ -49,7 +49,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (from `~/Documents/Projects/AFN-DL`)
-  - Aspects
+  - Aspects (from `~/Documents/Development/Aspects`)
   - BlocksKit
   - CCDTimeSaver
   - CocoaSecurity
@@ -66,7 +66,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   http://git.2dfire.net/ios/cocoapods-spec.git:
-    - Aspects
     - CCDTimeSaver
     - CocoaSecurity
     - MBProgressHUD
@@ -81,6 +80,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   AFNetworking:
     :path: "~/Documents/Projects/AFN-DL"
+  Aspects:
+    :path: "~/Documents/Development/Aspects"
   FMDB:
     :path: "~/Documents/Development/fmdb"
   SDWebImage:
@@ -92,7 +93,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 9eafa7e00949e88834fbf954cd1398560e814a1f
-  Aspects: 2a29023e54b6dd92a5fec8ead8e8607b41b45efa
+  Aspects: fc1e3a3ed849fd7d5634e3de6ed01cb8e08bc4c5
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   CCDTimeSaver: 8c149554294d68fda7d60ca4472e6762ae5c8311
   CocoaSecurity: c1287f056a21fa88a74e4d7f57f56b0a1a6e64b0
@@ -107,6 +108,6 @@ SPEC CHECKSUMS:
   YYCache: e48e68f2c149d5278ee13dd4cfe0132b48125797
   YYModel: eb86cab3f5071337137ed680c72c1de4fc378356
 
-PODFILE CHECKSUM: 4d4d0f3f4c9a66b9140947712726990758a2ea5e
+PODFILE CHECKSUM: 581c67eadef1fe5330678bd52f2d89d4f0c5b713
 
 COCOAPODS: 1.6.0.beta.1

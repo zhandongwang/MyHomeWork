@@ -20,6 +20,15 @@
 		236098A01D980892009C589B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2360989E1D980892009C589B /* LaunchScreen.storyboard */; };
 		236098AB1D980892009C589B /* MyHomeWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098AA1D980892009C589B /* MyHomeWorkTests.m */; };
 		236098B61D980892009C589B /* MyHomeWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098B51D980892009C589B /* MyHomeWorkUITests.m */; };
+		23634C4921F166590028B669 /* FLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C4821F166590028B669 /* FLOperation.m */; };
+		23634C4C21F167630028B669 /* FLOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C4B21F167630028B669 /* FLOperationFactory.m */; };
+		23634C5221F16E7D0028B669 /* FLCashNormal.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C5121F16E7D0028B669 /* FLCashNormal.m */; };
+		23634C5521F16F710028B669 /* FLCashRebate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C5421F16F710028B669 /* FLCashRebate.m */; };
+		23634C5821F16FE50028B669 /* FLCashContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C5721F16FE50028B669 /* FLCashContext.m */; };
+		23634C5D21F177E20028B669 /* FLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C5C21F177E20028B669 /* FLBuilder.m */; };
+		23634C6321F1796B0028B669 /* FLDoor.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C6221F1796B0028B669 /* FLDoor.m */; };
+		23634C6621F179750028B669 /* FLEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C6521F179750028B669 /* FLEngine.m */; };
+		23634C6921F1797F0028B669 /* FLWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C6821F1797F0028B669 /* FLWheel.m */; };
 		2374CFA31E516696001B799D /* DHPopTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA21E516696001B799D /* DHPopTableViewCellModel.m */; };
 		2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA61E518C62001B799D /* DHAllOrderModel.m */; };
 		2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA81E518C62001B799D /* DHMessageKinds.m */; };
@@ -107,6 +116,29 @@
 		236098B11D980892009C589B /* MyHomeWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyHomeWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		236098B51D980892009C589B /* MyHomeWorkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHomeWorkUITests.m; sourceTree = "<group>"; };
 		236098B71D980892009C589B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23634C4721F166590028B669 /* FLOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLOperation.h; sourceTree = "<group>"; };
+		23634C4821F166590028B669 /* FLOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLOperation.m; sourceTree = "<group>"; };
+		23634C4A21F167630028B669 /* FLOperationFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLOperationFactory.h; sourceTree = "<group>"; };
+		23634C4B21F167630028B669 /* FLOperationFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLOperationFactory.m; sourceTree = "<group>"; };
+		23634C4F21F16E0B0028B669 /* FLCashProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCashProtocol.h; sourceTree = "<group>"; };
+		23634C5021F16E7D0028B669 /* FLCashNormal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCashNormal.h; sourceTree = "<group>"; };
+		23634C5121F16E7D0028B669 /* FLCashNormal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCashNormal.m; sourceTree = "<group>"; };
+		23634C5321F16F710028B669 /* FLCashRebate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCashRebate.h; sourceTree = "<group>"; };
+		23634C5421F16F710028B669 /* FLCashRebate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCashRebate.m; sourceTree = "<group>"; };
+		23634C5621F16FE50028B669 /* FLCashContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCashContext.h; sourceTree = "<group>"; };
+		23634C5721F16FE50028B669 /* FLCashContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCashContext.m; sourceTree = "<group>"; };
+		23634C5A21F177700028B669 /* FLBuilderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLBuilderProtocol.h; sourceTree = "<group>"; };
+		23634C5B21F177E20028B669 /* FLBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLBuilder.h; sourceTree = "<group>"; };
+		23634C5C21F177E20028B669 /* FLBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLBuilder.m; sourceTree = "<group>"; };
+		23634C5E21F1783E0028B669 /* FLDoorBuilderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLDoorBuilderProtocol.h; sourceTree = "<group>"; };
+		23634C5F21F1784E0028B669 /* FLEngineBuilderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLEngineBuilderProtocol.h; sourceTree = "<group>"; };
+		23634C6021F1785C0028B669 /* FLWheelBuilderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLWheelBuilderProtocol.h; sourceTree = "<group>"; };
+		23634C6121F1796B0028B669 /* FLDoor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLDoor.h; sourceTree = "<group>"; };
+		23634C6221F1796B0028B669 /* FLDoor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLDoor.m; sourceTree = "<group>"; };
+		23634C6421F179750028B669 /* FLEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLEngine.h; sourceTree = "<group>"; };
+		23634C6521F179750028B669 /* FLEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLEngine.m; sourceTree = "<group>"; };
+		23634C6721F1797F0028B669 /* FLWheel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLWheel.h; sourceTree = "<group>"; };
+		23634C6821F1797F0028B669 /* FLWheel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLWheel.m; sourceTree = "<group>"; };
 		2374CFA11E516696001B799D /* DHPopTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewCellModel.h; sourceTree = "<group>"; };
 		2374CFA21E516696001B799D /* DHPopTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableViewCellModel.m; sourceTree = "<group>"; };
 		2374CFA51E518C62001B799D /* DHAllOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAllOrderModel.h; sourceTree = "<group>"; };
@@ -283,6 +315,7 @@
 		2360988F1D980892009C589B /* MyHomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				23634C4621F165FC0028B669 /* Pattern */,
 				233D2C3B219A6D4900A816E1 /* Cache */,
 				23965FBE2193DEF400349149 /* Runtime */,
 				23BF04772134E8F500ECD946 /* RAC */,
@@ -338,6 +371,60 @@
 				236098B71D980892009C589B /* Info.plist */,
 			);
 			path = MyHomeWorkUITests;
+			sourceTree = "<group>";
+		};
+		23634C4621F165FC0028B669 /* Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				23634C5921F177280028B669 /* Builer */,
+				23634C4E21F16C2A0028B669 /* Strategy */,
+				23634C4D21F16B7E0028B669 /* SimpleFactory */,
+			);
+			path = Pattern;
+			sourceTree = "<group>";
+		};
+		23634C4D21F16B7E0028B669 /* SimpleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				23634C4721F166590028B669 /* FLOperation.h */,
+				23634C4821F166590028B669 /* FLOperation.m */,
+				23634C4B21F167630028B669 /* FLOperationFactory.m */,
+				23634C4A21F167630028B669 /* FLOperationFactory.h */,
+			);
+			path = SimpleFactory;
+			sourceTree = "<group>";
+		};
+		23634C4E21F16C2A0028B669 /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				23634C4F21F16E0B0028B669 /* FLCashProtocol.h */,
+				23634C5021F16E7D0028B669 /* FLCashNormal.h */,
+				23634C5121F16E7D0028B669 /* FLCashNormal.m */,
+				23634C5321F16F710028B669 /* FLCashRebate.h */,
+				23634C5421F16F710028B669 /* FLCashRebate.m */,
+				23634C5621F16FE50028B669 /* FLCashContext.h */,
+				23634C5721F16FE50028B669 /* FLCashContext.m */,
+			);
+			path = Strategy;
+			sourceTree = "<group>";
+		};
+		23634C5921F177280028B669 /* Builer */ = {
+			isa = PBXGroup;
+			children = (
+				23634C5A21F177700028B669 /* FLBuilderProtocol.h */,
+				23634C5E21F1783E0028B669 /* FLDoorBuilderProtocol.h */,
+				23634C5F21F1784E0028B669 /* FLEngineBuilderProtocol.h */,
+				23634C6021F1785C0028B669 /* FLWheelBuilderProtocol.h */,
+				23634C6121F1796B0028B669 /* FLDoor.h */,
+				23634C6221F1796B0028B669 /* FLDoor.m */,
+				23634C6421F179750028B669 /* FLEngine.h */,
+				23634C6521F179750028B669 /* FLEngine.m */,
+				23634C6721F1797F0028B669 /* FLWheel.h */,
+				23634C6821F1797F0028B669 /* FLWheel.m */,
+				23634C5B21F177E20028B669 /* FLBuilder.h */,
+				23634C5C21F177E20028B669 /* FLBuilder.m */,
+			);
+			path = Builer;
 			sourceTree = "<group>";
 		};
 		2374CFA41E518C62001B799D /* Model */ = {
@@ -656,30 +743,37 @@
 				23BFA07021DCD7B80045AF0B /* RACViewModel.m in Sources */,
 				23E8B79321E5E01700FD446F /* DHOrderDishModel.m in Sources */,
 				236098981D980892009C589B /* FLMainViewController.m in Sources */,
+				23634C6321F1796B0028B669 /* FLDoor.m in Sources */,
+				23634C5D21F177E20028B669 /* FLBuilder.m in Sources */,
 				23BF048621353D0200ECD946 /* WZDBaseViewController.m in Sources */,
 				23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */,
 				23BF048921353D2100ECD946 /* FLChildViewController.m in Sources */,
 				23E8B79C21E6E67E00FD446F /* DHOrderDishModel+Test2.m in Sources */,
 				23E8B79621E5E07A00FD446F /* DHOrderDishModel+Test.m in Sources */,
 				23BF04802134E8F600ECD946 /* CaculatorMaker.m in Sources */,
+				23634C6921F1797F0028B669 /* FLWheel.m in Sources */,
 				23BFA07321DCD7E00045AF0B /* RACRequest.m in Sources */,
 				2374CFC01E51A247001B799D /* FRCMainViewController.m in Sources */,
 				2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */,
 				23A5E7531E4DA59E008DCAEE /* DHPopTableViewCell.m in Sources */,
 				23BF04832134E8F600ECD946 /* Caculator.m in Sources */,
 				2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */,
+				23634C6621F179750028B669 /* FLEngine.m in Sources */,
 				2374CFB11E518C62001B799D /* DHMessageModel.m in Sources */,
 				23BF04812134E8F600ECD946 /* RACViewController.m in Sources */,
 				2307F1662064A2120060A688 /* WZDPatch.m in Sources */,
 				233D2C3E219A6D6600A816E1 /* FLCacheViewController.m in Sources */,
 				23E77FFA218855FD009B8E84 /* FLWebViewController.m in Sources */,
+				23634C5821F16FE50028B669 /* FLCashContext.m in Sources */,
 				2374CFBD1E5195A3001B799D /* UIViewController+DHRouter.m in Sources */,
 				23965FB321918F4200349149 /* WebPlugin.m in Sources */,
 				23608A921E050F7100C4D190 /* WZDCustomView.m in Sources */,
+				23634C4C21F167630028B669 /* FLOperationFactory.m in Sources */,
 				2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */,
 				23965FC12193DF4500349149 /* FLCar.m in Sources */,
 				2374CFB21E518C62001B799D /* DHOrderKind.m in Sources */,
 				23388E40219436CB00189ACC /* FLProxyB.m in Sources */,
+				23634C4921F166590028B669 /* FLOperation.m in Sources */,
 				2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */,
 				236098951D980892009C589B /* AppDelegate.m in Sources */,
 				23E77FF521884539009B8E84 /* JSPerson.m in Sources */,
@@ -688,6 +782,8 @@
 				236098921D980892009C589B /* main.m in Sources */,
 				2374CFBA1E518D45001B799D /* FRCBaseViewController.m in Sources */,
 				23965FBA2191B9A000349149 /* FLSwiftWebViewController.swift in Sources */,
+				23634C5521F16F710028B669 /* FLCashRebate.m in Sources */,
+				23634C5221F16E7D0028B669 /* FLCashNormal.m in Sources */,
 				23965FC42193E3AC00349149 /* FLPerson.m in Sources */,
 				2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */,
 				237EE7122159CC850056116E /* DHUserModel.m in Sources */,

@@ -9,6 +9,18 @@
 #import "FLChildViewController.h"
 #include <pthread.h>
 #import "DHOrderModel.h"
+#import "FLOperationFactory.h"
+#import "FLOperation.h"
+
+#import "FLCashRebate.h"
+#import "FLCashNormal.h"
+#import "FLCashContext.h"
+
+#import "FLBuilder.h"
+#import "FLDoor.h"
+#import "FLEngine.h"
+#import "FLWheel.h"
+
 typedef void(^MyBlock)(void);
 
 @interface FLChildViewController ()<FLBaseViewControllerProtocol>
@@ -25,17 +37,26 @@ typedef void(^MyBlock)(void);
     self.child = self;
 //    [self practiceBlock];
 //    [self practiceRunTime];
+//    FLOperation *operation = [[[FLOperationFactory alloc] init] createOperation:FLOperationTypeMul];
+//    operation.numberA = 8;
+//    operation.numberB = 4;
+//
+//    NSLog(@"%f",[operation getResult]);
     
-    DHOrderModel * __strong person_one = [[DHOrderModel alloc]init];
     
-    DHOrderModel * __unsafe_unretained person_two = person_one;
     
-    NSLog(@"person_one地址:%p",person_one);
-    person_one = nil;
+//    FLCashContext *context  = [[FLCashContext alloc] initWithCash:[FLCashRebate new]];
+//    NSLog(@"%f",[context getResult:100]);
     
-    NSLog(@"person_one:%@,person_one地址:%p",person_one,person_one);
-    NSLog(@"person_two地址:%p",person_two);
-    NSLog(@"person_two:%@",person_two);
+    FLBuilder *builder = [[FLBuilder alloc] init];
+    builder.door = [FLDoor new];
+    builder.engine = [FLEngine new];
+    builder.wheel  = [FLWheel new];
+    
+    [builder buildParts];
+    
+    NSLog(@"%@",builder.proInfo);
+    
 }
 
 void *run (void * param){
@@ -46,12 +67,6 @@ void *run (void * param){
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    NSLog(@"viewWillAppear");
-}
-
-- (void)swizzledViewWillAppear:(BOOL)animated {
-    NSLog(@"swizzledViewWillAppear");
-    [self swizzledViewWillAppear:animated];
 }
 
 - (void)practiceBlock {
@@ -69,12 +84,43 @@ void *run (void * param){
 
 - (void)practiceRunTime {
     //messageForwading
-    Method origMethod = class_getInstanceMethod([self class], @selector(viewWillAppear:));
-    Method swizzledMethod = class_getInstanceMethod([self class], @selector(swizzledViewWillAppear:));
-    if (class_addMethod([self class], @selector(swizzledViewWillAppear:), method_getImplementation(origMethod), method_getTypeEncoding(origMethod))) {
-        method_exchangeImplementations(origMethod, swizzledMethod);
-    }
+//    Method origMethod = class_getInstanceMethod([self class], @selector(viewWillAppear:));
+//    Method swizzledMethod = class_getInstanceMethod([self class], @selector(swizzledViewWillAppear:));
+//    if (class_addMethod([self class], @selector(swizzledViewWillAppear:), method_getImplementation(origMethod), method_getTypeEncoding(origMethod))) {
+//        method_exchangeImplementations(origMethod, swizzledMethod);
+//    }
+}
 
+- (void)practiceOpt {
+    
+    
+    
+    
+}
+
+
+- (id)sefePerformAction:(SEL)action target:(NSObject *)target params:(NSDictionary *)params {
+    NSMethodSignature *signature = [target methodSignatureForSelector:action];
+    if (signature == nil) {
+        return nil;
+    }
+    
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+    if (params) {
+        [invocation setArgument:&params atIndex:2];
+    }
+    [invocation setTarget:target];
+    [invocation setSelector:action];
+    const char *retType = [signature methodReturnType];
+    if (strcmp(retType, @encode(void)) == 0) {
+        [invocation invoke];
+        return nil;
+    }
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    return [target performSelector:action withObject:params];
+#pragma clang diagnostic pop
 }
 
 - (void)practiceGCD {
