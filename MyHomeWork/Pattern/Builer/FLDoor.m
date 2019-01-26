@@ -9,6 +9,9 @@
 #import "FLDoor.h"
 
 @implementation FLDoor
+- (void)dealloc {
+    NSLog(@"FLDoor dealloc");
+}
 
 - (void)doorColor:(UIColor *)color {
     

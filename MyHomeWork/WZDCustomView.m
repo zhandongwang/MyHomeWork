@@ -82,6 +82,24 @@
 //    [thread start];
 //}
 
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+//    if (self.userInteractionEnabled == NO || self.hidden || self.alpha <= 0.01) {
+//        return  nil;
+//    }
+//    if (![self pointInside:point withEvent:event]) {
+//        return nil;
+//    }
+//    __block UIView *targetView = self;
+//    [self.subviews enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(__kindof UIView * _Nonnull childView, NSUInteger idx, BOOL * _Nonnull stop) {
+//        CGPoint pt = [self convertPoint:point toView:childView];
+//        if ([childView hitTest:pt withEvent:event]) {
+//            targetView = [childView hitTest:pt withEvent:event];
+//        }
+//    }];
+//
+//    return targetView;
+//}
+
 - (void)show {
     [[NSRunLoop currentRunLoop] addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
     //RunLoop中要至少有一个Timer 或 一个Source

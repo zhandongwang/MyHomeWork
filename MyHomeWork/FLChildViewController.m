@@ -30,11 +30,31 @@ typedef void(^MyBlock)(void);
 @property (nonatomic, strong) dispatch_source_t timer;
 @end
 
+static void clean(NSObject **object) {
+    NSLog(@"clean");
+}
+
 @implementation FLChildViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.child = self;
+    int var = 10;
+    
+    [self practiceGCD];
+//    Class newCls = objc_allocateClassPair([NSObject class], "Student", 0);
+//    class_addIvar(newCls, "_age", 4, 1, @encode(int));
+//
+//    class_addMethod(newCls, @selector(runTimer), class_getMethodImplementation([self class], @selector(runTimer)), "v@:");
+//    objc_registerClassPair(newCls);
+//
+//    id student = [[newCls alloc] init];
+//    [student setValue:@10 forKey:@"_age"];
+//    NSLog(@"_age=%@", [student valueForKey:@"_age"]);
+//    [student runTimer];
+    
+    
+    
 //    [self practiceBlock];
 //    [self practiceRunTime];
 //    FLOperation *operation = [[[FLOperationFactory alloc] init] createOperation:FLOperationTypeMul];
@@ -42,21 +62,24 @@ typedef void(^MyBlock)(void);
 //    operation.numberB = 4;
 //
 //    NSLog(@"%f",[operation getResult]);
-    
-    
+//    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(runTimer) userInfo:nil repeats:YES];
     
 //    FLCashContext *context  = [[FLCashContext alloc] initWithCash:[FLCashRebate new]];
 //    NSLog(@"%f",[context getResult:100]);
     
-    FLBuilder *builder = [[FLBuilder alloc] init];
-    builder.door = [FLDoor new];
-    builder.engine = [FLEngine new];
-    builder.wheel  = [FLWheel new];
+//    FLBuilder *builder = [[FLBuilder alloc] init];
+//    builder.door = [FLDoor new];
+//    builder.engine = [FLEngine new];
+//    builder.wheel  = [FLWheel new];
+//
+//    [builder buildParts];
+//
+//    NSLog(@"%@",builder.proInfo);
     
-    [builder buildParts];
-    
-    NSLog(@"%@",builder.proInfo);
-    
+}
+
+- (void)runTimer {
+    NSLog(@"runTimer");
 }
 
 void *run (void * param){
@@ -87,6 +110,13 @@ void *run (void * param){
 //    Method origMethod = class_getInstanceMethod([self class], @selector(viewWillAppear:));
 //    Method swizzledMethod = class_getInstanceMethod([self class], @selector(swizzledViewWillAppear:));
 //    if (class_addMethod([self class], @selector(swizzledViewWillAppear:), method_getImplementation(origMethod), method_getTypeEncoding(origMethod))) {
+//        method_exchangeImplementations(origMethod, swizzledMethod);
+//    }
+    
+//    BOOL didAdded = class_addMethod([self class], @selector(viewWillAppear:), method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+//    if (didAdded) {
+//        class_replaceMethod([self class], @selector(swizzledViewWillAppear:), method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
+//    } else {
 //        method_exchangeImplementations(origMethod, swizzledMethod);
 //    }
 }
@@ -124,43 +154,51 @@ void *run (void * param){
 }
 
 - (void)practiceGCD {
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
-    NSMutableArray *array = @[].mutableCopy;
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
-    
+    dispatch_queue_t queue = dispatch_queue_create("apple.com", DISPATCH_QUEUE_SERIAL);
     dispatch_async(queue, ^{
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        [array addObject:@1];
-        [array addObject:@2];
-        [NSThread sleepForTimeInterval:2];
-        [array addObject:@3];
-        [array addObject:@4];
-        dispatch_semaphore_signal(semaphore);
-        NSLog(@"%@",array);
+        dispatch_async(queue, ^{
+             NSLog(@"%s",dispatch_queue_get_label(queue));
+        });
     });
     
-    dispatch_async(queue, ^{
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        [array addObject:@11];
-        [array addObject:@22];
-        [NSThread sleepForTimeInterval:4];
-        [array addObject:@33];
-        [array addObject:@44];
-        dispatch_semaphore_signal(semaphore);
-        NSLog(@"%@",array);
-    });
-    dispatch_async(queue, ^{
-                dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        [array addObject:@111];
-        [array addObject:@222];
-        [NSThread sleepForTimeInterval:6];
-        [array addObject:@333];
-        [array addObject:@444];
-                dispatch_semaphore_signal(semaphore);
-        NSLog(@"%@",array);
-    });
-    
+//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//
+//    NSMutableArray *array = @[].mutableCopy;
+//    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+//
+//    dispatch_async(queue, ^{
+//        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+//        [array addObject:@1];
+//        [array addObject:@2];
+//        [NSThread sleepForTimeInterval:2];
+//        [array addObject:@3];
+//        [array addObject:@4];
+//        dispatch_semaphore_signal(semaphore);
+//        NSLog(@"%@",array);
+//    });
+//
+//    dispatch_async(queue, ^{
+//        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+//        [array addObject:@11];
+//        [array addObject:@22];
+//        [NSThread sleepForTimeInterval:4];
+//        [array addObject:@33];
+//        [array addObject:@44];
+//        dispatch_semaphore_signal(semaphore);
+//        NSLog(@"%@",array);
+//    });
+//    dispatch_async(queue, ^{
+//                dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+//        [array addObject:@111];
+//        [array addObject:@222];
+//        [NSThread sleepForTimeInterval:6];
+//        [array addObject:@333];
+//        [array addObject:@444];
+//                dispatch_semaphore_signal(semaphore);
+//        NSLog(@"%@",array);
+//    });
+//
 
 //    dispatch_apply(10, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(size_t index) {
 //        NSLog(@"%ld",index);

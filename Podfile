@@ -16,10 +16,10 @@ pod 'OCTWebViewBridge'
 pod 'SnapKit'
 pod 'AFNetworking', :path => '~/Documents/Projects/AFN-DL'
 pod 'SDWebImage', :path => '~/Documents/Projects/SD-DL'
-pod 'CCDTimeSaver'
+pod 'CCDTimeSaver', :path =>'~/Documents/Development/CCDPods/CCDTimeSaver'
 pod 'FMDB', :path => '~/Documents/Development/fmdb'
-
-
+pod 'MLeaksFinder', :path => '~/Documents/Development/MLeaksFinder'
+pod 'fishhook', :path => '~/Documents/Development/fishhook'
 
 #test4
 

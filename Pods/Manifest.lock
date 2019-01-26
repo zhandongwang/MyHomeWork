@@ -32,12 +32,14 @@ PODS:
     - BlocksKit/DynamicDelegate
   - CCDTimeSaver (0.1.2)
   - CocoaSecurity (1.2.4.2)
+  - fishhook (0.2)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0.1)
   - MJRefresh (2.4.12)
+  - MLeaksFinder (1.0.0)
   - OCTWebViewBridge (2.1.0)
   - ReactiveObjC (3.0.0)
   - SDWebImage (4.2.1):
@@ -51,12 +53,14 @@ DEPENDENCIES:
   - AFNetworking (from `~/Documents/Projects/AFN-DL`)
   - Aspects (from `~/Documents/Development/Aspects`)
   - BlocksKit
-  - CCDTimeSaver
+  - CCDTimeSaver (from `~/Documents/Development/CCDPods/CCDTimeSaver`)
   - CocoaSecurity
+  - fishhook (from `~/Documents/Development/fishhook`)
   - FMDB (from `~/Documents/Development/fmdb`)
   - Masonry
   - MBProgressHUD
   - MJRefresh (~> 2.4.7)
+  - MLeaksFinder (from `~/Documents/Development/MLeaksFinder`)
   - OCTWebViewBridge
   - ReactiveObjC (= 3.0.0)
   - SDWebImage (from `~/Documents/Projects/SD-DL`)
@@ -66,7 +70,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   http://git.2dfire.net/ios/cocoapods-spec.git:
-    - CCDTimeSaver
     - CocoaSecurity
     - MBProgressHUD
   https://github.com/cocoapods/specs.git:
@@ -82,8 +85,14 @@ EXTERNAL SOURCES:
     :path: "~/Documents/Projects/AFN-DL"
   Aspects:
     :path: "~/Documents/Development/Aspects"
+  CCDTimeSaver:
+    :path: "~/Documents/Development/CCDPods/CCDTimeSaver"
+  fishhook:
+    :path: "~/Documents/Development/fishhook"
   FMDB:
     :path: "~/Documents/Development/fmdb"
+  MLeaksFinder:
+    :path: "~/Documents/Development/MLeaksFinder"
   SDWebImage:
     :path: "~/Documents/Projects/SD-DL"
   YYCache:
@@ -95,12 +104,14 @@ SPEC CHECKSUMS:
   AFNetworking: 9eafa7e00949e88834fbf954cd1398560e814a1f
   Aspects: fc1e3a3ed849fd7d5634e3de6ed01cb8e08bc4c5
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  CCDTimeSaver: 8c149554294d68fda7d60ca4472e6762ae5c8311
+  CCDTimeSaver: fa1ad8ef93ab3a6fd06a284291e1ebebc58e26c2
   CocoaSecurity: c1287f056a21fa88a74e4d7f57f56b0a1a6e64b0
+  fishhook: d564555f8b043c93dca04932fa8ea7cc44b7bd6b
   FMDB: 1c1e5586378da0fbe2148a7afa0297885fa0dc86
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 443c07c0aa22772fbe3702db40fc65c36d80155e
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
+  MLeaksFinder: 6c719c15840f2de8e1f6c26c8fec4fb7e3fe875c
   OCTWebViewBridge: e7712ef0c0670905da57b8a36d3f02a43115c507
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SDWebImage: 4340653c8610b66887d1b8c31fc00d8b39c99100
@@ -108,6 +119,6 @@ SPEC CHECKSUMS:
   YYCache: e48e68f2c149d5278ee13dd4cfe0132b48125797
   YYModel: eb86cab3f5071337137ed680c72c1de4fc378356
 
-PODFILE CHECKSUM: 581c67eadef1fe5330678bd52f2d89d4f0c5b713
+PODFILE CHECKSUM: 56b8bd0256dc1ea05943b348d190f1463606fd13
 
 COCOAPODS: 1.6.0.beta.1

@@ -39,25 +39,14 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Home";
     [self.view addSubview:self.customView];
-    [self.customView addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
-    DHOrderDishModel *order1 = [[DHOrderDishModel alloc] init];
-    order1.name = @"1";
-    
-//    DHOrderModel *order2 = [[DHOrderModel alloc] init];
-//    order2.name = @"2";
-//
-//    [order1 addObserver:self forKeyPath:@"name" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld ) context:nil];
-//    [order1 willChangeValueForKey:@"name"];
-//    [order2 didChangeValueForKey:@"name"];
-////    order1.name = @"11";
-//
-//    [order1 removeObserver:self forKeyPath:@"name"];
-    
-   
-    
+
+    NSInteger var = 110;
+    BOOL bVar = YES;
+    if (var > 100) {
+        bVar = NO;
+    }
+    NSLog(@"var now is %d",bVar);
 }
-
-
     
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
