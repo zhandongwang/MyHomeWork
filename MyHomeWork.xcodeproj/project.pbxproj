@@ -41,6 +41,7 @@
 		2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163B1E4D613E00FB5868 /* DHPopTableView.m */; };
 		2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */; };
 		237516411E4D617F00FB5868 /* popData.json in Resources */ = {isa = PBXBuildFile; fileRef = 237516401E4D617F00FB5868 /* popData.json */; };
+		237ED4B622114EC2003C9B19 /* FLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 237ED4B522114EC2003C9B19 /* FLLayer.m */; };
 		237EE7122159CC850056116E /* DHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EE7112159CC850056116E /* DHUserModel.m */; };
 		23965FB321918F4200349149 /* WebPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 23965FB221918F4200349149 /* WebPlugin.m */; };
 		23965FB521918FED00349149 /* log.js in Resources */ = {isa = PBXBuildFile; fileRef = 23965FB421918FED00349149 /* log.js */; };
@@ -162,6 +163,8 @@
 		2375163C1E4D613E00FB5868 /* DHPopTableViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewStyle.h; sourceTree = "<group>"; };
 		2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableViewStyle.m; sourceTree = "<group>"; };
 		237516401E4D617F00FB5868 /* popData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = popData.json; sourceTree = "<group>"; };
+		237ED4B422114EC2003C9B19 /* FLLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLLayer.h; sourceTree = "<group>"; };
+		237ED4B522114EC2003C9B19 /* FLLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLLayer.m; sourceTree = "<group>"; };
 		237EE7102159CC850056116E /* DHUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHUserModel.h; sourceTree = "<group>"; };
 		237EE7112159CC850056116E /* DHUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHUserModel.m; sourceTree = "<group>"; };
 		23965FB121918F4200349149 /* WebPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPlugin.h; sourceTree = "<group>"; };
@@ -335,6 +338,8 @@
 				2374CFBF1E51A247001B799D /* FRCMainViewController.m */,
 				23608A901E050F7100C4D190 /* WZDCustomView.h */,
 				23608A911E050F7100C4D190 /* WZDCustomView.m */,
+				237ED4B422114EC2003C9B19 /* FLLayer.h */,
+				237ED4B522114EC2003C9B19 /* FLLayer.m */,
 				2360989C1D980892009C589B /* Assets.xcassets */,
 				2360989E1D980892009C589B /* LaunchScreen.storyboard */,
 				236098A11D980892009C589B /* Info.plist */,
@@ -778,6 +783,7 @@
 				236098951D980892009C589B /* AppDelegate.m in Sources */,
 				23E77FF521884539009B8E84 /* JSPerson.m in Sources */,
 				2374CFA31E516696001B799D /* DHPopTableViewCellModel.m in Sources */,
+				237ED4B622114EC2003C9B19 /* FLLayer.m in Sources */,
 				23965FC721940ED600349149 /* FLProxy.m in Sources */,
 				236098921D980892009C589B /* main.m in Sources */,
 				2374CFBA1E518D45001B799D /* FRCBaseViewController.m in Sources */,

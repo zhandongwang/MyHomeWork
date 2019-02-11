@@ -22,7 +22,7 @@
 #import "FLProxy.h"
 #import "FLProxyB.h"
 #import "DHOrderDishModel.h"
-@interface FLMainViewController ()
+@interface FLMainViewController ()<CAAnimationDelegate>
 
 @property (nonatomic, strong) WZDCustomView *customView;
 @property (nonatomic, strong) NSMutableDictionary *popTableViewDataDict;
@@ -39,15 +39,77 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Home";
     [self.view addSubview:self.customView];
-
-    NSInteger var = 110;
-    BOOL bVar = YES;
-    if (var > 100) {
-        bVar = NO;
-    }
-    NSLog(@"var now is %d",bVar);
 }
     
+- (void)testAnimation {
+//    CABasicAnimation *fadeIn = [CABasicAnimation animationWithKeyPath:@"bounds.size.width"];
+//    fadeIn.duration = 0.75;
+//    fadeIn.fromValue = @100;
+//    fadeIn.toValue = @300;
+//    fadeIn.removedOnCompletion = NO;
+//    fadeIn.fillMode = kCAFillModeForwards;
+//
+//    [self.customView.layer addAnimation:fadeIn forKey:@"fade in"];
+//
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NSLog(@"after animation UIView:%@",self.customView);
+//        NSLog(@"after animation UIView.layer.bounds.size.width:%f",self.customView.layer.bounds.size.width);
+//    });
+    
+    
+    
+//    CABasicAnimation *rotate = [CABasicAnimation animation];
+//    rotate.keyPath = @"transform.rotation.z";
+//    rotate.toValue = @(M_PI);
+//
+//    CABasicAnimation *scale = [CABasicAnimation animation];
+//    scale.keyPath = @"transform.scale";
+//    scale.toValue = @(10);
+//
+//    CABasicAnimation *move = [CABasicAnimation animation];
+//    move.keyPath = @"transform.translation.z";
+//    move.toValue = [NSValue valueWithCGPoint:CGPointMake(300, 300)];
+//
+//    CAAnimationGroup *group = [ CAAnimationGroup animation];
+//    group.animations = @[scale];
+//    group.duration = 2.0;
+//    group.removedOnCompletion = NO;
+//    group.fillMode = kCAFillModeForwards;
+//    group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+//
+//    group.delegate = self;
+//
+//    [self.customView.layer addAnimation:group forKey:nil];
+    
+    
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:1.0f];
+//    self.customView.frame = CGRectMake(0, 100, 50, 50);
+//    [UIView commitAnimations];
+    
+    CAKeyframeAnimation *anima = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    NSValue *value0 = [NSValue valueWithCGPoint:CGPointMake(0, SCREEN_HEIGHT/2-50)];
+    NSValue *value1 = [NSValue valueWithCGPoint:CGPointMake(SCREEN_WIDTH/3, SCREEN_HEIGHT/2-50)];
+    NSValue *value2 = [NSValue valueWithCGPoint:CGPointMake(SCREEN_WIDTH/3, SCREEN_HEIGHT/2+50)];
+    NSValue *value3 = [NSValue valueWithCGPoint:CGPointMake(SCREEN_WIDTH*2/3, SCREEN_HEIGHT/2+50)];
+    NSValue *value4 = [NSValue valueWithCGPoint:CGPointMake(SCREEN_WIDTH*2/3, SCREEN_HEIGHT/2-50)];
+    NSValue *value5 = [NSValue valueWithCGPoint:CGPointMake(SCREEN_WIDTH, SCREEN_HEIGHT/2-50)];
+    anima.values = [NSArray arrayWithObjects:value0,value1,value2,value3,value4,value5, nil];
+    anima.duration = 2.0f;
+    anima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];//设置动画的节奏
+    anima.delegate = self;//设置代理，可以检测动画的开始和结束
+    [self.customView.layer addAnimation:anima forKey:nil];
+}
+
+
+- (void)animationDidStart:(CAAnimation *)anim {
+    NSLog(@"animationDidStart");
+}
+
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    NSLog(@"animationDidStop");
+}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
      NSLog(@"监听到%@的%@改变了%@", object, keyPath,change);
@@ -147,22 +209,7 @@
 }
 
 - (void)btnTapped {
-//    FLCar *car = [[FLCar alloc] init];
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        [car class];
-//    });
-    
-    [self.actionCommand.executionSignals subscribeNext:^(id  _Nullable x) {
-        [x subscribeNext:^(id  _Nullable x) {
-             NSLog(@"%@",x);
-        }];
-        
-    }];
-    
-//    
-//    [self.actionCommand.executionSignals.switchToLatest subscribeNext:^(id  _Nullable x) {
-//        NSLog(@"%@",x);
-//    }];
+    [self testAnimation];
 }
 
 #pragma mark - accessors

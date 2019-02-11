@@ -7,6 +7,7 @@
 //
 
 #import "WZDCustomView.h"
+#import "FLLayer.h"
 
 @interface WZDCustomView()
 
@@ -21,11 +22,15 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor yellowColor];
     }
     return self;
 }
-    
+
+//+ (Class)layerClass {
+//    return [FLLayer class];
+//}
+
 - (void)drawRect:(CGRect)rect {
     
 //    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 100, 100)];
@@ -46,7 +51,7 @@
 //    [[UIColor blueColor] setFill];
 //    [path fill];
 //    
-    CGSize size = self.bounds.size;
+//    CGSize size = self.bounds.size;
 //
 //    CGFloat lineHeight = 3.0;
 //    CGFloat lineWidth = 60;
