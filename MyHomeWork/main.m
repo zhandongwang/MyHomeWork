@@ -8,7 +8,6 @@
 
 #include <Foundation/Foundation.h>
 #import "AppDelegate.h"
-#include "fishhook.h"
 
 static int(*orig_close)(int);
 static int(*orig_open)(const char *, int, ...);
@@ -37,10 +36,14 @@ int my_open(const char *path, int oflag, ...) {
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
+        
+        
+        
+        
 //        struct rebinding open_rebinding = {"open", my_open,(void *)&orig_open};
 //        rebind_symbols((struct rebinding[1]){open_rebinding}, 1);
 //        __unused int fd = open(argv[0], O_RDONLY);
-//
+
         
 //        rebind_symbols((struct rebinding[2]){{"close", my_close, (void *)&orig_close}, {"open", my_open, (void *)&orig_open}}, 2);
 //
@@ -51,7 +54,7 @@ int main(int argc, char * argv[]) {
 //        read(fd, &magic_number, 4);
 //        printf("Mach-O Magic Number: %x \n", magic_number);
 //        close(fd);
-//
+
         
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }

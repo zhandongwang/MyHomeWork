@@ -1,9 +1,9 @@
 {
   "name": "CCDTimeSaver",
   "version": "0.1.2",
-  "summary": "A short description of CCDTimeSaver.",
+  "summary": "basic A short description of CCDTimeSaver.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "http://git.2dfire-inc.com/ccd-iOS/CCDTimeSaver",
+  "homepage": "http://git.2dfire.net/ccd-iOS/CCDTimeSaver",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "fengli": "fengli@2dfire.com"
   },
   "source": {
-    "git": "git@git.2dfire-inc.com:ccd-iOS/CCDTimeSaver.git",
+    "git": "git@git.2dfire.net:ccd-iOS/CCDTimeSaver.git",
     "tag": "0.1.2"
   },
   "platforms": {
@@ -20,5 +20,12 @@
   },
   "source_files": "CCDTimeSaver/Classes/**/*",
   "requires_arc": true,
-  "frameworks": "UIKit"
+  "frameworks": "UIKit",
+  "ios": {
+    "preserve_paths": [
+      "CCDTimeSaver/Classes/**/*",
+      "CCDTimeSaver.framework"
+    ]
+  },
+  "prepare_command": "echo '        #!/bin/sh\n\n        if [[ -d CCDTimeSaver.framework ]]; then\n          echo \"Tdfire: CCDTimeSaver.framework is not empty\"\n          exit 0\n        fi\n\n        if [[ ! -d tdfire_download_temp ]]; then\n          mkdir tdfire_download_temp\n        fi\n\n        cd tdfire_download_temp\n\n        curl --fail -O -J -v http://iosframeworkserver-shopkeeperclient.app.2dfire.com/download/CCDTimeSaver/0.1.2\n\n        if [[ -f CCDTimeSaver.framework.zip ]]; then\n          echo \"Tdfire: copying CCDTimeSaver.framework ...\"\n\n          unzip CCDTimeSaver.framework.zip\n          cp -fa CCDTimeSaver.framework ../\n        fi\n\n        cd ..\n        rm -fr tdfire_download_temp\n\n        echo \"pod cache path for CCDTimeSaver: $(pwd)\"\n' > download.sh && sh download.sh && rm download.sh"
 }

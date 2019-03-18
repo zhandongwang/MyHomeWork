@@ -17,5 +17,12 @@
              };
 }
 
+- (void)changeTitle:(NSString *)str {
+    self.title = str;
+}
+
+- (void)changeOld:(BOOL)status {
+    self.isOld = status;
+}
 
 @end

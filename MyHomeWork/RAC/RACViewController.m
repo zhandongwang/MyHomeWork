@@ -28,26 +28,57 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self setupSubViews];
+//    [self setupSubViews];
+//
+//    self.viewModel = [[RACViewModel alloc] init];
+//    RAC(self.viewModel, userName) = self.userNameTextField.rac_textSignal;
+//    RAC(self.viewModel,password) = self.pwdTextField.rac_textSignal;
+//
+//    self.loginButton.rac_command = self.viewModel.loginCommand;
+//    @weakify(self);
+//    [[self.viewModel.loginCommand executionSignals] subscribeNext:^(RACSignal  *x) {
+//        @strongify(self)
+//        [x subscribeNext:^(NSString*  value) {
+//            NSLog(@"%@",value);
+//        }];
+//    }];
     
-    self.viewModel = [[RACViewModel alloc] init];
-    RAC(self.viewModel, userName) = self.userNameTextField.rac_textSignal;
-    RAC(self.viewModel,password) = self.pwdTextField.rac_textSignal;
+//    RACSignal *A = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+//        [subscriber sendNext:@"A"];
+//
+//        return  nil;
+//    }];
+//    RACSignal *B = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+//        [subscriber sendNext:@"B"];
+//        return  nil;
+//    }];
     
-    self.loginButton.rac_command = self.viewModel.loginCommand;
-    @weakify(self);
-    [[self.viewModel.loginCommand executionSignals] subscribeNext:^(RACSignal  *x) {
-        @strongify(self)
-        [x subscribeNext:^(NSString*  value) {
-            NSLog(@"%@",value);
-        }];
-    }];
+
+//    RACSignal *combine = [A combineLatestWith:B];
+//    [combine subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//    }];
+    
+    RACSubject *sA = [RACSubject subject];
+    RACSubject *sB = [RACSubject subject];
+//    RACSignal *sThen = [sA then:^RACSignal * _Nonnull{
+//        return sB;
+//    }];
+    
+//    [sThen subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//    }];
     
     
+//    RACSignal *sCombine = [sA zipWith:sB];
+//    [sCombine subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//    }];
     
-    
-    
-    
+    [sA sendNext:@"sA"];
+    [sA sendNext:@"sAA"];
+    [sB sendNext:@"sB"];
+    [sB sendNext:@"sBB"];
     
 //    @weakify(self);
 //    [[[[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside]

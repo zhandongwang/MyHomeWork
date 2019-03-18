@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "998098DD18360A3C7AB512FC7AEF11F2"
+               BlueprintIdentifier = "74D7EE4BA6156E7BFD3AB2EE23330317"
                BlueprintName = "CCDTimeSaver"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libCCDTimeSaver.a">

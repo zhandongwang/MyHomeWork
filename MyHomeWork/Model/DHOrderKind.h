@@ -14,5 +14,8 @@
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSArray <DHOrderModel *> *orders;
+@property (nonatomic, assign) BOOL isOld;
 
+- (void)changeTitle:(NSString *)str;
+- (void)changeOld:(BOOL)status;
 @end

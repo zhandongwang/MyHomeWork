@@ -9,6 +9,8 @@
 #import "FLChildViewController.h"
 #include <pthread.h>
 #import "DHOrderModel.h"
+#import "DHOrderKind.h"
+//#import "DHOrderDishModel.h"
 #import "FLOperationFactory.h"
 #import "FLOperation.h"
 
@@ -21,13 +23,18 @@
 #import "FLEngine.h"
 #import "FLWheel.h"
 
+#import "FLFMDBHelper.h"
+#import <ReactiveObjC/ReactiveObjC.h>
+
 typedef void(^MyBlock)(void);
 
 @interface FLChildViewController ()<FLBaseViewControllerProtocol>
 
 @property (nonatomic, copy) MyBlock blockOne;
 @property (nonatomic, copy) MyBlock blockTwo;
+@property (nonatomic, copy) NSString *address;
 @property (nonatomic, strong) dispatch_source_t timer;
+@property (nonatomic, strong) DHOrderModel *orderModel;
 @end
 
 static void clean(NSObject **object) {
@@ -38,8 +45,16 @@ static void clean(NSObject **object) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.child = self;
-    int var = 10;
+
+    
+    
+    
+    
+    
+    
+//    [FLFMDBHelper createDB];
+//    DHOrderDishModel *model = [DHOrderDishModel new];
+    
     
     [self practiceGCD];
 //    Class newCls = objc_allocateClassPair([NSObject class], "Student", 0);
@@ -93,38 +108,33 @@ void *run (void * param){
 }
 
 - (void)practiceBlock {
-    NSLog(@"start practiceBlock");
-    self.blockOne = ^{
-        [NSThread sleepForTimeInterval:3];
-        NSLog(@"this is blockOne");
+    _blockOne = ^{
+        self.address = @"test";
+//        [self practiceGCD];
+//        _address = @"test";
     };
     
-    self.blockTwo = ^{
-        [NSThread sleepForTimeInterval:5];
-         NSLog(@"this is blockTwo");
-    };
 }
 
 - (void)practiceRunTime {
     //messageForwading
-//    Method origMethod = class_getInstanceMethod([self class], @selector(viewWillAppear:));
-//    Method swizzledMethod = class_getInstanceMethod([self class], @selector(swizzledViewWillAppear:));
+    Method origMethod = class_getInstanceMethod([self class], @selector(viewWillAppear:));
+    Method swizzledMethod = class_getInstanceMethod([self class], @selector(swizzledViewWillAppear:));
 //    if (class_addMethod([self class], @selector(swizzledViewWillAppear:), method_getImplementation(origMethod), method_getTypeEncoding(origMethod))) {
 //        method_exchangeImplementations(origMethod, swizzledMethod);
 //    }
     
-//    BOOL didAdded = class_addMethod([self class], @selector(viewWillAppear:), method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-//    if (didAdded) {
-//        class_replaceMethod([self class], @selector(swizzledViewWillAppear:), method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
-//    } else {
-//        method_exchangeImplementations(origMethod, swizzledMethod);
-//    }
+    BOOL didAdded = class_addMethod([self class], @selector(viewWillAppear:), method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+    if (didAdded) {
+        class_replaceMethod([self class], @selector(swizzledViewWillAppear:), method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
+    } else {
+        method_exchangeImplementations(origMethod, swizzledMethod);
+    }
 }
 
 - (void)practiceOpt {
     
-    
-    
+
     
 }
 
@@ -155,17 +165,85 @@ void *run (void * param){
 
 - (void)practiceGCD {
     
-    dispatch_queue_t queue = dispatch_queue_create("apple.com", DISPATCH_QUEUE_SERIAL);
-    dispatch_async(queue, ^{
-        dispatch_async(queue, ^{
-             NSLog(@"%s",dispatch_queue_get_label(queue));
-        });
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    __block NSInteger count = 8;
+    NSCondition *condition = [[NSCondition alloc] init];
+//    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:5];
+        NSLog(@"1 finished");
+        [condition lock];
+        count -= 1;
+        [condition signal];
+        [condition unlock];
+    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:5];
+        NSLog(@"2 finished");
+        [condition lock];
+        count -= 1;
+        [condition signal];
+        [condition unlock];
+    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:5];
+        NSLog(@"3 finished");
+        [condition lock];
+        count -= 1;
+        [condition signal];
+        [condition unlock];
+    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:5];
+        NSLog(@"4 finished");
+        [condition lock];
+        count -= 1;
+        [condition signal];
+        [condition unlock];
     });
     
-//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//
-//    NSMutableArray *array = @[].mutableCopy;
-//    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:5];
+        NSLog(@"5 finished");
+        [condition lock];
+        count -= 1;
+        [condition signal];
+        [condition unlock];
+    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:5];
+        NSLog(@"6 finished");
+        [condition lock];
+        count -= 1;
+        [condition signal];
+        [condition unlock];
+    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:5];
+        NSLog(@"7 finished");
+        [condition lock];
+        count -= 1;
+        [condition signal];
+        [condition unlock];
+    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:5];
+        NSLog(@"8 finished");
+        [condition lock];
+        count -= 1;
+        [condition signal];
+        [condition unlock];
+    });
+    
+    NSLog(@"before update UI");
+    while (count > 0) {
+        [condition wait];
+    }
+    
+    
+    
+
 //
 //    dispatch_async(queue, ^{
 //        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);

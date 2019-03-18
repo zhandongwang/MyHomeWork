@@ -13,7 +13,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSURL *picUrl;
 @property (nonatomic, strong) NSNumber *score;
-@property (nonatomic, assign) NSUInteger age;
+@property (nonatomic, assign) long age;
 @property (nonatomic, copy) NSString *address;
 
 @end

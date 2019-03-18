@@ -32,14 +32,15 @@ PODS:
     - BlocksKit/DynamicDelegate
   - CCDTimeSaver (0.1.2)
   - CocoaSecurity (1.2.4.2)
-  - fishhook (0.2)
+  - FBRetainCycleDetector (0.1.4.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0.1)
   - MJRefresh (2.4.12)
-  - MLeaksFinder (1.0.0)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
   - OCTWebViewBridge (2.1.0)
   - ReactiveObjC (3.0.0)
   - SDWebImage (4.2.1):
@@ -55,12 +56,11 @@ DEPENDENCIES:
   - BlocksKit
   - CCDTimeSaver (from `~/Documents/Development/CCDPods/CCDTimeSaver`)
   - CocoaSecurity
-  - fishhook (from `~/Documents/Development/fishhook`)
   - FMDB (from `~/Documents/Development/fmdb`)
   - Masonry
   - MBProgressHUD
   - MJRefresh (~> 2.4.7)
-  - MLeaksFinder (from `~/Documents/Development/MLeaksFinder`)
+  - MLeaksFinder
   - OCTWebViewBridge
   - ReactiveObjC (= 3.0.0)
   - SDWebImage (from `~/Documents/Projects/SD-DL`)
@@ -71,11 +71,13 @@ DEPENDENCIES:
 SPEC REPOS:
   http://git.2dfire.net/ios/cocoapods-spec.git:
     - CocoaSecurity
+    - FBRetainCycleDetector
     - MBProgressHUD
   https://github.com/cocoapods/specs.git:
     - BlocksKit
     - Masonry
     - MJRefresh
+    - MLeaksFinder
     - OCTWebViewBridge
     - ReactiveObjC
     - SnapKit
@@ -87,12 +89,8 @@ EXTERNAL SOURCES:
     :path: "~/Documents/Development/Aspects"
   CCDTimeSaver:
     :path: "~/Documents/Development/CCDPods/CCDTimeSaver"
-  fishhook:
-    :path: "~/Documents/Development/fishhook"
   FMDB:
     :path: "~/Documents/Development/fmdb"
-  MLeaksFinder:
-    :path: "~/Documents/Development/MLeaksFinder"
   SDWebImage:
     :path: "~/Documents/Projects/SD-DL"
   YYCache:
@@ -101,24 +99,24 @@ EXTERNAL SOURCES:
     :path: "~/Documents/Development/YYModel"
 
 SPEC CHECKSUMS:
-  AFNetworking: 9eafa7e00949e88834fbf954cd1398560e814a1f
-  Aspects: fc1e3a3ed849fd7d5634e3de6ed01cb8e08bc4c5
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  CCDTimeSaver: fa1ad8ef93ab3a6fd06a284291e1ebebc58e26c2
+  CCDTimeSaver: 62e53255b357b8eb652193fd5493879bd411a10a
   CocoaSecurity: c1287f056a21fa88a74e4d7f57f56b0a1a6e64b0
-  fishhook: d564555f8b043c93dca04932fa8ea7cc44b7bd6b
-  FMDB: 1c1e5586378da0fbe2148a7afa0297885fa0dc86
+  FBRetainCycleDetector: 22a77c1446a858961ee4bce6e943603add9db037
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 443c07c0aa22772fbe3702db40fc65c36d80155e
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
-  MLeaksFinder: 6c719c15840f2de8e1f6c26c8fec4fb7e3fe875c
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   OCTWebViewBridge: e7712ef0c0670905da57b8a36d3f02a43115c507
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
-  SDWebImage: 4340653c8610b66887d1b8c31fc00d8b39c99100
+  SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  YYCache: e48e68f2c149d5278ee13dd4cfe0132b48125797
-  YYModel: eb86cab3f5071337137ed680c72c1de4fc378356
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 56b8bd0256dc1ea05943b348d190f1463606fd13
+PODFILE CHECKSUM: 37f807f9c0f539a1c707a7d0045a245ddb507eed
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.0

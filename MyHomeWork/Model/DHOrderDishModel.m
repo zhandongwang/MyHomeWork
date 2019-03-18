@@ -9,15 +9,15 @@
 #import "DHOrderDishModel.h"
 
 @implementation DHOrderDishModel
-+ (void)load {
-    NSLog(@"DHOrderDishModel load");
-}
-+ (void)initialize {
-    NSLog(@"DHOrderDishModel initialize");
-}
-
-- (void)printName {
-    NSLog(@"printName--DHOrderDishModel");
-}
+//+ (void)load {
+//    NSLog(@"DHOrderDishModel load");
+//}
+//+ (void)initialize {
+//    NSLog(@"DHOrderDishModel initialize");
+//}
+//
+//- (void)printName {
+//    NSLog(@"printName--DHOrderDishModel");
+//}
     
 @end

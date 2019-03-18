@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FLClothesProvider.h"
+#import "FLBookProvider.h"
 
-@interface FLProxy : NSProxy {
-    id _objct;
+@interface FLProxy : NSProxy
+<FLBookProviderProtocol, FLClothesProviderProtocol>
+{
+    id _object;
 }
 
++ (instancetype)dealerProxy;
 + (id)proxyForObject:(id)obj;
-
 @end

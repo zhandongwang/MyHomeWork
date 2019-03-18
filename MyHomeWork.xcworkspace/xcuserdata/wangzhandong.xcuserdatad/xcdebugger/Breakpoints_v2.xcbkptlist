@@ -73,13 +73,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyHomeWork/FLChildViewController.m"
-            timestampString = "570181179.942185"
+            filePath = "MyHomeWork/SQL/FLFMDBHelper.m"
+            timestampString = "574571466.4082609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "+createDB"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyHomeWork/SQL/FLFMDBHelper.m"
+            timestampString = "574571466.408866"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "+createDB"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -7,16 +7,20 @@
 //
 
 #import "DHOrderModel.h"
+#import "DHOrderKind.h"
 
 @implementation DHOrderModel
 
-+ (void)load {
-        NSLog(@"DHOrderModel load");
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.kind = [[DHOrderKind alloc] init];
+        self.kind.title = @"first";
+        self.kind.isOld = NO;
     }
-+ (void)initialize {
-    NSLog(@"DHOrderModel initialize");
+    return self;
 }
-    
 //- (NSInteger)countOfOrderArray {
 //    return self.count;
 //}

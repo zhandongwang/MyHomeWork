@@ -31,26 +31,33 @@
 //    return [FLLayer class];
 //}
 
+- (void)layoutSubviews {
+    NSLog(@"%s", __func__);
+    [super layoutSubviews];
+}
+
 - (void)drawRect:(CGRect)rect {
+    self.backgroundColor = [UIColor redColor];
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 100, 100)];
+    [[UIColor blueColor] setFill];
+    [path fill];
     
-//    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 100, 100)];
-//    [[UIColor blueColor] setFill];
-//    [path fill];
-    
+//    CGRect myrect = CGRectMake(10, 10, 50, 50);
+//
 //    CGContextRef context = UIGraphicsGetCurrentContext();
 //    CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
 //    CGContextSetLineWidth(context, 3);
 //    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:myrect cornerRadius:10];
 //    [path stroke];
-    
+//
 //    CGContextAddEllipseInRect(context, myrect);
 //    CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
 //    CGContextFillPath(context);
-    
+//
 //    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:rect];
 //    [[UIColor blueColor] setFill];
 //    [path fill];
-//    
+//
 //    CGSize size = self.bounds.size;
 //
 //    CGFloat lineHeight = 3.0;
@@ -59,26 +66,26 @@
 //    linePath.lineWidth = lineHeight;
 //    [linePath moveToPoint:CGPointMake(size.width/2 - lineWidth/2, size.height/2)];
 //    [linePath addLineToPoint:CGPointMake(size.width/2 + lineWidth/2, size.height/2)];
-//    
+//
 //    [linePath moveToPoint:CGPointMake(size.width/2 ,size.height/2 - lineWidth/2)];
 //    [linePath addLineToPoint:CGPointMake( size.width/2, size.height/2 + lineWidth/2)];
-//    
+//
 //    [[UIColor whiteColor] setStroke];
 //    [linePath stroke];
-    
+//
 //    CGPoint center = CGPointMake(100, 100);
 //    CGFloat radius = 100;
 //    CGFloat arcWidth = 30;
-//    
+//
 //    CGFloat startAngle = 3* M_PI / 4;
 //    CGFloat endAngle = M_PI / 4;
-//    
+//
 //    UIBezierPath *arcPath = [UIBezierPath bezierPathWithArcCenter:center radius:(radius / 2 - arcWidth / 2)startAngle:startAngle endAngle:endAngle clockwise:YES];
-//    
+//
 //    arcPath.lineWidth = arcWidth;
 //    [[UIColor redColor] setStroke];
 //    [arcPath stroke];
-//    
+    
     
 }
 //-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

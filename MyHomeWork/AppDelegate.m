@@ -13,8 +13,12 @@
 #import "FRCMainViewController.h"
 #import "FLChildViewController.h"
 #import "MyHomeWork-Swift.h"
+#import "DHOrderModel.h"
+
 @interface AppDelegate ()
 
+@property (nonatomic, strong) DHOrderModel *order;
+@property (nonatomic, assign) NSInteger count;
 @end
 
 @implementation AppDelegate
@@ -22,8 +26,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.order = [DHOrderModel new];
+    self.order.name = @"1";
+    self.count = 1;
     
-    FLMainViewController  *vc = [[FLMainViewController alloc] init];
+    FLChildViewController  *vc = [[FLChildViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigationController;
     self.window.backgroundColor = [UIColor whiteColor];
@@ -31,9 +38,7 @@
     [self.window makeKeyAndVisible];
     
     
-    //test1
-    //1
-    //2
+    
     
     return YES;
 }
@@ -54,6 +59,18 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+     [NSThread sleepForTimeInterval:3];
+     if (self.count & 1) {
+         self.order.name = @"2";
+         NSLog(@"%@",self.order.name);
+     } else {
+         self.order.name = nil;
+     }
+     self.count++;
+     
+ });
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class DHOrderKind;
 @interface DHOrderModel : NSObject
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSNumber *orderID;
+@property (nonatomic, strong) DHOrderKind *kind;
 
 @property (nonatomic, strong) NSMutableArray *orders;
 

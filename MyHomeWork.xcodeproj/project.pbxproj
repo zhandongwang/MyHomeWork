@@ -10,8 +10,9 @@
 		2307F1662064A2120060A688 /* WZDPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307F1652064A2120060A688 /* WZDPatch.m */; };
 		2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307F1682064A3F60060A688 /* WZDPatchTest.m */; };
 		2335DCBB1E0E137100C48142 /* testWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = 2335DCBA1E0E137100C48142 /* testWeb.html */; };
-		23388E40219436CB00189ACC /* FLProxyB.m in Sources */ = {isa = PBXBuildFile; fileRef = 23388E3F219436CB00189ACC /* FLProxyB.m */; };
 		233D2C3E219A6D6600A816E1 /* FLCacheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 233D2C3D219A6D6600A816E1 /* FLCacheViewController.m */; };
+		2356D6DD221E897900DC57D7 /* FLMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2356D6DC221E897900DC57D7 /* FLMsgModel.m */; };
+		2356D6E0221E8AC500DC57D7 /* FLFMDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2356D6DF221E8AC500DC57D7 /* FLFMDBHelper.m */; };
 		23608A921E050F7100C4D190 /* WZDCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23608A911E050F7100C4D190 /* WZDCustomView.m */; };
 		236098921D980892009C589B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098911D980892009C589B /* main.m */; };
 		236098951D980892009C589B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 236098941D980892009C589B /* AppDelegate.m */; };
@@ -29,6 +30,8 @@
 		23634C6321F1796B0028B669 /* FLDoor.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C6221F1796B0028B669 /* FLDoor.m */; };
 		23634C6621F179750028B669 /* FLEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C6521F179750028B669 /* FLEngine.m */; };
 		23634C6921F1797F0028B669 /* FLWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C6821F1797F0028B669 /* FLWheel.m */; };
+		236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 236F1A2B22156ADA009E8C11 /* FLBookProvider.m */; };
+		236F1A2F22156B32009E8C11 /* FLClothesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 236F1A2E22156B32009E8C11 /* FLClothesProvider.m */; };
 		2374CFA31E516696001B799D /* DHPopTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA21E516696001B799D /* DHPopTableViewCellModel.m */; };
 		2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA61E518C62001B799D /* DHAllOrderModel.m */; };
 		2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA81E518C62001B799D /* DHMessageKinds.m */; };
@@ -41,6 +44,7 @@
 		2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163B1E4D613E00FB5868 /* DHPopTableView.m */; };
 		2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */; };
 		237516411E4D617F00FB5868 /* popData.json in Resources */ = {isa = PBXBuildFile; fileRef = 237516401E4D617F00FB5868 /* popData.json */; };
+		237BE7692230C3510097AE6F /* FLTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237BE7682230C3510097AE6F /* FLTestModel.m */; };
 		237ED4B622114EC2003C9B19 /* FLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 237ED4B522114EC2003C9B19 /* FLLayer.m */; };
 		237EE7122159CC850056116E /* DHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EE7112159CC850056116E /* DHUserModel.m */; };
 		23965FB321918F4200349149 /* WebPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 23965FB221918F4200349149 /* WebPlugin.m */; };
@@ -96,10 +100,12 @@
 		2307F1672064A3F60060A688 /* WZDPatchTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDPatchTest.h; sourceTree = "<group>"; };
 		2307F1682064A3F60060A688 /* WZDPatchTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDPatchTest.m; sourceTree = "<group>"; };
 		2335DCBA1E0E137100C48142 /* testWeb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testWeb.html; sourceTree = "<group>"; };
-		23388E3E219436CB00189ACC /* FLProxyB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLProxyB.h; sourceTree = "<group>"; };
-		23388E3F219436CB00189ACC /* FLProxyB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLProxyB.m; sourceTree = "<group>"; };
 		233D2C3C219A6D6600A816E1 /* FLCacheViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCacheViewController.h; sourceTree = "<group>"; };
 		233D2C3D219A6D6600A816E1 /* FLCacheViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCacheViewController.m; sourceTree = "<group>"; };
+		2356D6DB221E897900DC57D7 /* FLMsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLMsgModel.h; sourceTree = "<group>"; };
+		2356D6DC221E897900DC57D7 /* FLMsgModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLMsgModel.m; sourceTree = "<group>"; };
+		2356D6DE221E8AC500DC57D7 /* FLFMDBHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLFMDBHelper.h; sourceTree = "<group>"; };
+		2356D6DF221E8AC500DC57D7 /* FLFMDBHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLFMDBHelper.m; sourceTree = "<group>"; };
 		23608A901E050F7100C4D190 /* WZDCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZDCustomView.h; sourceTree = "<group>"; };
 		23608A911E050F7100C4D190 /* WZDCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZDCustomView.m; sourceTree = "<group>"; };
 		2360988D1D980892009C589B /* MyHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +146,10 @@
 		23634C6521F179750028B669 /* FLEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLEngine.m; sourceTree = "<group>"; };
 		23634C6721F1797F0028B669 /* FLWheel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLWheel.h; sourceTree = "<group>"; };
 		23634C6821F1797F0028B669 /* FLWheel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLWheel.m; sourceTree = "<group>"; };
+		236F1A2A22156ADA009E8C11 /* FLBookProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLBookProvider.h; sourceTree = "<group>"; };
+		236F1A2B22156ADA009E8C11 /* FLBookProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLBookProvider.m; sourceTree = "<group>"; };
+		236F1A2D22156B32009E8C11 /* FLClothesProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLClothesProvider.h; sourceTree = "<group>"; };
+		236F1A2E22156B32009E8C11 /* FLClothesProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLClothesProvider.m; sourceTree = "<group>"; };
 		2374CFA11E516696001B799D /* DHPopTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewCellModel.h; sourceTree = "<group>"; };
 		2374CFA21E516696001B799D /* DHPopTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableViewCellModel.m; sourceTree = "<group>"; };
 		2374CFA51E518C62001B799D /* DHAllOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAllOrderModel.h; sourceTree = "<group>"; };
@@ -163,6 +173,8 @@
 		2375163C1E4D613E00FB5868 /* DHPopTableViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewStyle.h; sourceTree = "<group>"; };
 		2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableViewStyle.m; sourceTree = "<group>"; };
 		237516401E4D617F00FB5868 /* popData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = popData.json; sourceTree = "<group>"; };
+		237BE7672230C3510097AE6F /* FLTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLTestModel.h; sourceTree = "<group>"; };
+		237BE7682230C3510097AE6F /* FLTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLTestModel.m; sourceTree = "<group>"; };
 		237ED4B422114EC2003C9B19 /* FLLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLLayer.h; sourceTree = "<group>"; };
 		237ED4B522114EC2003C9B19 /* FLLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLLayer.m; sourceTree = "<group>"; };
 		237EE7102159CC850056116E /* DHUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHUserModel.h; sourceTree = "<group>"; };
@@ -293,6 +305,17 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		2356D6DA221E895C00DC57D7 /* SQL */ = {
+			isa = PBXGroup;
+			children = (
+				2356D6DB221E897900DC57D7 /* FLMsgModel.h */,
+				2356D6DC221E897900DC57D7 /* FLMsgModel.m */,
+				2356D6DE221E8AC500DC57D7 /* FLFMDBHelper.h */,
+				2356D6DF221E8AC500DC57D7 /* FLFMDBHelper.m */,
+			);
+			path = SQL;
+			sourceTree = "<group>";
+		};
 		236098841D980892009C589B = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +341,7 @@
 		2360988F1D980892009C589B /* MyHomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				2356D6DA221E895C00DC57D7 /* SQL */,
 				23634C4621F165FC0028B669 /* Pattern */,
 				233D2C3B219A6D4900A816E1 /* Cache */,
 				23965FBE2193DEF400349149 /* Runtime */,
@@ -453,6 +477,8 @@
 				23E8B79B21E6E67E00FD446F /* DHOrderDishModel+Test2.m */,
 				237EE7102159CC850056116E /* DHUserModel.h */,
 				237EE7112159CC850056116E /* DHUserModel.m */,
+				237BE7672230C3510097AE6F /* FLTestModel.h */,
+				237BE7682230C3510097AE6F /* FLTestModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -496,8 +522,10 @@
 				23965FC32193E3AC00349149 /* FLPerson.m */,
 				23965FC521940ED600349149 /* FLProxy.h */,
 				23965FC621940ED600349149 /* FLProxy.m */,
-				23388E3E219436CB00189ACC /* FLProxyB.h */,
-				23388E3F219436CB00189ACC /* FLProxyB.m */,
+				236F1A2A22156ADA009E8C11 /* FLBookProvider.h */,
+				236F1A2B22156ADA009E8C11 /* FLBookProvider.m */,
+				236F1A2D22156B32009E8C11 /* FLClothesProvider.h */,
+				236F1A2E22156B32009E8C11 /* FLClothesProvider.m */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -750,6 +778,7 @@
 				236098981D980892009C589B /* FLMainViewController.m in Sources */,
 				23634C6321F1796B0028B669 /* FLDoor.m in Sources */,
 				23634C5D21F177E20028B669 /* FLBuilder.m in Sources */,
+				236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */,
 				23BF048621353D0200ECD946 /* WZDBaseViewController.m in Sources */,
 				23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */,
 				23BF048921353D2100ECD946 /* FLChildViewController.m in Sources */,
@@ -761,6 +790,8 @@
 				2374CFC01E51A247001B799D /* FRCMainViewController.m in Sources */,
 				2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */,
 				23A5E7531E4DA59E008DCAEE /* DHPopTableViewCell.m in Sources */,
+				237BE7692230C3510097AE6F /* FLTestModel.m in Sources */,
+				236F1A2F22156B32009E8C11 /* FLClothesProvider.m in Sources */,
 				23BF04832134E8F600ECD946 /* Caculator.m in Sources */,
 				2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */,
 				23634C6621F179750028B669 /* FLEngine.m in Sources */,
@@ -775,9 +806,9 @@
 				23608A921E050F7100C4D190 /* WZDCustomView.m in Sources */,
 				23634C4C21F167630028B669 /* FLOperationFactory.m in Sources */,
 				2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */,
+				2356D6E0221E8AC500DC57D7 /* FLFMDBHelper.m in Sources */,
 				23965FC12193DF4500349149 /* FLCar.m in Sources */,
 				2374CFB21E518C62001B799D /* DHOrderKind.m in Sources */,
-				23388E40219436CB00189ACC /* FLProxyB.m in Sources */,
 				23634C4921F166590028B669 /* FLOperation.m in Sources */,
 				2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */,
 				236098951D980892009C589B /* AppDelegate.m in Sources */,
@@ -789,6 +820,7 @@
 				2374CFBA1E518D45001B799D /* FRCBaseViewController.m in Sources */,
 				23965FBA2191B9A000349149 /* FLSwiftWebViewController.swift in Sources */,
 				23634C5521F16F710028B669 /* FLCashRebate.m in Sources */,
+				2356D6DD221E897900DC57D7 /* FLMsgModel.m in Sources */,
 				23634C5221F16E7D0028B669 /* FLCashNormal.m in Sources */,
 				23965FC42193E3AC00349149 /* FLPerson.m in Sources */,
 				2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */,
@@ -919,6 +951,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_GENERATE_MAP_FILE = YES;
+				LD_MAP_FILE_PATH = "$(TARGET_TEMP_DIR)/$(PRODUCT_NAME)-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;

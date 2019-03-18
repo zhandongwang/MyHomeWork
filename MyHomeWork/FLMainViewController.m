@@ -10,7 +10,7 @@
 #import "WZDCustomView.h"
 #import "DHAllOrderModel.h"
 #import "DHOrderKind.h"
-#import "DHOrderModel.h"
+//#import "DHOrderModel.h"
 
 #import "FRCMainViewController.h"
 #import <BlocksKit/BlocksKit.h>
@@ -20,8 +20,9 @@
 #import "FLPerson.h"
 #import "FLCar.h"
 #import "FLProxy.h"
-#import "FLProxyB.h"
 #import "DHOrderDishModel.h"
+#import "DHUserModel.h"
+
 @interface FLMainViewController ()<CAAnimationDelegate>
 
 @property (nonatomic, strong) WZDCustomView *customView;
@@ -34,13 +35,60 @@
 
 @implementation FLMainViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Home";
     [self.view addSubview:self.customView];
+    [self.customView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(200, 200));
+        make.center.equalTo(self.view);
+        
+    }];
+    NSLog(@"%@",self.title);
+
+//    FLProxy *proxy = [FLProxy dealerProxy];
+//    [proxy purchaseBookWithTitle:@"hello"];
+////    [proxy purchaseCloseWithSize:CGSizeMake(10, 10)];
+//    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+//    NSURL *url = [FLProxy proxyForObject:[NSURL URLWithString:@"www.google.com"]];
+//    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        [NSThread sleepForTimeInterval:1.5];
+//        NSLog(@"URL RESPONSE");
+//        dispatch_semaphore_signal(sem);
+//    }];
+//    [task resume];
+//    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+//    NSLog(@"test finished");
+
 }
+
+- (void)viewWillLayoutSubviews {
+    NSLog(@"%s",__func__);
+    [super viewWillLayoutSubviews];
+}
+
+- (void)viewDidLayoutSubviews {
+    NSLog(@"%s",__func__);
+    [super viewDidLayoutSubviews];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.customView setNeedsLayout];
     
+    NSDictionary *dict = @{@"age" : @"10000"};
+    DHUserModel *user = [DHUserModel yy_modelWithJSON:dict];
+    NSLog(@"%ld",user.age);
+
+    
+}
+
 - (void)testAnimation {
 //    CABasicAnimation *fadeIn = [CABasicAnimation animationWithKeyPath:@"bounds.size.width"];
 //    fadeIn.duration = 0.75;
@@ -56,7 +104,44 @@
 //        NSLog(@"after animation UIView.layer.bounds.size.width:%f",self.customView.layer.bounds.size.width);
 //    });
     
+    CABasicAnimation *zPosition = [CABasicAnimation animation];
+    zPosition.keyPath = @"zPosition";
+    zPosition.fromValue = @-1;
+    zPosition.toValue = @1;
+    zPosition.duration = 1.2;
     
+    CAKeyframeAnimation *rotation = [CAKeyframeAnimation animation];
+    rotation.keyPath = @"rotation.z";
+    rotation.values = @[ @0, @0.14, @0 ];
+    rotation.duration = 1.2;
+    rotation.timingFunctions = @[
+                                 [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
+                                 [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]
+                                 ];
+    
+    CAKeyframeAnimation *position = [CAKeyframeAnimation animation];
+    position.keyPath = @"position";
+    position.values = @[
+                        [NSValue valueWithCGPoint:CGPointZero],
+                        [NSValue valueWithCGPoint:CGPointMake(200, 300)]
+                        ];
+    position.timingFunctions = @[
+                                 [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
+                                 [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]
+                                 ];
+//    position.additive = YES;
+    position.duration = 1.2;
+    
+    CAAnimationGroup *group2 = [[CAAnimationGroup alloc] init];
+    group2.animations = @[ rotation ];
+    group2.duration = 1.2;
+//    group2.beginTime = 0.5;
+    group2.delegate = self;
+    group2.removedOnCompletion = NO;
+    
+    [self.customView.layer addAnimation:group2 forKey:nil];
+    
+//    self.customView.layer.zPosition = 1;
     
 //    CABasicAnimation *rotate = [CABasicAnimation animation];
 //    rotate.keyPath = @"transform.rotation.z";
@@ -87,18 +172,6 @@
 //    self.customView.frame = CGRectMake(0, 100, 50, 50);
 //    [UIView commitAnimations];
     
-    CAKeyframeAnimation *anima = [CAKeyframeAnimation animationWithKeyPath:@"position"];
-    NSValue *value0 = [NSValue valueWithCGPoint:CGPointMake(0, SCREEN_HEIGHT/2-50)];
-    NSValue *value1 = [NSValue valueWithCGPoint:CGPointMake(SCREEN_WIDTH/3, SCREEN_HEIGHT/2-50)];
-    NSValue *value2 = [NSValue valueWithCGPoint:CGPointMake(SCREEN_WIDTH/3, SCREEN_HEIGHT/2+50)];
-    NSValue *value3 = [NSValue valueWithCGPoint:CGPointMake(SCREEN_WIDTH*2/3, SCREEN_HEIGHT/2+50)];
-    NSValue *value4 = [NSValue valueWithCGPoint:CGPointMake(SCREEN_WIDTH*2/3, SCREEN_HEIGHT/2-50)];
-    NSValue *value5 = [NSValue valueWithCGPoint:CGPointMake(SCREEN_WIDTH, SCREEN_HEIGHT/2-50)];
-    anima.values = [NSArray arrayWithObjects:value0,value1,value2,value3,value4,value5, nil];
-    anima.duration = 2.0f;
-    anima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];//设置动画的节奏
-    anima.delegate = self;//设置代理，可以检测动画的开始和结束
-    [self.customView.layer addAnimation:anima forKey:nil];
 }
 
 
@@ -116,25 +189,25 @@
 }
 
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self.customView updateName:@"hello"];
-    
-    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(NSNumber * _Nullable input) {
-        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-            NSInteger integer = [input integerValue];
-            for (NSInteger i = 0; i < integer; i++) {
-                [subscriber sendNext:@(i)];
-            }
-            [subscriber sendCompleted];
-            return nil;
-        }];
-    }];
-    [[command.executionSignals switchToLatest] subscribeNext:^(id  _Nullable x) {
-        NSLog(@"%@", x);
-    }];
-    
-    [command execute:@1];
+//- (void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//    [self.customView updateName:@"hello"];
+//
+//    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(NSNumber * _Nullable input) {
+//        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+//            NSInteger integer = [input integerValue];
+//            for (NSInteger i = 0; i < integer; i++) {
+//                [subscriber sendNext:@(i)];
+//            }
+//            [subscriber sendCompleted];
+//            return nil;
+//        }];
+//    }];
+//    [[command.executionSignals switchToLatest] subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@", x);
+//    }];
+//
+//    [command execute:@1];
 //    [RACScheduler.mainThreadScheduler afterDelay:0.1
 //                                        schedule:^{
 //                                            [command execute:@2];
@@ -172,7 +245,7 @@
 //      }] ;
     
     
-}
+//}
 
 
 - (void)updateWithFirst:(id)x1 second:(id)x2 {
@@ -198,11 +271,6 @@
     !block?: block(@"hello");
 }
 
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -217,16 +285,15 @@
 - (WZDCustomView *)customView
 {
     if (!_customView) {
-        _customView = [[WZDCustomView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
-        _customView.center = self.view.center;
-        
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setTitle:@"测试" forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [button setBackgroundColor:[UIColor yellowColor]];
-        button.frame = CGRectMake(50, 50, 50, 20);
-        [button addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
-        [_customView addSubview:button];
+        _customView = [[WZDCustomView alloc] init];
+        _customView.backgroundColor = [UIColor yellowColor];
+//        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [button setTitle:@"测试" forState:UIControlStateNormal];
+//        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//        [button setBackgroundColor:[UIColor yellowColor]];
+//        button.frame = CGRectMake(50, 50, 50, 20);
+//        [button addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
+//        [_customView addSubview:button];
     }
     return _customView;
 }
