@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "10F7F0656BB99FDCBE7BD4CCA0400A8E"
-               BlueprintName = "SDWebImage"
+               BlueprintIdentifier = "E0184E522F4EBAA7CCAB9AD5AECB9CE4"
+               BlueprintName = "fishhook"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libSDWebImage.a">
+               BuildableName = "libfishhook.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

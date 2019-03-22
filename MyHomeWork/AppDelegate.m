@@ -30,7 +30,7 @@
     self.order.name = @"1";
     self.count = 1;
     
-    FLChildViewController  *vc = [[FLChildViewController alloc] init];
+    FLMainViewController  *vc = [[FLMainViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigationController;
     self.window.backgroundColor = [UIColor whiteColor];

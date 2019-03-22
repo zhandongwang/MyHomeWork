@@ -18,7 +18,7 @@ pod 'AFNetworking', :path => '~/Documents/Projects/AFN-DL'
 pod 'SDWebImage', :path => '~/Documents/Projects/SD-DL'
 pod 'CCDTimeSaver', :path =>'~/Documents/Development/CCDPods/CCDTimeSaver'
 pod 'FMDB', :path => '~/Documents/Development/fmdb'
-pod 'MLeaksFinder'
-#pod 'fishhook', :path => '~/Documents/Development/fishhook'
+#pod 'MLeaksFinder'
+pod 'fishhook'
 
 end

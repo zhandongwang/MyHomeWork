@@ -9,9 +9,9 @@
 #import "FLProxy.h"
 
 @interface FLProxy () {
-    FLBookProvider *_book;
-    FLClothesProvider *_clothes;
-    NSMutableDictionary *_methodsMap;
+//    FLBookProvider *_book;
+//    FLClothesProvider *_clothes;
+//    NSMutableDictionary *_methodsMap;
 }
 
 @end
@@ -30,26 +30,26 @@
 }
 
 - (instancetype)init {
-    _methodsMap = [NSMutableDictionary dictionary];
-    _book = [FLBookProvider new];
-    _clothes = [FLClothesProvider new];
-    [self _registerMethodsWithTarget:_book];
-    [self _registerMethodsWithTarget:_clothes];
-    
+//    _methodsMap = [NSMutableDictionary dictionary];
+//    _book = [FLBookProvider new];
+//    _clothes = [FLClothesProvider new];
+//    [self _registerMethodsWithTarget:_book];
+//    [self _registerMethodsWithTarget:_clothes];
+
     return self;
 }
 
-- (void)_registerMethodsWithTarget:(id )target {
-    unsigned int count = 0;
-    Method *method_list = class_copyMethodList([target class], &count);
-    for (int i = 0; i < count; ++i) {
-        Method temp_method = method_list[i];
-        SEL temp_sel =  method_getName(temp_method);
-        const char *temp_method_name = sel_getName(temp_sel);
-        [_methodsMap setObject:target forKey:[NSString stringWithUTF8String:temp_method_name]];
-    }
-    free(method_list);
-}
+//- (void)_registerMethodsWithTarget:(id )target {
+//    unsigned int count = 0;
+//    Method *method_list = class_copyMethodList([target class], &count);
+//    for (int i = 0; i < count; ++i) {
+//        Method temp_method = method_list[i];
+//        SEL temp_sel =  method_getName(temp_method);
+//        const char *temp_method_name = sel_getName(temp_sel);
+//        [_methodsMap setObject:target forKey:[NSString stringWithUTF8String:temp_method_name]];
+//    }
+//    free(method_list);
+//}
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)sel {
 //    NSString *name = NSStringFromSelector(sel);

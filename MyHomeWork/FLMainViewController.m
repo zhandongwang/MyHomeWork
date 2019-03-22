@@ -20,6 +20,7 @@
 #import "FLPerson.h"
 #import "FLCar.h"
 #import "FLProxy.h"
+#import "FLSecondProxy.h"
 #import "DHOrderDishModel.h"
 #import "DHUserModel.h"
 
@@ -50,7 +51,7 @@
 
 //    FLProxy *proxy = [FLProxy dealerProxy];
 //    [proxy purchaseBookWithTitle:@"hello"];
-////    [proxy purchaseCloseWithSize:CGSizeMake(10, 10)];
+//    [proxy purchaseCloseWithSize:CGSizeMake(10, 10)];
 //    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
 //    NSURL *url = [FLProxy proxyForObject:[NSURL URLWithString:@"www.google.com"]];
 //    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -61,7 +62,18 @@
 //    [task resume];
 //    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
 //    NSLog(@"test finished");
-
+    NSMutableArray *array = [NSMutableArray array];
+    NSMutableString *str = [NSMutableString string];
+    id proxy = [[FLSecondProxy alloc] initWithTarge1:array target2:str];
+    [proxy appendString:@"This"];
+    [proxy appendString:@"is"];
+    [proxy addObject:str];
+    [proxy appendString:@"a"];
+    [proxy appendString:@"test"];
+    NSLog(@"%ld",[proxy count]);//1
+    NSLog(@"%@",[proxy objectAtIndex:0]);//Thisisatest
+    NSLog(@"%d",[proxy isEqualToString:@"Thisisatest"]);//1
+    
 }
 
 - (void)viewWillLayoutSubviews {

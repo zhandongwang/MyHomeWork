@@ -18,4 +18,8 @@
     return self;
 }
 
+- (void)runTo:(NSString *)place {
+    NSLog(@"User Run %@", place);
+}
+
 @end

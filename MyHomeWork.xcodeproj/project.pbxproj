@@ -32,6 +32,7 @@
 		23634C6921F1797F0028B669 /* FLWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C6821F1797F0028B669 /* FLWheel.m */; };
 		236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 236F1A2B22156ADA009E8C11 /* FLBookProvider.m */; };
 		236F1A2F22156B32009E8C11 /* FLClothesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 236F1A2E22156B32009E8C11 /* FLClothesProvider.m */; };
+		236F8E8F224329F20092CD48 /* FLSecondProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 236F8E8E224329F20092CD48 /* FLSecondProxy.m */; };
 		2374CFA31E516696001B799D /* DHPopTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA21E516696001B799D /* DHPopTableViewCellModel.m */; };
 		2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA61E518C62001B799D /* DHAllOrderModel.m */; };
 		2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA81E518C62001B799D /* DHMessageKinds.m */; };
@@ -150,6 +151,8 @@
 		236F1A2B22156ADA009E8C11 /* FLBookProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLBookProvider.m; sourceTree = "<group>"; };
 		236F1A2D22156B32009E8C11 /* FLClothesProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLClothesProvider.h; sourceTree = "<group>"; };
 		236F1A2E22156B32009E8C11 /* FLClothesProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLClothesProvider.m; sourceTree = "<group>"; };
+		236F8E8D224329F20092CD48 /* FLSecondProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLSecondProxy.h; sourceTree = "<group>"; };
+		236F8E8E224329F20092CD48 /* FLSecondProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLSecondProxy.m; sourceTree = "<group>"; };
 		2374CFA11E516696001B799D /* DHPopTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewCellModel.h; sourceTree = "<group>"; };
 		2374CFA21E516696001B799D /* DHPopTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableViewCellModel.m; sourceTree = "<group>"; };
 		2374CFA51E518C62001B799D /* DHAllOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAllOrderModel.h; sourceTree = "<group>"; };
@@ -522,6 +525,8 @@
 				23965FC32193E3AC00349149 /* FLPerson.m */,
 				23965FC521940ED600349149 /* FLProxy.h */,
 				23965FC621940ED600349149 /* FLProxy.m */,
+				236F8E8D224329F20092CD48 /* FLSecondProxy.h */,
+				236F8E8E224329F20092CD48 /* FLSecondProxy.m */,
 				236F1A2A22156ADA009E8C11 /* FLBookProvider.h */,
 				236F1A2B22156ADA009E8C11 /* FLBookProvider.m */,
 				236F1A2D22156B32009E8C11 /* FLClothesProvider.h */,
@@ -777,6 +782,7 @@
 				23E8B79321E5E01700FD446F /* DHOrderDishModel.m in Sources */,
 				236098981D980892009C589B /* FLMainViewController.m in Sources */,
 				23634C6321F1796B0028B669 /* FLDoor.m in Sources */,
+				236F8E8F224329F20092CD48 /* FLSecondProxy.m in Sources */,
 				23634C5D21F177E20028B669 /* FLBuilder.m in Sources */,
 				236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */,
 				23BF048621353D0200ECD946 /* WZDBaseViewController.m in Sources */,

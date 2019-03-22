@@ -16,4 +16,6 @@
 @property (nonatomic, assign) long age;
 @property (nonatomic, copy) NSString *address;
 
+
+- (void)runTo:(NSString *)place;
 @end

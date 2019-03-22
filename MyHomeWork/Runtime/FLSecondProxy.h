@@ -1,8 +1,8 @@
 //
-//  FLTestModel.h
+//  FLSecondProxy.h
 //  MyHomeWork
 //
-//  Created by 凤梨 on 2019/3/7.
+//  Created by 凤梨 on 2019/3/21.
 //  Copyright © 2019年 zhandongwang. All rights reserved.
 //
 
@@ -10,10 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FLTestModel : NSObject
+@interface FLSecondProxy : NSProxy {
+    id target1;
+    id target2;
+}
 
-- (void)runTo:(NSString *)place;
-
+- (id)initWithTarge1:(id)t1  target2:(id)t2;
 
 @end
 

@@ -11,7 +11,7 @@
 #import "FLBookProvider.h"
 
 @interface FLProxy : NSProxy
-<FLBookProviderProtocol, FLClothesProviderProtocol>
+//<FLBookProviderProtocol, FLClothesProviderProtocol>
 {
     id _object;
 }

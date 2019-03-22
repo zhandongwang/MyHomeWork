@@ -26,6 +26,10 @@
 #import "FLFMDBHelper.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 
+#import "DHUserModel.h"
+#import "FLTestModel.h"
+
+
 typedef void(^MyBlock)(void);
 
 @interface FLChildViewController ()<FLBaseViewControllerProtocol>
@@ -46,6 +50,8 @@ static void clean(NSObject **object) {
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    FLTestModel *testModel = [FLTestModel new];
+    [testModel runTo:@"beijing"];
     
     
     
@@ -56,7 +62,7 @@ static void clean(NSObject **object) {
 //    DHOrderDishModel *model = [DHOrderDishModel new];
     
     
-    [self practiceGCD];
+//    [self practiceGCD];
 //    Class newCls = objc_allocateClassPair([NSObject class], "Student", 0);
 //    class_addIvar(newCls, "_age", 4, 1, @encode(int));
 //
@@ -118,18 +124,18 @@ void *run (void * param){
 
 - (void)practiceRunTime {
     //messageForwading
-    Method origMethod = class_getInstanceMethod([self class], @selector(viewWillAppear:));
-    Method swizzledMethod = class_getInstanceMethod([self class], @selector(swizzledViewWillAppear:));
+//    Method origMethod = class_getInstanceMethod([self class], @selector(viewWillAppear:));
+//    Method swizzledMethod = class_getInstanceMethod([self class], @selector(swizzledViewWillAppear:));
 //    if (class_addMethod([self class], @selector(swizzledViewWillAppear:), method_getImplementation(origMethod), method_getTypeEncoding(origMethod))) {
 //        method_exchangeImplementations(origMethod, swizzledMethod);
 //    }
     
-    BOOL didAdded = class_addMethod([self class], @selector(viewWillAppear:), method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-    if (didAdded) {
-        class_replaceMethod([self class], @selector(swizzledViewWillAppear:), method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
-    } else {
-        method_exchangeImplementations(origMethod, swizzledMethod);
-    }
+//    BOOL didAdded = class_addMethod([self class], @selector(viewWillAppear:), method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+//    if (didAdded) {
+//        class_replaceMethod([self class], @selector(swizzledViewWillAppear:), method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
+//    } else {
+//        method_exchangeImplementations(origMethod, swizzledMethod);
+//    }
 }
 
 - (void)practiceOpt {
