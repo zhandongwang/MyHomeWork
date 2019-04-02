@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FLTestModel : NSObject
 
+@property (nonatomic, strong) NSString *ID;
 - (void)runTo:(NSString *)place;
 
 

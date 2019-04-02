@@ -32,7 +32,6 @@
 //}
 
 - (void)layoutSubviews {
-    NSLog(@"%s", __func__);
     [super layoutSubviews];
 }
 

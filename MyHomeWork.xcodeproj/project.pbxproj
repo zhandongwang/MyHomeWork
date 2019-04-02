@@ -45,6 +45,7 @@
 		2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163B1E4D613E00FB5868 /* DHPopTableView.m */; };
 		2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */; };
 		237516411E4D617F00FB5868 /* popData.json in Resources */ = {isa = PBXBuildFile; fileRef = 237516401E4D617F00FB5868 /* popData.json */; };
+		237600962251DEAE00900FAA /* UIViewController+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 237600952251DEAE00900FAA /* UIViewController+Analysis.m */; };
 		237BE7692230C3510097AE6F /* FLTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237BE7682230C3510097AE6F /* FLTestModel.m */; };
 		237ED4B622114EC2003C9B19 /* FLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 237ED4B522114EC2003C9B19 /* FLLayer.m */; };
 		237EE7122159CC850056116E /* DHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EE7112159CC850056116E /* DHUserModel.m */; };
@@ -64,6 +65,10 @@
 		23BF048921353D2100ECD946 /* FLChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF048821353D2100ECD946 /* FLChildViewController.m */; };
 		23BFA07021DCD7B80045AF0B /* RACViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA06F21DCD7B80045AF0B /* RACViewModel.m */; };
 		23BFA07321DCD7E00045AF0B /* RACRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA07221DCD7E00045AF0B /* RACRequest.m */; };
+		23CCB59B2251EF4E00A5EE8E /* NSObject+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB59A2251EF4E00A5EE8E /* NSObject+Analysis.m */; };
+		23CCB59E2251F35300A5EE8E /* UIControl+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB59D2251F35300A5EE8E /* UIControl+Analysis.m */; };
+		23CCB5A12252014F00A5EE8E /* UITableView+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB5A02252014F00A5EE8E /* UITableView+Analysis.m */; };
+		23CCB5A42252123E00A5EE8E /* UIGestureRecognizer+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB5A32252123E00A5EE8E /* UIGestureRecognizer+Analysis.m */; };
 		23D3682E1E4C5A5300ECC80D /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D368301E4C5A5300ECC80D /* test2.png */; };
 		23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A1B1E46F3A800B3FFFD /* InfoPlist.strings */; };
 		23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A251E46F7F200B3FFFD /* Localizable.strings */; };
@@ -176,6 +181,8 @@
 		2375163C1E4D613E00FB5868 /* DHPopTableViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPopTableViewStyle.h; sourceTree = "<group>"; };
 		2375163D1E4D613E00FB5868 /* DHPopTableViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPopTableViewStyle.m; sourceTree = "<group>"; };
 		237516401E4D617F00FB5868 /* popData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = popData.json; sourceTree = "<group>"; };
+		237600942251DEAE00900FAA /* UIViewController+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Analysis.h"; sourceTree = "<group>"; };
+		237600952251DEAE00900FAA /* UIViewController+Analysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Analysis.m"; sourceTree = "<group>"; };
 		237BE7672230C3510097AE6F /* FLTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLTestModel.h; sourceTree = "<group>"; };
 		237BE7682230C3510097AE6F /* FLTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLTestModel.m; sourceTree = "<group>"; };
 		237ED4B422114EC2003C9B19 /* FLLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLLayer.h; sourceTree = "<group>"; };
@@ -211,6 +218,14 @@
 		23BFA06F21DCD7B80045AF0B /* RACViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACViewModel.m; sourceTree = "<group>"; };
 		23BFA07121DCD7E00045AF0B /* RACRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACRequest.h; sourceTree = "<group>"; };
 		23BFA07221DCD7E00045AF0B /* RACRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACRequest.m; sourceTree = "<group>"; };
+		23CCB5992251EF4E00A5EE8E /* NSObject+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Analysis.h"; sourceTree = "<group>"; };
+		23CCB59A2251EF4E00A5EE8E /* NSObject+Analysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Analysis.m"; sourceTree = "<group>"; };
+		23CCB59C2251F35300A5EE8E /* UIControl+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Analysis.h"; sourceTree = "<group>"; };
+		23CCB59D2251F35300A5EE8E /* UIControl+Analysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Analysis.m"; sourceTree = "<group>"; };
+		23CCB59F2252014F00A5EE8E /* UITableView+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+Analysis.h"; sourceTree = "<group>"; };
+		23CCB5A02252014F00A5EE8E /* UITableView+Analysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Analysis.m"; sourceTree = "<group>"; };
+		23CCB5A22252123E00A5EE8E /* UIGestureRecognizer+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Analysis.h"; sourceTree = "<group>"; };
+		23CCB5A32252123E00A5EE8E /* UIGestureRecognizer+Analysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Analysis.m"; sourceTree = "<group>"; };
 		23D368171E4C0ABE00ECC80D /* MyHomeWork-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Prefix.pch"; sourceTree = "<group>"; };
 		23D3682F1E4C5A5300ECC80D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/test2.png; sourceTree = "<group>"; };
 		23D368311E4C5A5900ECC80D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/test2.png"; sourceTree = "<group>"; };
@@ -531,6 +546,16 @@
 				236F1A2B22156ADA009E8C11 /* FLBookProvider.m */,
 				236F1A2D22156B32009E8C11 /* FLClothesProvider.h */,
 				236F1A2E22156B32009E8C11 /* FLClothesProvider.m */,
+				237600942251DEAE00900FAA /* UIViewController+Analysis.h */,
+				237600952251DEAE00900FAA /* UIViewController+Analysis.m */,
+				23CCB5992251EF4E00A5EE8E /* NSObject+Analysis.h */,
+				23CCB59A2251EF4E00A5EE8E /* NSObject+Analysis.m */,
+				23CCB59C2251F35300A5EE8E /* UIControl+Analysis.h */,
+				23CCB59D2251F35300A5EE8E /* UIControl+Analysis.m */,
+				23CCB59F2252014F00A5EE8E /* UITableView+Analysis.h */,
+				23CCB5A02252014F00A5EE8E /* UITableView+Analysis.m */,
+				23CCB5A22252123E00A5EE8E /* UIGestureRecognizer+Analysis.h */,
+				23CCB5A32252123E00A5EE8E /* UIGestureRecognizer+Analysis.m */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -779,9 +804,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BFA07021DCD7B80045AF0B /* RACViewModel.m in Sources */,
+				23CCB5A12252014F00A5EE8E /* UITableView+Analysis.m in Sources */,
 				23E8B79321E5E01700FD446F /* DHOrderDishModel.m in Sources */,
 				236098981D980892009C589B /* FLMainViewController.m in Sources */,
+				237600962251DEAE00900FAA /* UIViewController+Analysis.m in Sources */,
 				23634C6321F1796B0028B669 /* FLDoor.m in Sources */,
+				23CCB59B2251EF4E00A5EE8E /* NSObject+Analysis.m in Sources */,
 				236F8E8F224329F20092CD48 /* FLSecondProxy.m in Sources */,
 				23634C5D21F177E20028B669 /* FLBuilder.m in Sources */,
 				236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */,
@@ -791,6 +819,7 @@
 				23E8B79C21E6E67E00FD446F /* DHOrderDishModel+Test2.m in Sources */,
 				23E8B79621E5E07A00FD446F /* DHOrderDishModel+Test.m in Sources */,
 				23BF04802134E8F600ECD946 /* CaculatorMaker.m in Sources */,
+				23CCB5A42252123E00A5EE8E /* UIGestureRecognizer+Analysis.m in Sources */,
 				23634C6921F1797F0028B669 /* FLWheel.m in Sources */,
 				23BFA07321DCD7E00045AF0B /* RACRequest.m in Sources */,
 				2374CFC01E51A247001B799D /* FRCMainViewController.m in Sources */,
@@ -802,6 +831,7 @@
 				2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */,
 				23634C6621F179750028B669 /* FLEngine.m in Sources */,
 				2374CFB11E518C62001B799D /* DHMessageModel.m in Sources */,
+				23CCB59E2251F35300A5EE8E /* UIControl+Analysis.m in Sources */,
 				23BF04812134E8F600ECD946 /* RACViewController.m in Sources */,
 				2307F1662064A2120060A688 /* WZDPatch.m in Sources */,
 				233D2C3E219A6D6600A816E1 /* FLCacheViewController.m in Sources */,

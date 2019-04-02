@@ -23,31 +23,55 @@
 #import "FLSecondProxy.h"
 #import "DHOrderDishModel.h"
 #import "DHUserModel.h"
+#import "FLChildViewController.h"
+#import "NSObject+Analysis.h"
+#import "UIGestureRecognizer+Analysis.h"
 
 @interface FLMainViewController ()<CAAnimationDelegate>
 
 @property (nonatomic, strong) WZDCustomView *customView;
+@property (nonatomic, strong) UIButton *customButton;
+
 @property (nonatomic, strong) NSMutableDictionary *popTableViewDataDict;
 @property (nonatomic, strong) NSMutableArray *popTableViewSectionData;
 
 @property (nonatomic, strong) RACCommand *actionCommand;
 
+
+
 @end
 
 @implementation FLMainViewController
 
++ (void)load {
+    [self user_swizzleOriginalCls:[FLMainViewController class] originalSEL:@selector(viewWillAppear:) swizzledSEL:@selector(main_swizzledViewWillAppear:)];
+}
+
+- (void)main_swizzledViewWillAppear:(BOOL)ani {
+    [self main_swizzledViewWillAppear:ani];
+    NSLog(@"%s",__func__);
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Home";
     [self.view addSubview:self.customView];
+    [self.view addSubview:self.customButton];
     [self.customView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(200, 200));
         make.center.equalTo(self.view);
         
     }];
-    NSLog(@"%@",self.title);
+    
+    [self.customButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(100, 40));
+        make.centerX.mas_equalTo(self.view);
+        make.top.equalTo(self.customView.mas_bottom).offset(40);
+    }];
+    
+    
+    
 
 //    FLProxy *proxy = [FLProxy dealerProxy];
 //    [proxy purchaseBookWithTitle:@"hello"];
@@ -62,32 +86,18 @@
 //    [task resume];
 //    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
 //    NSLog(@"test finished");
-    NSMutableArray *array = [NSMutableArray array];
-    NSMutableString *str = [NSMutableString string];
-    id proxy = [[FLSecondProxy alloc] initWithTarge1:array target2:str];
-    [proxy appendString:@"This"];
-    [proxy appendString:@"is"];
-    [proxy addObject:str];
-    [proxy appendString:@"a"];
-    [proxy appendString:@"test"];
-    NSLog(@"%ld",[proxy count]);//1
-    NSLog(@"%@",[proxy objectAtIndex:0]);//Thisisatest
-    NSLog(@"%d",[proxy isEqualToString:@"Thisisatest"]);//1
-    
-}
-
-- (void)viewWillLayoutSubviews {
-    NSLog(@"%s",__func__);
-    [super viewWillLayoutSubviews];
-}
-
-- (void)viewDidLayoutSubviews {
-    NSLog(@"%s",__func__);
-    [super viewDidLayoutSubviews];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+//    NSMutableArray *array = [NSMutableArray array];
+//    NSMutableString *str = [NSMutableString string];
+//    id proxy = [[FLSecondProxy alloc] initWithTarge1:array target2:str];
+//    [proxy appendString:@"This"];
+//    [proxy appendString:@"is"];
+//    [proxy addObject:str];
+//    [proxy appendString:@"a"];
+//    [proxy appendString:@"test"];
+//    NSLog(@"%ld",[proxy count]);//1
+//    NSLog(@"%@",[proxy objectAtIndex:0]);//Thisisatest
+//    NSLog(@"%d",[proxy isEqualToString:@"Thisisatest"]);//1
+//
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -289,23 +299,36 @@
 }
 
 - (void)btnTapped {
-    [self testAnimation];
+//    [self testAnimation];
+    UIViewController *child = [[FLChildViewController alloc] init];
+    [self.navigationController pushViewController:child animated:YES];
+}
+
+- (void)customViewTapped:(UITapGestureRecognizer *)ges {
+    UIViewController *child = [[FLChildViewController alloc] init];
+    [self.navigationController pushViewController:child animated:YES];
 }
 
 #pragma mark - accessors
+
+- (UIButton *)customButton {
+    if (!_customButton) {
+        _customButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_customButton addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
+        [_customButton setBackgroundColor:[UIColor redColor]];
+        [_customButton setTitle:@"test" forState:UIControlStateNormal];
+    }
+    return _customButton;
+}
 
 - (WZDCustomView *)customView
 {
     if (!_customView) {
         _customView = [[WZDCustomView alloc] init];
         _customView.backgroundColor = [UIColor yellowColor];
-//        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [button setTitle:@"测试" forState:UIControlStateNormal];
-//        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//        [button setBackgroundColor:[UIColor yellowColor]];
-//        button.frame = CGRectMake(50, 50, 50, 20);
-//        [button addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
-//        [_customView addSubview:button];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(customViewTapped:)];
+        tap.name = NSStringFromSelector(@selector(customViewTapped:));
+        [_customView addGestureRecognizer:tap];
     }
     return _customView;
 }

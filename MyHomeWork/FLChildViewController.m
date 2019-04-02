@@ -28,7 +28,7 @@
 
 #import "DHUserModel.h"
 #import "FLTestModel.h"
-
+#import "NSObject+Analysis.h"
 
 typedef void(^MyBlock)(void);
 
@@ -41,23 +41,19 @@ typedef void(^MyBlock)(void);
 @property (nonatomic, strong) DHOrderModel *orderModel;
 @end
 
-static void clean(NSObject **object) {
-    NSLog(@"clean");
+@implementation FLChildViewController
+
++ (void)load {
+    [self user_swizzleOriginalCls:[FLChildViewController class] originalSEL:@selector(viewWillAppear:) swizzledSEL:@selector(child_swizzledViewWillAppear:)];
 }
 
-@implementation FLChildViewController
+- (void)child_swizzledViewWillAppear:(BOOL)ani {
+    [self child_swizzledViewWillAppear:ani];
+    NSLog(@"%s",__func__);
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    FLTestModel *testModel = [FLTestModel new];
-    [testModel runTo:@"beijing"];
-    
-    
-    
-    
-    
-    
 //    [FLFMDBHelper createDB];
 //    DHOrderDishModel *model = [DHOrderDishModel new];
     
@@ -124,18 +120,6 @@ void *run (void * param){
 
 - (void)practiceRunTime {
     //messageForwading
-//    Method origMethod = class_getInstanceMethod([self class], @selector(viewWillAppear:));
-//    Method swizzledMethod = class_getInstanceMethod([self class], @selector(swizzledViewWillAppear:));
-//    if (class_addMethod([self class], @selector(swizzledViewWillAppear:), method_getImplementation(origMethod), method_getTypeEncoding(origMethod))) {
-//        method_exchangeImplementations(origMethod, swizzledMethod);
-//    }
-    
-//    BOOL didAdded = class_addMethod([self class], @selector(viewWillAppear:), method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-//    if (didAdded) {
-//        class_replaceMethod([self class], @selector(swizzledViewWillAppear:), method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
-//    } else {
-//        method_exchangeImplementations(origMethod, swizzledMethod);
-//    }
 }
 
 - (void)practiceOpt {
