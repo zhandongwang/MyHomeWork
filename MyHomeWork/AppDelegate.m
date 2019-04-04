@@ -12,8 +12,8 @@
 #import "FLWebViewController.h"
 #import "FRCMainViewController.h"
 #import "FLChildViewController.h"
-#import "MyHomeWork-Swift.h"
 #import "DHOrderModel.h"
+#import "MyHomeWork-Swift.h"
 
 @interface AppDelegate ()
 
@@ -30,7 +30,7 @@
     self.order.name = @"1";
     self.count = 1;
     
-    FLMainViewController  *vc = [[FLMainViewController alloc] init];
+    FLSwiftStudySecondViewController  *vc = [[FLSwiftStudySecondViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigationController;
     self.window.backgroundColor = [UIColor whiteColor];

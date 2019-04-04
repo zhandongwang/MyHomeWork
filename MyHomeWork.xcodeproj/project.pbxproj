@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		2307F1662064A2120060A688 /* WZDPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307F1652064A2120060A688 /* WZDPatch.m */; };
 		2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307F1682064A3F60060A688 /* WZDPatchTest.m */; };
+		232413A2225595F3008618C7 /* FLSwiftStudyGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232413A1225595F3008618C7 /* FLSwiftStudyGlobal.swift */; };
+		232413A4225596AB008618C7 /* FLSwiftStudySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232413A3225596AB008618C7 /* FLSwiftStudySecondViewController.swift */; };
+		232413AA2255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 232413A62255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf */; };
+		232413AB2255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 232413A72255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf */; };
+		232413AC2255B10E008618C7 /* Gaspar Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 232413A82255B10E008618C7 /* Gaspar Regular.otf */; };
+		232413AD2255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 232413A92255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf */; };
 		2335DCBB1E0E137100C48142 /* testWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = 2335DCBA1E0E137100C48142 /* testWeb.html */; };
 		233D2C3E219A6D6600A816E1 /* FLCacheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 233D2C3D219A6D6600A816E1 /* FLCacheViewController.m */; };
 		2356D6DD221E897900DC57D7 /* FLMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2356D6DC221E897900DC57D7 /* FLMsgModel.m */; };
@@ -69,6 +75,7 @@
 		23CCB59E2251F35300A5EE8E /* UIControl+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB59D2251F35300A5EE8E /* UIControl+Analysis.m */; };
 		23CCB5A12252014F00A5EE8E /* UITableView+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB5A02252014F00A5EE8E /* UITableView+Analysis.m */; };
 		23CCB5A42252123E00A5EE8E /* UIGestureRecognizer+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB5A32252123E00A5EE8E /* UIGestureRecognizer+Analysis.m */; };
+		23CCB5C62254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB5C52254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift */; };
 		23D3682E1E4C5A5300ECC80D /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D368301E4C5A5300ECC80D /* test2.png */; };
 		23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A1B1E46F3A800B3FFFD /* InfoPlist.strings */; };
 		23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A251E46F7F200B3FFFD /* Localizable.strings */; };
@@ -105,6 +112,12 @@
 		2307F1652064A2120060A688 /* WZDPatch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDPatch.m; sourceTree = "<group>"; };
 		2307F1672064A3F60060A688 /* WZDPatchTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDPatchTest.h; sourceTree = "<group>"; };
 		2307F1682064A3F60060A688 /* WZDPatchTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDPatchTest.m; sourceTree = "<group>"; };
+		232413A1225595F3008618C7 /* FLSwiftStudyGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudyGlobal.swift; sourceTree = "<group>"; };
+		232413A3225596AB008618C7 /* FLSwiftStudySecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudySecondViewController.swift; sourceTree = "<group>"; };
+		232413A62255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFTongXin_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
+		232413A72255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFZhiHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
+		232413A82255B10E008618C7 /* Gaspar Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gaspar Regular.otf"; sourceTree = "<group>"; };
+		232413A92255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFJinHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
 		2335DCBA1E0E137100C48142 /* testWeb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testWeb.html; sourceTree = "<group>"; };
 		233D2C3C219A6D6600A816E1 /* FLCacheViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCacheViewController.h; sourceTree = "<group>"; };
 		233D2C3D219A6D6600A816E1 /* FLCacheViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCacheViewController.m; sourceTree = "<group>"; };
@@ -226,6 +239,7 @@
 		23CCB5A02252014F00A5EE8E /* UITableView+Analysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Analysis.m"; sourceTree = "<group>"; };
 		23CCB5A22252123E00A5EE8E /* UIGestureRecognizer+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Analysis.h"; sourceTree = "<group>"; };
 		23CCB5A32252123E00A5EE8E /* UIGestureRecognizer+Analysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Analysis.m"; sourceTree = "<group>"; };
+		23CCB5C52254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudyFirstViewController.swift; sourceTree = "<group>"; };
 		23D368171E4C0ABE00ECC80D /* MyHomeWork-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Prefix.pch"; sourceTree = "<group>"; };
 		23D3682F1E4C5A5300ECC80D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/test2.png; sourceTree = "<group>"; };
 		23D368311E4C5A5900ECC80D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/test2.png"; sourceTree = "<group>"; };
@@ -297,6 +311,28 @@
 			path = Patch;
 			sourceTree = "<group>";
 		};
+		232413A0225595CB008618C7 /* SwiftStudy */ = {
+			isa = PBXGroup;
+			children = (
+				232413A52255B0CF008618C7 /* Fonts */,
+				23CCB5C52254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift */,
+				232413A3225596AB008618C7 /* FLSwiftStudySecondViewController.swift */,
+				232413A1225595F3008618C7 /* FLSwiftStudyGlobal.swift */,
+			);
+			path = SwiftStudy;
+			sourceTree = "<group>";
+		};
+		232413A52255B0CF008618C7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				232413A82255B10E008618C7 /* Gaspar Regular.otf */,
+				232413A92255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf */,
+				232413A62255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf */,
+				232413A72255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		2335DCB91E0E130F00C48142 /* Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +395,7 @@
 		2360988F1D980892009C589B /* MyHomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				232413A0225595CB008618C7 /* SwiftStudy */,
 				2356D6DA221E895C00DC57D7 /* SQL */,
 				23634C4621F165FC0028B669 /* Pattern */,
 				233D2C3B219A6D4900A816E1 /* Cache */,
@@ -717,11 +754,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				236098A01D980892009C589B /* LaunchScreen.storyboard in Resources */,
+				232413AD2255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf in Resources */,
+				232413AC2255B10E008618C7 /* Gaspar Regular.otf in Resources */,
 				23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */,
 				23D3682E1E4C5A5300ECC80D /* test2.png in Resources */,
 				2335DCBB1E0E137100C48142 /* testWeb.html in Resources */,
 				23E77FF721885097009B8E84 /* EvaluatePrice.js in Resources */,
 				23965FB521918FED00349149 /* log.js in Resources */,
+				232413AA2255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf in Resources */,
+				232413AB2255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf in Resources */,
 				23A5E7501E4DA04A008DCAEE /* message.json in Resources */,
 				2360989D1D980892009C589B /* Assets.xcassets in Resources */,
 				237516411E4D617F00FB5868 /* popData.json in Resources */,
@@ -811,6 +852,7 @@
 				23634C6321F1796B0028B669 /* FLDoor.m in Sources */,
 				23CCB59B2251EF4E00A5EE8E /* NSObject+Analysis.m in Sources */,
 				236F8E8F224329F20092CD48 /* FLSecondProxy.m in Sources */,
+				232413A4225596AB008618C7 /* FLSwiftStudySecondViewController.swift in Sources */,
 				23634C5D21F177E20028B669 /* FLBuilder.m in Sources */,
 				236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */,
 				23BF048621353D0200ECD946 /* WZDBaseViewController.m in Sources */,
@@ -831,6 +873,8 @@
 				2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */,
 				23634C6621F179750028B669 /* FLEngine.m in Sources */,
 				2374CFB11E518C62001B799D /* DHMessageModel.m in Sources */,
+				232413A2225595F3008618C7 /* FLSwiftStudyGlobal.swift in Sources */,
+				23CCB5C62254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift in Sources */,
 				23CCB59E2251F35300A5EE8E /* UIControl+Analysis.m in Sources */,
 				23BF04812134E8F600ECD946 /* RACViewController.m in Sources */,
 				2307F1662064A2120060A688 /* WZDPatch.m in Sources */,
