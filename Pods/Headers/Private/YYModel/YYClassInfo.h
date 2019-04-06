@@ -1,1 +1,1 @@
-../../../../../../Development/YYModel/YYModel/YYClassInfo.h
+../../../YYModel/YYModel/YYClassInfo.h

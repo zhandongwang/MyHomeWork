@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "833345B0CF19BE1F4C6C6C9D891CF06A"
+               BlueprintIdentifier = "33EA18FEBACED5F2769D7F699B0A84AC"
                BlueprintName = "OCTWebViewBridge"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libOCTWebViewBridge.a">

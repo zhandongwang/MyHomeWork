@@ -1,1 +1,1 @@
-../../../../../SD-DL/SDWebImage/NSData+ImageContentType.h
+../../../SDWebImage/SDWebImage/NSData+ImageContentType.h

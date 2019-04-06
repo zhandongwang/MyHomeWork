@@ -26,13 +26,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.order = [DHOrderModel new];
-    self.order.name = @"1";
-    self.count = 1;
+
+    UITabBar.appearance.tintColor = UIColor.blackColor;
+    UITabBar.appearance.barTintColor = UIColor.whiteColor;
+    UINavigationBar.appearance.tintColor = UIColor.blackColor;
+    UINavigationBar.appearance.barTintColor = UIColor.whiteColor;
+    UIApplication.sharedApplication.statusBarStyle = UIStatusBarStyleDefault;
+
     
-    FLSwiftStudySecondViewController  *vc = [[FLSwiftStudySecondViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = navigationController;
+    FLTabBarController  *vc = [[FLTabBarController alloc] init];
+    self.window.rootViewController = vc;
     self.window.backgroundColor = [UIColor whiteColor];
 
     [self.window makeKeyAndVisible];

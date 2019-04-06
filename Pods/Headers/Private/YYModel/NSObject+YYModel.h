@@ -1,1 +1,1 @@
-../../../../../../Development/YYModel/YYModel/NSObject+YYModel.h
+../../../YYModel/YYModel/NSObject+YYModel.h
