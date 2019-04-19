@@ -9,7 +9,15 @@
 #import "DHOrderModel.h"
 #import "DHOrderKind.h"
 
-@implementation DHOrderModel
+@interface DHOrderModel ()
+
+@property(nonatomic, copy) void(^blockOne)(NSString *str);
+
+@end
+
+@implementation DHOrderModel{
+    NSString *_orderName;
+}
 
 - (instancetype)init
 {
@@ -18,8 +26,21 @@
         self.kind = [[DHOrderKind alloc] init];
         self.kind.title = @"first";
         self.kind.isOld = NO;
+        [self testBlock];
     }
     return self;
+}
+- (void)testBlock {
+    _orderName = @"hello";
+    self.blockOne = ^(NSString *str) {
+        _orderName = str;
+    };
+    self.blockOne(@"world");
+}
+
+- (void)dealloc
+{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 //- (NSInteger)countOfOrderArray {
 //    return self.count;

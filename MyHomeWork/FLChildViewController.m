@@ -31,10 +31,10 @@
 #import "NSObject+Analysis.h"
 
 typedef void(^MyBlock)(void);
-
+typedef void(^MyParamBlock)(NSString *str);
 @interface FLChildViewController ()<FLBaseViewControllerProtocol>
 
-@property (nonatomic, copy) MyBlock blockOne;
+@property (nonatomic, copy) MyParamBlock blockOne;
 @property (nonatomic, copy) MyBlock blockTwo;
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, strong) dispatch_source_t timer;
@@ -42,10 +42,9 @@ typedef void(^MyBlock)(void);
 @end
 
 @implementation FLChildViewController
-
-+ (void)load {
-    [self user_swizzleOriginalCls:[FLChildViewController class] originalSEL:@selector(viewWillAppear:) swizzledSEL:@selector(child_swizzledViewWillAppear:)];
-}
+//+ (void)load {
+//    [self user_swizzleOriginalCls:[FLChildViewController class] originalSEL:@selector(viewWillAppear:) swizzledSEL:@selector(child_swizzledViewWillAppear:)];
+//}
 
 - (void)child_swizzledViewWillAppear:(BOOL)ani {
     [self child_swizzledViewWillAppear:ani];
@@ -54,6 +53,8 @@ typedef void(^MyBlock)(void);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    DHOrderModel *model = [[DHOrderModel alloc] init];
+    
 //    [FLFMDBHelper createDB];
 //    DHOrderDishModel *model = [DHOrderDishModel new];
     
@@ -110,12 +111,6 @@ void *run (void * param){
 }
 
 - (void)practiceBlock {
-    _blockOne = ^{
-        self.address = @"test";
-//        [self practiceGCD];
-//        _address = @"test";
-    };
-    
 }
 
 - (void)practiceRunTime {
