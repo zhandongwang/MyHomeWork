@@ -79,6 +79,11 @@
 		23D3682E1E4C5A5300ECC80D /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D368301E4C5A5300ECC80D /* test2.png */; };
 		23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A1B1E46F3A800B3FFFD /* InfoPlist.strings */; };
 		23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A251E46F7F200B3FFFD /* Localizable.strings */; };
+		23E5A0DB22584DA5006BDDA9 /* FLSwiftStudy27.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5A0DA22584DA5006BDDA9 /* FLSwiftStudy27.swift */; };
+		23E5A0DD22585302006BDDA9 /* FLSwiftStudy27FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5A0DC22585302006BDDA9 /* FLSwiftStudy27FirstViewController.swift */; };
+		23E5A0DF22585317006BDDA9 /* FLSwiftStudy27SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5A0DE22585317006BDDA9 /* FLSwiftStudy27SecondViewController.swift */; };
+		23E5A0E122585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5A0E022585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift */; };
+		23E5A0E322585377006BDDA9 /* FLSwiftStudyBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5A0E222585377006BDDA9 /* FLSwiftStudyBaseViewController.swift */; };
 		23E77FF521884539009B8E84 /* JSPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E77FF421884539009B8E84 /* JSPerson.m */; };
 		23E77FF721885097009B8E84 /* EvaluatePrice.js in Resources */ = {isa = PBXBuildFile; fileRef = 23E77FF621885096009B8E84 /* EvaluatePrice.js */; };
 		23E77FFA218855FD009B8E84 /* FLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E77FF9218855FD009B8E84 /* FLWebViewController.m */; };
@@ -259,6 +264,11 @@
 		23DE6A271E46F7FB00B3FFFD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		23DE6A281E46F7FD00B3FFFD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		23DE6A291E46F7FE00B3FFFD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		23E5A0DA22584DA5006BDDA9 /* FLSwiftStudy27.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudy27.swift; sourceTree = "<group>"; };
+		23E5A0DC22585302006BDDA9 /* FLSwiftStudy27FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudy27FirstViewController.swift; sourceTree = "<group>"; };
+		23E5A0DE22585317006BDDA9 /* FLSwiftStudy27SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudy27SecondViewController.swift; sourceTree = "<group>"; };
+		23E5A0E022585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudy27ThirdViewController.swift; sourceTree = "<group>"; };
+		23E5A0E222585377006BDDA9 /* FLSwiftStudyBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudyBaseViewController.swift; sourceTree = "<group>"; };
 		23E77FF321884539009B8E84 /* JSPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSPerson.h; sourceTree = "<group>"; };
 		23E77FF421884539009B8E84 /* JSPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSPerson.m; sourceTree = "<group>"; };
 		23E77FF621885096009B8E84 /* EvaluatePrice.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = EvaluatePrice.js; sourceTree = "<group>"; };
@@ -317,6 +327,11 @@
 				232413A52255B0CF008618C7 /* Fonts */,
 				23CCB5C52254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift */,
 				232413A3225596AB008618C7 /* FLSwiftStudySecondViewController.swift */,
+				23E5A0E222585377006BDDA9 /* FLSwiftStudyBaseViewController.swift */,
+				23E5A0DA22584DA5006BDDA9 /* FLSwiftStudy27.swift */,
+				23E5A0DC22585302006BDDA9 /* FLSwiftStudy27FirstViewController.swift */,
+				23E5A0DE22585317006BDDA9 /* FLSwiftStudy27SecondViewController.swift */,
+				23E5A0E022585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift */,
 				232413A1225595F3008618C7 /* FLSwiftStudyGlobal.swift */,
 			);
 			path = SwiftStudy;
@@ -852,6 +867,7 @@
 				23634C6321F1796B0028B669 /* FLDoor.m in Sources */,
 				23CCB59B2251EF4E00A5EE8E /* NSObject+Analysis.m in Sources */,
 				236F8E8F224329F20092CD48 /* FLSecondProxy.m in Sources */,
+				23E5A0E322585377006BDDA9 /* FLSwiftStudyBaseViewController.swift in Sources */,
 				232413A4225596AB008618C7 /* FLSwiftStudySecondViewController.swift in Sources */,
 				23634C5D21F177E20028B669 /* FLBuilder.m in Sources */,
 				236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */,
@@ -879,6 +895,7 @@
 				23BF04812134E8F600ECD946 /* RACViewController.m in Sources */,
 				2307F1662064A2120060A688 /* WZDPatch.m in Sources */,
 				233D2C3E219A6D6600A816E1 /* FLCacheViewController.m in Sources */,
+				23E5A0E122585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift in Sources */,
 				23E77FFA218855FD009B8E84 /* FLWebViewController.m in Sources */,
 				23634C5821F16FE50028B669 /* FLCashContext.m in Sources */,
 				2374CFBD1E5195A3001B799D /* UIViewController+DHRouter.m in Sources */,
@@ -886,6 +903,7 @@
 				23608A921E050F7100C4D190 /* WZDCustomView.m in Sources */,
 				23634C4C21F167630028B669 /* FLOperationFactory.m in Sources */,
 				2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */,
+				23E5A0DD22585302006BDDA9 /* FLSwiftStudy27FirstViewController.swift in Sources */,
 				2356D6E0221E8AC500DC57D7 /* FLFMDBHelper.m in Sources */,
 				23965FC12193DF4500349149 /* FLCar.m in Sources */,
 				2374CFB21E518C62001B799D /* DHOrderKind.m in Sources */,
@@ -901,9 +919,11 @@
 				23965FBA2191B9A000349149 /* FLSwiftWebViewController.swift in Sources */,
 				23634C5521F16F710028B669 /* FLCashRebate.m in Sources */,
 				2356D6DD221E897900DC57D7 /* FLMsgModel.m in Sources */,
+				23E5A0DF22585317006BDDA9 /* FLSwiftStudy27SecondViewController.swift in Sources */,
 				23634C5221F16E7D0028B669 /* FLCashNormal.m in Sources */,
 				23965FC42193E3AC00349149 /* FLPerson.m in Sources */,
 				2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */,
+				23E5A0DB22584DA5006BDDA9 /* FLSwiftStudy27.swift in Sources */,
 				237EE7122159CC850056116E /* DHUserModel.m in Sources */,
 				2374CFB31E518C62001B799D /* DHOrderModel.m in Sources */,
 			);

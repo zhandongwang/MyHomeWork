@@ -1,1 +1,1 @@
-../../../../../SD-DL/SDWebImage/SDWebImageGIFCoder.h
+../../../SDWebImage/SDWebImage/SDWebImageGIFCoder.h

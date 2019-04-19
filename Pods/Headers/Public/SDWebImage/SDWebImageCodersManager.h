@@ -1,1 +1,1 @@
-../../../../../SD-DL/SDWebImage/SDWebImageCodersManager.h
+../../../SDWebImage/SDWebImage/SDWebImageCodersManager.h
