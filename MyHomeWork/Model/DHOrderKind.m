@@ -25,4 +25,16 @@
     self.isOld = status;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNoti:) name:@"testNoti" object:nil];
+    }
+    return self;
+}
+
+- (void)receivedNoti:(NSNotification* )noti{
+    NSLog(@"DHOrderKind --%s",__FUNCTION__);
+}
 @end

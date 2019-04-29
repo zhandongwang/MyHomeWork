@@ -15,6 +15,7 @@
 
 @end
 
+
 @implementation DHOrderModel{
     NSString *_orderName;
 }
@@ -23,13 +24,15 @@
 {
     self = [super init];
     if (self) {
-        self.kind = [[DHOrderKind alloc] init];
-        self.kind.title = @"first";
-        self.kind.isOld = NO;
-        [self testBlock];
+         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNoti:) name:@"testNoti" object:nil];
     }
     return self;
 }
+
+- (void)receivedNoti:(NSNotification* )noti{
+    NSLog(@"DHOrderModel --%s",__FUNCTION__);
+}
+
 - (void)testBlock {
     _orderName = @"hello";
     self.blockOne = ^(NSString *str) {
@@ -38,10 +41,6 @@
     self.blockOne(@"world");
 }
 
-- (void)dealloc
-{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
-}
 //- (NSInteger)countOfOrderArray {
 //    return self.count;
 //}

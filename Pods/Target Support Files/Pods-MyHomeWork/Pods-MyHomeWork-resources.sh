@@ -3,10 +3,15 @@ set -e
 set -u
 set -o pipefail
 
+function on_error {
+  echo "$(realpath -mq "${0}"):$1: error: Unexpected failure"
+}
+trap 'on_error $LINENO' ERR
+
 if [ -z ${UNLOCALIZED_RESOURCES_FOLDER_PATH+x} ]; then
-    # If UNLOCALIZED_RESOURCES_FOLDER_PATH is not set, then there's nowhere for us to copy
-    # resources to, so exit 0 (signalling the script phase was successful).
-    exit 0
+  # If UNLOCALIZED_RESOURCES_FOLDER_PATH is not set, then there's nowhere for us to copy
+  # resources to, so exit 0 (signalling the script phase was successful).
+  exit 0
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
@@ -100,6 +105,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/message.js"
   install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.css"
   install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.js"
+  install_resource "${PODS_ROOT}/WeexSDK/pre-build/native-bundle-main.js"
+  install_resource "${PODS_ROOT}/WeexSDK/pre-build/weex-main-jsfm.js"
+  install_resource "${PODS_ROOT}/WeexSDK/pre-build/weex-polyfill.js"
+  install_resource "${PODS_ROOT}/WeexSDK/pre-build/weex-rax-api.js"
+  install_resource "${PODS_ROOT}/WeexSDK/ios/sdk/WeexSDK/Resources/wx_load_error@3x.png"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
@@ -110,6 +120,11 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/message.js"
   install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.css"
   install_resource "${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.js"
+  install_resource "${PODS_ROOT}/WeexSDK/pre-build/native-bundle-main.js"
+  install_resource "${PODS_ROOT}/WeexSDK/pre-build/weex-main-jsfm.js"
+  install_resource "${PODS_ROOT}/WeexSDK/pre-build/weex-polyfill.js"
+  install_resource "${PODS_ROOT}/WeexSDK/pre-build/weex-rax-api.js"
+  install_resource "${PODS_ROOT}/WeexSDK/ios/sdk/WeexSDK/Resources/wx_load_error@3x.png"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

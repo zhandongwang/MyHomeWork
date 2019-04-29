@@ -49,134 +49,81 @@
         return 0;
     }
     
-//    FMDBQuickCheck([db hadError]);
-    
     if ([db hadError]) {
         NSLog(@"Err, %d: %@", [db lastErrorCode], [db lastErrorMessage]);
     }
+    FMResultSet *rs = nil;
     
-//    [db executeUpdate:@"create table test(a text, b text, c integer, d double, e double)"];
-//    [db dbeginTransaction];
-//    int i = 0;
-//    while (i++ < 20) {
-//        [db executeUpdate:@"insert into test(a,b,c,d,e) values (?,?,?,?,?)",
-//         @"hi this a",
-//         [NSString stringWithFormat:@"%d",i],
-//         @(i),
-//         [NSDate date],
-//         [NSNumber numberWithFloat:2.2f]];
+//    [db executeUpdate:@"create table t2 (a integer, b integer)"];
+//    if (![db executeUpdate:@"insert into t2 values (?, ?)", nil, [NSNumber numberWithInt:5]]) {
+//        NSLog(@"UH OH, can't insert a nil value for some reason...");
 //    }
-//    [db commit];
-    
-//    FMResultSet *ret = [db executeQuery:@"select * from test "];
-//    while ([ret next]) {
-//        NSLog(@"current c is: %d", [ret intForColumn:@"c"]);
 //
+//    rs = [db executeQuery:@"select * from t2"];
+//    while ([rs next]) {
+//        NSString *aa = [rs stringForColumnIndex:0];
+//        NSString *bb = [rs stringForColumnIndex:1];
+//        if (aa != nil) {
+//            NSLog(@"%s:%d", __FUNCTION__, __LINE__);
+//            NSLog(@"OH OH, PROBLEMO!");
+//            return 10;
+//        }
+//        else {
+//            NSLog(@"YAY, NULL VALUES");
+//        }
+//
+//        if (![bb isEqualToString:@"5"]) {
+//            NSLog(@"%s:%d", __FUNCTION__, __LINE__);
+//            NSLog(@"OH OH, PROBLEMO!");
+//            return 10;
+//        }
 //    }
-/*
-    // empty strings should still return a value.
-    FMDBQuickCheck(([db boolForQuery:@"SELECT ? not null", @""]));
     
-    // same with empty bits o' mutable data
-    FMDBQuickCheck(([db boolForQuery:@"SELECT ? not null", [NSMutableData data]]));
     
-    // same with empty bits o' data
-    FMDBQuickCheck(([db boolForQuery:@"SELECT ? not null", [NSData data]]));
-
+    [db executeUpdate:@"create table t3 (a somevalue)"];
     [db beginTransaction];
-    int i= 0;
+    int i = 0;
     while (i++ < 20) {
-        [db executeUpdate:@"insert into test values (?,?,?,?,?)",@"hi'world",[NSString stringWithFormat:@"number %d",i],
-         [NSNumber numberWithInt:i],
-         [NSDate date],
-         [NSNumber numberWithFloat:30.0]];
+        [db executeUpdate:@"insert into t3(a) values(?)", @(i)];
+        
     }
-
     [db commit];
-
-    [db executeUpdate:@"create table cs (aRowName integer, bRowName text)"];
-    FMDBQuickCheck(![db hadError]);
-    [db executeUpdate:@"insert into cs values(?, ?)", @1,@"hello"];
     
-    FMResultSet *rs = [db executeQuery:@"select * from cs"];
-    while ([rs next]) {
-        NSDictionary *d = [rs resultDictionary];
-        //列名大小写敏感
-        FMDBQuickCheck([d objectForKey:@"aRowName"]);
-        FMDBQuickCheck([d objectForKey:@"arowname"]);
-        FMDBQuickCheck([d objectForKey:@"bRowName"]);
-        FMDBQuickCheck(![d objectForKey:@"browname"]);
-    }
-
-    [db executeUpdate:@"create table blobTable (a text, b blob)"];
-    NSData *data = [NSData dataWithContentsOfFile:@"/Applications/Safari.app/Contents/Resources/compass.icns"];
-    if (data) {
-        [db executeUpdate:@"insert into blobTable(a, b) values (?,?)",@"safari's compass", data];
-        FMResultSet *rs = [db executeQuery:@"select b from blobTable where a = ?", @"safari's compass"];
-        if ([rs next]) {
-            data = [rs dataForColumn:@"b"];
-            [data writeToFile:@"/tmp/compass.icns" atomically:NO];
-//            system("/usr/bin/open /tmp/compass.icns");
-            NSLog(@"succed");
-        } else {
-             NSLog(@"Could not select image.");
-        }
-        [rs close];
-    }
-
-    [db executeUpdate:@"create table nulltest (a text, b text)"];
-    [db executeUpdate:@"insert into nulltest values(?,?)", [NSNull null], @"a"];
-    [db executeUpdate:@"insert into nulltest values(?,?)", nil, @"b"];
-    FMResultSet *rs = [db executeQuery:@"select * from nulltest"];
+    [db executeUpdate:@"create table nulltest(a text, b text)"];
+    [db executeUpdate:@"insert into nulltest (a,b) values(?,?)", @"hello:\"this is fenngli's book\"", @"b"];
+    rs = [db executeQuery:@"select * from nulltest"];
+    
     while ([rs next]) {
         NSString *a = [rs stringForColumnIndex:0];
-        NSString *b = [rs stringForColumnIndex:1];
-        
-        if (!b) {
-            NSLog(@"Oh crap, the nil / null inserts didn't work!");
-            return 10;
-        }
-        if (a) {
-            NSLog(@"Oh crap, the nil / null inserts didn't work (son of error message)!");
-            return 11;
-        }
-        else {
-            NSLog(@"HURRAH FOR NSNULL (and nil)!");
-        }
+      
+        NSLog(@"%@",a);
     }
+//    while ([rs next]) {
+//        int foo = [rs intForColumnIndex:0];
+//        int newVal = foo + 100;
+//        [db executeUpdate:@"update t3 set a = ? where a = ?", @(newVal), @(foo)];
+//        FMResultSet *rs2 = [db executeQuery:@"select a from t3 where a = ?", @(newVal)];
+//        [rs2 next];
+//        if ([rs2 intForColumnIndex:0] != newVal) {
+//            NSLog(@"Oh crap, our update didn't work out!");
+//            return 9;
+//        }
+//        [rs2 close];
+//    }
+    
+    
+    
+//    [db executeUpdate:@"create table cs (aRowName integer, bRowName text)"];
+//    [db executeUpdate:@"insert into cs values(?,?)",[NSNumber numberWithBool:1], @"hello"];
+//    FMResultSet *rs = [db executeQuery:@"select * from cs"];
+//    while ([rs next]) {
+//        NSDictionary *d = [rs resultDictionary];
+//        FMDBQuickCheck([d objectForKey:@"aRowName"]);
+////        FMDBQuickCheck([d objectForKey:@"arowname"]);
+//        FMDBQuickCheck([d objectForKey:@"bRowName"]);
+////        FMDBQuickCheck([d objectForKey:@"browname"]);
+//    }
 
-    FMDBQuickCheck([db columnExists:@"a" inTableWithName:@"nulltest"]);
-    FMDBQuickCheck([db columnExists:@"b" inTableWithName:@"nulltest"]);
-    FMDBQuickCheck(![db columnExists:@"c" inTableWithName:@"nulltest"]);
-*/
-    [db executeUpdate:@"create table nulltest2 (s text, d data, i integer, f double, b integer)"];
-    
-    // grab the data for this again, since we overwrote it with some memory that has since disapeared.
-    NSData *safariCompass = [NSData dataWithContentsOfFile:@"/Applications/Safari.app/Contents/Resources/compass.icns"];
-    
-    [db executeUpdate:@"insert into nulltest2 (s, d, i, f, b) values (?, ?, ?, ?, ?)" , @"Hi", safariCompass, [NSNumber numberWithInt:12], [NSNumber numberWithFloat:4.4f], [NSNumber numberWithBool:YES]];
-//    [db executeUpdate:@"insert into nulltest2 (s, d, i, f, b) values (?, ?, ?, ?, ?)" , nil, nil, nil, nil, [NSNull null]];
-    
-    FMResultSet *rs = [db executeQuery:@"select * from nulltest2"];
-    
-    while ([rs next]){
-        int i = [rs intForColumnIndex:2];
-//        if (i == 12)
-        {
-            FMDBQuickCheck(![rs columnIndexIsNull:0]);
-            FMDBQuickCheck(![rs columnIndexIsNull:1]);
-            FMDBQuickCheck(![rs columnIndexIsNull:2]);
-            FMDBQuickCheck(![rs columnIndexIsNull:3]);
-            FMDBQuickCheck(![rs columnIndexIsNull:4]);
-            FMDBQuickCheck( [rs columnIndexIsNull:5]);
-        
-        }
-        
-        
-        
-    }
-    
-    
     
     return 0;
 }

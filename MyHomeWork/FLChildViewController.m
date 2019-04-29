@@ -29,6 +29,7 @@
 #import "DHUserModel.h"
 #import "FLTestModel.h"
 #import "NSObject+Analysis.h"
+#import <WeexSDK/WeexSDK.h>
 
 typedef void(^MyBlock)(void);
 typedef void(^MyParamBlock)(NSString *str);
@@ -39,6 +40,8 @@ typedef void(^MyParamBlock)(NSString *str);
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, strong) dispatch_source_t timer;
 @property (nonatomic, strong) DHOrderModel *orderModel;
+
+@property (nonatomic, strong) WXSDKInstance *wxInstance;
 @end
 
 @implementation FLChildViewController
@@ -53,46 +56,17 @@ typedef void(^MyParamBlock)(NSString *str);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    DHOrderModel *model = [[DHOrderModel alloc] init];
+    self.wxInstance = [[WXSDKInstance alloc] init];
+    self.wxInstance.viewController = self;
+    self.wxInstance.frame = self.view.frame;
+    __weak typeof(self)weakSelf = self;
+    self.wxInstance.onCreate = ^(UIView *view) {
+        [weakSelf.view addSubview:view];
+    };
     
-//    [FLFMDBHelper createDB];
-//    DHOrderDishModel *model = [DHOrderDishModel new];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"js"];
+//    [self.wxInstance renderWithURL:url options:@{@"bundleUrl":[self.url absoluteString]} data:nil];
     
-    
-//    [self practiceGCD];
-//    Class newCls = objc_allocateClassPair([NSObject class], "Student", 0);
-//    class_addIvar(newCls, "_age", 4, 1, @encode(int));
-//
-//    class_addMethod(newCls, @selector(runTimer), class_getMethodImplementation([self class], @selector(runTimer)), "v@:");
-//    objc_registerClassPair(newCls);
-//
-//    id student = [[newCls alloc] init];
-//    [student setValue:@10 forKey:@"_age"];
-//    NSLog(@"_age=%@", [student valueForKey:@"_age"]);
-//    [student runTimer];
-    
-    
-    
-//    [self practiceBlock];
-//    [self practiceRunTime];
-//    FLOperation *operation = [[[FLOperationFactory alloc] init] createOperation:FLOperationTypeMul];
-//    operation.numberA = 8;
-//    operation.numberB = 4;
-//
-//    NSLog(@"%f",[operation getResult]);
-//    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(runTimer) userInfo:nil repeats:YES];
-    
-//    FLCashContext *context  = [[FLCashContext alloc] initWithCash:[FLCashRebate new]];
-//    NSLog(@"%f",[context getResult:100]);
-    
-//    FLBuilder *builder = [[FLBuilder alloc] init];
-//    builder.door = [FLDoor new];
-//    builder.engine = [FLEngine new];
-//    builder.wheel  = [FLWheel new];
-//
-//    [builder buildParts];
-//
-//    NSLog(@"%@",builder.proInfo);
     
 }
 
@@ -108,6 +82,8 @@ void *run (void * param){
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNoti" object:nil];
+    
 }
 
 - (void)practiceBlock {

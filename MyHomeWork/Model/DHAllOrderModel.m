@@ -11,10 +11,14 @@
 
 @implementation DHAllOrderModel
 
+
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{
              @"allOrders":[DHOrderKind class]
              };
 }
+
+
+
 
 @end

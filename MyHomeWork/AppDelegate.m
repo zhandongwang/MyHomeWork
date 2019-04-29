@@ -14,6 +14,10 @@
 #import "FLChildViewController.h"
 #import "DHOrderModel.h"
 #import "MyHomeWork-Swift.h"
+#import "ResultModel.h"
+#import <WeexSDK/WeexSDK.h>
+#import <AFNetworking/AFNetworking.h>
+#import <YYModel/YYModel.h>
 
 @interface AppDelegate ()
 
@@ -26,9 +30,42 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.order = [DHOrderModel new];
-    self.order.name = @"1";
-    self.count = 1;
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json",@"text/plain",@"text/html", nil]];
+    [manager.requestSerializer setStringEncoding:NSUTF8StringEncoding];
+    
+    [manager GET:@"https://suggest.taobao.com/sug?code=utf-8&q=iphone" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+         ResultModel *model = [ResultModel yy_modelWithDictionary:responseObject];
+            
+            for (NSArray *itemArray in model.result) {
+                NSLog(@"%@",itemArray);
+            }
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@",error.description);
+    }];
+    
+    
+    
+//    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"https://suggest.taobao.com/sug?code=utf-8&q=iphone"]completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//
+//        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+//        ResultModel *model = [[ResultModel alloc] init];
+//        model.result = dict[@"result"];
+//
+//        for (NSArray *itemArray in model.result) {
+//            NSLog(@"%@",itemArray);
+//        }
+//
+//
+//    }];
+//    [task resume];
+    
+    
+    
     
     FLChildViewController  *vc = [[FLChildViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];

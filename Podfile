@@ -20,5 +20,6 @@ pod 'SDWebImage'
 pod 'FMDB'
 #pod 'MLeaksFinder'
 pod 'fishhook'
-
+pod  'WXDevtool', :configurations => ['Debug']
+pod 'WeexSDK'
 end

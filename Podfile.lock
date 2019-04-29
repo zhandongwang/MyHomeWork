@@ -44,6 +44,11 @@ PODS:
     - SDWebImage/Core (= 4.4.4)
   - SDWebImage/Core (4.4.4)
   - SnapKit (4.2.0)
+  - SocketRocket (0.5.1)
+  - WeexSDK (0.20.1)
+  - WXDevtool (0.20.0):
+    - SocketRocket
+    - WeexSDK
   - YYCache (1.0.4)
   - YYModel (1.0.4.2)
 
@@ -61,6 +66,8 @@ DEPENDENCIES:
   - ReactiveObjC (= 3.0.0)
   - SDWebImage
   - SnapKit
+  - WeexSDK
+  - WXDevtool
   - YYCache
   - YYModel
 
@@ -81,6 +88,9 @@ SPEC REPOS:
     - ReactiveObjC
     - SDWebImage
     - SnapKit
+    - SocketRocket
+    - WeexSDK
+    - WXDevtool
     - YYCache
 
 SPEC CHECKSUMS:
@@ -97,9 +107,12 @@ SPEC CHECKSUMS:
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SDWebImage: c00ec18ab25d10e5ffac109b0f78d1b4341c9691
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  WeexSDK: ced3f2ef2f0cb48d1d76fd2f03c645572c632d21
+  WXDevtool: 833dd3e835df1f5f278fc8865c865d48196bfdab
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 4fb57c2e53b0d22dc4414878928ece524bf30788
 
-PODFILE CHECKSUM: 8cd8ce1f1673ed1a9c0430e084286249e2adef34
+PODFILE CHECKSUM: e39bc4c452d7f0cea88b99fe70693f7d822f7d5d
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.0
