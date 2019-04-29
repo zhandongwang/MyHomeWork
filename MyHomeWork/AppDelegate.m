@@ -18,6 +18,7 @@
 #import <WeexSDK/WeexSDK.h>
 #import <AFNetworking/AFNetworking.h>
 #import <YYModel/YYModel.h>
+#import "FLCollectionViewController.h"
 
 @interface AppDelegate ()
 
@@ -30,24 +31,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json",@"text/plain",@"text/html", nil]];
-    [manager.requestSerializer setStringEncoding:NSUTF8StringEncoding];
-    
-    [manager GET:@"https://suggest.taobao.com/sug?code=utf-8&q=iphone" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]]) {
-         ResultModel *model = [ResultModel yy_modelWithDictionary:responseObject];
-            
-            for (NSArray *itemArray in model.result) {
-                NSLog(@"%@",itemArray);
-            }
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@",error.description);
-    }];
-    
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    [manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json",@"text/plain",@"text/html", nil]];
+//    [manager.requestSerializer setStringEncoding:NSUTF8StringEncoding];
+//
+//    [manager GET:@"https://suggest.taobao.com/sug?code=utf-8&q=iphone" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+//
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+//         ResultModel *model = [ResultModel yy_modelWithDictionary:responseObject];
+//
+//            for (NSArray *itemArray in model.result) {
+//                NSLog(@"%@",itemArray);
+//            }
+//        }
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        NSLog(@"%@",error.description);
+//    }];
+//
     
     
 //    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"https://suggest.taobao.com/sug?code=utf-8&q=iphone"]completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -67,7 +68,7 @@
     
     
     
-    FLChildViewController  *vc = [[FLChildViewController alloc] init];
+    FLCollectionViewController  *vc = [[FLCollectionViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigationController;
     self.window.backgroundColor = [UIColor whiteColor];

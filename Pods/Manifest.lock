@@ -40,9 +40,9 @@ PODS:
   - MJRefresh (2.4.12)
   - OCTWebViewBridge (2.1.0)
   - ReactiveObjC (3.0.0)
-  - SDWebImage (4.4.4):
-    - SDWebImage/Core (= 4.4.4)
-  - SDWebImage/Core (4.4.4)
+  - SDWebImage (5.0.2):
+    - SDWebImage/Core (= 5.0.2)
+  - SDWebImage/Core (5.0.2)
   - SnapKit (4.2.0)
   - SocketRocket (0.5.1)
   - WeexSDK (0.20.1)
@@ -105,7 +105,7 @@ SPEC CHECKSUMS:
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
   OCTWebViewBridge: e7712ef0c0670905da57b8a36d3f02a43115c507
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
-  SDWebImage: c00ec18ab25d10e5ffac109b0f78d1b4341c9691
+  SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   WeexSDK: ced3f2ef2f0cb48d1d76fd2f03c645572c632d21

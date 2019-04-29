@@ -12,7 +12,7 @@
 @implementation UITableView (Analysis)
 
 + (void)load {
-    [self user_swizzleOriginalCls:[UITableView class] originalSEL:@selector(setDelegate:) swizzledSEL:@selector(user_setDelegate:)];
+//    [self user_swizzleOriginalCls:[UITableView class] originalSEL:@selector(setDelegate:) swizzledSEL:@selector(user_setDelegate:)];
 }
 
 - (void)user_setDelegate:(id<UITableViewDelegate>)delegate {

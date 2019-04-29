@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2307F1662064A2120060A688 /* WZDPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307F1652064A2120060A688 /* WZDPatch.m */; };
 		2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307F1682064A3F60060A688 /* WZDPatchTest.m */; };
+		2320909E2276FF540034CA96 /* FLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320909D2276FF540034CA96 /* FLCollectionViewController.m */; };
+		232090A12276FFB90034CA96 /* FLCollectionViewLinearLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 232090A02276FFB90034CA96 /* FLCollectionViewLinearLayout.m */; };
+		232090A42277019E0034CA96 /* FLCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 232090A32277019E0034CA96 /* FLCollectionViewCell.m */; };
 		232413A2225595F3008618C7 /* FLSwiftStudyGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232413A1225595F3008618C7 /* FLSwiftStudyGlobal.swift */; };
 		232413A4225596AB008618C7 /* FLSwiftStudySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232413A3225596AB008618C7 /* FLSwiftStudySecondViewController.swift */; };
 		232413AA2255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 232413A62255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf */; };
@@ -119,6 +122,12 @@
 		2307F1652064A2120060A688 /* WZDPatch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDPatch.m; sourceTree = "<group>"; };
 		2307F1672064A3F60060A688 /* WZDPatchTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDPatchTest.h; sourceTree = "<group>"; };
 		2307F1682064A3F60060A688 /* WZDPatchTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDPatchTest.m; sourceTree = "<group>"; };
+		2320909C2276FF540034CA96 /* FLCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCollectionViewController.h; sourceTree = "<group>"; };
+		2320909D2276FF540034CA96 /* FLCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCollectionViewController.m; sourceTree = "<group>"; };
+		2320909F2276FFB90034CA96 /* FLCollectionViewLinearLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCollectionViewLinearLayout.h; sourceTree = "<group>"; };
+		232090A02276FFB90034CA96 /* FLCollectionViewLinearLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCollectionViewLinearLayout.m; sourceTree = "<group>"; };
+		232090A22277019E0034CA96 /* FLCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCollectionViewCell.h; sourceTree = "<group>"; };
+		232090A32277019E0034CA96 /* FLCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCollectionViewCell.m; sourceTree = "<group>"; };
 		232413A1225595F3008618C7 /* FLSwiftStudyGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudyGlobal.swift; sourceTree = "<group>"; };
 		232413A3225596AB008618C7 /* FLSwiftStudySecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudySecondViewController.swift; sourceTree = "<group>"; };
 		232413A62255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFTongXin_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
@@ -329,6 +338,12 @@
 		2320909B2276FEE90034CA96 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				2320909C2276FF540034CA96 /* FLCollectionViewController.h */,
+				2320909D2276FF540034CA96 /* FLCollectionViewController.m */,
+				2320909F2276FFB90034CA96 /* FLCollectionViewLinearLayout.h */,
+				232090A02276FFB90034CA96 /* FLCollectionViewLinearLayout.m */,
+				232090A22277019E0034CA96 /* FLCollectionViewCell.h */,
+				232090A32277019E0034CA96 /* FLCollectionViewCell.m */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -891,6 +906,7 @@
 				23E8B79321E5E01700FD446F /* DHOrderDishModel.m in Sources */,
 				236098981D980892009C589B /* FLMainViewController.m in Sources */,
 				237600962251DEAE00900FAA /* UIViewController+Analysis.m in Sources */,
+				232090A12276FFB90034CA96 /* FLCollectionViewLinearLayout.m in Sources */,
 				23634C6321F1796B0028B669 /* FLDoor.m in Sources */,
 				23CCB59B2251EF4E00A5EE8E /* NSObject+Analysis.m in Sources */,
 				236F8E8F224329F20092CD48 /* FLSecondProxy.m in Sources */,
@@ -912,6 +928,7 @@
 				23A5E7531E4DA59E008DCAEE /* DHPopTableViewCell.m in Sources */,
 				237BE7692230C3510097AE6F /* FLTestModel.m in Sources */,
 				236F1A2F22156B32009E8C11 /* FLClothesProvider.m in Sources */,
+				232090A42277019E0034CA96 /* FLCollectionViewCell.m in Sources */,
 				23BF04832134E8F600ECD946 /* Caculator.m in Sources */,
 				2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */,
 				23634C6621F179750028B669 /* FLEngine.m in Sources */,
@@ -923,6 +940,7 @@
 				2307F1662064A2120060A688 /* WZDPatch.m in Sources */,
 				233D2C3E219A6D6600A816E1 /* FLCacheViewController.m in Sources */,
 				23E5A0E122585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift in Sources */,
+				2320909E2276FF540034CA96 /* FLCollectionViewController.m in Sources */,
 				23E77FFA218855FD009B8E84 /* FLWebViewController.m in Sources */,
 				23634C5821F16FE50028B669 /* FLCashContext.m in Sources */,
 				2374CFBD1E5195A3001B799D /* UIViewController+DHRouter.m in Sources */,

@@ -12,7 +12,7 @@
 @implementation UIControl (Analysis)
 
 + (void)load {
-    [self user_swizzleOriginalCls:[UIControl class] originalSEL: @selector(sendAction:to:forEvent:) swizzledSEL:@selector(user_sendAction:to:forEvent:)];
+//    [self user_swizzleOriginalCls:[UIControl class] originalSEL: @selector(sendAction:to:forEvent:) swizzledSEL:@selector(user_sendAction:to:forEvent:)];
 }
 
 - (void)user_sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {

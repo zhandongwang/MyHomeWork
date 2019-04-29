@@ -13,7 +13,7 @@
 @implementation UIViewController (Analysis)
 
 + (void)load {
-    [self user_swizzleOriginalCls:[UIViewController class] originalSEL: @selector(viewWillAppear:) swizzledSEL:@selector(user_viewWillAppear:)];
+//    [self user_swizzleOriginalCls:[UIViewController class] originalSEL: @selector(viewWillAppear:) swizzledSEL:@selector(user_viewWillAppear:)];
 }
 
 - (void)user_viewWillAppear:(BOOL)animated {

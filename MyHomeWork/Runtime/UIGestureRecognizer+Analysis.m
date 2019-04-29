@@ -11,7 +11,7 @@
 
 @implementation UIGestureRecognizer (Analysis)
 + (void)load {
-    [self user_swizzleOriginalCls:[UIGestureRecognizer class] originalSEL:@selector(initWithTarget:action:) swizzledSEL:@selector(user_initWithTarget:action:)];
+//    [self user_swizzleOriginalCls:[UIGestureRecognizer class] originalSEL:@selector(initWithTarget:action:) swizzledSEL:@selector(user_initWithTarget:action:)];
 }
 
 - (instancetype)user_initWithTarget:(id)target action:(SEL)action {
