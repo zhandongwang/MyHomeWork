@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2304FCD42277ECC400754B13 /* FLCollectionViewCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2304FCD32277ECC400754B13 /* FLCollectionViewCircleLayout.m */; };
 		2307F1662064A2120060A688 /* WZDPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307F1652064A2120060A688 /* WZDPatch.m */; };
 		2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307F1682064A3F60060A688 /* WZDPatchTest.m */; };
 		2320909E2276FF540034CA96 /* FLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320909D2276FF540034CA96 /* FLCollectionViewController.m */; };
@@ -119,6 +120,8 @@
 /* Begin PBXFileReference section */
 		0BCFDF0087E34B7DC8491769 /* Pods-MyHomeWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHomeWork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork.debug.xcconfig"; sourceTree = "<group>"; };
 		230206D22178A649006FBF56 /* MyHomeWork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Bridging-Header.h"; sourceTree = "<group>"; };
+		2304FCD22277ECC400754B13 /* FLCollectionViewCircleLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCollectionViewCircleLayout.h; sourceTree = "<group>"; };
+		2304FCD32277ECC400754B13 /* FLCollectionViewCircleLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCollectionViewCircleLayout.m; sourceTree = "<group>"; };
 		2307F1642064A2120060A688 /* WZDPatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDPatch.h; sourceTree = "<group>"; };
 		2307F1652064A2120060A688 /* WZDPatch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDPatch.m; sourceTree = "<group>"; };
 		2307F1672064A3F60060A688 /* WZDPatchTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDPatchTest.h; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 				232090A02276FFB90034CA96 /* FLCollectionViewLinearLayout.m */,
 				23CDBEDD2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.h */,
 				23CDBEDE2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.m */,
+				2304FCD22277ECC400754B13 /* FLCollectionViewCircleLayout.h */,
+				2304FCD32277ECC400754B13 /* FLCollectionViewCircleLayout.m */,
 				232090A22277019E0034CA96 /* FLCollectionViewCell.h */,
 				232090A32277019E0034CA96 /* FLCollectionViewCell.m */,
 			);
@@ -922,6 +927,7 @@
 				236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */,
 				23BF048621353D0200ECD946 /* WZDBaseViewController.m in Sources */,
 				23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */,
+				2304FCD42277ECC400754B13 /* FLCollectionViewCircleLayout.m in Sources */,
 				23BF048921353D2100ECD946 /* FLChildViewController.m in Sources */,
 				23E8B79C21E6E67E00FD446F /* DHOrderDishModel+Test2.m in Sources */,
 				23E8B79621E5E07A00FD446F /* DHOrderDishModel+Test.m in Sources */,

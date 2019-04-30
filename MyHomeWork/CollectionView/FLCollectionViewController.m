@@ -7,15 +7,17 @@
 //
 
 #import "FLCollectionViewController.h"
-#import "FLCollectionViewLinearLayout.h"
 #import "FLCollectionViewCell.h"
+#import "FLCollectionViewLinearLayout.h"
 #import "FLCollectionViewWaterFallLayout.h"
+#import "FLCollectionViewCircleLayout.h"
 
-@interface FLCollectionViewController ()<UICollectionViewDataSource>
+@interface FLCollectionViewController ()<UICollectionViewDataSource, FLCollectionViewWaterFallLayoutDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) FLCollectionViewLinearLayout *linearLayout;
 @property (nonatomic, strong) FLCollectionViewWaterFallLayout *waterFallLayout;
+@property (nonatomic, strong) FLCollectionViewCircleLayout *circleLayout;
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
@@ -30,7 +32,7 @@
     
     self.dataArray = [NSMutableArray array];
     
-    for (int i = 0; i < 100 ; ++i) {
+    for (int i = 0; i < 10 ; ++i) {
         [self.dataArray addObject:[NSString stringWithFormat:@"cell%d",i]];
     }
     [self.view addSubview:self.collectionView];
@@ -58,9 +60,11 @@
     return 300;
 }
 
+#pragma mark - accessors
+
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.waterFallLayout];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.circleLayout];
         _collectionView.backgroundColor = [UIColor blackColor];
         _collectionView.dataSource = self;
         [_collectionView registerClass:[FLCollectionViewCell class] forCellWithReuseIdentifier:@"cellID"];
@@ -99,4 +103,12 @@
     }
     return _waterFallLayout;
 }
+
+- (FLCollectionViewCircleLayout *)circleLayout {
+    if (!_circleLayout) {
+        _circleLayout = [FLCollectionViewCircleLayout new];
+    }
+    return _circleLayout;
+}
+
 @end
