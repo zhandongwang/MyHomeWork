@@ -8,6 +8,7 @@
 
 #import "FLTableViewController.h"
 #import "FLChildViewController.h"
+#import "FLCTViewController.h"
 
 static NSString * const kCellID = @"cellID";
 
@@ -25,17 +26,28 @@ static NSString * const kCellID = @"cellID";
     [super viewDidLoad];
     self.title = @"功能列表";
     
+    [self configDataSource];
+    [self configTableView];
+    
+}
+- (void)configDataSource {
     self.dataDict = @{@"UIKit":@"goToUIKit",
                       @"RunTime":@"goToRunTime",
                       @"RunLoop":@"goToRunLoop",
                       @"Block":@"goToBlock",
+                      @"Core Text":@"goToCoreText"
                       };
     self.dataSource = [NSMutableArray arrayWithArray:self.dataDict.allKeys];
+}
+
+
+- (void)configTableView {
     self.tableView.rowHeight = 88;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellID];
     self.tableView.tableFooterView = [UIView new];
-    
 }
+
+#pragma mark - Methods
 
 - (void)goToUIKit {
     [self.navigationController pushViewController:[[FLChildViewController alloc] init] animated:YES];
@@ -51,6 +63,10 @@ static NSString * const kCellID = @"cellID";
     
 }
 
+- (void)goToCoreText {
+    [self.navigationController pushViewController:[[FLCTViewController alloc] init] animated:YES];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -64,6 +80,7 @@ static NSString * const kCellID = @"cellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellID forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = self.dataSource[indexPath.row];
     
     return cell;

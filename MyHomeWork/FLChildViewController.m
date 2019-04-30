@@ -33,7 +33,7 @@
 
 typedef void(^MyBlock)(void);
 typedef void(^MyParamBlock)(NSString *str);
-@interface FLChildViewController ()<FLBaseViewControllerProtocol>
+@interface FLChildViewController ()
 
 @property (nonatomic, copy) MyParamBlock blockOne;
 @property (nonatomic, copy) MyBlock blockTwo;

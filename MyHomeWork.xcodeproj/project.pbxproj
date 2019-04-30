@@ -41,6 +41,14 @@
 		23634C6621F179750028B669 /* FLEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C6521F179750028B669 /* FLEngine.m */; };
 		23634C6921F1797F0028B669 /* FLWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23634C6821F1797F0028B669 /* FLWheel.m */; };
 		23683B592278187C00337D2C /* FLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23683B582278187C00337D2C /* FLTableViewController.m */; };
+		23683B5F2278212B00337D2C /* FLCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23683B5E2278212B00337D2C /* FLCTViewController.m */; };
+		23683B62227831D200337D2C /* FLCTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23683B61227831D200337D2C /* FLCTView.m */; };
+		23683B652278398300337D2C /* CTFrameParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 23683B642278398300337D2C /* CTFrameParserConfig.m */; };
+		23683B68227839BC00337D2C /* CTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 23683B67227839BC00337D2C /* CTFrameParser.m */; };
+		23683B6B227839EA00337D2C /* CoreTextData.m in Sources */ = {isa = PBXBuildFile; fileRef = 23683B6A227839EA00337D2C /* CoreTextData.m */; };
+		23683B6E22783EB200337D2C /* CTDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23683B6D22783EB200337D2C /* CTDisplayView.m */; };
+		23683B71227842FC00337D2C /* UIView+CTFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 23683B70227842FC00337D2C /* UIView+CTFrame.m */; };
+		23683B7322784CE500337D2C /* JsonTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = 23683B7222784CE500337D2C /* JsonTemplate.json */; };
 		236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 236F1A2B22156ADA009E8C11 /* FLBookProvider.m */; };
 		236F1A2F22156B32009E8C11 /* FLClothesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 236F1A2E22156B32009E8C11 /* FLClothesProvider.m */; };
 		236F8E8F224329F20092CD48 /* FLSecondProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 236F8E8E224329F20092CD48 /* FLSecondProxy.m */; };
@@ -72,7 +80,7 @@
 		23BF04812134E8F600ECD946 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF04792134E8F500ECD946 /* RACViewController.m */; };
 		23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF047B2134E8F500ECD946 /* NSObject+Caculator.m */; };
 		23BF04832134E8F600ECD946 /* Caculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF047E2134E8F500ECD946 /* Caculator.m */; };
-		23BF048621353D0200ECD946 /* WZDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF048521353D0200ECD946 /* WZDBaseViewController.m */; };
+		23BF048621353D0200ECD946 /* FLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF048521353D0200ECD946 /* FLBaseViewController.m */; };
 		23BF048921353D2100ECD946 /* FLChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF048821353D2100ECD946 /* FLChildViewController.m */; };
 		23BFA07021DCD7B80045AF0B /* RACViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA06F21DCD7B80045AF0B /* RACViewModel.m */; };
 		23BFA07321DCD7E00045AF0B /* RACRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA07221DCD7E00045AF0B /* RACRequest.m */; };
@@ -186,6 +194,21 @@
 		23634C6821F1797F0028B669 /* FLWheel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLWheel.m; sourceTree = "<group>"; };
 		23683B572278187C00337D2C /* FLTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLTableViewController.h; sourceTree = "<group>"; };
 		23683B582278187C00337D2C /* FLTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLTableViewController.m; sourceTree = "<group>"; };
+		23683B5D2278212B00337D2C /* FLCTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCTViewController.h; sourceTree = "<group>"; };
+		23683B5E2278212B00337D2C /* FLCTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCTViewController.m; sourceTree = "<group>"; };
+		23683B60227831D200337D2C /* FLCTView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCTView.h; sourceTree = "<group>"; };
+		23683B61227831D200337D2C /* FLCTView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCTView.m; sourceTree = "<group>"; };
+		23683B632278398300337D2C /* CTFrameParserConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTFrameParserConfig.h; sourceTree = "<group>"; };
+		23683B642278398300337D2C /* CTFrameParserConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTFrameParserConfig.m; sourceTree = "<group>"; };
+		23683B66227839BC00337D2C /* CTFrameParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTFrameParser.h; sourceTree = "<group>"; };
+		23683B67227839BC00337D2C /* CTFrameParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTFrameParser.m; sourceTree = "<group>"; };
+		23683B69227839EA00337D2C /* CoreTextData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreTextData.h; sourceTree = "<group>"; };
+		23683B6A227839EA00337D2C /* CoreTextData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTextData.m; sourceTree = "<group>"; };
+		23683B6C22783EB200337D2C /* CTDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTDisplayView.h; sourceTree = "<group>"; };
+		23683B6D22783EB200337D2C /* CTDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTDisplayView.m; sourceTree = "<group>"; };
+		23683B6F227842FC00337D2C /* UIView+CTFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CTFrame.h"; sourceTree = "<group>"; };
+		23683B70227842FC00337D2C /* UIView+CTFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CTFrame.m"; sourceTree = "<group>"; };
+		23683B7222784CE500337D2C /* JsonTemplate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonTemplate.json; sourceTree = "<group>"; };
 		236F1A2A22156ADA009E8C11 /* FLBookProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLBookProvider.h; sourceTree = "<group>"; };
 		236F1A2B22156ADA009E8C11 /* FLBookProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLBookProvider.m; sourceTree = "<group>"; };
 		236F1A2D22156B32009E8C11 /* FLClothesProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLClothesProvider.h; sourceTree = "<group>"; };
@@ -243,8 +266,8 @@
 		23BF047D2134E8F500ECD946 /* RACViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACViewController.h; sourceTree = "<group>"; };
 		23BF047E2134E8F500ECD946 /* Caculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caculator.m; sourceTree = "<group>"; };
 		23BF047F2134E8F500ECD946 /* NSObject+Caculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Caculator.h"; sourceTree = "<group>"; };
-		23BF048421353D0200ECD946 /* WZDBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDBaseViewController.h; sourceTree = "<group>"; };
-		23BF048521353D0200ECD946 /* WZDBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZDBaseViewController.m; sourceTree = "<group>"; };
+		23BF048421353D0200ECD946 /* FLBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLBaseViewController.h; sourceTree = "<group>"; };
+		23BF048521353D0200ECD946 /* FLBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLBaseViewController.m; sourceTree = "<group>"; };
 		23BF048721353D2100ECD946 /* FLChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLChildViewController.h; sourceTree = "<group>"; };
 		23BF048821353D2100ECD946 /* FLChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLChildViewController.m; sourceTree = "<group>"; };
 		23BFA06E21DCD7B80045AF0B /* RACViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACViewModel.h; sourceTree = "<group>"; };
@@ -444,6 +467,7 @@
 		2360988F1D980892009C589B /* MyHomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				23683B5C2278210B00337D2C /* CoreText */,
 				2320909B2276FEE90034CA96 /* CollectionView */,
 				2373072A227147E5003901CC /* test.json */,
 				232413A0225595CB008618C7 /* SwiftStudy */,
@@ -484,6 +508,7 @@
 			children = (
 				236098911D980892009C589B /* main.m */,
 				23D368171E4C0ABE00ECC80D /* MyHomeWork-Prefix.pch */,
+				23683B7222784CE500337D2C /* JsonTemplate.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -560,6 +585,27 @@
 			path = Builer;
 			sourceTree = "<group>";
 		};
+		23683B5C2278210B00337D2C /* CoreText */ = {
+			isa = PBXGroup;
+			children = (
+				23683B5D2278212B00337D2C /* FLCTViewController.h */,
+				23683B5E2278212B00337D2C /* FLCTViewController.m */,
+				23683B60227831D200337D2C /* FLCTView.h */,
+				23683B61227831D200337D2C /* FLCTView.m */,
+				23683B632278398300337D2C /* CTFrameParserConfig.h */,
+				23683B642278398300337D2C /* CTFrameParserConfig.m */,
+				23683B66227839BC00337D2C /* CTFrameParser.h */,
+				23683B67227839BC00337D2C /* CTFrameParser.m */,
+				23683B69227839EA00337D2C /* CoreTextData.h */,
+				23683B6A227839EA00337D2C /* CoreTextData.m */,
+				23683B6C22783EB200337D2C /* CTDisplayView.h */,
+				23683B6D22783EB200337D2C /* CTDisplayView.m */,
+				23683B6F227842FC00337D2C /* UIView+CTFrame.h */,
+				23683B70227842FC00337D2C /* UIView+CTFrame.m */,
+			);
+			path = CoreText;
+			sourceTree = "<group>";
+		};
 		2374CFA41E518C62001B799D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -596,8 +642,8 @@
 				2374CFB91E518D45001B799D /* FRCBaseViewController.m */,
 				2374CFBB1E5195A3001B799D /* UIViewController+DHRouter.h */,
 				2374CFBC1E5195A3001B799D /* UIViewController+DHRouter.m */,
-				23BF048421353D0200ECD946 /* WZDBaseViewController.h */,
-				23BF048521353D0200ECD946 /* WZDBaseViewController.m */,
+				23BF048421353D0200ECD946 /* FLBaseViewController.h */,
+				23BF048521353D0200ECD946 /* FLBaseViewController.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -819,6 +865,7 @@
 				2360989D1D980892009C589B /* Assets.xcassets in Resources */,
 				237516411E4D617F00FB5868 /* popData.json in Resources */,
 				23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */,
+				23683B7322784CE500337D2C /* JsonTemplate.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,17 +964,20 @@
 				23CCB59B2251EF4E00A5EE8E /* NSObject+Analysis.m in Sources */,
 				236F8E8F224329F20092CD48 /* FLSecondProxy.m in Sources */,
 				23E5A0E322585377006BDDA9 /* FLSwiftStudyBaseViewController.swift in Sources */,
+				23683B5F2278212B00337D2C /* FLCTViewController.m in Sources */,
 				232413A4225596AB008618C7 /* FLSwiftStudySecondViewController.swift in Sources */,
 				23634C5D21F177E20028B669 /* FLBuilder.m in Sources */,
 				236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */,
-				23BF048621353D0200ECD946 /* WZDBaseViewController.m in Sources */,
+				23BF048621353D0200ECD946 /* FLBaseViewController.m in Sources */,
 				23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */,
+				23683B68227839BC00337D2C /* CTFrameParser.m in Sources */,
 				2304FCD42277ECC400754B13 /* FLCollectionViewCircleLayout.m in Sources */,
 				23BF048921353D2100ECD946 /* FLChildViewController.m in Sources */,
 				23E8B79C21E6E67E00FD446F /* DHOrderDishModel+Test2.m in Sources */,
 				23E8B79621E5E07A00FD446F /* DHOrderDishModel+Test.m in Sources */,
 				23BF04802134E8F600ECD946 /* CaculatorMaker.m in Sources */,
 				23CCB5A42252123E00A5EE8E /* UIGestureRecognizer+Analysis.m in Sources */,
+				23683B652278398300337D2C /* CTFrameParserConfig.m in Sources */,
 				23634C6921F1797F0028B669 /* FLWheel.m in Sources */,
 				23BFA07321DCD7E00045AF0B /* RACRequest.m in Sources */,
 				2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */,
@@ -964,6 +1014,7 @@
 				2375163E1E4D613E00FB5868 /* DHPopTableView.m in Sources */,
 				236098951D980892009C589B /* AppDelegate.m in Sources */,
 				23E77FF521884539009B8E84 /* JSPerson.m in Sources */,
+				23683B62227831D200337D2C /* FLCTView.m in Sources */,
 				2374CFA31E516696001B799D /* DHPopTableViewCellModel.m in Sources */,
 				23965FC721940ED600349149 /* FLProxy.m in Sources */,
 				236098921D980892009C589B /* main.m in Sources */,
@@ -972,9 +1023,12 @@
 				23634C5521F16F710028B669 /* FLCashRebate.m in Sources */,
 				2356D6DD221E897900DC57D7 /* FLMsgModel.m in Sources */,
 				23E5A0DF22585317006BDDA9 /* FLSwiftStudy27SecondViewController.swift in Sources */,
+				23683B6E22783EB200337D2C /* CTDisplayView.m in Sources */,
 				23634C5221F16E7D0028B669 /* FLCashNormal.m in Sources */,
 				23965FC42193E3AC00349149 /* FLPerson.m in Sources */,
 				2375163F1E4D613E00FB5868 /* DHPopTableViewStyle.m in Sources */,
+				23683B6B227839EA00337D2C /* CoreTextData.m in Sources */,
+				23683B71227842FC00337D2C /* UIView+CTFrame.m in Sources */,
 				23E5A0DB22584DA5006BDDA9 /* FLSwiftStudy27.swift in Sources */,
 				237EE7122159CC850056116E /* DHUserModel.m in Sources */,
 				2374CFB31E518C62001B799D /* DHOrderModel.m in Sources */,

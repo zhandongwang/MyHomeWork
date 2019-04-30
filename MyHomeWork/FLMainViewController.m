@@ -10,9 +10,6 @@
 #import "WZDCustomView.h"
 #import "DHAllOrderModel.h"
 #import "DHOrderKind.h"
-//#import "DHOrderModel.h"
-
-#import "FRCMainViewController.h"
 #import <BlocksKit/BlocksKit.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "JSPerson.h"

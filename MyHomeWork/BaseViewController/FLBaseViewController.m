@@ -6,33 +6,19 @@
 //  Copyright © 2018年 zhandongwang. All rights reserved.
 //
 
-#import "WZDBaseViewController.h"
+#import "FLBaseViewController.h"
 
-@interface WZDBaseViewController ()<FLBaseViewControllerProtocol>
-
-@end
-
-@implementation WZDBaseViewController
+@implementation FLBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    if ([self.child respondsToSelector:@selector(sendRequest)]) {
-        self.child = self;
-    }
-    
-    self.interceptor = self;
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void)sendRequest {
-    
-}
-
 
 @end
