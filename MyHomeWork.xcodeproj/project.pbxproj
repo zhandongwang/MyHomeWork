@@ -81,6 +81,7 @@
 		23CCB5A12252014F00A5EE8E /* UITableView+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB5A02252014F00A5EE8E /* UITableView+Analysis.m */; };
 		23CCB5A42252123E00A5EE8E /* UIGestureRecognizer+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB5A32252123E00A5EE8E /* UIGestureRecognizer+Analysis.m */; };
 		23CCB5C62254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB5C52254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift */; };
+		23CDBEDF2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CDBEDE2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.m */; };
 		23D3682E1E4C5A5300ECC80D /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D368301E4C5A5300ECC80D /* test2.png */; };
 		23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A1B1E46F3A800B3FFFD /* InfoPlist.strings */; };
 		23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A251E46F7F200B3FFFD /* Localizable.strings */; };
@@ -259,6 +260,8 @@
 		23CCB5A22252123E00A5EE8E /* UIGestureRecognizer+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Analysis.h"; sourceTree = "<group>"; };
 		23CCB5A32252123E00A5EE8E /* UIGestureRecognizer+Analysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Analysis.m"; sourceTree = "<group>"; };
 		23CCB5C52254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudyFirstViewController.swift; sourceTree = "<group>"; };
+		23CDBEDD2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCollectionViewWaterFallLayout.h; sourceTree = "<group>"; };
+		23CDBEDE2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCollectionViewWaterFallLayout.m; sourceTree = "<group>"; };
 		23D368171E4C0ABE00ECC80D /* MyHomeWork-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Prefix.pch"; sourceTree = "<group>"; };
 		23D3682F1E4C5A5300ECC80D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/test2.png; sourceTree = "<group>"; };
 		23D368311E4C5A5900ECC80D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/test2.png"; sourceTree = "<group>"; };
@@ -342,6 +345,8 @@
 				2320909D2276FF540034CA96 /* FLCollectionViewController.m */,
 				2320909F2276FFB90034CA96 /* FLCollectionViewLinearLayout.h */,
 				232090A02276FFB90034CA96 /* FLCollectionViewLinearLayout.m */,
+				23CDBEDD2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.h */,
+				23CDBEDE2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.m */,
 				232090A22277019E0034CA96 /* FLCollectionViewCell.h */,
 				232090A32277019E0034CA96 /* FLCollectionViewCell.m */,
 			);
@@ -908,6 +913,7 @@
 				237600962251DEAE00900FAA /* UIViewController+Analysis.m in Sources */,
 				232090A12276FFB90034CA96 /* FLCollectionViewLinearLayout.m in Sources */,
 				23634C6321F1796B0028B669 /* FLDoor.m in Sources */,
+				23CDBEDF2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.m in Sources */,
 				23CCB59B2251EF4E00A5EE8E /* NSObject+Analysis.m in Sources */,
 				236F8E8F224329F20092CD48 /* FLSecondProxy.m in Sources */,
 				23E5A0E322585377006BDDA9 /* FLSwiftStudyBaseViewController.swift in Sources */,

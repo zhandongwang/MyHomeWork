@@ -9,11 +9,13 @@
 #import "FLCollectionViewController.h"
 #import "FLCollectionViewLinearLayout.h"
 #import "FLCollectionViewCell.h"
+#import "FLCollectionViewWaterFallLayout.h"
 
 @interface FLCollectionViewController ()<UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) FLCollectionViewLinearLayout *linearLayout;
+@property (nonatomic, strong) FLCollectionViewWaterFallLayout *waterFallLayout;
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
@@ -48,9 +50,17 @@
     return cell;
 }
 
+- (CGFloat)waterFallLayout:(FLCollectionViewWaterFallLayout *)waterLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath
+                 itemWidth:(CGFloat)itemWidth {
+    if (indexPath.item & 1) {
+        return 200;
+    }
+    return 300;
+}
+
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.linearLayout];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.waterFallLayout];
         _collectionView.backgroundColor = [UIColor blackColor];
         _collectionView.dataSource = self;
         [_collectionView registerClass:[FLCollectionViewCell class] forCellWithReuseIdentifier:@"cellID"];
@@ -80,5 +90,13 @@
     return _linearLayout;
 }
 
-
+- (FLCollectionViewWaterFallLayout *)waterFallLayout {
+    if (!_waterFallLayout) {
+        _waterFallLayout = [[FLCollectionViewWaterFallLayout alloc]
+                            init];
+        _waterFallLayout.delegate = self;
+        
+    }
+    return _waterFallLayout;
+}
 @end
