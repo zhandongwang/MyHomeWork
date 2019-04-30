@@ -19,6 +19,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <YYModel/YYModel.h>
 #import "FLCollectionViewController.h"
+#import "FLTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -68,14 +69,12 @@
     
     
     
-    FLCollectionViewController  *vc = [[FLCollectionViewController alloc] init];
+    FLTableViewController  *vc = [[FLTableViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigationController;
     self.window.backgroundColor = [UIColor whiteColor];
 
     [self.window makeKeyAndVisible];
-    
-    
     
     
     return YES;

@@ -56,15 +56,15 @@ typedef void(^MyParamBlock)(NSString *str);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.wxInstance = [[WXSDKInstance alloc] init];
-    self.wxInstance.viewController = self;
-    self.wxInstance.frame = self.view.frame;
-    __weak typeof(self)weakSelf = self;
-    self.wxInstance.onCreate = ^(UIView *view) {
-        [weakSelf.view addSubview:view];
-    };
-    
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"js"];
+//    self.wxInstance = [[WXSDKInstance alloc] init];
+//    self.wxInstance.viewController = self;
+//    self.wxInstance.frame = self.view.frame;
+//    __weak typeof(self)weakSelf = self;
+//    self.wxInstance.onCreate = ^(UIView *view) {
+//        [weakSelf.view addSubview:view];
+//    };
+//    
+//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"js"];
 //    [self.wxInstance renderWithURL:url options:@{@"bundleUrl":[self.url absoluteString]} data:nil];
     
     
