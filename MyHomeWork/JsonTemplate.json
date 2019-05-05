@@ -1,5 +1,11 @@
 [
     {
+        "type":"img",
+        "width":"200",
+        "height":"108",
+        "name":"remen"
+    },
+    {
         "color":"blue",
         "content":"CoreText是用于处理文字和字体的底层技术。",
         "size":16,
@@ -22,6 +28,12 @@
         "content":"Quartz能够直接处理字体（font）和字形（glyphs），将文字渲染到界面上，它是基础库中唯一能够处理字形的模块。",
         "size":16,
         "type":"txt"
+    },
+    {
+        "type":"img",
+        "width":"375",
+        "height":"200",
+        "name":"fengli"
     },
     {
         "color":"default",

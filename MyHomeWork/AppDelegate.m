@@ -7,23 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "FLMainViewController.h"
-#import "RACViewController.h"
-#import "FLWebViewController.h"
-#import "FLUIKitViewController.h"
-#import "DHOrderModel.h"
 #import "MyHomeWork-Swift.h"
-#import "ResultModel.h"
-#import <WeexSDK/WeexSDK.h>
-#import <AFNetworking/AFNetworking.h>
-#import <YYModel/YYModel.h>
-#import "FLCollectionViewController.h"
 #import "FLTableViewController.h"
 
 @interface AppDelegate ()
 
-@property (nonatomic, strong) DHOrderModel *order;
-@property (nonatomic, assign) NSInteger count;
 @end
 
 @implementation AppDelegate
@@ -95,18 +83,6 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
- dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-     [NSThread sleepForTimeInterval:3];
-     if (self.count & 1) {
-         self.order.name = @"2";
-         NSLog(@"%@",self.order.name);
-     } else {
-         self.order.name = nil;
-     }
-     self.count++;
-     
- });
-    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

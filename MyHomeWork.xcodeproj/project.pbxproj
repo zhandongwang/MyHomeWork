@@ -69,6 +69,7 @@
 		23965FC42193E3AC00349149 /* FLPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 23965FC32193E3AC00349149 /* FLPerson.m */; };
 		23965FC721940ED600349149 /* FLProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23965FC621940ED600349149 /* FLProxy.m */; };
 		23ADA727227EDBE500ED1FA3 /* FLConcurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ADA726227EDBE500ED1FA3 /* FLConcurrentViewController.m */; };
+		23ADA72A227EE26700ED1FA3 /* CoreTextImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ADA729227EE26700ED1FA3 /* CoreTextImageData.m */; };
 		23BF04802134E8F600ECD946 /* CaculatorMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF04782134E8F500ECD946 /* CaculatorMaker.m */; };
 		23BF04812134E8F600ECD946 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF04792134E8F500ECD946 /* RACViewController.m */; };
 		23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF047B2134E8F500ECD946 /* NSObject+Caculator.m */; };
@@ -239,6 +240,8 @@
 		23965FC621940ED600349149 /* FLProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLProxy.m; sourceTree = "<group>"; };
 		23ADA725227EDBE500ED1FA3 /* FLConcurrentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLConcurrentViewController.h; sourceTree = "<group>"; };
 		23ADA726227EDBE500ED1FA3 /* FLConcurrentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLConcurrentViewController.m; sourceTree = "<group>"; };
+		23ADA728227EE26700ED1FA3 /* CoreTextImageData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreTextImageData.h; sourceTree = "<group>"; };
+		23ADA729227EE26700ED1FA3 /* CoreTextImageData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTextImageData.m; sourceTree = "<group>"; };
 		23BF04782134E8F500ECD946 /* CaculatorMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaculatorMaker.m; sourceTree = "<group>"; };
 		23BF04792134E8F500ECD946 /* RACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACViewController.m; sourceTree = "<group>"; };
 		23BF047A2134E8F500ECD946 /* Caculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caculator.h; sourceTree = "<group>"; };
@@ -568,6 +571,8 @@
 				23683B6D22783EB200337D2C /* CTDisplayView.m */,
 				23683B6F227842FC00337D2C /* UIView+CTFrame.h */,
 				23683B70227842FC00337D2C /* UIView+CTFrame.m */,
+				23ADA728227EE26700ED1FA3 /* CoreTextImageData.h */,
+				23ADA729227EE26700ED1FA3 /* CoreTextImageData.m */,
 			);
 			path = CoreText;
 			sourceTree = "<group>";
@@ -961,6 +966,7 @@
 				23BF04812134E8F600ECD946 /* RACViewController.m in Sources */,
 				2307F1662064A2120060A688 /* WZDPatch.m in Sources */,
 				23E5A0E122585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift in Sources */,
+				23ADA72A227EE26700ED1FA3 /* CoreTextImageData.m in Sources */,
 				2320909E2276FF540034CA96 /* FLCollectionViewController.m in Sources */,
 				23E77FFA218855FD009B8E84 /* FLWebViewController.m in Sources */,
 				23634C5821F16FE50028B669 /* FLCashContext.m in Sources */,
