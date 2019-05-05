@@ -115,5 +115,68 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/FMDB/src/fmdb/FMDatabaseQueue.m"
+            timestampString = "578738710.275974"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "-inDatabase:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[FMDatabaseQueue inDatabase:]"
+                  moduleName = "MyHomeWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wangzhandong/Documents/Projects/MyHomeWork/Pods/FMDB/src/fmdb/FMDatabaseQueue.m"
+                  timestampString = "578739858.911041"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "183">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__30-[FMDatabaseQueue inDatabase:]_block_invoke"
+                  moduleName = "MyHomeWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wangzhandong/Documents/Projects/MyHomeWork/Pods/FMDB/src/fmdb/FMDatabaseQueue.m"
+                  timestampString = "578739858.91356"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.65"
+                  moduleName = "MyHomeWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wangzhandong/Documents/Projects/MyHomeWork/Pods/FMDB/src/fmdb/FMDatabaseQueue.m"
+                  timestampString = "578739858.916503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

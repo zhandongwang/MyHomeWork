@@ -7,7 +7,7 @@
 //
 
 #import "FLTableViewController.h"
-#import "FLChildViewController.h"
+#import "FLUIKitViewController.h"
 #import "FLCTViewController.h"
 
 static NSString * const kCellID = @"cellID";
@@ -50,7 +50,7 @@ static NSString * const kCellID = @"cellID";
 #pragma mark - Methods
 
 - (void)goToUIKit {
-    [self.navigationController pushViewController:[[FLChildViewController alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[FLUIKitViewController alloc] init] animated:YES];
 }
 
 - (void)goToRunTime {

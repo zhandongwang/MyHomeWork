@@ -18,7 +18,7 @@ pod 'AFNetworking'
 pod 'SDWebImage'
 #pod 'CCDTimeSaver'
 pod 'FMDB'
-#pod 'MLeaksFinder'
+pod 'MLeaksFinder'
 pod 'fishhook'
 pod  'WXDevtool', :configurations => ['Debug']
 pod 'WeexSDK'

@@ -31,6 +31,7 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - CocoaSecurity (1.2.4.2)
+  - FBRetainCycleDetector (0.1.4.1)
   - fishhook (0.2)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -38,6 +39,8 @@ PODS:
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0.1)
   - MJRefresh (2.4.12)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
   - OCTWebViewBridge (2.1.0)
   - ReactiveObjC (3.0.0)
   - SDWebImage (5.0.2):
@@ -62,6 +65,7 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - MJRefresh (~> 2.4.7)
+  - MLeaksFinder
   - OCTWebViewBridge
   - ReactiveObjC (= 3.0.0)
   - SDWebImage
@@ -75,6 +79,7 @@ SPEC REPOS:
   http://git.2dfire.net/ios/cocoapods-spec.git:
     - Aspects
     - CocoaSecurity
+    - FBRetainCycleDetector
     - MBProgressHUD
     - YYModel
   https://github.com/cocoapods/specs.git:
@@ -84,6 +89,7 @@ SPEC REPOS:
     - FMDB
     - Masonry
     - MJRefresh
+    - MLeaksFinder
     - OCTWebViewBridge
     - ReactiveObjC
     - SDWebImage
@@ -98,11 +104,13 @@ SPEC CHECKSUMS:
   Aspects: 2a29023e54b6dd92a5fec8ead8e8607b41b45efa
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   CocoaSecurity: c1287f056a21fa88a74e4d7f57f56b0a1a6e64b0
+  FBRetainCycleDetector: 22a77c1446a858961ee4bce6e943603add9db037
   fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 443c07c0aa22772fbe3702db40fc65c36d80155e
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   OCTWebViewBridge: e7712ef0c0670905da57b8a36d3f02a43115c507
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
@@ -113,6 +121,6 @@ SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 4fb57c2e53b0d22dc4414878928ece524bf30788
 
-PODFILE CHECKSUM: e39bc4c452d7f0cea88b99fe70693f7d822f7d5d
+PODFILE CHECKSUM: 8e305a446a208a7cdce1a73c04d790b65c2d549d
 
 COCOAPODS: 1.6.0
