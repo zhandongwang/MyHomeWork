@@ -62,6 +62,7 @@
 		237600962251DEAE00900FAA /* UIViewController+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 237600952251DEAE00900FAA /* UIViewController+Analysis.m */; };
 		237BE7692230C3510097AE6F /* FLTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237BE7682230C3510097AE6F /* FLTestModel.m */; };
 		237EE7122159CC850056116E /* DHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EE7112159CC850056116E /* DHUserModel.m */; };
+		238899E822803805001E500F /* FLCoreGraphicsPushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238899E722803805001E500F /* FLCoreGraphicsPushButton.swift */; };
 		23965FB321918F4200349149 /* WebPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 23965FB221918F4200349149 /* WebPlugin.m */; };
 		23965FB521918FED00349149 /* log.js in Resources */ = {isa = PBXBuildFile; fileRef = 23965FB421918FED00349149 /* log.js */; };
 		23965FBA2191B9A000349149 /* FLSwiftWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23965FB92191B9A000349149 /* FLSwiftWebViewController.swift */; };
@@ -70,6 +71,9 @@
 		23965FC721940ED600349149 /* FLProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23965FC621940ED600349149 /* FLProxy.m */; };
 		23ADA727227EDBE500ED1FA3 /* FLConcurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ADA726227EDBE500ED1FA3 /* FLConcurrentViewController.m */; };
 		23ADA72A227EE26700ED1FA3 /* CoreTextImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ADA729227EE26700ED1FA3 /* CoreTextImageData.m */; };
+		23ADA72E22802F3900ED1FA3 /* FLCoreGraphicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ADA72D22802F3900ED1FA3 /* FLCoreGraphicsViewController.m */; };
+		23ADA73122802F8A00ED1FA3 /* FLCoreGraphicsCutomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ADA73022802F8A00ED1FA3 /* FLCoreGraphicsCutomView.m */; };
+		23ADA7342280302C00ED1FA3 /* FLCoreGraphicsPushButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ADA7332280302C00ED1FA3 /* FLCoreGraphicsPushButton.m */; };
 		23BF04802134E8F600ECD946 /* CaculatorMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF04782134E8F500ECD946 /* CaculatorMaker.m */; };
 		23BF04812134E8F600ECD946 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF04792134E8F500ECD946 /* RACViewController.m */; };
 		23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF047B2134E8F500ECD946 /* NSObject+Caculator.m */; };
@@ -228,6 +232,7 @@
 		237BE7682230C3510097AE6F /* FLTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLTestModel.m; sourceTree = "<group>"; };
 		237EE7102159CC850056116E /* DHUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHUserModel.h; sourceTree = "<group>"; };
 		237EE7112159CC850056116E /* DHUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHUserModel.m; sourceTree = "<group>"; };
+		238899E722803805001E500F /* FLCoreGraphicsPushButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLCoreGraphicsPushButton.swift; sourceTree = "<group>"; };
 		23965FB121918F4200349149 /* WebPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPlugin.h; sourceTree = "<group>"; };
 		23965FB221918F4200349149 /* WebPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPlugin.m; sourceTree = "<group>"; };
 		23965FB421918FED00349149 /* log.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = log.js; sourceTree = "<group>"; };
@@ -242,6 +247,12 @@
 		23ADA726227EDBE500ED1FA3 /* FLConcurrentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLConcurrentViewController.m; sourceTree = "<group>"; };
 		23ADA728227EE26700ED1FA3 /* CoreTextImageData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreTextImageData.h; sourceTree = "<group>"; };
 		23ADA729227EE26700ED1FA3 /* CoreTextImageData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTextImageData.m; sourceTree = "<group>"; };
+		23ADA72C22802F3900ED1FA3 /* FLCoreGraphicsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCoreGraphicsViewController.h; sourceTree = "<group>"; };
+		23ADA72D22802F3900ED1FA3 /* FLCoreGraphicsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCoreGraphicsViewController.m; sourceTree = "<group>"; };
+		23ADA72F22802F8A00ED1FA3 /* FLCoreGraphicsCutomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCoreGraphicsCutomView.h; sourceTree = "<group>"; };
+		23ADA73022802F8A00ED1FA3 /* FLCoreGraphicsCutomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCoreGraphicsCutomView.m; sourceTree = "<group>"; };
+		23ADA7322280302C00ED1FA3 /* FLCoreGraphicsPushButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCoreGraphicsPushButton.h; sourceTree = "<group>"; };
+		23ADA7332280302C00ED1FA3 /* FLCoreGraphicsPushButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCoreGraphicsPushButton.m; sourceTree = "<group>"; };
 		23BF04782134E8F500ECD946 /* CaculatorMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaculatorMaker.m; sourceTree = "<group>"; };
 		23BF04792134E8F500ECD946 /* RACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACViewController.m; sourceTree = "<group>"; };
 		23BF047A2134E8F500ECD946 /* Caculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caculator.h; sourceTree = "<group>"; };
@@ -442,6 +453,7 @@
 		2360988F1D980892009C589B /* MyHomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				23ADA72B22802F0900ED1FA3 /* CoreGraphics */,
 				23ADA724227EDBC600ED1FA3 /* Concurrent */,
 				23ADA723227EDB1300ED1FA3 /* UIKit */,
 				23683B5C2278210B00337D2C /* CoreText */,
@@ -668,6 +680,20 @@
 			path = Concurrent;
 			sourceTree = "<group>";
 		};
+		23ADA72B22802F0900ED1FA3 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				23ADA72C22802F3900ED1FA3 /* FLCoreGraphicsViewController.h */,
+				23ADA72D22802F3900ED1FA3 /* FLCoreGraphicsViewController.m */,
+				23ADA72F22802F8A00ED1FA3 /* FLCoreGraphicsCutomView.h */,
+				23ADA73022802F8A00ED1FA3 /* FLCoreGraphicsCutomView.m */,
+				23ADA7322280302C00ED1FA3 /* FLCoreGraphicsPushButton.h */,
+				23ADA7332280302C00ED1FA3 /* FLCoreGraphicsPushButton.m */,
+				238899E722803805001E500F /* FLCoreGraphicsPushButton.swift */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
 		23BF04772134E8F500ECD946 /* RAC */ = {
 			isa = PBXGroup;
 			children = (
@@ -873,11 +899,6 @@
 				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/message.js",
 				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.css",
 				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/night.js",
-				"${PODS_ROOT}/WeexSDK/pre-build/native-bundle-main.js",
-				"${PODS_ROOT}/WeexSDK/pre-build/weex-main-jsfm.js",
-				"${PODS_ROOT}/WeexSDK/pre-build/weex-polyfill.js",
-				"${PODS_ROOT}/WeexSDK/pre-build/weex-rax-api.js",
-				"${PODS_ROOT}/WeexSDK/ios/sdk/WeexSDK/Resources/wx_load_error@3x.png",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -889,11 +910,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/message.js",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/night.css",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/night.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/native-bundle-main.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/weex-main-jsfm.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/weex-polyfill.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/weex-rax-api.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wx_load_error@3x.png",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -925,6 +941,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				238899E822803805001E500F /* FLCoreGraphicsPushButton.swift in Sources */,
 				23BFA07021DCD7B80045AF0B /* RACViewModel.m in Sources */,
 				23CCB5A12252014F00A5EE8E /* UITableView+Analysis.m in Sources */,
 				23E8B79321E5E01700FD446F /* DHOrderDishModel.m in Sources */,
@@ -958,6 +975,7 @@
 				232090A42277019E0034CA96 /* FLCollectionViewCell.m in Sources */,
 				23BF04832134E8F600ECD946 /* Caculator.m in Sources */,
 				2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */,
+				23ADA73122802F8A00ED1FA3 /* FLCoreGraphicsCutomView.m in Sources */,
 				23634C6621F179750028B669 /* FLEngine.m in Sources */,
 				2374CFB11E518C62001B799D /* DHMessageModel.m in Sources */,
 				232413A2225595F3008618C7 /* FLSwiftStudyGlobal.swift in Sources */,
@@ -977,6 +995,7 @@
 				2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */,
 				2373072E2271488C003901CC /* ResultModel.m in Sources */,
 				23E5A0DD22585302006BDDA9 /* FLSwiftStudy27FirstViewController.swift in Sources */,
+				23ADA72E22802F3900ED1FA3 /* FLCoreGraphicsViewController.m in Sources */,
 				2356D6E0221E8AC500DC57D7 /* FLFMDBHelper.m in Sources */,
 				23965FC12193DF4500349149 /* FLCar.m in Sources */,
 				2374CFB21E518C62001B799D /* DHOrderKind.m in Sources */,
@@ -998,6 +1017,7 @@
 				23683B6B227839EA00337D2C /* CoreTextData.m in Sources */,
 				23683B71227842FC00337D2C /* UIView+CTFrame.m in Sources */,
 				23E5A0DB22584DA5006BDDA9 /* FLSwiftStudy27.swift in Sources */,
+				23ADA7342280302C00ED1FA3 /* FLCoreGraphicsPushButton.m in Sources */,
 				237EE7122159CC850056116E /* DHUserModel.m in Sources */,
 				2374CFB31E518C62001B799D /* DHOrderModel.m in Sources */,
 			);

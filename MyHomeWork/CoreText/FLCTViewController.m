@@ -31,30 +31,30 @@
     // Do any additional setup after loading the view.
     self.title = @"Core Text";
     
-    CTDisplayView *dispaleView = [[CTDisplayView alloc] initWithFrame:CGRectMake(0, 0, 300, 200)];
-    dispaleView.center = CGPointMake(self.view.center.x, self.view.center.y-100);
-    dispaleView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:dispaleView];
+//    CTDisplayView *dispaleView = [[CTDisplayView alloc] initWithFrame:CGRectMake(0, 0, 300, 200)];
+//    dispaleView.center = CGPointMake(self.view.center.x, self.view.center.y-100);
+//    dispaleView.backgroundColor = [UIColor whiteColor];
+//    [self.view addSubview:dispaleView];
+//
+//
+//    CTFrameParserConfig *config = [[CTFrameParserConfig alloc] init];
+//    config.width = dispaleView.width;
+//
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"JsonTemplate" ofType:@"json"];
+//
+//    //创建绘制数据实例
+//    CoreTextData *data = [CTFrameParser parseTemplateFile:path config:config];
+//    dispaleView.data = data;
+//    dispaleView.height = data.height;
+//    dispaleView.backgroundColor = [UIColor yellowColor];
     
     
-    CTFrameParserConfig *config = [[CTFrameParserConfig alloc] init];
-    config.width = dispaleView.width;
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"JsonTemplate" ofType:@"json"];
-    
-    //创建绘制数据实例
-    CoreTextData *data = [CTFrameParser parseTemplateFile:path config:config];
-    dispaleView.data = data;
-    dispaleView.height = data.height;
-    dispaleView.backgroundColor = [UIColor yellowColor];
-    
-    
-    
-//    [self.view addSubview:self.ctView];
-//    [self.ctView mas_makeConstraints:^(MASConstraintMaker *make) {
-//       make.center.equalTo(self.view);
-//        make.size.mas_equalTo(CGSizeMake(CGRectGetWidth(self.view.frame), 300));
-//    }];
+    [self.view addSubview:self.ctView];
+    [self.ctView mas_makeConstraints:^(MASConstraintMaker *make) {
+       make.center.equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(CGRectGetWidth(self.view.frame), 300));
+    }];
 //    [self.view addSubview:self.textLabel];
 //    [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.center.equalTo(self.view);

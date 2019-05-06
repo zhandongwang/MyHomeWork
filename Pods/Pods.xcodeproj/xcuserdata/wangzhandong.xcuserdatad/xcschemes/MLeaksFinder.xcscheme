@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B5A8353E9A7C61CCAD58A74CD23D2D1A"
+               BuildableName = "libMLeaksFinder.a"
                BlueprintName = "MLeaksFinder"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libMLeaksFinder.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

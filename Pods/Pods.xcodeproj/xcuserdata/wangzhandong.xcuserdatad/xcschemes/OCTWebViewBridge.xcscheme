@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "833345B0CF19BE1F4C6C6C9D891CF06A"
+               BuildableName = "libOCTWebViewBridge.a"
                BlueprintName = "OCTWebViewBridge"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libOCTWebViewBridge.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -7,6 +7,7 @@ pod 'BlocksKit'
 pod 'Masonry'
 pod 'YYModel'
 pod 'YYCache'
+pod 'YYText'
 pod 'MJRefresh', '~> 2.4.7'
 pod 'MBProgressHUD'
 pod 'ReactiveObjC', '3.0.0'
@@ -16,10 +17,13 @@ pod 'OCTWebViewBridge'
 pod 'SnapKit'
 pod 'AFNetworking'
 pod 'SDWebImage'
-#pod 'CCDTimeSaver'
+pod 'CCDTimeSaver'
 pod 'FMDB'
 pod 'MLeaksFinder'
 pod 'fishhook'
-pod  'WXDevtool', :configurations => ['Debug']
-pod 'WeexSDK'
+#pod  'WXDevtool', :configurations => ['Debug']
+#pod 'WeexSDK'
+
+
+
 end

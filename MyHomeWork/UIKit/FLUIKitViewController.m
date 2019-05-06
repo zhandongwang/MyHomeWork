@@ -35,7 +35,7 @@
 
 - (FLCustomView *)customView {
     if (!_customView) {
-        _customView = [[FLCustomView alloc] initWithFrame:CGRectMake(100, 200, 200, 300)];
+        _customView = [[FLCustomView alloc] initWithFrame:CGRectMake(100, 200, 300, 500)];
     }
     return _customView;
 }

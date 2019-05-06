@@ -9,6 +9,7 @@
 #import "FLTableViewController.h"
 #import "FLUIKitViewController.h"
 #import "FLCTViewController.h"
+#import "FLCoreGraphicsViewController.h"
 
 static NSString * const kCellID = @"cellID";
 
@@ -35,7 +36,8 @@ static NSString * const kCellID = @"cellID";
                       @"RunTime":@"goToRunTime",
                       @"RunLoop":@"goToRunLoop",
                       @"Block":@"goToBlock",
-                      @"Core Text":@"goToCoreText"
+                      @"Core Text":@"goToCoreText",
+                      @"Core Graphics":@"goToCoreGraphics",
                       };
     self.dataSource = [NSMutableArray arrayWithArray:self.dataDict.allKeys];
 }
@@ -65,6 +67,10 @@ static NSString * const kCellID = @"cellID";
 
 - (void)goToCoreText {
     [self.navigationController pushViewController:[[FLCTViewController alloc] init] animated:YES];
+}
+
+- (void)goToCoreGraphics {
+    [self.navigationController pushViewController:[[FLCoreGraphicsViewController alloc] init] animated:YES];
 }
 
 #pragma mark - Table view data source

@@ -30,6 +30,7 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - CCDTimeSaver (0.1.2)
   - CocoaSecurity (1.2.4.2)
   - FBRetainCycleDetector (0.1.4.1)
   - fishhook (0.2)
@@ -47,18 +48,15 @@ PODS:
     - SDWebImage/Core (= 5.0.2)
   - SDWebImage/Core (5.0.2)
   - SnapKit (4.2.0)
-  - SocketRocket (0.5.1)
-  - WeexSDK (0.20.1)
-  - WXDevtool (0.20.0):
-    - SocketRocket
-    - WeexSDK
   - YYCache (1.0.4)
   - YYModel (1.0.4.2)
+  - YYText (1.0.7.1)
 
 DEPENDENCIES:
   - AFNetworking
   - Aspects
   - BlocksKit
+  - CCDTimeSaver
   - CocoaSecurity
   - fishhook
   - FMDB
@@ -70,18 +68,19 @@ DEPENDENCIES:
   - ReactiveObjC (= 3.0.0)
   - SDWebImage
   - SnapKit
-  - WeexSDK
-  - WXDevtool
   - YYCache
   - YYModel
+  - YYText
 
 SPEC REPOS:
   http://git.2dfire.net/ios/cocoapods-spec.git:
     - Aspects
+    - CCDTimeSaver
     - CocoaSecurity
     - FBRetainCycleDetector
     - MBProgressHUD
     - YYModel
+    - YYText
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - BlocksKit
@@ -94,15 +93,13 @@ SPEC REPOS:
     - ReactiveObjC
     - SDWebImage
     - SnapKit
-    - SocketRocket
-    - WeexSDK
-    - WXDevtool
     - YYCache
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Aspects: 2a29023e54b6dd92a5fec8ead8e8607b41b45efa
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  CCDTimeSaver: 8c149554294d68fda7d60ca4472e6762ae5c8311
   CocoaSecurity: c1287f056a21fa88a74e4d7f57f56b0a1a6e64b0
   FBRetainCycleDetector: 22a77c1446a858961ee4bce6e943603add9db037
   fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
@@ -115,12 +112,10 @@ SPEC CHECKSUMS:
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
-  WeexSDK: ced3f2ef2f0cb48d1d76fd2f03c645572c632d21
-  WXDevtool: 833dd3e835df1f5f278fc8865c865d48196bfdab
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 4fb57c2e53b0d22dc4414878928ece524bf30788
+  YYText: 1b20648f2be4d853c390e98315ff403864e92f01
 
-PODFILE CHECKSUM: 8e305a446a208a7cdce1a73c04d790b65c2d549d
+PODFILE CHECKSUM: 6ca189047b20c2bc8498ab2ea3e5ed66a2fec82c
 
 COCOAPODS: 1.6.0

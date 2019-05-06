@@ -24,7 +24,17 @@
     
     //3.创建绘制局域
     CGMutablePathRef path = CGPathCreateMutable();
-    CGPathAddRect(path, NULL, self.bounds);
+    CGPathAddEllipseInRect(path, NULL, CGRectMake(100, 200, 100, 100));
+    CGPathAddEllipseInRect(path, NULL, CGRectMake(50, 150, 200, 200));
+
+//    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
+//    CGContextAddEllipseInRect(context, CGRectMake(100, 200, 100, 100));
+//    CGContextAddEllipseInRect(context, CGRectMake(50, 150, 200, 200));
+//
+//    CGContextStrokePath(context);
+//    CGPathRef path = CGContextCopyPath(context);
+    
+
     NSAttributedString *attString = [[NSAttributedString alloc] initWithString:
                                      @"CoreText是用于处理文字和字体的底层技术。"
                                      "它直接和Core Graphics(又被称为Quartz)打交道。"
