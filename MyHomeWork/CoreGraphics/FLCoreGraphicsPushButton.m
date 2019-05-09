@@ -21,6 +21,19 @@ static const CGFloat halfPointShift = 0.5;
     
     CGFloat plusWidth = MIN(self.bounds.size.width, self.bounds.size.height) * plusButtonScale;
     CGFloat halfPlusWidth = plusWidth * 0.5;
+    UIBezierPath *plusPath = [[UIBezierPath alloc] init];
+    [plusPath setLineWidth:plusLineWidth];
+    [plusPath moveToPoint:CGPointMake([self halfWidth] - halfPlusWidth, [self halfHeight])];
+    [plusPath addLineToPoint:CGPointMake([self halfWidth] + halfPlusWidth, [self halfHeight])];
+    
+    [plusPath moveToPoint:CGPointMake([self halfWidth], [self halfHeight] - halfPlusWidth)];
+    
+    [plusPath addLineToPoint:CGPointMake([self halfWidth], [self halfHeight] + halfPlusWidth)];
+    
+    [[UIColor whiteColor] setStroke];
+    [plusPath stroke];
+    
+    
     
     
     

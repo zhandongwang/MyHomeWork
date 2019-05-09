@@ -62,7 +62,6 @@
 		237600962251DEAE00900FAA /* UIViewController+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 237600952251DEAE00900FAA /* UIViewController+Analysis.m */; };
 		237BE7692230C3510097AE6F /* FLTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237BE7682230C3510097AE6F /* FLTestModel.m */; };
 		237EE7122159CC850056116E /* DHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EE7112159CC850056116E /* DHUserModel.m */; };
-		238899E822803805001E500F /* FLCoreGraphicsPushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238899E722803805001E500F /* FLCoreGraphicsPushButton.swift */; };
 		23965FB321918F4200349149 /* WebPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 23965FB221918F4200349149 /* WebPlugin.m */; };
 		23965FB521918FED00349149 /* log.js in Resources */ = {isa = PBXBuildFile; fileRef = 23965FB421918FED00349149 /* log.js */; };
 		23965FBA2191B9A000349149 /* FLSwiftWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23965FB92191B9A000349149 /* FLSwiftWebViewController.swift */; };
@@ -232,7 +231,6 @@
 		237BE7682230C3510097AE6F /* FLTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLTestModel.m; sourceTree = "<group>"; };
 		237EE7102159CC850056116E /* DHUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHUserModel.h; sourceTree = "<group>"; };
 		237EE7112159CC850056116E /* DHUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHUserModel.m; sourceTree = "<group>"; };
-		238899E722803805001E500F /* FLCoreGraphicsPushButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLCoreGraphicsPushButton.swift; sourceTree = "<group>"; };
 		23965FB121918F4200349149 /* WebPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPlugin.h; sourceTree = "<group>"; };
 		23965FB221918F4200349149 /* WebPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPlugin.m; sourceTree = "<group>"; };
 		23965FB421918FED00349149 /* log.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = log.js; sourceTree = "<group>"; };
@@ -689,7 +687,6 @@
 				23ADA73022802F8A00ED1FA3 /* FLCoreGraphicsCutomView.m */,
 				23ADA7322280302C00ED1FA3 /* FLCoreGraphicsPushButton.h */,
 				23ADA7332280302C00ED1FA3 /* FLCoreGraphicsPushButton.m */,
-				238899E722803805001E500F /* FLCoreGraphicsPushButton.swift */,
 			);
 			path = CoreGraphics;
 			sourceTree = "<group>";
@@ -941,7 +938,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				238899E822803805001E500F /* FLCoreGraphicsPushButton.swift in Sources */,
 				23BFA07021DCD7B80045AF0B /* RACViewModel.m in Sources */,
 				23CCB5A12252014F00A5EE8E /* UITableView+Analysis.m in Sources */,
 				23E8B79321E5E01700FD446F /* DHOrderDishModel.m in Sources */,

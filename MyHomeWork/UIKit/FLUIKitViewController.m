@@ -12,15 +12,17 @@
 @interface FLUIKitViewController ()
 
 @property (nonatomic, strong) FLCustomView *customView;
+@property (nonatomic, strong) UIImageView *imageView;
 
 @end
 
-@implementation FLUIKitViewController
+@implementation FLUIKitViewController {
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.customView];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
