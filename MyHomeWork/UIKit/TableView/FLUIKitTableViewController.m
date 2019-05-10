@@ -38,17 +38,13 @@ static NSString * const kCellReusedID = @"FLUIKitTableViewCell";
 - (void)sendRequest {
     co_launch(^{
         NSArray *dataArray = [[FLUIKitTableViewControllerViewModel sharedInstance] getDiscoverList:@"1"];
-        NSError *error = co_getError();
-        if (error) {
-            NSLog(@"%@",[error localizedDescription]);
-        }
         if (dataArray) {
             self.dataSource = [dataArray copy];
             [self.tableView reloadData];
-            
+
         } else {
             NSLog(@"request data failed");
-        } 
+        }
     });
 }
 

@@ -138,7 +138,7 @@
                   moduleName = "MyHomeWork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangzhandong/Documents/Projects/MyHomeWork/Pods/FMDB/src/fmdb/FMDatabaseQueue.m"
-                  timestampString = "579151833.880138"
+                  timestampString = "579163918.734367"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "190"
@@ -153,7 +153,7 @@
                   moduleName = "MyHomeWork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangzhandong/Documents/Projects/MyHomeWork/Pods/FMDB/src/fmdb/FMDatabaseQueue.m"
-                  timestampString = "579151833.882701"
+                  timestampString = "579163918.737785"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "190"
@@ -168,7 +168,7 @@
                   moduleName = "MyHomeWork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangzhandong/Documents/Projects/MyHomeWork/Pods/FMDB/src/fmdb/FMDatabaseQueue.m"
-                  timestampString = "579151833.884974"
+                  timestampString = "579163918.74081"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "190"
@@ -191,22 +191,6 @@
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "-drawRect:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyHomeWork/UIKit/TableView/FLUIKitTableViewController.m"
-            timestampString = "579151833.60295"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-sendRequest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

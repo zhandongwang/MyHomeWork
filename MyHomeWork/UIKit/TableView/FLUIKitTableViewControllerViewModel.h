@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 - (NSArray*)getDiscoverList:(NSString *)pageLimit;
+
 @end
 
 NS_ASSUME_NONNULL_END

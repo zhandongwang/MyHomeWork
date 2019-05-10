@@ -8,6 +8,7 @@
 
 #import "FLDataService.h"
 #import <CommonCrypto/CommonDigest.h>
+#import <AFNetworking/AFNetworking.h>
 #import "FLConst.h"
 
 @interface FLDataService ()
@@ -95,7 +96,7 @@
             }
         });
         
-        _imageActor =  co_actor_onqueue(_imageQueue, ^(COActorChan * _Nonnull channel) {
+        _imageActor = co_actor_onqueue(_imageQueue, ^(COActorChan * _Nonnull channel) {
             NSData *data = nil;
             UIImage *image = nil;
             COActorCompletable *completable = nil;
@@ -160,21 +161,21 @@
 
 - (COPromise *)getDataWithURL:(NSString*)url {
     return [COPromise promise:^(COPromiseFulfill  _Nonnull fullfill, COPromiseReject  _Nonnull reject) {
-        [NSURLSession sharedSession].configuration.requestCachePolicy = NSURLRequestReloadIgnoringCacheData;
-        NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            if (error) {
-                reject(error);
-            } else {
-                fullfill(data);
-            }
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.requestSerializer.timeoutInterval = 10;
+        [manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            fullfill(responseObject);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            reject(error);
         }];
-        [task resume];
     } onQueue:_networkQueue];
 }
 
 - (id)requestJSONWithURL:(NSString *)url CO_ASYNC {
     SURE_ASYNC
-    return await([self.jsonActor sendMessage:url]);
+    return await([self.networkActor sendMessage:url]);
 }
 
 - (UIImage*)imageWithURL:(NSString*)url CO_ASYNC {

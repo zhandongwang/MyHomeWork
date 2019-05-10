@@ -88,6 +88,7 @@
 		23C84DA5228449AB0017B770 /* FLMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DA4228449AB0017B770 /* FLMovieModel.m */; };
 		23C84DA822844BCD0017B770 /* FLMovieListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DA722844BCD0017B770 /* FLMovieListModel.m */; };
 		23C84DAE22850FA80017B770 /* UIImageView+FLWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DAD22850FA80017B770 /* UIImageView+FLWebCache.m */; };
+		23C84DB1228551C20017B770 /* FLNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DB0228551C20017B770 /* FLNetworkHelper.m */; };
 		23CCB59B2251EF4E00A5EE8E /* NSObject+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB59A2251EF4E00A5EE8E /* NSObject+Analysis.m */; };
 		23CCB59E2251F35300A5EE8E /* UIControl+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB59D2251F35300A5EE8E /* UIControl+Analysis.m */; };
 		23CCB5A12252014F00A5EE8E /* UITableView+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB5A02252014F00A5EE8E /* UITableView+Analysis.m */; };
@@ -289,6 +290,8 @@
 		23C84DA722844BCD0017B770 /* FLMovieListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLMovieListModel.m; sourceTree = "<group>"; };
 		23C84DAC22850FA80017B770 /* UIImageView+FLWebCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FLWebCache.h"; sourceTree = "<group>"; };
 		23C84DAD22850FA80017B770 /* UIImageView+FLWebCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FLWebCache.m"; sourceTree = "<group>"; };
+		23C84DAF228551C20017B770 /* FLNetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLNetworkHelper.h; sourceTree = "<group>"; };
+		23C84DB0228551C20017B770 /* FLNetworkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLNetworkHelper.m; sourceTree = "<group>"; };
 		23CCB5992251EF4E00A5EE8E /* NSObject+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Analysis.h"; sourceTree = "<group>"; };
 		23CCB59A2251EF4E00A5EE8E /* NSObject+Analysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Analysis.m"; sourceTree = "<group>"; };
 		23CCB59C2251F35300A5EE8E /* UIControl+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Analysis.h"; sourceTree = "<group>"; };
@@ -759,6 +762,8 @@
 			children = (
 				23C84DA0228424030017B770 /* FLDataService.h */,
 				23C84DA1228424030017B770 /* FLDataService.m */,
+				23C84DAF228551C20017B770 /* FLNetworkHelper.h */,
+				23C84DB0228551C20017B770 /* FLNetworkHelper.m */,
 			);
 			path = DataService;
 			sourceTree = "<group>";
@@ -1030,6 +1035,7 @@
 				23BF048921353D2100ECD946 /* FLUIKitViewController.m in Sources */,
 				23E8B79C21E6E67E00FD446F /* DHOrderDishModel+Test2.m in Sources */,
 				23C84DA2228424030017B770 /* FLDataService.m in Sources */,
+				23C84DB1228551C20017B770 /* FLNetworkHelper.m in Sources */,
 				23E8B79621E5E07A00FD446F /* DHOrderDishModel+Test.m in Sources */,
 				23BF04802134E8F600ECD946 /* CaculatorMaker.m in Sources */,
 				23CCB5A42252123E00A5EE8E /* UIGestureRecognizer+Analysis.m in Sources */,
