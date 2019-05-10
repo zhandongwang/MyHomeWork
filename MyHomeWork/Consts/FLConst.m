@@ -11,8 +11,8 @@
 NSString * const kFLNetworkHost = @"http://api.themoviedb.org/3";
 NSString * const kFLNetworkApikey = @"328c283cd27bd1877d9080ccb1604c91";
 
-NSString * const kFLNetworkThumbnailPosterImageUrl= @"http://image.tmdb.org/t/p/w92/";
-NSString * const kFLNetworkOriginalPosterImageUrl= @"http://image.tmdb.org/t/p/w500/";
+NSString * const kFLNetworkThumbnailPosterImageUrl= @"http://image.tmdb.org/t/p/w92";
+NSString * const kFLNetworkOriginalPosterImageUrl= @"http://image.tmdb.org/t/p/w500";
 
 @implementation FLConst
 

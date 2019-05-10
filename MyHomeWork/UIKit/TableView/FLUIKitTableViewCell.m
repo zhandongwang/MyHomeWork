@@ -8,7 +8,7 @@
 
 #import "FLUIKitTableViewCell.h"
 #import <Masonry/Masonry.h>
-#import "UIImageView+WebCache.h"
+#import "UIImageView+FLWebCache.h"
 #import "FLMovieModel.h"
 #import "FLConst.h"
 @interface FLUIKitTableViewCell ()
@@ -59,8 +59,10 @@
 
 - (void)updateWithImageUrl:(NSString *)url name:(NSString *)name{
     self.nameLabel.text = name;
-    NSURL *picUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kFLNetworkOriginalPosterImageUrl,url]];
-    [self.picImageView sd_setImageWithURL:picUrl];
+    NSString *picUrl = [NSString stringWithFormat:@"%@%@",kFLNetworkOriginalPosterImageUrl,url];
+    self.picImageView.image = nil;
+    [self.picImageView setImageWithPicURL:picUrl];
+//    [self.picImageView sd_setImageWithURL:picUrl];
 }
 
 - (UIImageView *)picImageView {

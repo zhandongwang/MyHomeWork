@@ -87,6 +87,7 @@
 		23C84DA2228424030017B770 /* FLDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DA1228424030017B770 /* FLDataService.m */; };
 		23C84DA5228449AB0017B770 /* FLMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DA4228449AB0017B770 /* FLMovieModel.m */; };
 		23C84DA822844BCD0017B770 /* FLMovieListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DA722844BCD0017B770 /* FLMovieListModel.m */; };
+		23C84DAE22850FA80017B770 /* UIImageView+FLWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DAD22850FA80017B770 /* UIImageView+FLWebCache.m */; };
 		23CCB59B2251EF4E00A5EE8E /* NSObject+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB59A2251EF4E00A5EE8E /* NSObject+Analysis.m */; };
 		23CCB59E2251F35300A5EE8E /* UIControl+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB59D2251F35300A5EE8E /* UIControl+Analysis.m */; };
 		23CCB5A12252014F00A5EE8E /* UITableView+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB5A02252014F00A5EE8E /* UITableView+Analysis.m */; };
@@ -286,6 +287,8 @@
 		23C84DA4228449AB0017B770 /* FLMovieModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLMovieModel.m; sourceTree = "<group>"; };
 		23C84DA622844BCD0017B770 /* FLMovieListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLMovieListModel.h; sourceTree = "<group>"; };
 		23C84DA722844BCD0017B770 /* FLMovieListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLMovieListModel.m; sourceTree = "<group>"; };
+		23C84DAC22850FA80017B770 /* UIImageView+FLWebCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FLWebCache.h"; sourceTree = "<group>"; };
+		23C84DAD22850FA80017B770 /* UIImageView+FLWebCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FLWebCache.m"; sourceTree = "<group>"; };
 		23CCB5992251EF4E00A5EE8E /* NSObject+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Analysis.h"; sourceTree = "<group>"; };
 		23CCB59A2251EF4E00A5EE8E /* NSObject+Analysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Analysis.m"; sourceTree = "<group>"; };
 		23CCB59C2251F35300A5EE8E /* UIControl+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Analysis.h"; sourceTree = "<group>"; };
@@ -745,6 +748,8 @@
 				23C84DA4228449AB0017B770 /* FLMovieModel.m */,
 				23C84DA622844BCD0017B770 /* FLMovieListModel.h */,
 				23C84DA722844BCD0017B770 /* FLMovieListModel.m */,
+				23C84DAC22850FA80017B770 /* UIImageView+FLWebCache.h */,
+				23C84DAD22850FA80017B770 /* UIImageView+FLWebCache.m */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -1017,6 +1022,7 @@
 				236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */,
 				23BF048621353D0200ECD946 /* FLBaseViewController.m in Sources */,
 				23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */,
+				23C84DAE22850FA80017B770 /* UIImageView+FLWebCache.m in Sources */,
 				23C84D9C2284219F0017B770 /* FLUIKitTableViewControllerViewModel.m in Sources */,
 				23683B68227839BC00337D2C /* CTFrameParser.m in Sources */,
 				2304FCD42277ECC400754B13 /* FLCollectionViewCircleLayout.m in Sources */,

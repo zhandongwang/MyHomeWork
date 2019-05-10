@@ -120,7 +120,8 @@
                         if (data) {
                             image = [[UIImage alloc] initWithData:data];
                             message.complete(image);
-                            [self saveDataToCache:data withIdentifier:url];
+                        } else {
+                            message.complete(nil);
                         }
                     }
                     if (image) {
