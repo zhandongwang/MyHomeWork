@@ -21,9 +21,6 @@ pod 'CCDTimeSaver'
 pod 'FMDB'
 pod 'MLeaksFinder'
 pod 'fishhook'
-#pod  'WXDevtool', :configurations => ['Debug']
-#pod 'WeexSDK'
-
-
+pod 'coobjc'
 
 end

@@ -10,6 +10,7 @@
 #import "FLUIKitViewController.h"
 #import "FLCTViewController.h"
 #import "FLCoreGraphicsViewController.h"
+#import "FLUIKitTableViewController.h"
 
 static NSString * const kCellID = @"cellID";
 
@@ -52,7 +53,7 @@ static NSString * const kCellID = @"cellID";
 #pragma mark - Methods
 
 - (void)goToUIKit {
-    [self.navigationController pushViewController:[[FLUIKitViewController alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[FLUIKitTableViewController alloc] init] animated:YES];
 }
 
 - (void)goToRunTime {

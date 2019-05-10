@@ -50,7 +50,6 @@
 		236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 236F1A2B22156ADA009E8C11 /* FLBookProvider.m */; };
 		236F1A2F22156B32009E8C11 /* FLClothesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 236F1A2E22156B32009E8C11 /* FLClothesProvider.m */; };
 		236F8E8F224329F20092CD48 /* FLSecondProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 236F8E8E224329F20092CD48 /* FLSecondProxy.m */; };
-		2373072B227147E5003901CC /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 2373072A227147E5003901CC /* test.json */; };
 		2373072E2271488C003901CC /* ResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2373072D2271488C003901CC /* ResultModel.m */; };
 		2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA61E518C62001B799D /* DHAllOrderModel.m */; };
 		2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */ = {isa = PBXBuildFile; fileRef = 2374CFA81E518C62001B799D /* DHMessageKinds.m */; };
@@ -81,6 +80,13 @@
 		23BF048921353D2100ECD946 /* FLUIKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF048821353D2100ECD946 /* FLUIKitViewController.m */; };
 		23BFA07021DCD7B80045AF0B /* RACViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA06F21DCD7B80045AF0B /* RACViewModel.m */; };
 		23BFA07321DCD7E00045AF0B /* RACRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA07221DCD7E00045AF0B /* RACRequest.m */; };
+		23C84D9222840F1C0017B770 /* FLUIKitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84D9122840F1C0017B770 /* FLUIKitTableViewController.m */; };
+		23C84D99228410220017B770 /* FLUIKitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84D98228410220017B770 /* FLUIKitTableViewCell.m */; };
+		23C84D9C2284219F0017B770 /* FLUIKitTableViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84D9B2284219F0017B770 /* FLUIKitTableViewControllerViewModel.m */; };
+		23C84D9F228422970017B770 /* FLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84D9E228422970017B770 /* FLConst.m */; };
+		23C84DA2228424030017B770 /* FLDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DA1228424030017B770 /* FLDataService.m */; };
+		23C84DA5228449AB0017B770 /* FLMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DA4228449AB0017B770 /* FLMovieModel.m */; };
+		23C84DA822844BCD0017B770 /* FLMovieListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DA722844BCD0017B770 /* FLMovieListModel.m */; };
 		23CCB59B2251EF4E00A5EE8E /* NSObject+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB59A2251EF4E00A5EE8E /* NSObject+Analysis.m */; };
 		23CCB59E2251F35300A5EE8E /* UIControl+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB59D2251F35300A5EE8E /* UIControl+Analysis.m */; };
 		23CCB5A12252014F00A5EE8E /* UITableView+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB5A02252014F00A5EE8E /* UITableView+Analysis.m */; };
@@ -208,7 +214,6 @@
 		236F1A2E22156B32009E8C11 /* FLClothesProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLClothesProvider.m; sourceTree = "<group>"; };
 		236F8E8D224329F20092CD48 /* FLSecondProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLSecondProxy.h; sourceTree = "<group>"; };
 		236F8E8E224329F20092CD48 /* FLSecondProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLSecondProxy.m; sourceTree = "<group>"; };
-		2373072A227147E5003901CC /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		2373072C2271488C003901CC /* ResultModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultModel.h; sourceTree = "<group>"; };
 		2373072D2271488C003901CC /* ResultModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultModel.m; sourceTree = "<group>"; };
 		2374CFA51E518C62001B799D /* DHAllOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAllOrderModel.h; sourceTree = "<group>"; };
@@ -267,6 +272,20 @@
 		23BFA06F21DCD7B80045AF0B /* RACViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACViewModel.m; sourceTree = "<group>"; };
 		23BFA07121DCD7E00045AF0B /* RACRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACRequest.h; sourceTree = "<group>"; };
 		23BFA07221DCD7E00045AF0B /* RACRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACRequest.m; sourceTree = "<group>"; };
+		23C84D9022840F1C0017B770 /* FLUIKitTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLUIKitTableViewController.h; sourceTree = "<group>"; };
+		23C84D9122840F1C0017B770 /* FLUIKitTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLUIKitTableViewController.m; sourceTree = "<group>"; };
+		23C84D97228410220017B770 /* FLUIKitTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLUIKitTableViewCell.h; sourceTree = "<group>"; };
+		23C84D98228410220017B770 /* FLUIKitTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLUIKitTableViewCell.m; sourceTree = "<group>"; };
+		23C84D9A2284219F0017B770 /* FLUIKitTableViewControllerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLUIKitTableViewControllerViewModel.h; sourceTree = "<group>"; };
+		23C84D9B2284219F0017B770 /* FLUIKitTableViewControllerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLUIKitTableViewControllerViewModel.m; sourceTree = "<group>"; };
+		23C84D9D228422970017B770 /* FLConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLConst.h; sourceTree = "<group>"; };
+		23C84D9E228422970017B770 /* FLConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLConst.m; sourceTree = "<group>"; };
+		23C84DA0228424030017B770 /* FLDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLDataService.h; sourceTree = "<group>"; };
+		23C84DA1228424030017B770 /* FLDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLDataService.m; sourceTree = "<group>"; };
+		23C84DA3228449AB0017B770 /* FLMovieModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLMovieModel.h; sourceTree = "<group>"; };
+		23C84DA4228449AB0017B770 /* FLMovieModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLMovieModel.m; sourceTree = "<group>"; };
+		23C84DA622844BCD0017B770 /* FLMovieListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLMovieListModel.h; sourceTree = "<group>"; };
+		23C84DA722844BCD0017B770 /* FLMovieListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLMovieListModel.m; sourceTree = "<group>"; };
 		23CCB5992251EF4E00A5EE8E /* NSObject+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Analysis.h"; sourceTree = "<group>"; };
 		23CCB59A2251EF4E00A5EE8E /* NSObject+Analysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Analysis.m"; sourceTree = "<group>"; };
 		23CCB59C2251F35300A5EE8E /* UIControl+Analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Analysis.h"; sourceTree = "<group>"; };
@@ -451,12 +470,13 @@
 		2360988F1D980892009C589B /* MyHomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				23C84D9622840FAD0017B770 /* Tools */,
+				23C84D9522840F9E0017B770 /* Consts */,
+				23C84D9422840F940017B770 /* DataService */,
 				23ADA72B22802F0900ED1FA3 /* CoreGraphics */,
 				23ADA724227EDBC600ED1FA3 /* Concurrent */,
 				23ADA723227EDB1300ED1FA3 /* UIKit */,
 				23683B5C2278210B00337D2C /* CoreText */,
-				2320909B2276FEE90034CA96 /* CollectionView */,
-				2373072A227147E5003901CC /* test.json */,
 				232413A0225595CB008618C7 /* SwiftStudy */,
 				2356D6DA221E895C00DC57D7 /* SQL */,
 				23634C4621F165FC0028B669 /* Pattern */,
@@ -661,6 +681,8 @@
 		23ADA723227EDB1300ED1FA3 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				2320909B2276FEE90034CA96 /* CollectionView */,
+				23C84D8F22840F010017B770 /* TableView */,
 				23608A901E050F7100C4D190 /* FLCustomView.h */,
 				23608A911E050F7100C4D190 /* FLCustomView.m */,
 				23BF048721353D2100ECD946 /* FLUIKitViewController.h */,
@@ -708,6 +730,48 @@
 				23BF047F2134E8F500ECD946 /* NSObject+Caculator.h */,
 			);
 			path = RAC;
+			sourceTree = "<group>";
+		};
+		23C84D8F22840F010017B770 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				23C84D9022840F1C0017B770 /* FLUIKitTableViewController.h */,
+				23C84D9122840F1C0017B770 /* FLUIKitTableViewController.m */,
+				23C84D97228410220017B770 /* FLUIKitTableViewCell.h */,
+				23C84D98228410220017B770 /* FLUIKitTableViewCell.m */,
+				23C84D9A2284219F0017B770 /* FLUIKitTableViewControllerViewModel.h */,
+				23C84D9B2284219F0017B770 /* FLUIKitTableViewControllerViewModel.m */,
+				23C84DA3228449AB0017B770 /* FLMovieModel.h */,
+				23C84DA4228449AB0017B770 /* FLMovieModel.m */,
+				23C84DA622844BCD0017B770 /* FLMovieListModel.h */,
+				23C84DA722844BCD0017B770 /* FLMovieListModel.m */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		23C84D9422840F940017B770 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				23C84DA0228424030017B770 /* FLDataService.h */,
+				23C84DA1228424030017B770 /* FLDataService.m */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		23C84D9522840F9E0017B770 /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+				23C84D9D228422970017B770 /* FLConst.h */,
+				23C84D9E228422970017B770 /* FLConst.m */,
+			);
+			path = Consts;
+			sourceTree = "<group>";
+		};
+		23C84D9622840FAD0017B770 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		23D3681C1E4C580400ECC80D /* images */ = {
@@ -849,7 +913,6 @@
 			files = (
 				236098A01D980892009C589B /* LaunchScreen.storyboard in Resources */,
 				232413AD2255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf in Resources */,
-				2373072B227147E5003901CC /* test.json in Resources */,
 				232413AC2255B10E008618C7 /* Gaspar Regular.otf in Resources */,
 				23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */,
 				23D3682E1E4C5A5300ECC80D /* test2.png in Resources */,
@@ -954,14 +1017,18 @@
 				236F1A2C22156ADA009E8C11 /* FLBookProvider.m in Sources */,
 				23BF048621353D0200ECD946 /* FLBaseViewController.m in Sources */,
 				23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */,
+				23C84D9C2284219F0017B770 /* FLUIKitTableViewControllerViewModel.m in Sources */,
 				23683B68227839BC00337D2C /* CTFrameParser.m in Sources */,
 				2304FCD42277ECC400754B13 /* FLCollectionViewCircleLayout.m in Sources */,
+				23C84D9F228422970017B770 /* FLConst.m in Sources */,
 				23BF048921353D2100ECD946 /* FLUIKitViewController.m in Sources */,
 				23E8B79C21E6E67E00FD446F /* DHOrderDishModel+Test2.m in Sources */,
+				23C84DA2228424030017B770 /* FLDataService.m in Sources */,
 				23E8B79621E5E07A00FD446F /* DHOrderDishModel+Test.m in Sources */,
 				23BF04802134E8F600ECD946 /* CaculatorMaker.m in Sources */,
 				23CCB5A42252123E00A5EE8E /* UIGestureRecognizer+Analysis.m in Sources */,
 				23683B652278398300337D2C /* CTFrameParserConfig.m in Sources */,
+				23C84DA822844BCD0017B770 /* FLMovieListModel.m in Sources */,
 				23634C6921F1797F0028B669 /* FLWheel.m in Sources */,
 				23BFA07321DCD7E00045AF0B /* RACRequest.m in Sources */,
 				2374CFB01E518C62001B799D /* DHMessageKinds.m in Sources */,
@@ -979,10 +1046,13 @@
 				23CCB59E2251F35300A5EE8E /* UIControl+Analysis.m in Sources */,
 				23BF04812134E8F600ECD946 /* RACViewController.m in Sources */,
 				2307F1662064A2120060A688 /* WZDPatch.m in Sources */,
+				23C84DA5228449AB0017B770 /* FLMovieModel.m in Sources */,
 				23E5A0E122585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift in Sources */,
 				23ADA72A227EE26700ED1FA3 /* CoreTextImageData.m in Sources */,
 				2320909E2276FF540034CA96 /* FLCollectionViewController.m in Sources */,
+				23C84D99228410220017B770 /* FLUIKitTableViewCell.m in Sources */,
 				23E77FFA218855FD009B8E84 /* FLWebViewController.m in Sources */,
+				23C84D9222840F1C0017B770 /* FLUIKitTableViewController.m in Sources */,
 				23634C5821F16FE50028B669 /* FLCashContext.m in Sources */,
 				2374CFBD1E5195A3001B799D /* UIViewController+DHRouter.m in Sources */,
 				23965FB321918F4200349149 /* WebPlugin.m in Sources */,

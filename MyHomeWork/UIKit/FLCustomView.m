@@ -60,9 +60,6 @@
     
     CGContextStrokePath(con);
     
-
-    
-    
 }
 
 - (void)updateName:(NSString *)name {
