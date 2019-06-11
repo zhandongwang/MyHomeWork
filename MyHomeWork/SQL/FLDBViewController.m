@@ -58,7 +58,22 @@ static NSString * const kDBTableViewCellID = @"kDBTableViewCellID";
     person.man = YES;
     person.goal = @(1.11);
     person.birthday = [NSDate date];
-    [person ccd_realmModelByClass:[FLPersonRealmModel class]];
+    FLPersonRealmModel *personModel = [person ccd_realmModelByClass:[FLPersonRealmModel class]];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm transactionWithBlock:^{
+        [realm addObject:personModel];
+    }];
+    NSLog(@"%@",[realm configuration].fileURL);
+    NSLog(@"FAFAAA");
+    RLMResults *persons = [FLPersonRealmModel allObjects];
+    for (FLPersonRealmModel *pp in persons) {
+        NSLog(@"personInfo=%@",pp);
+        NSLog(@"person.car=%@",pp.car);
+        for (FLCarRealmModel *cc in pp.vehicles) {
+             NSLog(@"person.vehicles.car=%@",cc);
+        }
+    }
+    
     
     
 //    FLRLMCar *car = [[FLRLMCar alloc] init];

@@ -51,7 +51,7 @@
                 targetPropertyName = [customRLMPropertyMapper valueForKey:propertyName];
             }
             
-            if ([genericMapper.allKeys containsObject:propertyName]) {//数组属性暂不处理
+            if ([genericMapper.allKeys containsObject:propertyName]) {//数组
                 NSArray *itemArray = [self valueForKey:propertyName];
                 NSMutableArray *itemTargetArray = [NSMutableArray array];
                 [itemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

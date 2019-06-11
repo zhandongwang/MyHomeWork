@@ -10,4 +10,14 @@
 
 @implementation FLCarRealmModel
 
+- (NSString *)debugDescription
+{
+    return [NSString stringWithFormat:@"<%@: %p> name=%@, price=%f", [self class], self, self.name, self.price];
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@: %p> name=%@, price=%f", [self class], self, self.name, self.price];
+}
+
 @end
