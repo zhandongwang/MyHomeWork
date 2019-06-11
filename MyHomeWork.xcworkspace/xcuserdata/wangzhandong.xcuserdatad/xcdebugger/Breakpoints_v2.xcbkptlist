@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyHomeWork/SQL/NSObject+RLMHelper.m"
-            timestampString = "581932064.376448"
+            timestampString = "581937001.812853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "-realmModelByClass:"
             landmarkType = "7">
          </BreakpointContent>

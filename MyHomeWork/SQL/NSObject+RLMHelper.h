@@ -50,9 +50,9 @@ typedef NS_OPTIONS(NSUInteger, CCDEncodingType) {
 
 @protocol RLMHelper <NSObject>
 
-+ (nullable NSDictionary<NSString *, id> *)modelCustomRLMPropertyMapper;
++ (nullable NSDictionary<NSString *, NSString*> *)modelCustomRLMPropertyMapper;
 
-+ (nullable NSDictionary<NSString *, id> *)modelContainerRLMPropertyGenericClass;
++ (nullable NSDictionary<NSString *, Class> *)modelContainerRLMPropertyGenericClass;
 
 @end
 

@@ -45,7 +45,8 @@ static NSString * const kDBTableViewCellID = @"kDBTableViewCellID";
     person.age = 20;
     person.salary = 1000000.001;
     person.man = YES;
-    person.goal = @1;
+    person.goal = @(1.11);
+    person.birthday = [NSDate date];
     [person realmModelByClass:[FLPersonRealmModel class]];
     
     

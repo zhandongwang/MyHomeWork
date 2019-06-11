@@ -7,6 +7,8 @@
 //
 
 #import "RLMObject.h"
+#import <Realm/Realm.h>
+
 @class FLCarRealmModel;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -25,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSDate *birthday;
 
-@property  NSNumber *goal;
+@property  NSNumber<RLMDouble> *goal;
 
 @property  BOOL man;
 

@@ -9,6 +9,8 @@
 #import "NSObject+RLMHelper.h"
 #import <objc/runtime.h>
 #import "FLPersonRealmModel.h"
+#import <YYModel/YYClassInfo.h>
+
 CCDEncodingType CCDEncodingGetType(const char *typeEncoding) {
     char *type = (char *)typeEncoding;
     if (!type) {
@@ -58,74 +60,89 @@ CCDEncodingType CCDEncodingGetType(const char *typeEncoding) {
     id realmModel = [[targetCls alloc] init];
     
     
-    Class originCls = [self class];
-    NSDictionary<NSString *, id> *genericMapper = nil;
-    //数组属性
-    if ([originCls respondsToSelector:@selector(modelContainerRLMPropertyGenericClass)]) {
-        genericMapper = [originCls modelContainerRLMPropertyGenericClass];
+    Class cls = [self class];
+    NSDictionary<NSString *, Class> *genericMapper = nil;
+    NSDictionary<NSString *, NSString *> *customRLMPropertyMapper = nil;
+    
+    if ([cls respondsToSelector:@selector(modelCustomRLMPropertyMapper)]) {
+        customRLMPropertyMapper = [cls modelCustomRLMPropertyMapper];
     }
     
+    //数组属性
+    if ([cls respondsToSelector:@selector(modelContainerRLMPropertyGenericClass)]) {
+        genericMapper = [cls modelContainerRLMPropertyGenericClass];
+    }
+    
+
     unsigned int count = 0;
-    objc_property_t *properties = class_copyPropertyList(originCls, &count);
+    objc_property_t *properties = class_copyPropertyList(cls, &count);
     for (unsigned int idx = 0; idx < count; ++idx) {
         objc_property_t property = properties[idx];
-        const char * name = property_getName(property);
-        if (name) {
-            NSString *propertyName = [NSString stringWithUTF8String:name];
-            objc_property_t targetProperty = class_getProperty(targetCls, name);
+        
+        YYClassPropertyInfo *propertyInfo = [[YYClassPropertyInfo alloc] initWithProperty:property];
+        NSString *propertyName = propertyInfo.name;
+        if (propertyName.length) {
+            objc_property_t targetProperty = class_getProperty(targetCls, property_getName(property));
             if (!targetProperty) {
                 @throw [NSException exceptionWithName:@"Transfer RLMModel Error" reason:@"Target Property Not Found" userInfo:nil];
             }
             if ([genericMapper.allKeys containsObject:propertyName]) {//数组属性暂不处理
                 continue;
             }
-            CCDEncodingType type = 0;
-            unsigned int attrCount = 0;
-            objc_property_attribute_t *attrs = property_copyAttributeList(property, &attrCount);
-            for (unsigned int i = 0; i < attrCount; ++i) {
-                switch (attrs[i].name[0]) {
-                        case 'T':{//Type Encoding
-                            NSString *typeEncoding = [NSString stringWithUTF8String:attrs[i].value];
-                            type = CCDEncodingGetType(attrs[i].value);
-                            if ((type & CCDEncodingTypeMask) == CCDEncodingTypeObject && typeEncoding.length) {
-                                NSScanner *scanner = [NSScanner scannerWithString:typeEncoding];
-                                if (![scanner  scanString:@"@\""  intoString:NULL]) {
-                                      continue;
-                                }
-                                NSString *clsName = nil;
-                                if ([scanner scanUpToCharactersFromSet: [NSCharacterSet characterSetWithCharactersInString:@"\"<"] intoString:&clsName]) {
-                                    if (clsName.length) {
-                                        Class tmpCls = objc_getClass(clsName.UTF8String);
-                                        
-                                        NSString *innerRealmClsName = [NSString stringWithFormat:@"%@RLM",NSStringFromClass(tmpCls)];
-                                    }
-                                }
-                                
-                            }
-                            
-                            
-                            
-                        }break;
+            NSString *targetPropertyName = propertyName;
+            if ([customRLMPropertyMapper valueForKey:propertyName]) {
+                targetPropertyName = [customRLMPropertyMapper valueForKey:propertyName];
+            }
+            YYEncodingType type = propertyInfo.type & YYEncodingTypeMask;
+            switch (type) {
+                case YYEncodingTypeObject: {
+                    if (propertyInfo.cls == [NSNumber class] ||
+                        propertyInfo.cls == [NSString class] ||
+                        propertyInfo.cls == [NSDate class] ||
+                        propertyInfo.cls == [NSData class]) {
+                        [realmModel setValue:[self valueForKey:propertyName] forKey:targetPropertyName];
+                    } else {//自定义class
                         
-                    default:
-                        break;
-                }
-                
+                    }
+                }break;
+                    
+                case YYEncodingTypeBool:
+                case YYEncodingTypeInt8:
+                case YYEncodingTypeUInt8:
+                case YYEncodingTypeInt16:
+                case YYEncodingTypeUInt16:
+                case YYEncodingTypeInt32:
+                case YYEncodingTypeUInt32:
+                case YYEncodingTypeInt64:
+                case YYEncodingTypeUInt64:
+                case YYEncodingTypeFloat:
+                case YYEncodingTypeDouble:
+                case YYEncodingTypeLongDouble: {
+                    [realmModel setValue:[self valueForKey:propertyName] forKey:targetPropertyName];
+                }break;
+                    
+                default:
+                    break;
             }
-            if (attrs) {
-                free(attrs);
-                attrs = NULL;
-            }
-        
         }
+        
     }
-    if (properties) {
-        free(properties);
-        properties = NULL;
-    }
-    
     
     return realmModel;
 }
+
+- (NSString *)ccd_assembleRealmModelClassName:(NSString *)modelClassName {
+    if (modelClassName.length == 0 ) {
+        return nil;
+    }
+    NSString *name = nil;
+    NSRange range = [modelClassName rangeOfString:@"Model" options:NSBackwardsSearch];
+    if (range.location != NSNotFound) {
+        NSString *subString = [modelClassName substringToIndex:range.location];
+        name = [NSString stringWithFormat:@"%@RealmModel",subString];
+    }
+    return name;
+}
+
 
 @end

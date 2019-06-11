@@ -15,8 +15,9 @@
 
 @property (nonatomic, strong) FLCarModel *car;
 
-@property (nonatomic, assign) NSInteger userID;
+@property (nonatomic, strong) NSNumber *goal;
 
+@property (nonatomic, assign) NSInteger userID;
 
 @property (nonatomic, copy) NSString *name;
 
@@ -26,7 +27,7 @@
 
 @property (nonatomic, strong) NSDate *birthday;
 
-@property (nonatomic, strong) NSNumber *goal;
+
 
 @property (nonatomic, assign) BOOL man;
 
