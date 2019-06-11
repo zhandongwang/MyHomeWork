@@ -72,7 +72,6 @@ CCDEncodingType CCDEncodingGetType(const char *typeEncoding) {
     if ([cls respondsToSelector:@selector(modelContainerRLMPropertyGenericClass)]) {
         genericMapper = [cls modelContainerRLMPropertyGenericClass];
     }
-    
 
     unsigned int count = 0;
     objc_property_t *properties = class_copyPropertyList(cls, &count);
@@ -102,7 +101,12 @@ CCDEncodingType CCDEncodingGetType(const char *typeEncoding) {
                         propertyInfo.cls == [NSData class]) {
                         [realmModel setValue:[self valueForKey:propertyName] forKey:targetPropertyName];
                     } else {//自定义class
-                        
+                        id subModel = [self valueForKey:propertyName];
+                        if (subModel) {
+                            NSString *targetSubModelName = [self ccd_assembleRealmModelClassName:NSStringFromClass(propertyInfo.cls)];
+                            id targetSubModel = [subModel ccd_realmModelByClass:NSClassFromString(targetSubModelName)];
+                            [realmModel setValue:targetSubModel forKey:targetPropertyName];
+                        }
                     }
                 }break;
                     
