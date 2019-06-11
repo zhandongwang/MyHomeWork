@@ -11,6 +11,8 @@
 #import "FLCTViewController.h"
 #import "FLCoreGraphicsViewController.h"
 #import "FLUIKitTableViewController.h"
+#import "FLRunTimeViewController.h"
+#import "FLDBViewController.h"
 
 static NSString * const kCellID = @"cellID";
 
@@ -36,7 +38,7 @@ static NSString * const kCellID = @"cellID";
     self.dataDict = @{@"UIKit":@"goToUIKit",
                       @"RunTime":@"goToRunTime",
                       @"RunLoop":@"goToRunLoop",
-                      @"Block":@"goToBlock",
+                      @"DataBase":@"goToDataBase",
                       @"Core Text":@"goToCoreText",
                       @"Core Graphics":@"goToCoreGraphics",
                       };
@@ -57,13 +59,13 @@ static NSString * const kCellID = @"cellID";
 }
 
 - (void)goToRunTime {
-    
+    [self.navigationController pushViewController:[[FLRunTimeViewController alloc] init] animated:YES];
 }
 - (void)goToRunLoop {
     
 }
-- (void)goToBlock {
-    
+- (void)goToDataBase {
+     [self.navigationController pushViewController:[[FLDBViewController alloc] init] animated:YES];
 }
 
 - (void)goToCoreText {

@@ -1,0 +1,27 @@
+{
+  "name": "CCDDataBaseHelper",
+  "version": "0.1.0",
+  "summary": "A short description of CCDDataBaseHelper.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "http://git.2dfire.net/ccd-iOS/ccddatabasehelper",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zhandongwang": "fengli@2dfire.com"
+  },
+  "source": {
+    "git": "git@git.2dfire.net:ccd-iOS/ccddatabasehelper.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CCDDataBaseHelper/Classes/**/*",
+  "dependencies": {
+    "FMDB": [
+
+    ]
+  }
+}

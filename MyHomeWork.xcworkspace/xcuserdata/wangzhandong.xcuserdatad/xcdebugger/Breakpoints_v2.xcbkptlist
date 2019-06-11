@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyHomeWork/Model/FLTestModel.m"
-            timestampString = "574754770.64332"
+            timestampString = "579517346.849378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyHomeWork/Model/FLTestModel.m"
-            timestampString = "574754770.643773"
+            timestampString = "579517346.849759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -121,61 +121,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/FMDB/src/fmdb/FMDatabaseQueue.m"
-            timestampString = "578738710.275974"
+            filePath = "../../Development/CCDPods/ccddatabasehelper/CCDDataBaseHelper/Classes/NSObject+CCDFMDBHandler.m"
+            timestampString = "580986099.266945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "-inDatabase:"
+            startingLineNumber = "707"
+            endingLineNumber = "707"
+            landmarkName = "+ccd_dbColumnTypes"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[FMDatabaseQueue inDatabase:]"
-                  moduleName = "MyHomeWork"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wangzhandong/Documents/Projects/MyHomeWork/Pods/FMDB/src/fmdb/FMDatabaseQueue.m"
-                  timestampString = "579163918.734367"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "190"
-                  endingLineNumber = "190"
-                  offsetFromSymbolStart = "183">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__30-[FMDatabaseQueue inDatabase:]_block_invoke"
-                  moduleName = "MyHomeWork"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wangzhandong/Documents/Projects/MyHomeWork/Pods/FMDB/src/fmdb/FMDatabaseQueue.m"
-                  timestampString = "579163918.737785"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "190"
-                  endingLineNumber = "190"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.65"
-                  moduleName = "MyHomeWork"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wangzhandong/Documents/Projects/MyHomeWork/Pods/FMDB/src/fmdb/FMDatabaseQueue.m"
-                  timestampString = "579163918.74081"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "190"
-                  endingLineNumber = "190"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -184,13 +137,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyHomeWork/CoreGraphics/FLCoreGraphicsPushButton.m"
-            timestampString = "578833785.0023021"
+            filePath = "MyHomeWork/SQL/NSObject+RLMHelper.m"
+            timestampString = "581932064.376448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "-drawRect:"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-realmModelByClass:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

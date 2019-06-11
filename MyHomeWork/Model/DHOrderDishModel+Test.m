@@ -10,13 +10,13 @@
 
 @implementation DHOrderDishModel (Test)
 
-+ (void)load {
-        NSLog(@"DHOrderDishModel(Test) load");
-    }
-+ (void)initialize {
-    NSLog(@"DHOrderDishModel(Test) initialize");
-}
-   
+//+ (void)load {
+//        NSLog(@"DHOrderDishModel(Test) load");
+//    }
+//+ (void)initialize {
+//    NSLog(@"DHOrderDishModel(Test) initialize");
+//}
+//   
 - (void)printName {
         NSLog(@"printName--DHOrderDishModel (Test)");
 }

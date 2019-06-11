@@ -175,7 +175,10 @@
 
 - (id)requestJSONWithURL:(NSString *)url CO_ASYNC {
     SURE_ASYNC
-    return await([self.networkActor sendMessage:url]);
+    NSLog(@"-----before await-------");
+    id ret = await([self.networkActor sendMessage:url]);
+    NSLog(@"-----after await-------");
+    return ret;
 }
 
 - (UIImage*)imageWithURL:(NSString*)url CO_ASYNC {

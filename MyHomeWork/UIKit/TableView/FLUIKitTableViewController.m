@@ -25,7 +25,9 @@ static NSString * const kCellReusedID = @"FLUIKitTableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configTableView];
+    NSLog(@"-------before invoke request------------");
     [self sendRequest];
+    NSLog(@"-------after invoke request------------");
 }
 
 - (void)configTableView {
@@ -37,7 +39,11 @@ static NSString * const kCellReusedID = @"FLUIKitTableViewCell";
 
 - (void)sendRequest {
     co_launch(^{
+        NSLog(@"-------before send request------------");
         NSArray *dataArray = [[FLUIKitTableViewControllerViewModel sharedInstance] getDiscoverList:@"1"];
+        
+        NSLog(@"-------after send request------------");
+        
         if (dataArray) {
             self.dataSource = [dataArray copy];
             [self.tableView reloadData];

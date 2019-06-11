@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSUInteger receiverID;
 @property (nonatomic, strong) NSDate *sendTime;
 @property (nonatomic, copy) NSString *msgContent;
-@property (nonatomic, strong) NSURL *avartarUrl;
+@property (nonatomic, assign) CGFloat cost;
 
 @end
 

@@ -9,51 +9,34 @@
 #import "AppDelegate.h"
 #import "MyHomeWork-Swift.h"
 #import "FLTableViewController.h"
+#import "OOMDataManager.h"
+#import "PLeakSniffer.h"
+#import <coobjc/coobjc.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+
 
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    [manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json",@"text/plain",@"text/html", nil]];
-//    [manager.requestSerializer setStringEncoding:NSUTF8StringEncoding];
-//
-//    [manager GET:@"https://suggest.taobao.com/sug?code=utf-8&q=iphone" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-//
-//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        if ([responseObject isKindOfClass:[NSDictionary class]]) {
-//         ResultModel *model = [ResultModel yy_modelWithDictionary:responseObject];
-//
-//            for (NSArray *itemArray in model.result) {
-//                NSLog(@"%@",itemArray);
-//            }
-//        }
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        NSLog(@"%@",error.description);
-//    }];
-//
+//    [self setupMemoryCheck];
+    
+    [[PLeakSniffer sharedInstance] installLeakSniffer];
+    [[PLeakSniffer sharedInstance] alertLeaks];
     
     
-//    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"https://suggest.taobao.com/sug?code=utf-8&q=iphone"]completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//
-//        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-//        ResultModel *model = [[ResultModel alloc] init];
-//        model.result = dict[@"result"];
-//
-//        for (NSArray *itemArray in model.result) {
-//            NSLog(@"%@",itemArray);
-//        }
-//
-//
-//    }];
-//    [task resume];
-    
-    
+//    _memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:@[[CacheCleanerPlugin new],
+//                                                                  [RetainCycleLoggerPlugin new]]
+//                               retainCycleDetectorConfiguration:nil];
+//    _memoryProfiler = [FBMemoryProfiler new];
+//    [_memoryProfiler enable];
     
     
     FLTableViewController  *vc = [[FLTableViewController alloc] init];
@@ -66,6 +49,27 @@
     
     return YES;
 }
+/*
+- (void)setupMemoryCheck {
+    OOMDetector *detector = [OOMDetector getInstance];
+    // 设置捕获堆栈数据、内存log代理，在出现单次大块内存分配、检查到内存泄漏时、调用uploadAllStack方法时会触发此回调
+    [detector setFileDataDelegate:[OOMDataManager getInstance]];
+    // 设置app内存触顶监控数据代理，在调用startMaxMemoryStatistic:开启内存触顶监控后会触发此回调，返回前一次app运行时单次生命周期内的最大物理内存数据
+    [detector setPerformanceDataDelegate:[OOMDataManager getInstance]];
+    [detector setupWithDefaultConfig];
+    
+    // 单次大块内存分配监控
+    [detector startSingleChunkMallocDetector:50 * 1024 * 1024 callback:^(size_t bytes, NSString *stack) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:kChunkMallocNoti object:stack];
+    }];
+    
+    // 开启内存泄漏监控
+//    [detector setupLeakChecker];
+    [detector uploadAllStack];
+    
+}
+ */
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

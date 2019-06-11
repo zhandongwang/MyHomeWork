@@ -36,7 +36,6 @@ PODS:
   - coobjc (1.2.0):
     - cocore (~> 1.2.0)
   - FBRetainCycleDetector (0.1.4.1)
-  - fishhook (0.2)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
@@ -46,10 +45,15 @@ PODS:
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
   - OCTWebViewBridge (2.1.0)
+  - PLeakSniffer (0.2.1):
+    - FBRetainCycleDetector
   - ReactiveObjC (3.0.0)
-  - SDWebImage (5.0.2):
-    - SDWebImage/Core (= 5.0.2)
-  - SDWebImage/Core (5.0.2)
+  - Realm (3.16.1):
+    - Realm/Headers (= 3.16.1)
+  - Realm/Headers (3.16.1)
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
   - SnapKit (4.2.0)
   - YYCache (1.0.4)
   - YYModel (1.0.4.2)
@@ -62,14 +66,15 @@ DEPENDENCIES:
   - CCDTimeSaver
   - CocoaSecurity
   - coobjc
-  - fishhook
   - FMDB
   - Masonry
   - MBProgressHUD
   - MJRefresh (~> 2.4.7)
   - MLeaksFinder
   - OCTWebViewBridge
+  - PLeakSniffer (from `~/Documents/Development/PLeakSniffer`)
   - ReactiveObjC (= 3.0.0)
+  - Realm
   - SDWebImage
   - SnapKit
   - YYCache
@@ -90,16 +95,20 @@ SPEC REPOS:
     - BlocksKit
     - cocore
     - coobjc
-    - fishhook
     - FMDB
     - Masonry
     - MJRefresh
     - MLeaksFinder
     - OCTWebViewBridge
     - ReactiveObjC
+    - Realm
     - SDWebImage
     - SnapKit
     - YYCache
+
+EXTERNAL SOURCES:
+  PLeakSniffer:
+    :path: "~/Documents/Development/PLeakSniffer"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -110,20 +119,21 @@ SPEC CHECKSUMS:
   cocore: cc9d76229458f286a632d9cecb63bd699bd3529d
   coobjc: 090a460e32e90d0e820e64c31cf7b79dece51a7c
   FBRetainCycleDetector: 22a77c1446a858961ee4bce6e943603add9db037
-  fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 443c07c0aa22772fbe3702db40fc65c36d80155e
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   OCTWebViewBridge: e7712ef0c0670905da57b8a36d3f02a43115c507
+  PLeakSniffer: 1b1d8afddced058a0f359464a41f17127c7d6db7
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
-  SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
+  Realm: 601cacc51d8be3b17a377ef787be0f6ee0e76cf1
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 4fb57c2e53b0d22dc4414878928ece524bf30788
   YYText: 1b20648f2be4d853c390e98315ff403864e92f01
 
-PODFILE CHECKSUM: a1bc203dabed9414c9b431576d0e9dacb191f960
+PODFILE CHECKSUM: 114497aeb1afa3053f4d66f48c7770fb006ff3c1
 
 COCOAPODS: 1.6.0
