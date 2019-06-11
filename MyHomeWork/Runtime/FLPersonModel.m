@@ -7,8 +7,13 @@
 //
 
 #import "FLPersonModel.h"
+#import "FLCarModel.h"
 
 @implementation FLPersonModel
+
++ (nullable NSDictionary<NSString *, Class> *)modelContainerRLMPropertyGenericClass {
+    return @{@"vehicles": [FLCarModel class]};
+}
 
 - (void)runTo:(NSString *)place {
     NSLog(@"FLPerson %@", place);

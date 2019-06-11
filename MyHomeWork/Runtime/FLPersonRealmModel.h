@@ -8,12 +8,13 @@
 
 #import "RLMObject.h"
 #import <Realm/Realm.h>
-
-@class FLCarRealmModel;
+#import "FLCarRealmModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FLPersonRealmModel : RLMObject
+
+@property RLMArray <FLCarRealmModel *><FLCarRealmModel> *vehicles;
 
 @property FLCarRealmModel *car;
 

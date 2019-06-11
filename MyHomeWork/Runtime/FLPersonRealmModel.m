@@ -10,4 +10,8 @@
 
 @implementation FLPersonRealmModel
 
+//+ (NSArray<NSString *> *)ignoredProperties {
+//    return @[@"vehicles"];
+//}
+
 @end

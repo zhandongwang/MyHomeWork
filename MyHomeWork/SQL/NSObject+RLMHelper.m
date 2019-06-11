@@ -30,6 +30,7 @@
         genericMapper = [cls modelContainerRLMPropertyGenericClass];
     }
 
+    NSArray *filters = @[@"superclass", @"description", @"debugDescription", @"hash"];
     unsigned int count = 0;
     objc_property_t *properties = class_copyPropertyList(cls, &count);
     for (unsigned int idx = 0; idx < count; ++idx) {
@@ -38,52 +39,66 @@
         YYClassPropertyInfo *propertyInfo = [[YYClassPropertyInfo alloc] initWithProperty:property];
         NSString *propertyName = propertyInfo.name;
         if (propertyName.length) {
+            if ([filters containsObject:propertyName]) {
+                continue;
+            }
             objc_property_t targetProperty = class_getProperty(targetCls, property_getName(property));
             if (!targetProperty) {
                 @throw [NSException exceptionWithName:@"Transfer RLMModel Error" reason:@"Target Property Not Found" userInfo:nil];
-            }
-            if ([genericMapper.allKeys containsObject:propertyName]) {//数组属性暂不处理
-                continue;
             }
             NSString *targetPropertyName = propertyName;
             if ([customRLMPropertyMapper valueForKey:propertyName]) {
                 targetPropertyName = [customRLMPropertyMapper valueForKey:propertyName];
             }
-            YYEncodingType type = propertyInfo.type & YYEncodingTypeMask;
-            switch (type) {
-                case YYEncodingTypeObject: {
-                    if (propertyInfo.cls == [NSNumber class] ||
-                        propertyInfo.cls == [NSString class] ||
-                        propertyInfo.cls == [NSDate class] ||
-                        propertyInfo.cls == [NSData class]) {
-                        [realmModel setValue:[self valueForKey:propertyName] forKey:targetPropertyName];
-                    } else {//自定义class
-                        id subModel = [self valueForKey:propertyName];
-                        if (subModel) {
-                            NSString *targetSubModelName = [self ccd_assembleRealmModelClassName:NSStringFromClass(propertyInfo.cls)];
-                            id targetSubModel = [subModel ccd_realmModelByClass:NSClassFromString(targetSubModelName)];
-                            [realmModel setValue:targetSubModel forKey:targetPropertyName];
+            
+            if ([genericMapper.allKeys containsObject:propertyName]) {//数组属性暂不处理
+                NSArray *itemArray = [self valueForKey:propertyName];
+                NSMutableArray *itemTargetArray = [NSMutableArray array];
+                [itemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    Class itemTargetCls = [obj class];
+                    NSString *itemTargetClsName = [self ccd_assembleRealmModelClassName:NSStringFromClass(itemTargetCls)];
+                    id itemTargetModel = [obj ccd_realmModelByClass:NSClassFromString(itemTargetClsName)];
+                    [itemTargetArray addObject:itemTargetModel];
+                }];
+                [realmModel setValue:itemTargetArray forKeyPath:targetPropertyName];
+                
+            } else {
+                YYEncodingType type = propertyInfo.type & YYEncodingTypeMask;
+                switch (type) {
+                    case YYEncodingTypeObject: {
+                        if (propertyInfo.cls == [NSNumber class] ||
+                            propertyInfo.cls == [NSString class] ||
+                            propertyInfo.cls == [NSDate class] ||
+                            propertyInfo.cls == [NSData class]) {
+                            [realmModel setValue:[self valueForKey:propertyName] forKey:targetPropertyName];
+                        } else {//自定义class
+                            id subModel = [self valueForKey:propertyName];
+                            if (subModel) {
+                                NSString *targetSubModelName = [self ccd_assembleRealmModelClassName:NSStringFromClass(propertyInfo.cls)];
+                                id targetSubModel = [subModel ccd_realmModelByClass:NSClassFromString(targetSubModelName)];
+                                [realmModel setValue:targetSubModel forKey:targetPropertyName];
+                            }
                         }
-                    }
-                }break;
-                    
-                case YYEncodingTypeBool:
-                case YYEncodingTypeInt8:
-                case YYEncodingTypeUInt8:
-                case YYEncodingTypeInt16:
-                case YYEncodingTypeUInt16:
-                case YYEncodingTypeInt32:
-                case YYEncodingTypeUInt32:
-                case YYEncodingTypeInt64:
-                case YYEncodingTypeUInt64:
-                case YYEncodingTypeFloat:
-                case YYEncodingTypeDouble:
-                case YYEncodingTypeLongDouble: {
-                    [realmModel setValue:[self valueForKey:propertyName] forKey:targetPropertyName];
-                }break;
-                    
-                default:
-                    break;
+                    }break;
+                        
+                    case YYEncodingTypeBool:
+                    case YYEncodingTypeInt8:
+                    case YYEncodingTypeUInt8:
+                    case YYEncodingTypeInt16:
+                    case YYEncodingTypeUInt16:
+                    case YYEncodingTypeInt32:
+                    case YYEncodingTypeUInt32:
+                    case YYEncodingTypeInt64:
+                    case YYEncodingTypeUInt64:
+                    case YYEncodingTypeFloat:
+                    case YYEncodingTypeDouble:
+                    case YYEncodingTypeLongDouble: {
+                        [realmModel setValue:[self valueForKey:propertyName] forKey:targetPropertyName];
+                    }break;
+                        
+                    default:
+                        break;
+                }
             }
         }
         

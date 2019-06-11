@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "NSObject+RLMHelper.h"
 
 @class FLCarModel;
-@interface FLPersonModel : NSObject
+@interface FLPersonModel : NSObject<RLMHelperProtocol>
 
+@property (nonatomic, strong) NSArray<FLCarModel *> *vehicles;
 
 @property (nonatomic, strong) FLCarModel *car;
 

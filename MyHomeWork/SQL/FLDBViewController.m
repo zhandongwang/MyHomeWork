@@ -40,11 +40,17 @@ static NSString * const kDBTableViewCellID = @"kDBTableViewCellID";
     self.dataSource = @[kDBActionInsert,kDBActionSelect,kDBActionUpdate,kDBActionDelete];
     
     FLPersonModel *person = [FLPersonModel new];
-    FLCarModel *car = [FLCarModel new];
-    car.name = @"BMW-X3";
-    car.price = 300000.00;
+    FLCarModel *bmw = [FLCarModel new];
+    bmw.name = @"BMW-X3";
+    bmw.price = 300000.00;
     
-    person.car = car;
+    
+    FLCarModel *audi = [FLCarModel new];
+    audi.name = @"Audi-A4L";
+    audi.price = 400000.00;
+    
+    person.vehicles = @[bmw, audi];
+    person.car = bmw;
     person.userID = 1001;
     person.name = @"Fengli";
     person.age = 20;
