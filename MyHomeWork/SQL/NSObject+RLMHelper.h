@@ -43,7 +43,7 @@ typedef NS_OPTIONS(NSUInteger, CCDEncodingType) {
 
 @interface NSObject (RLMHelper)
 
-- (id)realmModelByClass:(Class)cls;
+- (id)ccd_realmModelByClass:(Class)cls;
 
 
 @end

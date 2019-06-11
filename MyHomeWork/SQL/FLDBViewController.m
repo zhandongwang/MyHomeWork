@@ -47,7 +47,7 @@ static NSString * const kDBTableViewCellID = @"kDBTableViewCellID";
     person.man = YES;
     person.goal = @(1.11);
     person.birthday = [NSDate date];
-    [person realmModelByClass:[FLPersonRealmModel class]];
+    [person ccd_realmModelByClass:[FLPersonRealmModel class]];
     
     
 //    FLRLMCar *car = [[FLRLMCar alloc] init];

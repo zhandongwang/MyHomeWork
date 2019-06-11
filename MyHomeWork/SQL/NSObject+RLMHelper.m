@@ -55,7 +55,7 @@ CCDEncodingType CCDEncodingGetType(const char *typeEncoding) {
 
 @implementation NSObject (RLMHelper)
 
-- (id)realmModelByClass:(Class)targetCls {
+- (id)ccd_realmModelByClass:(Class)targetCls {
     NSParameterAssert(targetCls);
     id realmModel = [[targetCls alloc] init];
     
