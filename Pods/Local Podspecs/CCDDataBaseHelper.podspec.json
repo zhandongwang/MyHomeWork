@@ -18,10 +18,28 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "CCDDataBaseHelper/Classes/**/*",
-  "dependencies": {
-    "FMDB": [
+  "source_files": "CCDDataBaseHelper/Classes/**/*.{h,m}",
+  "public_header_files": "CCDDataBaseHelper/Classes/**/*.h",
+  "subspecs": [
+    {
+      "name": "FMDB",
+      "source_files": "CCDDataBaseHelper/Classes/FMDB/*.{h,m}",
+      "public_header_files": "CCDDataBaseHelper/Classes/FMDB/*.h",
+      "dependencies": {
+        "FMDB": [
 
-    ]
-  }
+        ]
+      }
+    },
+    {
+      "name": "Realm",
+      "source_files": "CCDDataBaseHelper/Classes/Realm/*.{h,m}",
+      "public_header_files": "CCDDataBaseHelper/Classes/Realm/*.h",
+      "dependencies": {
+        "Realm": [
+
+        ]
+      }
+    }
+  ]
 }

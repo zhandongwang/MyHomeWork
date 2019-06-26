@@ -14,6 +14,10 @@
 //    return @[@"vehicles"];
 //}
 
++ (NSString *)primaryKey {
+    return @"userID";
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"<%@: %p> userID=%ld, name=%@, age=%ld, salary=%f,birthday=%@,goal=%@,man=%d", [self class], self, self.userID,self.name, self.age, self.salary, self.birthday, self.goal, self.man];

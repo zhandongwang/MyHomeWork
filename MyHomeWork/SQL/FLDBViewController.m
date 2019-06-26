@@ -49,8 +49,9 @@ static NSString * const kDBTableViewCellID = @"kDBTableViewCellID";
     audi.name = @"Audi-A4L";
     audi.price = 400000.00;
     
-    person.vehicles = @[bmw, audi];
+//    person.vehicles = @[bmw, audi];
     person.car = bmw;
+    
     person.userID = 1001;
     person.name = @"Fengli";
     person.age = 20;
@@ -60,9 +61,11 @@ static NSString * const kDBTableViewCellID = @"kDBTableViewCellID";
     person.birthday = [NSDate date];
     FLPersonRealmModel *personModel = [person ccd_realmModelByClass:[FLPersonRealmModel class]];
     RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm transactionWithBlock:^{
-        [realm addObject:personModel];
-    }];
+    [realm beginWriteTransaction];
+    [realm addOrUpdateObject:personModel];
+    [realm commitWriteTransaction];
+
+
     NSLog(@"%@",[realm configuration].fileURL);
     NSLog(@"FAFAAA");
     RLMResults *persons = [FLPersonRealmModel allObjects];

@@ -9,6 +9,7 @@
 #import "FLCoreGraphicsViewController.h"
 #import "FLCoreGraphicsCutomView.h"
 #import "FLCoreGraphicsPushButton.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface FLCoreGraphicsViewController ()
 
@@ -28,8 +29,24 @@
         make.centerX.equalTo(self.view);
         make.centerY.equalTo(self.view).offset(100);
     }];
+
 }
 
+- (void)simpleDrawCode {
+    CGSize size  = self.view.bounds.size;
+    BOOL opaque = self.view.opaque;
+    CGFloat scale = [UIScreen mainScreen].scale;
+    UIGraphicsBeginImageContextWithOptions(size, opaque, scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    //绘制代码
+    
+    CGContextRestoreGState(context);
+    UIImage *image= UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    CFRelease(context);
+    
+}
 
 - (FLCoreGraphicsPushButton *)pushButton {
     if (!_pushButton) {

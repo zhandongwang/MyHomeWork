@@ -30,6 +30,13 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - CCDDataBaseHelper (0.1.0):
+    - CCDDataBaseHelper/FMDB (= 0.1.0)
+    - CCDDataBaseHelper/Realm (= 0.1.0)
+  - CCDDataBaseHelper/FMDB (0.1.0):
+    - FMDB
+  - CCDDataBaseHelper/Realm (0.1.0):
+    - Realm
   - CCDTimeSaver (0.1.2)
   - CocoaSecurity (1.2.4.2)
   - cocore (1.2.0)
@@ -56,13 +63,20 @@ PODS:
   - SDWebImage/Core (5.0.6)
   - SnapKit (4.2.0)
   - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
   - YYModel (1.0.4.2)
   - YYText (1.0.7.1)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
   - AFNetworking
   - Aspects
   - BlocksKit
+  - CCDDataBaseHelper (from `~/Documents/Development/CCDPods/ccddatabasehelper`)
   - CCDTimeSaver
   - CocoaSecurity
   - coobjc
@@ -80,6 +94,7 @@ DEPENDENCIES:
   - YYCache
   - YYModel
   - YYText
+  - YYWebImage
 
 SPEC REPOS:
   http://git.2dfire.net/ios/cocoapods-spec.git:
@@ -105,8 +120,12 @@ SPEC REPOS:
     - SDWebImage
     - SnapKit
     - YYCache
+    - YYImage
+    - YYWebImage
 
 EXTERNAL SOURCES:
+  CCDDataBaseHelper:
+    :path: "~/Documents/Development/CCDPods/ccddatabasehelper"
   PLeakSniffer:
     :path: "~/Documents/Development/PLeakSniffer"
 
@@ -114,6 +133,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Aspects: 2a29023e54b6dd92a5fec8ead8e8607b41b45efa
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  CCDDataBaseHelper: ab7595b8ca6d389a64c00464d330fa3daa619f34
   CCDTimeSaver: 8c149554294d68fda7d60ca4472e6762ae5c8311
   CocoaSecurity: c1287f056a21fa88a74e4d7f57f56b0a1a6e64b0
   cocore: cc9d76229458f286a632d9cecb63bd699bd3529d
@@ -131,9 +151,11 @@ SPEC CHECKSUMS:
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYModel: 4fb57c2e53b0d22dc4414878928ece524bf30788
   YYText: 1b20648f2be4d853c390e98315ff403864e92f01
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 114497aeb1afa3053f4d66f48c7770fb006ff3c1
+PODFILE CHECKSUM: f394acfdc59479bd961d4ce555cdf2d96df09a0d
 
 COCOAPODS: 1.6.0

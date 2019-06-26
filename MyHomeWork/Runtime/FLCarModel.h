@@ -16,6 +16,7 @@
 @property (nonatomic, assign) CGFloat price;
 
 
+
 - (void)runTo:(NSString *)place;
 
 

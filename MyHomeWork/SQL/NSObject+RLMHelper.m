@@ -17,7 +17,6 @@
     NSParameterAssert(targetCls);
     id realmModel = [[targetCls alloc] init];
     
-    
     Class cls = [self class];
     NSDictionary<NSString *, NSString *> *customRLMPropertyMapper = nil;
     NSDictionary<NSString *, Class> *genericMapper = nil;
@@ -102,6 +101,10 @@
             }
         }
         
+    }
+    if (properties) {
+        free(properties);
+        properties = NULL;
     }
     
     return realmModel;

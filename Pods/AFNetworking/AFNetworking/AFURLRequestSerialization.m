@@ -506,7 +506,7 @@ forHTTPHeaderField:(NSString *)field
             }
         }
     }
-
+    //`GET`, `HEAD`, and `DELETE` 方法的参数放在URL后面
     if ([self.HTTPMethodsEncodingParametersInURI containsObject:[[request HTTPMethod] uppercaseString]]) {
         if (query && query.length > 0) {
             mutableRequest.URL = [NSURL URLWithString:[[mutableRequest.URL absoluteString] stringByAppendingFormat:mutableRequest.URL.query ? @"&%@" : @"?%@", query]];

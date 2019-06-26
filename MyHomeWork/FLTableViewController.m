@@ -13,6 +13,9 @@
 #import "FLUIKitTableViewController.h"
 #import "FLRunTimeViewController.h"
 #import "FLDBViewController.h"
+#import "FLConcurrentViewController.h"
+#import "FLRunloopViewController.h"
+
 
 static NSString * const kCellID = @"cellID";
 
@@ -36,7 +39,7 @@ static NSString * const kCellID = @"cellID";
 }
 - (void)configDataSource {
     self.dataDict = @{@"UIKit":@"goToUIKit",
-                      @"RunTime":@"goToRunTime",
+                      @"Concurrent":@"goToConcurrent",
                       @"RunLoop":@"goToRunLoop",
                       @"DataBase":@"goToDataBase",
                       @"Core Text":@"goToCoreText",
@@ -58,11 +61,15 @@ static NSString * const kCellID = @"cellID";
     [self.navigationController pushViewController:[[FLUIKitTableViewController alloc] init] animated:YES];
 }
 
+- (void)goToRunLoop {
+    [self.navigationController pushViewController:[[FLRunloopViewController alloc] init] animated:YES];
+}
+
 - (void)goToRunTime {
     [self.navigationController pushViewController:[[FLRunTimeViewController alloc] init] animated:YES];
 }
-- (void)goToRunLoop {
-    
+- (void)goToConcurrent {
+     [self.navigationController pushViewController:[[FLConcurrentViewController alloc] init] animated:YES];
 }
 - (void)goToDataBase {
      [self.navigationController pushViewController:[[FLDBViewController alloc] init] animated:YES];
