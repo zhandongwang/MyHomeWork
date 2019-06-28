@@ -24,7 +24,7 @@
 {
     self = [super init];
     if (self) {
-         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNoti:) name:@"testNoti" object:nil];
+//         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNoti:) name:@"testNoti" object:nil];
     }
     return self;
 }

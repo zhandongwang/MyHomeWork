@@ -9,6 +9,7 @@
 #import "FLUIKitViewController.h"
 #import "FLCustomView.h"
 
+
 @interface FLUIKitViewController ()
 
 @property (nonatomic, strong) FLCustomView *customView;
@@ -24,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.customView];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

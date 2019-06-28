@@ -11,6 +11,7 @@
 #import <coobjc/coobjc.h>
 #import "FLUIKitTableViewControllerViewModel.h"
 #import "FLMovieModel.h"
+#import "DHOrderDishModel.h"
 
 static NSString * const kCellReusedID = @"FLUIKitTableViewCell";
 
@@ -24,6 +25,7 @@ static NSString * const kCellReusedID = @"FLUIKitTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    DHOrderDishModel *dish = [DHOrderDishModel new];
     [self configTableView];
     NSLog(@"-------before invoke request------------");
     [self sendRequest];

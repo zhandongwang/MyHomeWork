@@ -19,5 +19,16 @@
 //- (void)printName {
 //    NSLog(@"printName--DHOrderDishModel");
 //}
-    
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        NSLog(@"%@",NSStringFromClass([self class]));
+        NSLog(@"%@",NSStringFromClass([super class]));
+    }
+    return self;
+}
+
+
 @end

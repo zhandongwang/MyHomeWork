@@ -61,6 +61,7 @@
     
     RACSubject *sA = [RACSubject subject];
     RACSubject *sB = [RACSubject subject];
+
 //    RACSignal *sThen = [sA then:^RACSignal * _Nonnull{
 //        return sB;
 //    }];
@@ -152,18 +153,27 @@
         
         return nil;
     }];
-    
-    RACSubject *subject = [RACSubject subject];
-    NSLog(@"Subject created.");
-    
-    [[RACScheduler mainThreadScheduler] afterDelay:2 schedule:^{
-        //订阅冷信号, 事件通过subject发送出去
-        [coldSignal subscribe:subject];
+    //创建订阅者
+    [coldSignal subscribeNext:^(id  _Nullable x) {
+        
+    } error:^(NSError * _Nullable error) {
+        
+    } completed:^{
+        
     }];
     
-    [subject subscribeNext:^(id x) {
-        NSLog(@"Subscriber 1 recieve value:%@.", x);
-    }];
+    
+//    RACSubject *subject = [RACSubject subject];
+//    NSLog(@"Subject created.");
+//
+//    [[RACScheduler mainThreadScheduler] afterDelay:2 schedule:^{
+//        //订阅冷信号, 事件通过subject发送出去
+//        [coldSignal subscribe:subject];
+//    }];
+//
+//    [subject subscribeNext:^(id x) {
+//        NSLog(@"Subscriber 1 recieve value:%@.", x);
+//    }];
 }
 
 //- (void)testSubject {

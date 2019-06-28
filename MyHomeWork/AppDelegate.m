@@ -27,6 +27,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 //    [self setupMemoryCheck];
     
+    
     [[PLeakSniffer sharedInstance] installLeakSniffer];
     [[PLeakSniffer sharedInstance] alertLeaks];
     
