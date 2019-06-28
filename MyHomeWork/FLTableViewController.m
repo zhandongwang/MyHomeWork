@@ -15,7 +15,7 @@
 #import "FLDBViewController.h"
 #import "FLConcurrentViewController.h"
 #import "FLRunloopViewController.h"
-
+#import "FLWebViewController.h"
 
 static NSString * const kCellID = @"cellID";
 
@@ -37,6 +37,9 @@ static NSString * const kCellID = @"cellID";
     [self configTableView];
     
 }
+
+
+
 - (void)configDataSource {
     self.dataDict = @{@"UIKit":@"goToUIKit",
                       @"Concurrent":@"goToConcurrent",
@@ -44,6 +47,9 @@ static NSString * const kCellID = @"cellID";
                       @"DataBase":@"goToDataBase",
                       @"Core Text":@"goToCoreText",
                       @"Core Graphics":@"goToCoreGraphics",
+                      @"WebView":@"goToWebView",
+                      @"RunTime":@"goToRunTime",
+                      
                       };
     self.dataSource = [NSMutableArray arrayWithArray:self.dataDict.allKeys];
 }
@@ -56,6 +62,11 @@ static NSString * const kCellID = @"cellID";
 }
 
 #pragma mark - Methods
+
+- (void)goToWebView {
+    [self.navigationController pushViewController:[[FLWebViewController alloc] init] animated:YES];
+}
+
 
 - (void)goToUIKit {
     [self.navigationController pushViewController:[[FLUIKitTableViewController alloc] init] animated:YES];

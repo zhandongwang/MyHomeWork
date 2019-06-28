@@ -12,7 +12,8 @@
 #import <OCTWebViewBridge/OCTWebViewBridge.h>
 #import "WebPlugin.h"
 
-@interface FLWebViewController ()<JSObjcDelegate, UIWebViewDelegate, WKScriptMessageHandler, WKNavigationDelegate,WKUIDelegate>
+@interface FLWebViewController ()<JSObjcDelegate, UIWebViewDelegate,
+WKScriptMessageHandler, WKNavigationDelegate,WKUIDelegate>
 
 @property (nonatomic, strong) JSContext *jsContext;
 @property (nonatomic, strong) UIWebView *webView;
@@ -38,7 +39,7 @@
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"testWeb" withExtension:@"html"];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
-    /*UIWebview*/
+//    /*UIWebview*/
 //    [self.view addSubview:self.webView];
 //    [self.webView loadRequest:request];
     
@@ -55,8 +56,8 @@
     [self.view addSubview:self.wkWebView];
     self.wkWebView.navigationDelegate = self;
     self.wkWebView.UIDelegate = self;
-    
-    
+
+
     [self.wkWebView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(64);
         make.bottom.equalTo(self.view).offset(-100);
@@ -64,16 +65,16 @@
     }];
     [self.wkWebView loadRequest:request];
     
-    [[OCTWebViewPluginInjector injectorForWebView:self.wkWebView] injectPlugin:[OCTLogPlugin new]];
-
-    [[OCTWebViewPluginInjector injectorForWebView:self.wkWebView] injectPluginWithFunctionName:@"test" handler:^(NSDictionary *data) {
-        NSLog(@"%@", data);
-    }];
-
-    [[OCTWebViewPluginInjector injectorForWebView:self.wkWebView] injectPluginWithFunctionName:@"test2" handlerWithResponseBlock:^(NSDictionary *data, OCTResponseCallback responseCallback) {
-        NSLog(@"test2: %@", data);
-        responseCallback(@{ @"Hello JS" : @"I'm back from Native" });
-    }];
+//    [[OCTWebViewPluginInjector injectorForWebView:self.wkWebView] injectPlugin:[OCTLogPlugin new]];
+//
+//    [[OCTWebViewPluginInjector injectorForWebView:self.wkWebView] injectPluginWithFunctionName:@"test" handler:^(NSDictionary *data) {
+//        NSLog(@"%@", data);
+//    }];
+//
+//    [[OCTWebViewPluginInjector injectorForWebView:self.wkWebView] injectPluginWithFunctionName:@"test2" handlerWithResponseBlock:^(NSDictionary *data, OCTResponseCallback responseCallback) {
+//        NSLog(@"test2: %@", data);
+//        responseCallback(@{ @"Hello JS" : @"I'm back from Native" });
+//    }];
 
     
 //    [[OCTWebViewPluginInjector injectorForWebView:self.wkWebView] injectPluginWithFunctionName:@"test2" handlerWithResponseBlock:^(NSDictionary *data, OCTResponseCallback responseCallback) {
@@ -104,17 +105,13 @@
 #pragma mark - WKNavigationDelegate
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    
+
     NSLog(@"发送请求之前调用");
-    
-    NSLog(@"%@",navigationAction.request.URL.absoluteString);
     decisionHandler(WKNavigationActionPolicyAllow);
-    
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
     NSLog(@"收到响应后调用");
-    NSLog(@"%@",navigationResponse.response.URL.absoluteString);
     decisionHandler(WKNavigationResponsePolicyAllow);
 }
 

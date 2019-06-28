@@ -7,21 +7,27 @@
     <div style="margin-top: 100px">
         <h1>Objective-C和JavaScript交互的那些事</h1>
         <input type="button" value="CallCamera" onclick="callCamera()">
-    </div>       
+<!--        <input type="button" value="CallCamera" onclick="Toyun.callCamera()">-->
+    </div>
 
     <div>
-        <input type="button" value="Share" onclick="calljs()">
+        <input type="button" value="Share" onclick="callShare()">
     </div>
 
 <script>
     var callShare = function() {
-        window.webkit.messageHandlers.MyNative.postMessage('testJS');
+        window.webkit.messageHandlers.MyNative.postMessage('callShare');
+    }
+    var shareCallback = function(info){
+        alert('shareCallBack success');
     }
 
     var callCamera = function() {
-        window.bridge.plugin.test2({'Hello Native': 'I am JS'}, function(json) {
-                                   window.bridge.log(JSON.stringify(json))
-                                   })
+        //window.bridge.plugin.test2({'Hello Native': 'I am JS'}, function(json) {
+         //                          window.bridge.log(JSON.stringify(json))
+           //                        })
+           
+        window.webkit.messageHandlers.MyNative.postMessage('callCamera');
     }
 
     var picCallback = function(photos) {
