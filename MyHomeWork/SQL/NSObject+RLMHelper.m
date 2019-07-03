@@ -9,10 +9,9 @@
 #import "NSObject+RLMHelper.h"
 #import <objc/runtime.h>
 #import <YYModel/YYClassInfo.h>
-#import "FLPersonRealmModel.h"
 
 @implementation NSObject (RLMHelper)
-
+/*
 - (id)ccd_realmModelByClass:(Class)targetCls {
     NSParameterAssert(targetCls);
     id realmModel = [[targetCls alloc] init];
@@ -123,5 +122,5 @@
     return name;
 }
 
-
+*/
 @end

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		23031BDE22AF586900C04AE4 /* NSObject+RLMHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 23031BDD22AF586900C04AE4 /* NSObject+RLMHelper.m */; };
-		23031BE122AF8E7C00C04AE4 /* FLCarRealmModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23031BE022AF8E7C00C04AE4 /* FLCarRealmModel.m */; };
 		2304FCD42277ECC400754B13 /* FLCollectionViewCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2304FCD32277ECC400754B13 /* FLCollectionViewCircleLayout.m */; };
 		2307F1662064A2120060A688 /* WZDPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307F1652064A2120060A688 /* WZDPatch.m */; };
 		2307F1692064A3F60060A688 /* WZDPatchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307F1682064A3F60060A688 /* WZDPatchTest.m */; };
@@ -21,7 +20,6 @@
 		232413AB2255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 232413A72255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf */; };
 		232413AC2255B10E008618C7 /* Gaspar Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 232413A82255B10E008618C7 /* Gaspar Regular.otf */; };
 		232413AD2255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 232413A92255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf */; };
-		232C4EB722AF95CC00FAF3EC /* FLPersonRealmModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 232C4EB622AF95CC00FAF3EC /* FLPersonRealmModel.m */; };
 		23358AA722C9F95200132738 /* FLCustomOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 23358AA622C9F95200132738 /* FLCustomOperation.m */; };
 		23358AAA22CA2DD000132738 /* FLCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 23358AA922CA2DD000132738 /* FLCustomButton.m */; };
 		2335DCBB1E0E137100C48142 /* testWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = 2335DCBA1E0E137100C48142 /* testWeb.html */; };
@@ -142,8 +140,6 @@
 		230206D22178A649006FBF56 /* MyHomeWork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Bridging-Header.h"; sourceTree = "<group>"; };
 		23031BDC22AF586900C04AE4 /* NSObject+RLMHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+RLMHelper.h"; sourceTree = "<group>"; };
 		23031BDD22AF586900C04AE4 /* NSObject+RLMHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RLMHelper.m"; sourceTree = "<group>"; };
-		23031BDF22AF8E7C00C04AE4 /* FLCarRealmModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCarRealmModel.h; sourceTree = "<group>"; };
-		23031BE022AF8E7C00C04AE4 /* FLCarRealmModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCarRealmModel.m; sourceTree = "<group>"; };
 		2304FCD22277ECC400754B13 /* FLCollectionViewCircleLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCollectionViewCircleLayout.h; sourceTree = "<group>"; };
 		2304FCD32277ECC400754B13 /* FLCollectionViewCircleLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCollectionViewCircleLayout.m; sourceTree = "<group>"; };
 		2307F1642064A2120060A688 /* WZDPatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZDPatch.h; sourceTree = "<group>"; };
@@ -162,8 +158,6 @@
 		232413A72255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFZhiHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
 		232413A82255B10E008618C7 /* Gaspar Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gaspar Regular.otf"; sourceTree = "<group>"; };
 		232413A92255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFJinHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
-		232C4EB522AF95CC00FAF3EC /* FLPersonRealmModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPersonRealmModel.h; sourceTree = "<group>"; };
-		232C4EB622AF95CC00FAF3EC /* FLPersonRealmModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLPersonRealmModel.m; sourceTree = "<group>"; };
 		23358AA522C9F95200132738 /* FLCustomOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCustomOperation.h; sourceTree = "<group>"; };
 		23358AA622C9F95200132738 /* FLCustomOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCustomOperation.m; sourceTree = "<group>"; };
 		23358AA822CA2DD000132738 /* FLCustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCustomButton.h; sourceTree = "<group>"; };
@@ -688,12 +682,8 @@
 				23DD355E22CC82F500059911 /* Proxy */,
 				23965FBF2193DF4500349149 /* FLCarModel.h */,
 				23965FC02193DF4500349149 /* FLCarModel.m */,
-				23031BDF22AF8E7C00C04AE4 /* FLCarRealmModel.h */,
-				23031BE022AF8E7C00C04AE4 /* FLCarRealmModel.m */,
 				23965FC22193E3AC00349149 /* FLPersonModel.h */,
 				23965FC32193E3AC00349149 /* FLPersonModel.m */,
-				232C4EB522AF95CC00FAF3EC /* FLPersonRealmModel.h */,
-				232C4EB622AF95CC00FAF3EC /* FLPersonRealmModel.m */,
 				236E2EDE2289544F00C3D4E2 /* FLRunTimeViewController.h */,
 				236E2EDF2289544F00C3D4E2 /* FLRunTimeViewController.m */,
 				236E2EE1228954A400C3D4E2 /* FLRunTimeView.h */,
@@ -1145,7 +1135,6 @@
 				236098951D980892009C589B /* AppDelegate.m in Sources */,
 				23E77FF521884539009B8E84 /* JSPerson.m in Sources */,
 				23683B62227831D200337D2C /* FLCTView.m in Sources */,
-				23031BE122AF8E7C00C04AE4 /* FLCarRealmModel.m in Sources */,
 				236098921D980892009C589B /* main.m in Sources */,
 				23031BDE22AF586900C04AE4 /* NSObject+RLMHelper.m in Sources */,
 				2374CFBA1E518D45001B799D /* FRCBaseViewController.m in Sources */,
@@ -1156,7 +1145,6 @@
 				23683B6E22783EB200337D2C /* CTDisplayView.m in Sources */,
 				23634C5221F16E7D0028B669 /* FLCashNormal.m in Sources */,
 				23965FC42193E3AC00349149 /* FLPersonModel.m in Sources */,
-				232C4EB722AF95CC00FAF3EC /* FLPersonRealmModel.m in Sources */,
 				23683B6B227839EA00337D2C /* CoreTextData.m in Sources */,
 				23683B71227842FC00337D2C /* UIView+CTFrame.m in Sources */,
 				23E5A0DB22584DA5006BDDA9 /* FLSwiftStudy27.swift in Sources */,

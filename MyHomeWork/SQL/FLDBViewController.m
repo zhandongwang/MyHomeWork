@@ -9,9 +9,7 @@
 #import "FLDBViewController.h"
 #import "FLCarModel.h"
 #import "FLPersonModel.h"
-#import "FLPersonRealmModel.h"
 #import "NSObject+RLMHelper.h"
-#import <Realm/Realm.h>
 #import <objc/runtime.h>
 
 static NSString * const kDBActionInsert = @"插入";
@@ -59,24 +57,24 @@ static NSString * const kDBTableViewCellID = @"kDBTableViewCellID";
     person.man = YES;
     person.goal = @(1.11);
     person.birthday = [NSDate date];
-    FLPersonRealmModel *personModel = [person ccd_realmModelByClass:[FLPersonRealmModel class]];
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm beginWriteTransaction];
-    [realm addOrUpdateObject:personModel];
-    [realm commitWriteTransaction];
+//    FLPersonRealmModel *personModel = [person ccd_realmModelByClass:[FLPersonRealmModel class]];
+//    RLMRealm *realm = [RLMRealm defaultRealm];
+//    [realm beginWriteTransaction];
+//    [realm addOrUpdateObject:personModel];
+//    [realm commitWriteTransaction];
 
 
-    NSLog(@"%@",[realm configuration].fileURL);
-    NSLog(@"FAFAAA");
-    RLMResults *persons = [FLPersonRealmModel allObjects];
-    for (FLPersonRealmModel *pp in persons) {
-        NSLog(@"personInfo=%@",pp);
-        NSLog(@"person.car=%@",pp.car);
-        for (FLCarRealmModel *cc in pp.vehicles) {
-             NSLog(@"person.vehicles.car=%@",cc);
-        }
-    }
-    
+//    NSLog(@"%@",[realm configuration].fileURL);
+//    NSLog(@"FAFAAA");
+//    RLMResults *persons = [FLPersonRealmModel allObjects];
+//    for (FLPersonRealmModel *pp in persons) {
+//        NSLog(@"personInfo=%@",pp);
+//        NSLog(@"person.car=%@",pp.car);
+//        for (FLCarRealmModel *cc in pp.vehicles) {
+//             NSLog(@"person.vehicles.car=%@",cc);
+//        }
+//    }
+//
     
     
 //    FLRLMCar *car = [[FLRLMCar alloc] init];
@@ -133,21 +131,21 @@ static NSString * const kDBTableViewCellID = @"kDBTableViewCellID";
 
 }
 
-- (void)createRealmDB {
-    NSString *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-    NSString *dbPath = [docPath stringByAppendingPathComponent:@"flrealm"];
-    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
-    config.fileURL = [NSURL URLWithString:dbPath];
-    config.schemaVersion = 1.0;
-    config.migrationBlock = ^(RLMMigration * _Nonnull migration, uint64_t oldSchemaVersion) {
-        if (oldSchemaVersion < 1.0) {
-            
-        }
-    };
-    [RLMRealmConfiguration setDefaultConfiguration:config];
-    
-    
-}
+//- (void)createRealmDB {
+//    NSString *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+//    NSString *dbPath = [docPath stringByAppendingPathComponent:@"flrealm"];
+//    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+//    config.fileURL = [NSURL URLWithString:dbPath];
+//    config.schemaVersion = 1.0;
+//    config.migrationBlock = ^(RLMMigration * _Nonnull migration, uint64_t oldSchemaVersion) {
+//        if (oldSchemaVersion < 1.0) {
+//
+//        }
+//    };
+//    [RLMRealmConfiguration setDefaultConfiguration:config];
+//
+//
+//}
 
 - (void)insert {
 //    FLPerson *p2 =  [[FLPerson alloc] init];

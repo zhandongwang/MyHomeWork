@@ -20,15 +20,14 @@ pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'CCDTimeSaver'
 pod 'FMDB'
-pod 'Realm'
+# pod 'Realm'
 #pod 'WCDB'
 pod 'MLeaksFinder'
 pod 'coobjc'
 #pod 'OOMDetector', '1.3'
 #pod 'fishhook', '0.2'
 pod 'PLeakSniffer', :path => '~/Documents/Development/PLeakSniffer'
-pod 'CCDDataBaseHelper',  :path => '~/Documents/Development/CCDPods/ccddatabasehelper'
-pod 'VCProfiler'
+# pod 'CCDDataBaseHelper',  :path => '~/Documents/Development/CCDPods/ccddatabasehelper'
 
 
 end
