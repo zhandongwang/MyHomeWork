@@ -30,11 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view addSubview:self.runTimeView];
-    
-    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(threadEntry:) object:@"hello thread"];
-    thread.name = @"FengliThread";
-    [thread start];
-    [self makeCar];
+
 }
 
 - (void)threadEntry:(id)param {
@@ -42,10 +38,6 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"in dispatch_async%@",[NSThread currentThread]);
-    });
-    NSLog(@"out dispatch_async%@",[NSThread currentThread]);
 }
 
 

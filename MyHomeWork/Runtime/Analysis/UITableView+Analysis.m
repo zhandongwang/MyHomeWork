@@ -11,9 +11,9 @@
 
 @implementation UITableView (Analysis)
 
-+ (void)load {
+//+ (void)load {
 //    [self user_swizzleOriginalCls:[UITableView class] originalSEL:@selector(setDelegate:) swizzledSEL:@selector(user_setDelegate:)];
-}
+//}
 
 - (void)user_setDelegate:(id<UITableViewDelegate>)delegate {
     [self user_setDelegate:delegate];
@@ -22,7 +22,7 @@
     Method originalMethod = class_getInstanceMethod([delegate class], originalSel);
     //初始化一个名字为delegat.class/tableview.tag的selector
     SEL swizzledSel =  NSSelectorFromString([NSString stringWithFormat:@"%@/%ld",[self class], self.tag]);
-    Method swizzledmethod = class_getInstanceMethod([self class], @selector(user_swizzleOriginalCls:originalSEL:swizzledSEL:));
+    Method swizzledmethod = class_getInstanceMethod([self class], @selector(user_tableView:didSelectRowAtIndexPath:));
     //IMP执行交换后的user_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 方法
     class_addMethod([delegate class], swizzledSel, method_getImplementation(swizzledmethod), method_getTypeEncoding(swizzledmethod));
     

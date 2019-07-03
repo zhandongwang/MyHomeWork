@@ -28,5 +28,7 @@ pod 'coobjc'
 #pod 'fishhook', '0.2'
 pod 'PLeakSniffer', :path => '~/Documents/Development/PLeakSniffer'
 pod 'CCDDataBaseHelper',  :path => '~/Documents/Development/CCDPods/ccddatabasehelper'
+pod 'VCProfiler'
+
 
 end

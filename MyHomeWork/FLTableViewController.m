@@ -30,15 +30,15 @@ static NSString * const kCellID = @"cellID";
 @implementation FLTableViewController
 
 - (void)viewDidLoad {
+    NSLog(@"%@ before super didLoad", [self class]);
     [super viewDidLoad];
+    NSLog(@"%@ after super didLoad", [self class]);
     self.title = @"功能列表";
     
     [self configDataSource];
     [self configTableView];
-    
+    NSLog(@"%@ after self didLoad", [self class]);
 }
-
-
 
 - (void)configDataSource {
     self.dataDict = @{@"UIKit":@"goToUIKit",
@@ -69,7 +69,7 @@ static NSString * const kCellID = @"cellID";
 
 
 - (void)goToUIKit {
-    [self.navigationController pushViewController:[[FLUIKitTableViewController alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[FLUIKitViewController alloc] init] animated:YES];
 }
 
 - (void)goToRunLoop {

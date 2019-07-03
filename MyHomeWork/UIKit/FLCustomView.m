@@ -33,6 +33,20 @@
     NSLog(@"%s%s",__FILE__,__func__);
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"=========> FLCustomView touchs Began");
+}
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"=========> FLCustomView touchs Moved");
+}
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"=========> FLCustomView touchs Ended");
+}
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"=========> FLCustomView touchs Cancelled");
+}
+
+
 //- (void)displayLayer:(CALayer *)layer {
 //    NSLog(@"%s%s",__FILE__,__func__);
 //}
@@ -42,25 +56,25 @@
 //    [super drawLayer:layer inContext:ctx];
 //}
 
-- (void)drawRect:(CGRect)rect {
-    NSLog(@"%s%s",__FILE__,__func__);
-//    self.backgroundColor = [UIColor redColor];
-//    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 200, 100, 100)];
-//    [[UIColor redColor] set];
-//    [path stroke];
+//- (void)drawRect:(CGRect)rect {
+//    NSLog(@"%s%s",__FILE__,__func__);
+////    self.backgroundColor = [UIColor redColor];
+////    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 200, 100, 100)];
+////    [[UIColor redColor] set];
+////    [path stroke];
+////
+////
+////    UIBezierPath *path2 = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(50, 150, 200, 200)];
+////    [[UIColor greenColor] set];
+////    [path2 stroke];
+//    CGContextRef con = UIGraphicsGetCurrentContext();
+//    CGContextSetStrokeColorWithColor(con, [UIColor redColor].CGColor);
+//    CGContextAddEllipseInRect(con, CGRectMake(100, 200, 100, 100));
+//    CGContextAddEllipseInRect(con, CGRectMake(50, 150, 200, 200));
 //
+//    CGContextStrokePath(con);
 //
-//    UIBezierPath *path2 = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(50, 150, 200, 200)];
-//    [[UIColor greenColor] set];
-//    [path2 stroke];
-    CGContextRef con = UIGraphicsGetCurrentContext();
-    CGContextSetStrokeColorWithColor(con, [UIColor redColor].CGColor);
-    CGContextAddEllipseInRect(con, CGRectMake(100, 200, 100, 100));
-    CGContextAddEllipseInRect(con, CGRectMake(50, 150, 200, 200));
-    
-    CGContextStrokePath(con);
-    
-}
+//}
 
 - (void)updateName:(NSString *)name {
     self.name = name;

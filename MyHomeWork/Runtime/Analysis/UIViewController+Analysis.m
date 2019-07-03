@@ -12,9 +12,16 @@
 
 @implementation UIViewController (Analysis)
 
-+ (void)load {
-//    [self user_swizzleOriginalCls:[UIViewController class] originalSEL: @selector(viewWillAppear:) swizzledSEL:@selector(user_viewWillAppear:)];
+//+ (void)load {
+//    [self user_swizzleOriginalCls:[UIViewController class] originalSEL: @selector(viewDidLoad) swizzledSEL:@selector(user_viewDidLoad)];
+//}
+
+- (void)user_viewDidLoad {
+    [self user_viewDidLoad];
+    NSString *identifier = [NSString stringWithFormat:@"%@", [self class]];
+    NSLog(@"%@",identifier);
 }
+
 
 - (void)user_viewWillAppear:(BOOL)animated {
     [self user_viewWillAppear:animated];

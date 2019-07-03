@@ -11,7 +11,7 @@
 
 @interface FLCarModel : NSObject
 
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, assign) NSString *name;
 
 @property (nonatomic, assign) CGFloat price;
 
