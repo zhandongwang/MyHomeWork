@@ -1,6 +1,7 @@
 
 source 'https://github.com/CocoaPods/Specs.git'
 source 'http://git.2dfire.net/ios/cocoapods-spec.git'   # 私有库
+
 target 'MyHomeWork' do
 
 pod 'BlocksKit'
@@ -9,7 +10,7 @@ pod 'YYModel'
 pod 'YYCache'
 pod 'YYText'
 pod 'YYWebImage'
-pod 'MJRefresh', '~> 2.4.7'
+pod 'MJRefresh', '~> 2.4.7'O
 pod 'MBProgressHUD'
 pod 'ReactiveObjC', '3.0.0'
 pod 'Aspects'
@@ -28,6 +29,6 @@ pod 'coobjc'
 #pod 'fishhook', '0.2'
 pod 'PLeakSniffer', :path => '~/Documents/Development/PLeakSniffer'
 # pod 'CCDDataBaseHelper',  :path => '~/Documents/Development/CCDPods/ccddatabasehelper'
-
+pod 'FL_flutter', :path => '~/Documents/Development/CCDPods/FL_flutter'
 
 end

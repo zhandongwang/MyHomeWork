@@ -36,6 +36,7 @@ PODS:
   - coobjc (1.2.0):
     - cocore (~> 1.2.0)
   - FBRetainCycleDetector (0.1.4.1)
+  - FL_flutter (0.0.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
@@ -69,6 +70,7 @@ DEPENDENCIES:
   - CCDTimeSaver
   - CocoaSecurity
   - coobjc
+  - FL_flutter (from `~/Documents/Development/CCDPods/FL_flutter`)
   - FMDB
   - Masonry
   - MBProgressHUD
@@ -111,6 +113,8 @@ SPEC REPOS:
     - YYWebImage
 
 EXTERNAL SOURCES:
+  FL_flutter:
+    :path: "~/Documents/Development/CCDPods/FL_flutter"
   PLeakSniffer:
     :path: "~/Documents/Development/PLeakSniffer"
 
@@ -123,6 +127,7 @@ SPEC CHECKSUMS:
   cocore: cc9d76229458f286a632d9cecb63bd699bd3529d
   coobjc: 090a460e32e90d0e820e64c31cf7b79dece51a7c
   FBRetainCycleDetector: 22a77c1446a858961ee4bce6e943603add9db037
+  FL_flutter: ed58935b6366331162251bc64d5f439a3cf64458
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 443c07c0aa22772fbe3702db40fc65c36d80155e
@@ -139,6 +144,6 @@ SPEC CHECKSUMS:
   YYText: 1b20648f2be4d853c390e98315ff403864e92f01
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: d92db39787dde179c2a4f78ea38342c1bc3b39c3
+PODFILE CHECKSUM: 2984194d4633d7d48627e8f19e5a97fe18a94d55
 
 COCOAPODS: 1.6.0

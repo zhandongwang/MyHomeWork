@@ -867,6 +867,7 @@
 				2360988A1D980892009C589B /* Frameworks */,
 				2360988B1D980892009C589B /* Resources */,
 				99BFA0DD49ACD5C9BE45D3C6 /* [CP] Copy Pods Resources */,
+				84A3471EDC7781944B377422 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1001,6 +1002,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		84A3471EDC7781944B377422 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-frameworks.sh",
+				"${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/App.framework",
+				"${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/engine/Flutter.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/App.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flutter.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		99BFA0DD49ACD5C9BE45D3C6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1008,6 +1033,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-resources.sh",
+				"${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/flutter_assets",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_template.js",
 				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_with_callback_template.js",
@@ -1019,6 +1045,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/flutter_assets",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/block_plugin_template.js",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/block_plugin_with_callback_template.js",

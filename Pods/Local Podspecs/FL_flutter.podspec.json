@@ -1,0 +1,29 @@
+{
+  "name": "FL_flutter",
+  "version": "0.0.1",
+  "summary": "A short description of FL_flutter.",
+  "description": "A short description of FL_flutter.",
+  "homepage": "https://github.com/zhandongwang/FL_flutter",
+  "authors": {
+    "fengli": "fengli@2dfire.com"
+  },
+  "source": {
+    "git": "git@github.com:zhandongwang/FL_flutter.git",
+    "tag": "0.0.1"
+  },
+  "source_files": [
+    "Classes",
+    "Classes/**/*.{h,m}"
+  ],
+  "vendored_frameworks": [
+    "Framework/*.framework",
+    "Framework/engine/*.framework"
+  ],
+  "resources": "Framework/flutter_assets",
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}
