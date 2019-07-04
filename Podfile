@@ -3,6 +3,10 @@ source 'https://github.com/CocoaPods/Specs.git'
 source 'http://git.2dfire.net/ios/cocoapods-spec.git'   # 私有库
 target 'MyHomeWork' do
 
+  flutter_application_path = './fl_flutter/'
+  eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
+  
+  
 pod 'BlocksKit'
 pod 'Masonry'
 pod 'YYModel'

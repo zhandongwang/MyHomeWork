@@ -36,6 +36,9 @@ PODS:
   - coobjc (1.2.0):
     - cocore (~> 1.2.0)
   - FBRetainCycleDetector (0.1.4.1)
+  - Flutter (1.0.0)
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
@@ -69,6 +72,8 @@ DEPENDENCIES:
   - CCDTimeSaver
   - CocoaSecurity
   - coobjc
+  - Flutter (from `./fl_flutter/.ios/Flutter/engine`)
+  - FlutterPluginRegistrant (from `./fl_flutter/.ios/Flutter/FlutterPluginRegistrant`)
   - FMDB
   - Masonry
   - MBProgressHUD
@@ -111,6 +116,10 @@ SPEC REPOS:
     - YYWebImage
 
 EXTERNAL SOURCES:
+  Flutter:
+    :path: "./fl_flutter/.ios/Flutter/engine"
+  FlutterPluginRegistrant:
+    :path: "./fl_flutter/.ios/Flutter/FlutterPluginRegistrant"
   PLeakSniffer:
     :path: "~/Documents/Development/PLeakSniffer"
 
@@ -123,6 +132,8 @@ SPEC CHECKSUMS:
   cocore: cc9d76229458f286a632d9cecb63bd699bd3529d
   coobjc: 090a460e32e90d0e820e64c31cf7b79dece51a7c
   FBRetainCycleDetector: 22a77c1446a858961ee4bce6e943603add9db037
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  FlutterPluginRegistrant: 8855ca2b426d228cb41aa6c26c0c83b8c49e3593
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 443c07c0aa22772fbe3702db40fc65c36d80155e
@@ -139,6 +150,6 @@ SPEC CHECKSUMS:
   YYText: 1b20648f2be4d853c390e98315ff403864e92f01
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: d92db39787dde179c2a4f78ea38342c1bc3b39c3
+PODFILE CHECKSUM: 68ef267b187fe7169d7a7e8b0af59780cb93ca2d
 
 COCOAPODS: 1.6.0

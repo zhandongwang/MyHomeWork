@@ -72,6 +72,7 @@
 		23ADA72E22802F3900ED1FA3 /* FLCoreGraphicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ADA72D22802F3900ED1FA3 /* FLCoreGraphicsViewController.m */; };
 		23ADA73122802F8A00ED1FA3 /* FLCoreGraphicsCutomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ADA73022802F8A00ED1FA3 /* FLCoreGraphicsCutomView.m */; };
 		23ADA7342280302C00ED1FA3 /* FLCoreGraphicsPushButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 23ADA7332280302C00ED1FA3 /* FLCoreGraphicsPushButton.m */; };
+		23B39A3722CCAAF900017844 /* FLFlutterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B39A3622CCAAF900017844 /* FLFlutterViewController.m */; };
 		23BF04802134E8F600ECD946 /* CaculatorMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF04782134E8F500ECD946 /* CaculatorMaker.m */; };
 		23BF04812134E8F600ECD946 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF04792134E8F500ECD946 /* RACViewController.m */; };
 		23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF047B2134E8F500ECD946 /* NSObject+Caculator.m */; };
@@ -264,6 +265,8 @@
 		23ADA73022802F8A00ED1FA3 /* FLCoreGraphicsCutomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCoreGraphicsCutomView.m; sourceTree = "<group>"; };
 		23ADA7322280302C00ED1FA3 /* FLCoreGraphicsPushButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCoreGraphicsPushButton.h; sourceTree = "<group>"; };
 		23ADA7332280302C00ED1FA3 /* FLCoreGraphicsPushButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCoreGraphicsPushButton.m; sourceTree = "<group>"; };
+		23B39A3522CCAAF900017844 /* FLFlutterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLFlutterViewController.h; sourceTree = "<group>"; };
+		23B39A3622CCAAF900017844 /* FLFlutterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLFlutterViewController.m; sourceTree = "<group>"; };
 		23BF04782134E8F500ECD946 /* CaculatorMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaculatorMaker.m; sourceTree = "<group>"; };
 		23BF04792134E8F500ECD946 /* RACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACViewController.m; sourceTree = "<group>"; };
 		23BF047A2134E8F500ECD946 /* Caculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caculator.h; sourceTree = "<group>"; };
@@ -496,6 +499,7 @@
 		2360988F1D980892009C589B /* MyHomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				23B39A3422CCAAE300017844 /* Flutter */,
 				239D7BB022BA1EBD00009809 /* Runloop */,
 				23C84D9522840F9E0017B770 /* Consts */,
 				23C84D9422840F940017B770 /* DataService */,
@@ -740,6 +744,15 @@
 			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
+		23B39A3422CCAAE300017844 /* Flutter */ = {
+			isa = PBXGroup;
+			children = (
+				23B39A3522CCAAF900017844 /* FLFlutterViewController.h */,
+				23B39A3622CCAAF900017844 /* FLFlutterViewController.m */,
+			);
+			path = Flutter;
+			sourceTree = "<group>";
+		};
 		23BF04772134E8F500ECD946 /* RAC */ = {
 			isa = PBXGroup;
 			children = (
@@ -862,11 +875,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 236098BA1D980892009C589B /* Build configuration list for PBXNativeTarget "MyHomeWork" */;
 			buildPhases = (
+				23B39A3822CCABB300017844 /* Run Script */,
 				D469D670E707F16AA547A6A3 /* [CP] Check Pods Manifest.lock */,
 				236098891D980892009C589B /* Sources */,
 				2360988A1D980892009C589B /* Frameworks */,
 				2360988B1D980892009C589B /* Resources */,
 				99BFA0DD49ACD5C9BE45D3C6 /* [CP] Copy Pods Resources */,
+				50DBCE637F944A58B4BBB861 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1001,6 +1016,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		23B39A3822CCABB300017844 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n\"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed\n";
+		};
+		50DBCE637F944A58B4BBB861 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-frameworks.sh",
+				"${PODS_ROOT}/../fl_flutter/.ios/Flutter/engine/Flutter.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flutter.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		99BFA0DD49ACD5C9BE45D3C6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1083,6 +1138,7 @@
 				23DD356B22CC836E00059911 /* UITableView+Analysis.m in Sources */,
 				23C84DB1228551C20017B770 /* FLNetworkHelper.m in Sources */,
 				23E8B79621E5E07A00FD446F /* DHOrderDishModel+Test.m in Sources */,
+				23B39A3722CCAAF900017844 /* FLFlutterViewController.m in Sources */,
 				23BF04802134E8F600ECD946 /* CaculatorMaker.m in Sources */,
 				23683B652278398300337D2C /* CTFrameParserConfig.m in Sources */,
 				23C84DA822844BCD0017B770 /* FLMovieListModel.m in Sources */,
@@ -1333,6 +1389,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2V9XE4LC4E;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MyHomeWork/MyHomeWork-Prefix.pch";
 				INFOPLIST_FILE = MyHomeWork/Info.plist;
@@ -1354,6 +1411,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2V9XE4LC4E;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MyHomeWork/MyHomeWork-Prefix.pch";
 				INFOPLIST_FILE = MyHomeWork/Info.plist;
