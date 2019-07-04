@@ -1,3 +1,5 @@
+import 'package:fl_flutter/FirstScreen.dart';
+import 'package:fl_flutter/SecondScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -19,7 +21,11 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: new FirstScreen(),
+      routes: <String, WidgetBuilder> {
+        '/First':(BuildContext context) => FirstScreen(),
+        '/Second':(BuildContext context) => SecondScreen()
+      },
     );
   }
 }

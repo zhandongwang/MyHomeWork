@@ -16,6 +16,7 @@
 #import "FLConcurrentViewController.h"
 #import "FLRunloopViewController.h"
 #import "FLWebViewController.h"
+#import "FLFlutterViewController.h"
 
 static NSString * const kCellID = @"cellID";
 
@@ -65,7 +66,7 @@ static NSString * const kCellID = @"cellID";
 #pragma mark - Methods
 
 - (void)goToFlutter {
-    [self.navigationController pushViewController:[[FLWebViewController alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[FLFlutterViewController alloc] init] animated:YES];
 }
 
 

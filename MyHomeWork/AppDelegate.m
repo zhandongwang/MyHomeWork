@@ -12,7 +12,7 @@
 #import "PLeakSniffer.h"
 #import <coobjc/coobjc.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-
+//#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h>
 
 @interface AppDelegate ()
 
@@ -32,6 +32,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
 
     [self.window makeKeyAndVisible];
+    
+//    self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
+//    [self.flutterEngine runWithEntrypoint:nil];
+//    [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
     
     
     return YES;
