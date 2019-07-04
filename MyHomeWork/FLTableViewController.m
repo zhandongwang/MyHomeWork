@@ -49,6 +49,7 @@ static NSString * const kCellID = @"cellID";
                       @"Core Graphics":@"goToCoreGraphics",
                       @"WebView":@"goToWebView",
                       @"RunTime":@"goToRunTime",
+                      @"Flutter":@"goToFlutter",
                       
                       };
     self.dataSource = [NSMutableArray arrayWithArray:self.dataDict.allKeys];
@@ -62,6 +63,11 @@ static NSString * const kCellID = @"cellID";
 }
 
 #pragma mark - Methods
+
+- (void)goToFlutter {
+    [self.navigationController pushViewController:[[FLWebViewController alloc] init] animated:YES];
+}
+
 
 - (void)goToWebView {
     [self.navigationController pushViewController:[[FLWebViewController alloc] init] animated:YES];
