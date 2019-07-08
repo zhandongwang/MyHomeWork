@@ -28,25 +28,26 @@
     [self.view addSubview:self.customView];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [tap addTarget:self action:@selector(click)];
     [self.view addGestureRecognizer:tap];
     
     
-    self.customView = [[FLCustomView alloc] initWithFrame:CGRectMake(100, 150, 50, 50)];
-    self.customView.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:self.customView];
-//    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(testGes)];
-//    [self.customView addGestureRecognizer:gesture];
-    
-    
-    self.customButton = [[FLCustomButton alloc] initWithFrame:CGRectMake(100, 250, 100, 30)];
-    [self.customButton setTitle:@"测试" forState:UIControlStateNormal];
-    [self.customButton setBackgroundColor:[UIColor redColor]];
-    [self.customButton addTarget:self action:@selector(customButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.customButton];
-    
-    NSLog(@"%@",[self.customView class]);
-    [self.customView addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
-    NSLog(@"%@",[self.customView class]);
+//    self.customView = [[FLCustomView alloc] initWithFrame:CGRectMake(100, 150, 50, 50)];
+//    self.customView.backgroundColor = [UIColor yellowColor];
+//    [self.view addSubview:self.customView];
+////    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(testGes)];
+////    [self.customView addGestureRecognizer:gesture];
+//
+//
+//    self.customButton = [[FLCustomButton alloc] initWithFrame:CGRectMake(100, 250, 100, 30)];
+//    [self.customButton setTitle:@"测试" forState:UIControlStateNormal];
+//    [self.customButton setBackgroundColor:[UIColor redColor]];
+//    [self.customButton addTarget:self action:@selector(customButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:self.customButton];
+//
+//    NSLog(@"%@",[self.customView class]);
+//    [self.customView addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+//    NSLog(@"%@",[self.customView class]);
 }
 
 
@@ -82,8 +83,12 @@
 //    [self.view addSubview:label];
 }
 
+- (void)click {
+    NSLog(@"base view tapAction--- click");
+}
+
 - (void)tapAction {
-     NSLog(@"base view tapAction");
+     NSLog(@"base view tapAction --- tapAction");
 }
 
 

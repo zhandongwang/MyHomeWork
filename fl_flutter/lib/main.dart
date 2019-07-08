@@ -1,34 +1,136 @@
-import 'package:fl_flutter/FirstScreen.dart';
-import 'package:fl_flutter/SecondScreen.dart';
+import 'package:fl_flutter/HomePage.dart';
+import 'package:fl_flutter/Post.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or press Run > Flutter Hot Reload in a Flutter IDE). Notice that the
-        // counter didn't reset back to zero; the application is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: new FirstScreen(),
-      routes: <String, WidgetBuilder> {
-        '/First':(BuildContext context) => FirstScreen(),
-        '/Second':(BuildContext context) => SecondScreen()
+      title: 'Flutter Code Sample for Navigator',
+      // MaterialApp contains our top-level Navigator
+      initialRoute: '/signup',
+      routes: {
+        '/': (BuildContext context) => HomePage(),
+        '/signup': (BuildContext context) => SignUpPage(),
       },
     );
   }
 }
+
+// class MyApp extends StatelessWidget {
+//   // This widget is the root of your application.
+//   MyApp({Key key}) : super(key:key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: new Scaffold(
+//         appBar: new AppBar(
+//           title: new Text('Fetch Data'),
+//         ),
+//         body: new Center(
+//           child: new FutureBuilder<Post>(
+//             future: fetchPost(),
+//             builder: (context, snapshot){
+//               if (snapshot.hasData) {
+//                 return new Text(snapshot.data.title);
+//               } else if (snapshot.hasError) {
+//                 return new Text('${snapshot.error}');
+//               }
+//               return new CircularProgressIndicator();
+//             },
+//           ),
+//         ),
+//       )
+//     );
+//   }
+// }
+
+class MyButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new GestureDetector(child: new Container(
+      height: 56,
+      padding: const EdgeInsets.all(8.0),
+      margin: const EdgeInsets.symmetric(horizontal: 8.0),
+      decoration: new BoxDecoration(
+         borderRadius: new BorderRadius.circular(5.0),
+          color: Colors.lightGreen[500],
+      ),
+    ),
+    onTap: (){
+      print('MyButton was tapped');
+    },);
+  }
+}
+
+
+class MyAppBar extends StatelessWidget {
+  final Widget title;
+  MyAppBar({this.title});
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      height: 56.0,
+      padding: const  EdgeInsets.only(top: 20, left: 20, right: 20),
+      decoration: new BoxDecoration(color:Colors.red),
+      child: new Row(
+        children: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.menu),
+            tooltip: 'Navigation menu',
+            onPressed: null,
+          ),
+          new Expanded(
+            child: new Center(
+              child: title,
+            ) ,
+          ),
+          new IconButton(
+            icon: new Icon(Icons.search),
+            tooltip: 'Search',
+            onPressed: null,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
+class MyScaffold extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new Material(
+      child: new Column(
+        children: <Widget>[
+          new MyAppBar(
+            title: new Text(
+              'Example title',
+            ),
+          ),
+          new Expanded(
+            child: new Center(
+              child: new Text('Hello flutter'),
+            ),
+          )
+          
+        ],
+      ),
+    );
+  }
+}
+
+
+
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);

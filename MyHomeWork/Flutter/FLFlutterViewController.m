@@ -32,7 +32,7 @@
 - (void)handleButtonAction {
 //    FlutterEngine *flutterEngine = [(AppDelegate *)[[UIApplication sharedApplication] delegate] flutterEngine];
     FlutterViewController *flutterViewController = [[FlutterViewController alloc]init];
-    [flutterViewController setInitialRoute:@""];
+    [flutterViewController setInitialRoute:@"/signup"];
     
     [self presentViewController:flutterViewController animated:false completion:nil];
 }

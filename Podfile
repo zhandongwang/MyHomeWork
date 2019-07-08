@@ -10,7 +10,7 @@ pod 'YYModel'
 pod 'YYCache'
 pod 'YYText'
 pod 'YYWebImage'
-pod 'MJRefresh', '~> 2.4.7'O
+pod 'MJRefresh', '~> 2.4.7'
 pod 'MBProgressHUD'
 pod 'ReactiveObjC', '3.0.0'
 pod 'Aspects'
