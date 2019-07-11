@@ -30,7 +30,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view addSubview:self.runTimeView];
-
+    
+    FLPersonModel *person = [FLPersonModel new];
+    [person runHome:@"hangzhou"];
+    
 }
 
 - (void)threadEntry:(id)param {

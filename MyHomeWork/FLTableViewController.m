@@ -16,6 +16,8 @@
 #import "FLConcurrentViewController.h"
 #import "FLRunloopViewController.h"
 #import "FLWebViewController.h"
+#import <Flutter/Flutter.h>
+
 #import "FLFlutterViewController.h"
 
 static NSString * const kCellID = @"cellID";
@@ -31,17 +33,11 @@ static NSString * const kCellID = @"cellID";
 @implementation FLTableViewController
 
 - (void)viewDidLoad {
-    NSLog(@"%@ before super didLoad", [self class]);
     [super viewDidLoad];
-    NSLog(@"%@ after super didLoad", [self class]);
     self.title = @"功能列表";
-    
     [self configDataSource];
     [self configTableView];
-    NSLog(@"%@ after self didLoad", [self class]);
-    
-    
-   
+
 }
 
 - (void)configDataSource {
@@ -69,8 +65,11 @@ static NSString * const kCellID = @"cellID";
 #pragma mark - Methods
 
 - (void)goToFlutter {
+    FlutterEngine *flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter.kds.CloudCash" project:nil];
+    [flutterEngine runWithEntrypoint:nil];
     
-    [self.navigationController pushViewController:[FLFlutterViewController new] animated:YES];
+    FLFlutterViewController *vc =  [[FLFlutterViewController alloc] initWithEngine:flutterEngine nibName:nil bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
@@ -84,7 +83,8 @@ static NSString * const kCellID = @"cellID";
 }
 
 - (void)goToRunLoop {
-    [self.navigationController pushViewController:[[FLFlutterViewController alloc] init] animated:YES];
+    [self goToFlutter];
+//    [self.navigationController pushViewController:[[FLRunloopViewController alloc] init] animated:YES];
 }
 
 

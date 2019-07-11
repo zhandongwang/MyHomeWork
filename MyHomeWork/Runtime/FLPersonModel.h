@@ -34,4 +34,5 @@
 
 - (void)runTo:(NSString *)place;
 
+- (void)runHome:(NSString *)place;
 @end
