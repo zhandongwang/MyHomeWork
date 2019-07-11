@@ -4,6 +4,10 @@
   "summary": "A short description of FL_flutter.",
   "description": "A short description of FL_flutter.",
   "homepage": "https://github.com/zhandongwang/FL_flutter",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
   "authors": {
     "fengli": "fengli@2dfire.com"
   },
@@ -11,15 +15,8 @@
     "git": "git@github.com:zhandongwang/FL_flutter.git",
     "tag": "0.0.1"
   },
-  "source_files": [
-    "Classes",
-    "Classes/**/*.{h,m}"
-  ],
-  "vendored_frameworks": [
-    "Framework/*.framework",
-    "Framework/engine/*.framework"
-  ],
-  "resources": "Framework/flutter_assets",
+  "source_files": "Classes/**/*.{h,m}",
+  "vendored_frameworks": "Framework/*.framework",
   "platforms": {
     "osx": null,
     "ios": null,

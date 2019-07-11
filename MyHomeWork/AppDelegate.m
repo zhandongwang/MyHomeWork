@@ -9,17 +9,15 @@
 #import "AppDelegate.h"
 #import "MyHomeWork-Swift.h"
 #import "FLTableViewController.h"
-#import "PLeakSniffer.h"
 #import <coobjc/coobjc.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-//#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h>
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate {
-    
+
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -32,11 +30,6 @@
     self.window.backgroundColor = [UIColor whiteColor];
 
     [self.window makeKeyAndVisible];
-    
-//    self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
-//    [self.flutterEngine runWithEntrypoint:nil];
-//    [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
-    
     
     return YES;
 }
@@ -62,7 +55,5 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
-
 
 @end

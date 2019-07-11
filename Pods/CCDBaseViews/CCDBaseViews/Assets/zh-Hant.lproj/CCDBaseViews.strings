@@ -1,0 +1,20 @@
+/* 
+  CCDBaseViewsLocalizable.strings
+  Pods
+
+  Created by 凤梨 on 17/3/22.
+
+*/
+
+"isloading" = "加載中...";
+"refreshing" = "正在刷新數據...";
+"ready4Refresh" = "鬆開立即刷新";
+"noMoreData" = "沒有更多了";
+"gotoDetail" = "查看詳情";
+"serverError" = "服務器異常，請點擊重試";
+"retry" = "點擊重試";
+"cancel" = "取消";
+"confirm" = "確定";
+"reasons" = "請選擇原因";
+"emptyData" = "沒有數據";
+"loading" = "正在加載";

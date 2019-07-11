@@ -1,0 +1,35 @@
+{
+  "name": "CCDFlutterKDS",
+  "version": "0.0.1",
+  "summary": "A short description of CCDFlutterKDS.",
+  "description": "A short description of CCDFlutterKDS",
+  "homepage": "http://git.2dfire.net/ccd-iOS/ccdflutterkds",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "fengli": "fengli@2dfire.com"
+  },
+  "source": {
+    "git": "git@git.2dfire.net:ccd-iOS/ccdflutterkds.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "Classes/**/*.{h,m}",
+  "resources": "Framework/flutter_assets",
+  "vendored_frameworks": "Framework/*.framework",
+  "dependencies": {
+    "CCDBaseViews": [
+
+    ],
+    "CCDNotification": [
+
+    ]
+  },
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

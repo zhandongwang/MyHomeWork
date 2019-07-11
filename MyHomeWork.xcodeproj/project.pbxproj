@@ -14,12 +14,6 @@
 		2320909E2276FF540034CA96 /* FLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320909D2276FF540034CA96 /* FLCollectionViewController.m */; };
 		232090A12276FFB90034CA96 /* FLCollectionViewLinearLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 232090A02276FFB90034CA96 /* FLCollectionViewLinearLayout.m */; };
 		232090A42277019E0034CA96 /* FLCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 232090A32277019E0034CA96 /* FLCollectionViewCell.m */; };
-		232413A2225595F3008618C7 /* FLSwiftStudyGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232413A1225595F3008618C7 /* FLSwiftStudyGlobal.swift */; };
-		232413A4225596AB008618C7 /* FLSwiftStudySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232413A3225596AB008618C7 /* FLSwiftStudySecondViewController.swift */; };
-		232413AA2255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 232413A62255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf */; };
-		232413AB2255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 232413A72255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf */; };
-		232413AC2255B10E008618C7 /* Gaspar Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 232413A82255B10E008618C7 /* Gaspar Regular.otf */; };
-		232413AD2255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 232413A92255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf */; };
 		23358AA722C9F95200132738 /* FLCustomOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 23358AA622C9F95200132738 /* FLCustomOperation.m */; };
 		23358AAA22CA2DD000132738 /* FLCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 23358AA922CA2DD000132738 /* FLCustomButton.m */; };
 		2335DCBB1E0E137100C48142 /* testWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = 2335DCBA1E0E137100C48142 /* testWeb.html */; };
@@ -90,7 +84,6 @@
 		23C84DA822844BCD0017B770 /* FLMovieListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DA722844BCD0017B770 /* FLMovieListModel.m */; };
 		23C84DAE22850FA80017B770 /* UIImageView+FLWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DAD22850FA80017B770 /* UIImageView+FLWebCache.m */; };
 		23C84DB1228551C20017B770 /* FLNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C84DB0228551C20017B770 /* FLNetworkHelper.m */; };
-		23CCB5C62254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCB5C52254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift */; };
 		23CDBEDF2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CDBEDE2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.m */; };
 		23D3682E1E4C5A5300ECC80D /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D368301E4C5A5300ECC80D /* test2.png */; };
 		23DD356922CC836E00059911 /* NSObject+Analysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23DD356122CC836D00059911 /* NSObject+Analysis.m */; };
@@ -104,17 +97,14 @@
 		23DD357922CC837700059911 /* FLClothesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 23DD357522CC837600059911 /* FLClothesProvider.m */; };
 		23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A1B1E46F3A800B3FFFD /* InfoPlist.strings */; };
 		23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23DE6A251E46F7F200B3FFFD /* Localizable.strings */; };
-		23E5A0DB22584DA5006BDDA9 /* FLSwiftStudy27.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5A0DA22584DA5006BDDA9 /* FLSwiftStudy27.swift */; };
-		23E5A0DD22585302006BDDA9 /* FLSwiftStudy27FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5A0DC22585302006BDDA9 /* FLSwiftStudy27FirstViewController.swift */; };
-		23E5A0DF22585317006BDDA9 /* FLSwiftStudy27SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5A0DE22585317006BDDA9 /* FLSwiftStudy27SecondViewController.swift */; };
-		23E5A0E122585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5A0E022585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift */; };
-		23E5A0E322585377006BDDA9 /* FLSwiftStudyBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5A0E222585377006BDDA9 /* FLSwiftStudyBaseViewController.swift */; };
 		23E77FF521884539009B8E84 /* JSPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E77FF421884539009B8E84 /* JSPerson.m */; };
 		23E77FF721885097009B8E84 /* EvaluatePrice.js in Resources */ = {isa = PBXBuildFile; fileRef = 23E77FF621885096009B8E84 /* EvaluatePrice.js */; };
 		23E77FFA218855FD009B8E84 /* FLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E77FF9218855FD009B8E84 /* FLWebViewController.m */; };
 		23E8B79321E5E01700FD446F /* DHOrderDishModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8B79221E5E01700FD446F /* DHOrderDishModel.m */; };
 		23E8B79621E5E07A00FD446F /* DHOrderDishModel+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8B79521E5E07A00FD446F /* DHOrderDishModel+Test.m */; };
 		23E8B79C21E6E67E00FD446F /* DHOrderDishModel+Test2.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8B79B21E6E67E00FD446F /* DHOrderDishModel+Test2.m */; };
+		23EC316722D713CB001698E1 /* FLForwardingTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EC316622D713CB001698E1 /* FLForwardingTarget.m */; };
+		23EC316A22D7152A001698E1 /* NSObject+UnRecognizeSelCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EC316922D7152A001698E1 /* NSObject+UnRecognizeSelCrash.m */; };
 		23EFA3D2229CD077005ADBB1 /* FLDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EFA3D1229CD077005ADBB1 /* FLDBViewController.m */; };
 		36B3E01D9D1E692147BBD537 /* libPods-MyHomeWork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69599EA15F9C66C29E99337B /* libPods-MyHomeWork.a */; };
 /* End PBXBuildFile section */
@@ -153,12 +143,6 @@
 		232090A02276FFB90034CA96 /* FLCollectionViewLinearLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCollectionViewLinearLayout.m; sourceTree = "<group>"; };
 		232090A22277019E0034CA96 /* FLCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCollectionViewCell.h; sourceTree = "<group>"; };
 		232090A32277019E0034CA96 /* FLCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCollectionViewCell.m; sourceTree = "<group>"; };
-		232413A1225595F3008618C7 /* FLSwiftStudyGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudyGlobal.swift; sourceTree = "<group>"; };
-		232413A3225596AB008618C7 /* FLSwiftStudySecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudySecondViewController.swift; sourceTree = "<group>"; };
-		232413A62255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFTongXin_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
-		232413A72255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFZhiHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
-		232413A82255B10E008618C7 /* Gaspar Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gaspar Regular.otf"; sourceTree = "<group>"; };
-		232413A92255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFJinHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
 		23358AA522C9F95200132738 /* FLCustomOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCustomOperation.h; sourceTree = "<group>"; };
 		23358AA622C9F95200132738 /* FLCustomOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCustomOperation.m; sourceTree = "<group>"; };
 		23358AA822CA2DD000132738 /* FLCustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCustomButton.h; sourceTree = "<group>"; };
@@ -301,7 +285,6 @@
 		23C84DAD22850FA80017B770 /* UIImageView+FLWebCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FLWebCache.m"; sourceTree = "<group>"; };
 		23C84DAF228551C20017B770 /* FLNetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLNetworkHelper.h; sourceTree = "<group>"; };
 		23C84DB0228551C20017B770 /* FLNetworkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLNetworkHelper.m; sourceTree = "<group>"; };
-		23CCB5C52254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudyFirstViewController.swift; sourceTree = "<group>"; };
 		23CDBEDD2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLCollectionViewWaterFallLayout.h; sourceTree = "<group>"; };
 		23CDBEDE2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLCollectionViewWaterFallLayout.m; sourceTree = "<group>"; };
 		23D368171E4C0ABE00ECC80D /* MyHomeWork-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyHomeWork-Prefix.pch"; sourceTree = "<group>"; };
@@ -341,11 +324,6 @@
 		23DE6A271E46F7FB00B3FFFD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		23DE6A281E46F7FD00B3FFFD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		23DE6A291E46F7FE00B3FFFD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
-		23E5A0DA22584DA5006BDDA9 /* FLSwiftStudy27.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudy27.swift; sourceTree = "<group>"; };
-		23E5A0DC22585302006BDDA9 /* FLSwiftStudy27FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudy27FirstViewController.swift; sourceTree = "<group>"; };
-		23E5A0DE22585317006BDDA9 /* FLSwiftStudy27SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudy27SecondViewController.swift; sourceTree = "<group>"; };
-		23E5A0E022585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudy27ThirdViewController.swift; sourceTree = "<group>"; };
-		23E5A0E222585377006BDDA9 /* FLSwiftStudyBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSwiftStudyBaseViewController.swift; sourceTree = "<group>"; };
 		23E77FF321884539009B8E84 /* JSPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSPerson.h; sourceTree = "<group>"; };
 		23E77FF421884539009B8E84 /* JSPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSPerson.m; sourceTree = "<group>"; };
 		23E77FF621885096009B8E84 /* EvaluatePrice.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = EvaluatePrice.js; sourceTree = "<group>"; };
@@ -357,6 +335,10 @@
 		23E8B79521E5E07A00FD446F /* DHOrderDishModel+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DHOrderDishModel+Test.m"; sourceTree = "<group>"; };
 		23E8B79A21E6E67E00FD446F /* DHOrderDishModel+Test2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DHOrderDishModel+Test2.h"; sourceTree = "<group>"; };
 		23E8B79B21E6E67E00FD446F /* DHOrderDishModel+Test2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DHOrderDishModel+Test2.m"; sourceTree = "<group>"; };
+		23EC316522D713CB001698E1 /* FLForwardingTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLForwardingTarget.h; sourceTree = "<group>"; };
+		23EC316622D713CB001698E1 /* FLForwardingTarget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLForwardingTarget.m; sourceTree = "<group>"; };
+		23EC316822D7152A001698E1 /* NSObject+UnRecognizeSelCrash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+UnRecognizeSelCrash.h"; sourceTree = "<group>"; };
+		23EC316922D7152A001698E1 /* NSObject+UnRecognizeSelCrash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+UnRecognizeSelCrash.m"; sourceTree = "<group>"; };
 		23EFA3D0229CD077005ADBB1 /* FLDBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLDBViewController.h; sourceTree = "<group>"; };
 		23EFA3D1229CD077005ADBB1 /* FLDBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLDBViewController.m; sourceTree = "<group>"; };
 		69599EA15F9C66C29E99337B /* libPods-MyHomeWork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyHomeWork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -415,33 +397,6 @@
 				232090A32277019E0034CA96 /* FLCollectionViewCell.m */,
 			);
 			path = CollectionView;
-			sourceTree = "<group>";
-		};
-		232413A0225595CB008618C7 /* SwiftStudy */ = {
-			isa = PBXGroup;
-			children = (
-				232413A52255B0CF008618C7 /* Fonts */,
-				23CCB5C52254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift */,
-				232413A3225596AB008618C7 /* FLSwiftStudySecondViewController.swift */,
-				23E5A0E222585377006BDDA9 /* FLSwiftStudyBaseViewController.swift */,
-				23E5A0DA22584DA5006BDDA9 /* FLSwiftStudy27.swift */,
-				23E5A0DC22585302006BDDA9 /* FLSwiftStudy27FirstViewController.swift */,
-				23E5A0DE22585317006BDDA9 /* FLSwiftStudy27SecondViewController.swift */,
-				23E5A0E022585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift */,
-				232413A1225595F3008618C7 /* FLSwiftStudyGlobal.swift */,
-			);
-			path = SwiftStudy;
-			sourceTree = "<group>";
-		};
-		232413A52255B0CF008618C7 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				232413A82255B10E008618C7 /* Gaspar Regular.otf */,
-				232413A92255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf */,
-				232413A62255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf */,
-				232413A72255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		2335DCB91E0E130F00C48142 /* Web */ = {
@@ -507,7 +462,6 @@
 				23ADA724227EDBC600ED1FA3 /* Concurrent */,
 				23ADA723227EDB1300ED1FA3 /* UIKit */,
 				23683B5C2278210B00337D2C /* CoreText */,
-				232413A0225595CB008618C7 /* SwiftStudy */,
 				2356D6DA221E895C00DC57D7 /* SQL */,
 				23634C4621F165FC0028B669 /* Pattern */,
 				23965FBE2193DEF400349149 /* Runtime */,
@@ -682,6 +636,7 @@
 		23965FBE2193DEF400349149 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				23EC316422D713B9001698E1 /* Crash */,
 				23DD355D22CC82F400059911 /* Analysis */,
 				23DD355E22CC82F500059911 /* Proxy */,
 				23965FBF2193DF4500349149 /* FLCarModel.h */,
@@ -851,6 +806,17 @@
 			path = Proxy;
 			sourceTree = "<group>";
 		};
+		23EC316422D713B9001698E1 /* Crash */ = {
+			isa = PBXGroup;
+			children = (
+				23EC316522D713CB001698E1 /* FLForwardingTarget.h */,
+				23EC316622D713CB001698E1 /* FLForwardingTarget.m */,
+				23EC316822D7152A001698E1 /* NSObject+UnRecognizeSelCrash.h */,
+				23EC316922D7152A001698E1 /* NSObject+UnRecognizeSelCrash.m */,
+			);
+			path = Crash;
+			sourceTree = "<group>";
+		};
 		554CF75A9F8F4738FF739435 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -880,7 +846,7 @@
 				2360988A1D980892009C589B /* Frameworks */,
 				2360988B1D980892009C589B /* Resources */,
 				99BFA0DD49ACD5C9BE45D3C6 /* [CP] Copy Pods Resources */,
-				84A3471EDC7781944B377422 /* [CP] Embed Pods Frameworks */,
+				B2057D49DCD43829C69D4FCB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -983,15 +949,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				236098A01D980892009C589B /* LaunchScreen.storyboard in Resources */,
-				232413AD2255B10E008618C7 /* MFJinHei_Noncommercial-Regular.ttf in Resources */,
-				232413AC2255B10E008618C7 /* Gaspar Regular.otf in Resources */,
 				23DE6A231E46F7F200B3FFFD /* Localizable.strings in Resources */,
 				23D3682E1E4C5A5300ECC80D /* test2.png in Resources */,
 				2335DCBB1E0E137100C48142 /* testWeb.html in Resources */,
 				23E77FF721885097009B8E84 /* EvaluatePrice.js in Resources */,
 				23965FB521918FED00349149 /* log.js in Resources */,
-				232413AA2255B10E008618C7 /* MFTongXin_Noncommercial-Regular.ttf in Resources */,
-				232413AB2255B10E008618C7 /* MFZhiHei_Noncommercial-Regular.ttf in Resources */,
 				2360989D1D980892009C589B /* Assets.xcassets in Resources */,
 				23DE6A191E46F3A800B3FFFD /* InfoPlist.strings in Resources */,
 				23683B7322784CE500337D2C /* JsonTemplate.json in Resources */,
@@ -1015,30 +977,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		84A3471EDC7781944B377422 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-frameworks.sh",
-				"${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/App.framework",
-				"${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/engine/Flutter.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/App.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flutter.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		99BFA0DD49ACD5C9BE45D3C6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1046,7 +984,6 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-resources.sh",
-				"${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/flutter_assets",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_template.js",
 				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge/Assets/block_plugin_with_callback_template.js",
@@ -1058,7 +995,6 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/flutter_assets",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/block_plugin_template.js",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/block_plugin_with_callback_template.js",
@@ -1071,6 +1007,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2057D49DCD43829C69D4FCB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-frameworks.sh",
+				"${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/App.framework",
+				"${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/Flutter.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/App.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flutter.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyHomeWork/Pods-MyHomeWork-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D469D670E707F16AA547A6A3 /* [CP] Check Pods Manifest.lock */ = {
@@ -1104,15 +1064,14 @@
 				232090A12276FFB90034CA96 /* FLCollectionViewLinearLayout.m in Sources */,
 				23634C6321F1796B0028B669 /* FLDoor.m in Sources */,
 				23CDBEDF2277DD3D009D62C5 /* FLCollectionViewWaterFallLayout.m in Sources */,
-				23E5A0E322585377006BDDA9 /* FLSwiftStudyBaseViewController.swift in Sources */,
 				23683B5F2278212B00337D2C /* FLCTViewController.m in Sources */,
-				232413A4225596AB008618C7 /* FLSwiftStudySecondViewController.swift in Sources */,
 				23634C5D21F177E20028B669 /* FLBuilder.m in Sources */,
 				23BF048621353D0200ECD946 /* FLBaseViewController.m in Sources */,
 				23BF04822134E8F600ECD946 /* NSObject+Caculator.m in Sources */,
 				23C84DAE22850FA80017B770 /* UIImageView+FLWebCache.m in Sources */,
 				23C84D9C2284219F0017B770 /* FLUIKitTableViewControllerViewModel.m in Sources */,
 				23683B68227839BC00337D2C /* CTFrameParser.m in Sources */,
+				23EC316722D713CB001698E1 /* FLForwardingTarget.m in Sources */,
 				2304FCD42277ECC400754B13 /* FLCollectionViewCircleLayout.m in Sources */,
 				23C84D9F228422970017B770 /* FLConst.m in Sources */,
 				23DD357622CC837700059911 /* FLProxy.m in Sources */,
@@ -1141,13 +1100,10 @@
 				23ADA73122802F8A00ED1FA3 /* FLCoreGraphicsCutomView.m in Sources */,
 				23634C6621F179750028B669 /* FLEngine.m in Sources */,
 				2374CFB11E518C62001B799D /* DHMessageModel.m in Sources */,
-				232413A2225595F3008618C7 /* FLSwiftStudyGlobal.swift in Sources */,
-				23CCB5C62254B80D00A5EE8E /* FLSwiftStudyFirstViewController.swift in Sources */,
 				239D7BB322BA1EBE00009809 /* FLRunloopViewController.m in Sources */,
 				23BF04812134E8F600ECD946 /* RACViewController.m in Sources */,
 				2307F1662064A2120060A688 /* WZDPatch.m in Sources */,
 				23C84DA5228449AB0017B770 /* FLMovieModel.m in Sources */,
-				23E5A0E122585322006BDDA9 /* FLSwiftStudy27ThirdViewController.swift in Sources */,
 				23ADA72A227EE26700ED1FA3 /* CoreTextImageData.m in Sources */,
 				23DD356922CC836E00059911 /* NSObject+Analysis.m in Sources */,
 				2320909E2276FF540034CA96 /* FLCollectionViewController.m in Sources */,
@@ -1166,7 +1122,6 @@
 				2374CFAF1E518C62001B799D /* DHAllOrderModel.m in Sources */,
 				2373072E2271488C003901CC /* ResultModel.m in Sources */,
 				23DD357822CC837700059911 /* FLSecondProxy.m in Sources */,
-				23E5A0DD22585302006BDDA9 /* FLSwiftStudy27FirstViewController.swift in Sources */,
 				23ADA72E22802F3900ED1FA3 /* FLCoreGraphicsViewController.m in Sources */,
 				23965FC12193DF4500349149 /* FLCarModel.m in Sources */,
 				2374CFB21E518C62001B799D /* DHOrderKind.m in Sources */,
@@ -1177,18 +1132,17 @@
 				23E77FF521884539009B8E84 /* JSPerson.m in Sources */,
 				23683B62227831D200337D2C /* FLCTView.m in Sources */,
 				236098921D980892009C589B /* main.m in Sources */,
+				23EC316A22D7152A001698E1 /* NSObject+UnRecognizeSelCrash.m in Sources */,
 				23031BDE22AF586900C04AE4 /* NSObject+RLMHelper.m in Sources */,
 				2374CFBA1E518D45001B799D /* FRCBaseViewController.m in Sources */,
 				23965FBA2191B9A000349149 /* FLSwiftWebViewController.swift in Sources */,
 				23634C5521F16F710028B669 /* FLCashRebate.m in Sources */,
 				2356D6DD221E897900DC57D7 /* FLMsgModel.m in Sources */,
-				23E5A0DF22585317006BDDA9 /* FLSwiftStudy27SecondViewController.swift in Sources */,
 				23683B6E22783EB200337D2C /* CTDisplayView.m in Sources */,
 				23634C5221F16E7D0028B669 /* FLCashNormal.m in Sources */,
 				23965FC42193E3AC00349149 /* FLPersonModel.m in Sources */,
 				23683B6B227839EA00337D2C /* CoreTextData.m in Sources */,
 				23683B71227842FC00337D2C /* UIView+CTFrame.m in Sources */,
-				23E5A0DB22584DA5006BDDA9 /* FLSwiftStudy27.swift in Sources */,
 				23ADA7342280302C00ED1FA3 /* FLCoreGraphicsPushButton.m in Sources */,
 				237EE7122159CC850056116E /* DHUserModel.m in Sources */,
 				2374CFB31E518C62001B799D /* DHOrderModel.m in Sources */,
@@ -1299,6 +1253,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1347,6 +1302,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1374,6 +1330,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2V9XE4LC4E;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MyHomeWork/MyHomeWork-Prefix.pch";
 				INFOPLIST_FILE = MyHomeWork/Info.plist;
@@ -1383,7 +1340,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyHomeWork/MyHomeWork-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1395,6 +1352,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2V9XE4LC4E;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MyHomeWork/MyHomeWork-Prefix.pch";
 				INFOPLIST_FILE = MyHomeWork/Info.plist;
@@ -1403,7 +1361,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zhandongwang.MyHomeWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyHomeWork/MyHomeWork-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

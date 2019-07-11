@@ -39,6 +39,9 @@ static NSString * const kCellID = @"cellID";
     [self configDataSource];
     [self configTableView];
     NSLog(@"%@ after self didLoad", [self class]);
+    
+    
+   
 }
 
 - (void)configDataSource {
@@ -66,7 +69,8 @@ static NSString * const kCellID = @"cellID";
 #pragma mark - Methods
 
 - (void)goToFlutter {
-    [self.navigationController pushViewController:[[FLFlutterViewController alloc] init] animated:YES];
+    
+    [self.navigationController pushViewController:[FLFlutterViewController new] animated:YES];
 }
 
 
@@ -80,8 +84,10 @@ static NSString * const kCellID = @"cellID";
 }
 
 - (void)goToRunLoop {
-    [self.navigationController pushViewController:[[FLRunloopViewController alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[FLFlutterViewController alloc] init] animated:YES];
 }
+
+
 
 - (void)goToRunTime {
     [self.navigationController pushViewController:[[FLRunTimeViewController alloc] init] animated:YES];

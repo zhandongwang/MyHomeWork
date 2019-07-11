@@ -1,0 +1,20 @@
+/* 
+  CCDBaseViewsLocalizable.strings
+  Pods
+
+  Created by 凤梨 on 17/3/22.
+
+*/
+
+"isloading" = "Loading...";
+"refreshing" = "Refreshing...";
+"ready4Refresh" = "Loose to refresh ";
+"noMoreData" = "All loaded";
+"gotoDetail" = "Check the details";
+"serverError" = "Service Unavailable";
+"retry" = "Tap retry";
+"cancel" = "Cancel";
+"confirm" = "Confirm";
+"reasons" = "Please choose reason";
+"emptyData" = "Empty data";
+"loading" = "Loading";
