@@ -6,52 +6,173 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+
+  Widget titleSection() {
+    return new Container(
+        color: Colors.yellowAccent,
+        padding: const EdgeInsets.all(32.0),
+        child: new Row(
+          children: <Widget>[
+            new Expanded(
+              child: new Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  new Container(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: new Text(
+                      'Oeschinen Lake Campground',
+                      style: new TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Text(
+                    'Kandersteg, Switzerland',
+                    style: new TextStyle(
+                      color: Colors.grey[500],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            new FavoriteWidget(),
+
+
+
+          ],
+        ),
+      );
+  }
+
+    Container _buildBottonColumn(Color color, IconData icon, String label) {
+      return new Container(
+        color: Colors.red,
+        child: new Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          new Icon(icon,color:color),
+          new Container(
+            margin: const EdgeInsets.only(top: 8.0),
+            child: new Text(
+              label,
+              style:new TextStyle (
+                color: color,fontSize: 12.0,
+                fontWeight: FontWeight.w400
+                )
+            ),
+          )
+        ],
+      ),
+      );
+    } 
+     Widget buttonSection(BuildContext context) {
+       Color color = Theme.of(context).primaryColor;
+       return new Container(
+        color: Colors.yellow,
+        child: new Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            _buildBottonColumn(color,Icons.call, 'CALL'),
+            _buildBottonColumn(color,Icons.near_me, 'ROUTE'),
+            _buildBottonColumn(color,Icons.share, 'SHARE'),
+          ],
+        ),
+      );
+    } 
+
+    Widget textSection(){
+        return new Container(
+        color: Colors.blue,
+        padding: const EdgeInsets.all(32.0),
+        child: new Text(
+          '''
+Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. Activities enjoyed here include rowing, and riding the summer toboggan run.
+          ''',
+          softWrap:true,
+        ),
+        );
+    } 
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Code Sample for Navigator',
       // MaterialApp contains our top-level Navigator
-      initialRoute: '/signup',
-      routes: {
-        '/': (BuildContext context) => HomePage(),
-        '/signup': (BuildContext context) => SignUpPage(),
-      },
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: Text('Flutter layout'),
+        ),
+        body: new ListView(
+          children:[
+            Image.asset('images/lake.jpeg',height: 240,fit: BoxFit.cover),
+            titleSection(),
+            buttonSection(context),
+            textSection(),
+          ],
+        ),
+      ),
     );
   }
 }
 
-// class MyApp extends StatelessWidget {
-//   // This widget is the root of your application.
-//   MyApp({Key key}) : super(key:key);
+class FavoriteWidget extends StatefulWidget {
+  @override
+  _FavoriteWidgetState createState() {
+    // TODO: implement createState
+    return new _FavoriteWidgetState();
+  }
+  
+}
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter Demo',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: new Scaffold(
-//         appBar: new AppBar(
-//           title: new Text('Fetch Data'),
-//         ),
-//         body: new Center(
-//           child: new FutureBuilder<Post>(
-//             future: fetchPost(),
-//             builder: (context, snapshot){
-//               if (snapshot.hasData) {
-//                 return new Text(snapshot.data.title);
-//               } else if (snapshot.hasError) {
-//                 return new Text('${snapshot.error}');
-//               }
-//               return new CircularProgressIndicator();
-//             },
-//           ),
-//         ),
-//       )
-//     );
-//   }
-// }
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  bool _isFavorited = true;
+  int _favoriteCount = 41;
+  
+  void _toggleFavorite(){
+    setState(() {
+      if (_isFavorited) {
+        _favoriteCount -= 1;
+      } else 
+      {
+        _favoriteCount += 1;
+      }
+       _isFavorited = !_isFavorited;
+    });
+  }
+
+  
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        new Container(
+          padding: new EdgeInsets.all(0),
+          child: new IconButton(
+            color: Colors.red[500],
+            icon: _isFavorited ? new Icon(Icons.star) : new Icon(Icons.star_border),
+            onPressed: _toggleFavorite,
+          ),
+        ),
+        new SizedBox(
+          width: 18.0,
+          child: new Container(
+            child: new Text('$_favoriteCount'),
+          ),
+        )
+      ],
+    );
+  }
+
+
+}
+
 
 class MyButton extends StatelessWidget {
   @override
@@ -128,8 +249,6 @@ class MyScaffold extends StatelessWidget {
     );
   }
 }
-
-
 
 
 class MyHomePage extends StatefulWidget {
