@@ -36,7 +36,7 @@ WKScriptMessageHandler, WKNavigationDelegate,WKUIDelegate>
     
 //    NSURL *url = [NSURL URLWithString:@"http://d.2dfire-pre.com/hercules/page/guide.html?allowBack=true&isInstallShopkeeperApp=false&pageIndex=1&version=4746&deviceType=1&industryType=3&language=en#/index"];
     
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"testWeb" withExtension:@"html"];
+    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"]; //[[NSBundle mainBundle] URLForResource:@"testWeb" withExtension:@"html"];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
 //    /*UIWebview*/
@@ -106,32 +106,52 @@ WKScriptMessageHandler, WKNavigationDelegate,WKUIDelegate>
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
 
-    NSLog(@"发送请求之前调用");
+    NSLog(@"decidePolicyForNavigationAction--Decides whether to allow or cancel a navigation.");
+    if ([[navigationAction.request.URL host] isEqualToString:@"itunes.apple.com"] &&
+        [[UIApplication sharedApplication] openURL:navigationAction.request.URL]) {
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+    
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
+- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation {
+    NSLog(@"didReceiveServerRedirectForProvisionalNavigation--Called when a web view receives a server redirect.");
+    
+    
+}
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
-    NSLog(@"收到响应后调用");
+    NSLog(@"decidePolicyForNavigationResponse--Decides whether to allow or cancel a navigation after its response is known.");
     decisionHandler(WKNavigationResponsePolicyAllow);
 }
 
 
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
-     NSLog(@"页面开始加载");
+     NSLog(@"didStartProvisionalNavigation---Called when web content begins to load in a web view");
 }
 
 
 - (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation {
-    NSLog(@"页面开始返回");
+    NSLog(@"didCommitNavigation---Called when the web view begins to receive web content");
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
-    NSLog(@"页面完成加载");
+     NSLog(@"didFinishNavigation---Called when the navigation is complete.");
     [webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '300%'" completionHandler:nil];
 }
 
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView API_AVAILABLE(macosx(10.11), ios(9.0)) {
     NSLog(@"WkWebView进程退出");
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    
+    NSLog(@"didFailNavigation--Called when an error occurs during navigation. %@", error);
+}
+
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    NSLog(@"didFailProvisionalNavigation--Called when an error occurs while the web view is loading content. %@", error);
 }
 
 #pragma mark - UIWebViewDelegate

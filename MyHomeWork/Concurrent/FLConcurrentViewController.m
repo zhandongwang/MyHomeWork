@@ -29,8 +29,7 @@
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(testGes)];
     [self.wrapperView addGestureRecognizer:gesture];
     
-    
-    
+
     self.testButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 250, 100, 30)];
     [self.testButton setTitle:@"测试" forState:UIControlStateNormal];
     [self.testButton setBackgroundColor:[UIColor redColor]];
@@ -38,6 +37,7 @@
     [self.view addSubview:self.testButton];
     
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -59,12 +59,14 @@
     NSLog(@"%s",__func__);
 }
 
-
+- (void)threadEntry:(NSString *)param {
+    NSLog(@"%@", param);
+}
 - (void)test {
 //    [self.thread cancel];
-//    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(threadEntry:) object:@"hello thread"];
-//    thread.name = @"FengliThread";
-//    [thread start];
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(threadEntry:) object:@"hello thread"];
+    thread.name = @"FengliThread";
+    [thread start];
 //    [self testThread];
 //    FLOperation *operation = [[FLOperation alloc] initWithObject:@"Hello Operation"];
 //    [operation main];
@@ -133,6 +135,12 @@
     NSLog(@"finished");
     
 }
+
+
+- (id)testNull {
+    return nil;
+}
+
 
 - (void)testDeadLock {
     dispatch_queue_t queue = dispatch_queue_create("com.bestswifter.queue", NULL);

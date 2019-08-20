@@ -24,22 +24,23 @@ static FLForwardingTarget *_target = nil;
 
 + (BOOL)isWhiteListClass:(Class)class {
     NSString *clsStr = NSStringFromClass(class);
-    if ([clsStr hasPrefix:@"_"]) {
+    if ([clsStr hasPrefix:@"_"]) {//内部类
         return NO;
     }
     BOOL isNullCls = [clsStr isEqualToString:NSStringFromClass([NSNull class])];
     
-    BOOL isMyClass = [clsStr hasPrefix:@"FL"];
+    BOOL isMyClass = [clsStr hasPrefix:@"FL"];//要被hook的类
     return isNullCls || isMyClass;
     
 }
 
 - (id)fl_forwardingTargetForSelector:(SEL)aSelector {
+    //先调用自身，以免破坏原来的消息转发流程
     id result = [self fl_forwardingTargetForSelector:aSelector];
     if (result) {//返回了其他对象
         return result;
     }
-    
+    //限制hook范围
     BOOL isWhiteListClass = [[self class] isWhiteListClass:[self class]];
     if (!isWhiteListClass) {
         return nil;//不需要被hook

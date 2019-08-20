@@ -12,7 +12,7 @@
 
 id ForwardingTarget_dynamicMethod(id self, SEL _cmd) {
     NSLog(@"got a crash:class:%@,sel:%@",[self class],NSStringFromSelector(_cmd));
-    
+    //上报给服务器
     return [NSNull null];
 }
 

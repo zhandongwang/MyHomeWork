@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class FLCustomView;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FLCustomButton : UIButton
+
+@property (nonatomic, strong) FLCustomView *childView;
 
 @end
 

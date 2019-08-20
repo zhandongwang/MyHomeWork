@@ -20,10 +20,10 @@
     
     SEL originalSel = @selector(tableView:didSelectRowAtIndexPath:);
     Method originalMethod = class_getInstanceMethod([delegate class], originalSel);
-    //初始化一个名字为delegat.class/tableview.tag的selector
+    //初始化一个名字为tableview.class/tableview.tag的selector
     SEL swizzledSel =  NSSelectorFromString([NSString stringWithFormat:@"%@/%ld",[self class], self.tag]);
+    //将selector添加的delegate的class中，IMP指向当前class的私有方法user_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     Method swizzledmethod = class_getInstanceMethod([self class], @selector(user_tableView:didSelectRowAtIndexPath:));
-    //IMP执行交换后的user_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 方法
     class_addMethod([delegate class], swizzledSel, method_getImplementation(swizzledmethod), method_getTypeEncoding(swizzledmethod));
     
     //如果delegate没有实现- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -48,13 +48,15 @@
 }
 
 - (void)user_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //通过唯一标识的规则， 找到原来的方法 （即tableView:didSelectRowAtIndexPath: 方法）
+    //通过唯一标识的规则， 找到原来的方法didSelectRowAtIndexPath的IMP
     SEL originalSel = NSSelectorFromString([NSString stringWithFormat:@"%@/%ld",[tableView class],tableView.tag]);
     if ([self respondsToSelector:originalSel]) {
         IMP imp = [self methodForSelector:originalSel];
         void(*func)(id,SEL,id,id) = (void*)imp;
+        //执行IMP
         func(self,originalSel,tableView, indexPath);
     }
+    //日志上报
     NSString *identifier = [NSString stringWithFormat:@"%@/%@/%ld",[self class],[tableView class],tableView.tag];
 }
 @end

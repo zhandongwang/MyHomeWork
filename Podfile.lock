@@ -34,23 +34,60 @@ PODS:
   - cocore (1.2.0)
   - coobjc (1.2.0):
     - cocore (~> 1.2.0)
-  - FBRetainCycleDetector (0.1.4.1)
+  - FBRetainCycleDetector (0.1.4.2)
   - FL_flutter (0.0.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - IMXEventBus (1.0.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0.1)
   - MJRefresh (2.4.12)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
   - OCTWebViewBridge (2.1.0)
+  - PINCache (3.0.1-beta.6):
+    - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
+    - PINCache/Core (= 3.0.1-beta.6)
+  - PINCache/Arc-exception-safe (3.0.1-beta.6):
+    - PINCache/Core
+  - PINCache/Core (3.0.1-beta.6):
+    - PINOperation (~> 1.1.0)
+  - PINOperation (1.1.2)
+  - PINRemoteImage/Core (3.0.0-beta.13):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.0-beta.13):
+    - PINRemoteImage/Core
+  - PINRemoteImage/PINCache (3.0.0-beta.13):
+    - PINCache (= 3.0.1-beta.6)
+    - PINRemoteImage/Core
   - ReactiveObjC (3.0.0)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
   - SnapKit (4.0.0)
+  - Texture (2.8.1):
+    - Texture/AssetsLibrary (= 2.8.1)
+    - Texture/Core (= 2.8.1)
+    - Texture/MapKit (= 2.8.1)
+    - Texture/Photos (= 2.8.1)
+    - Texture/PINRemoteImage (= 2.8.1)
+    - Texture/Video (= 2.8.1)
+  - Texture/AssetsLibrary (2.8.1):
+    - Texture/Core
+  - Texture/Core (2.8.1)
+  - Texture/MapKit (2.8.1):
+    - Texture/Core
+  - Texture/Photos (2.8.1):
+    - Texture/Core
+  - Texture/PINRemoteImage (2.8.1):
+    - PINRemoteImage/iOS (= 3.0.0-beta.13)
+    - PINRemoteImage/PINCache
+    - Texture/Core
+  - Texture/Video (2.8.1):
+    - Texture/Core
   - YYCache (1.0.4)
+  - YYDispatchQueuePool (1.0)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
@@ -68,6 +105,7 @@ DEPENDENCIES:
   - coobjc
   - FL_flutter (from `~/Documents/Development/CCDPods/FL_flutter`)
   - FMDB
+  - IMXEventBus
   - Masonry
   - MBProgressHUD
   - MJRefresh (~> 2.4.7)
@@ -76,7 +114,9 @@ DEPENDENCIES:
   - ReactiveObjC (= 3.0.0)
   - SDWebImage
   - SnapKit (= 4.0.0)
+  - Texture
   - YYCache
+  - YYDispatchQueuePool
   - YYModel
   - YYText
   - YYWebImage
@@ -95,14 +135,20 @@ SPEC REPOS:
     - cocore
     - coobjc
     - FMDB
+    - IMXEventBus
     - Masonry
     - MJRefresh
     - MLeaksFinder
     - OCTWebViewBridge
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
     - ReactiveObjC
     - SDWebImage
     - SnapKit
+    - Texture
     - YYCache
+    - YYDispatchQueuePool
     - YYImage
     - YYWebImage
 
@@ -117,23 +163,29 @@ SPEC CHECKSUMS:
   CocoaSecurity: c1287f056a21fa88a74e4d7f57f56b0a1a6e64b0
   cocore: cc9d76229458f286a632d9cecb63bd699bd3529d
   coobjc: 090a460e32e90d0e820e64c31cf7b79dece51a7c
-  FBRetainCycleDetector: 22a77c1446a858961ee4bce6e943603add9db037
+  FBRetainCycleDetector: acbe08b26312189ef6a4f95217cbbd6741389964
   FL_flutter: 22a0f8fda0a9f8e68b436524598db67b6eca4e63
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  IMXEventBus: 345a46de586a4a97801a1cdcf81a2150c1c20127
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 443c07c0aa22772fbe3702db40fc65c36d80155e
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   OCTWebViewBridge: e7712ef0c0670905da57b8a36d3f02a43115c507
+  PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
+  PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
+  PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  Texture: 8ecf6984065a1e54f06bf97b349ecca28582acd7
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYDispatchQueuePool: 3dfb2274bcc74207688dde8ac6f7bdd46871dd7b
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYModel: 4fb57c2e53b0d22dc4414878928ece524bf30788
   YYText: 1b20648f2be4d853c390e98315ff403864e92f01
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: fbd1eb0789aa1d74c272db64189d90b52129cdcb
+PODFILE CHECKSUM: 6ce0d2a7b030f99d81cc0b2305ccc0848d05c6bc
 
 COCOAPODS: 1.6.0

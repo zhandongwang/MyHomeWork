@@ -11,6 +11,9 @@
 #import "FLTableViewController.h"
 #import <coobjc/coobjc.h>
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "FLTestModel.h"
+#import <FLFlutterRouter.h>
+#import "GeneratedPluginRegistrant.h"
 
 @interface AppDelegate ()
 
@@ -23,13 +26,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-
+    
     FLTableViewController  *vc = [[FLTableViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = navigationController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
-
     [self.window makeKeyAndVisible];
+    
+    [GeneratedPluginRegistrant registerWithRegistry:self];
+    [FLFlutterRouter sharedInstance].navigationController = navigationController;
+    self.window.rootViewController = navigationController;
+    
+    [FlutterBoostPlugin.sharedInstance startFlutterWithPlatform:[FLFlutterRouter sharedInstance] onStart:^(FlutterViewController *fvc) {
+        
+    }];
     
     return YES;
 }

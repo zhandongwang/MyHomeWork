@@ -154,11 +154,21 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/App.framework"
+  install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/base_app_flutter.framework"
   install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/Flutter.framework"
+  install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/flutter_boost.framework"
+  install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/kds.framework"
+  install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/shared_preferences.framework"
+  install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/xservice_kit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/App.framework"
+  install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/base_app_flutter.framework"
   install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/Flutter.framework"
+  install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/flutter_boost.framework"
+  install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/kds.framework"
+  install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/shared_preferences.framework"
+  install_framework "${PODS_ROOT}/../../../Development/CCDPods/FL_flutter/Framework/xservice_kit.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

@@ -20,11 +20,11 @@
         return ges;
     }
 
-    //创建自定义方法  target.class/action.name
+    //添加私有方法 sel：target.class/action.name  IMP:user_gestureRecognizer
     NSString *selName = [NSString stringWithFormat:@"%s/%@",class_getName([target class]),NSStringFromSelector(action)];
     
     SEL swizzledSel = NSSelectorFromString(selName);
-    Method swizzledMethod = class_getInstanceMethod([self class], @selector(user_gesture:));
+    Method swizzledMethod = class_getInstanceMethod([self class], @selector(user_gestureRecognizer:));
     
     BOOL isAdded = class_addMethod([target class], swizzledSel, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
     if (isAdded) {
@@ -33,11 +33,13 @@
 
     return ges;
 }
-
-- (void)user_gesture:(UIGestureRecognizer *)gesture {
+//私有方法的实现
+- (void)user_gestureRecognizer:(UIGestureRecognizer *)gesture {
+    //上报日志
     NSString *identifier = [NSString stringWithFormat:@"%s/%@",class_getName([self class]),gesture.name];
+    NSLog(@"%@",identifier);
+    //执行
     SEL sel = NSSelectorFromString(identifier);
-    
     if ([self respondsToSelector:sel]) {
         IMP imp = [self methodForSelector:sel];
         void(*func)(id, SEL, id) = (void*)imp;

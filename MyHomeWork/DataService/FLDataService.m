@@ -159,7 +159,8 @@
     return self;
 }
 
-- (COPromise *)getDataWithURL:(NSString*)url {
+- (COPromise *)getDataWithURL:(NSString*)url CO_ASYNC{
+    SURE_ASYNC
     return [COPromise promise:^(COPromiseFulfill  _Nonnull fullfill, COPromiseReject  _Nonnull reject) {
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         manager.requestSerializer.timeoutInterval = 10;
@@ -167,7 +168,9 @@
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             fullfill(responseObject);
+            NSLog(@"-----request success-------");
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"-----request failed-------");
             reject(error);
         }];
     } onQueue:_networkQueue];
@@ -175,9 +178,10 @@
 
 - (id)requestJSONWithURL:(NSString *)url CO_ASYNC {
     SURE_ASYNC
-    NSLog(@"-----before await-------");
+    NSLog(@"-----before await networkActor-------");
+
     id ret = await([self.networkActor sendMessage:url]);
-    NSLog(@"-----after await-------");
+    NSLog(@"-----after await networkActor-------");
     return ret;
 }
 

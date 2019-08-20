@@ -11,7 +11,6 @@
 #import "FLCarModel.h"
 #import "FLPersonModel.h"
 
-
 @interface FLRunTimeViewController ()
 
 @property (nonatomic, strong) FLRunTimeView *runTimeView;
@@ -29,10 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view addSubview:self.runTimeView];
-    
-    FLPersonModel *person = [FLPersonModel new];
-    [person runHome:@"hangzhou"];
+//    [self.view addSubview:self.runTimeView];
     
 }
 

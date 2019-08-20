@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <flutter_boost/FlutterBoost.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : FlutterAppDelegate <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-
+//@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) FLBFlutterViewContainer *kdsViewController;
 
 @end
 

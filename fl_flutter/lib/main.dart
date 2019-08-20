@@ -126,7 +126,6 @@ class FavoriteWidget extends StatefulWidget {
     // TODO: implement createState
     return new _FavoriteWidgetState();
   }
-  
 }
 
 class _FavoriteWidgetState extends State<FavoriteWidget> {

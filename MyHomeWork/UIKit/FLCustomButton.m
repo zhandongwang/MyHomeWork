@@ -10,13 +10,16 @@
 
 @implementation FLCustomButton
 
-
+- (void)dealloc {
+    NSLog(@"FLCustomButton");
+}
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSLog(@"=========> FLCustomButton touchs Began");
     [super touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event];
 }
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSLog(@"=========> FLCustomButton touchs Moved");
+    [super touchesMoved:touches withEvent:event];
 }
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSLog(@"=========> FLCustomButton touchs Ended");
@@ -24,6 +27,7 @@
 }
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSLog(@"=========> FLCustomButton touchs Cancelled");
+    [super touchesCancelled:touches withEvent:event];
 }
 
 

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FLCustomButton.h"
 @interface FLCustomView : UIView
 
 - (void)updateName:(NSString *)name;
+@property (nonatomic, strong) FLCustomButton *childButton;
+
 @end

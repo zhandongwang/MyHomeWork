@@ -7,11 +7,12 @@
 //
 
 #import "FLCustomView.h"
+#import "FLCustomChildView.h"
 
 @interface FLCustomView()
 
 @property (nonatomic, copy) NSString *name;
-
+@property (nonatomic, strong) FLCustomChildView *customChildView;
 
 @end
 
@@ -22,30 +23,18 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor yellowColor];
+        self.backgroundColor = [UIColor grayColor];
     }
     return self;
 }
 
-
-- (void)setNeedsDisplay {
-    [super setNeedsDisplay];
-    NSLog(@"%s%s",__FILE__,__func__);
+- (void)childButtonTapped {
+    NSLog(@"childButtonTapped");
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"=========> FLCustomView touchs Began");
+- (void)testChildGes {
+    NSLog(@"testChildGes");
 }
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"=========> FLCustomView touchs Moved");
-}
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"=========> FLCustomView touchs Ended");
-}
-- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"=========> FLCustomView touchs Cancelled");
-}
-
 
 //- (void)displayLayer:(CALayer *)layer {
 //    NSLog(@"%s%s",__FILE__,__func__);

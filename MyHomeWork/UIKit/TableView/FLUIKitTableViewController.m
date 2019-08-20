@@ -45,10 +45,11 @@ static NSString * const kCellReusedID = @"FLUIKitTableViewCell";
         NSArray *dataArray = [[FLUIKitTableViewControllerViewModel sharedInstance] getDiscoverList:@"1"];
         
         NSLog(@"-------after send request------------");
-        
         if (dataArray) {
+            
             self.dataSource = [dataArray copy];
             [self.tableView reloadData];
+            NSLog(@"-------tableview reloaded------------");
 
         } else {
             NSLog(@"request data failed");
